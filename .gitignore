@@ -1,0 +1,4 @@
+
+# Directories created when regenerating protos
+out/
+tmp_common_protos/
