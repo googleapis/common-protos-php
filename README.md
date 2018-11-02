@@ -2,6 +2,8 @@
 
 [![release level](https://img.shields.io/badge/release%20level-general%20availability%20%28GA%29-brightgreen.svg?style&#x3D;flat)](https://cloud.google.com/terms/launch-stages)
 
+[![Build Status](https://api.travis-ci.org/googleapis/common-protos-php.svg?branch=master)](https://travis-ci.org/googleapis/common-protos-php)
+
 This repository is a home for the [protocol buffer][protobuf] types which are
 common dependencies throughout the Google API ecosystem, generated for PHP.
 The protobuf definitions for these generated PHP classes are provided in the
