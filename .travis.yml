@@ -18,8 +18,8 @@ jobs:
       install:
       - travis_retry composer install
       script:
-      - ./dev/sh/build-docs.sh
-      - ./dev/sh/push-docs.sh
+      - ./dev/build-docs.sh
+      - ./dev/push-docs.sh
       after_success: skip
 
 stages:
@@ -33,6 +33,6 @@ install:
   - travis_retry composer install
 script:
   - vendor/bin/phpunit
-  - if [[ $TRAVIS_PHP_VERSION =~ ^7 ]]; then ./dev/sh/build-docs.sh; fi
+  - if [[ $TRAVIS_PHP_VERSION =~ ^7 ]]; then ./dev/build-docs.sh master; fi
 after_success:
   - bash <(curl -s https://codecov.io/bash)
