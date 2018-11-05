@@ -18,8 +18,8 @@ jobs:
       install:
       - travis_retry composer install
       script:
-      - ./dev/sh/build-docs.sh
-      - ./dev/sh/push-docs.sh
+      - ./dev/build-docs.sh
+      - ./dev/push-docs.sh
       after_success: skip
 
 stages:
