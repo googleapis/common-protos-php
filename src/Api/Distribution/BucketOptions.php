@@ -9,25 +9,20 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A Distribution may optionally contain a histogram of the values in the
- * population.  The histogram is given in `bucket_counts` as counts of values
- * that fall into one of a sequence of non-overlapping buckets.  The sequence
- * of buckets is described by `bucket_options`.
- * A bucket specifies an inclusive lower bound and exclusive upper bound for
- * the values that are counted for that bucket.  The upper bound of a bucket
- * is strictly greater than the lower bound.
- * The sequence of N buckets for a Distribution consists of an underflow
- * bucket (number 0), zero or more finite buckets (number 1 through N - 2) and
- * an overflow bucket (number N - 1).  The buckets are contiguous:  the lower
- * bound of bucket i (i > 0) is the same as the upper bound of bucket i - 1.
- * The buckets span the whole range of finite values: lower bound of the
- * underflow bucket is -infinity and the upper bound of the overflow bucket is
- * +infinity.  The finite buckets are so-called because both bounds are
- * finite.
- * `BucketOptions` describes bucket boundaries in one of three ways.  Two
- * describe the boundaries by giving parameters for a formula to generate
- * boundaries and one gives the bucket boundaries explicitly.
- * If `bucket_boundaries` is not given, then no `bucket_counts` may be given.
+ * `BucketOptions` describes the bucket boundaries used to create a histogram
+ * for the distribution. The buckets can be in a linear sequence, an
+ * exponential sequence, or each bucket can be specified explicitly.
+ * `BucketOptions` does not include the number of values in each bucket.
+ * A bucket has an inclusive lower bound and exclusive upper bound for the
+ * values that are counted for that bucket. The upper bound of a bucket must
+ * be strictly greater than the lower bound. The sequence of N buckets for a
+ * distribution consists of an underflow bucket (number 0), zero or more
+ * finite buckets (number 1 through N - 2) and an overflow bucket (number N -
+ * 1). The buckets are contiguous: the lower bound of bucket i (i > 0) is the
+ * same as the upper bound of bucket i - 1. The buckets span the whole range
+ * of finite values: lower bound of the underflow bucket is -infinity and the
+ * upper bound of the overflow bucket is +infinity. The finite buckets are
+ * so-called because both bounds are finite.
  *
  * Generated from protobuf message <code>google.api.Distribution.BucketOptions</code>
  */
