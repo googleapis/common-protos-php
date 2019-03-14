@@ -53,7 +53,7 @@ function buildConfigForVersion($version)
     ;
 
     return new Sami($iterator, array(
-        'title'                => "Google ApiCore - $version",
+        'title'                => "Common Protos PHP - $version",
         'version'              => $version,
         'build_dir'            => "$gaxRootDir/tmp_gh-pages/%version%",
         'cache_dir'            => "$gaxRootDir/cache/%version%",
