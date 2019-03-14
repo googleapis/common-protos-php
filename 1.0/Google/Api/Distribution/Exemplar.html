@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Api\Distribution\Exemplar | Google ApiCore - 1.0</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/sami.css">
+        <script src="../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Api_Distribution_Exemplar" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">Google ApiCore - 1.0</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../../Google/Api.html">Api</a></li><li class="backslash">\</li><li><a href="../../../Google/Api/Distribution.html">Distribution</a></li><li class="backslash">\</li><li>Exemplar</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Exemplar
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Exemplar</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Exemplars are example points that may be used to annotate aggregated
+distribution values. They are metadata that gives information about a
+particular value added to a Distribution bucket, such as a trace ID that
+was active when a value was added. They may contain further information,
+such as a example values and timestamps, origin, etc.</p>            <p>Generated from protobuf message <code>google.api.Distribution.Exemplar</code></p>                    </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    float
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getValue">getValue</a>()
+        
+                                            <p>Value of the exemplar point. This value determines to which bucket the
+exemplar belongs.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setValue">setValue</a>(float $var)
+        
+                                            <p>Value of the exemplar point. This value determines to which bucket the
+exemplar belongs.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Protobuf\Timestamp">Timestamp</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getTimestamp">getTimestamp</a>()
+        
+                                            <p>The observation (sampling) time of the above value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setTimestamp">setTimestamp</a>(<abbr title="Google\Protobuf\Timestamp">Timestamp</abbr> $var)
+        
+                                            <p>The observation (sampling) time of the above value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAttachments">getAttachments</a>()
+        
+                                            <p>Contextual information about the example value. Examples are:
+  Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+  Literal string: type.googleapis.com/google.protobuf.StringValue
+  Labels dropped during aggregation:
+    type.googleapis.com/google.monitoring.v3.DroppedLabels
+There may be only a single attachment of any given message type in a
+single exemplar, and this is enforced by the system.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setAttachments">setAttachments</a>(<abbr title="Google\Protobuf\Any">Any</abbr>[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr> $var)
+        
+                                            <p>Contextual information about the example value. Examples are:
+  Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+  Literal string: type.googleapis.com/google.protobuf.StringValue
+  Labels dropped during aggregation:
+    type.googleapis.com/google.monitoring.v3.DroppedLabels
+There may be only a single attachment of any given message type in a
+single exemplar, and this is enforced by the system.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 69</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type float $value
+      Value of the exemplar point. This value determines to which bucket the
+      exemplar belongs.
+@type \Google\Protobuf\Timestamp $timestamp
+      The observation (sampling) time of the above value.
+@type \Google\Protobuf\Any[]|\Google\Protobuf\Internal\RepeatedField $attachments
+      Contextual information about the example value. Examples are:
+        Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+        Literal string: type.googleapis.com/google.protobuf.StringValue
+        Labels dropped during aggregation:
+          type.googleapis.com/google.monitoring.v3.DroppedLabels
+      There may be only a single attachment of any given message type in a
+      single exemplar, and this is enforced by the system.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getValue">
+        <div class="location">at         line 81</div>
+        <code>                    float
+    <strong>getValue</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Value of the exemplar point. This value determines to which bucket the
+exemplar belongs.</p>                    <p>Generated from protobuf field <code>double value = 1;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setValue">
+        <div class="location">at         line 94</div>
+        <code>                    $this
+    <strong>setValue</strong>(float $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Value of the exemplar point. This value determines to which bucket the
+exemplar belongs.</p>                    <p>Generated from protobuf field <code>double value = 1;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>float</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getTimestamp">
+        <div class="location">at         line 108</div>
+        <code>                    <abbr title="Google\Protobuf\Timestamp">Timestamp</abbr>
+    <strong>getTimestamp</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The observation (sampling) time of the above value.</p>                    <p>Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Protobuf\Timestamp">Timestamp</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setTimestamp">
+        <div class="location">at         line 120</div>
+        <code>                    $this
+    <strong>setTimestamp</strong>(<abbr title="Google\Protobuf\Timestamp">Timestamp</abbr> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The observation (sampling) time of the above value.</p>                    <p>Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Google\Protobuf\Timestamp">Timestamp</abbr></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAttachments">
+        <div class="location">at         line 140</div>
+        <code>                    <abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr>
+    <strong>getAttachments</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Contextual information about the example value. Examples are:
+  Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+  Literal string: type.googleapis.com/google.protobuf.StringValue
+  Labels dropped during aggregation:
+    type.googleapis.com/google.monitoring.v3.DroppedLabels
+There may be only a single attachment of any given message type in a
+single exemplar, and this is enforced by the system.</p>                    <p>Generated from protobuf field <code>repeated .google.protobuf.Any attachments = 3;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setAttachments">
+        <div class="location">at         line 158</div>
+        <code>                    $this
+    <strong>setAttachments</strong>(<abbr title="Google\Protobuf\Any">Any</abbr>[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Contextual information about the example value. Examples are:
+  Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+  Literal string: type.googleapis.com/google.protobuf.StringValue
+  Labels dropped during aggregation:
+    type.googleapis.com/google.monitoring.v3.DroppedLabels
+There may be only a single attachment of any given message type in a
+single exemplar, and this is enforced by the system.</p>                    <p>Generated from protobuf field <code>repeated .google.protobuf.Any attachments = 3;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Google\Protobuf\Any">Any</abbr>[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
