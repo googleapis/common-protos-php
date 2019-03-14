@@ -9,15 +9,15 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Distribution contains summary statistics for a population of values and,
- * optionally, a histogram representing the distribution of those values across
- * a specified set of histogram buckets.
+ * `Distribution` contains summary statistics for a population of values. It
+ * optionally contains a histogram representing the distribution of those values
+ * across a set of buckets.
  * The summary statistics are the count, mean, sum of the squared deviation from
  * the mean, the minimum, and the maximum of the set of population of values.
  * The histogram is based on a sequence of buckets and gives a count of values
- * that fall into each bucket.  The boundaries of the buckets are given either
- * explicitly or by specifying parameters for a method of computing them
- * (buckets of fixed width or buckets of exponentially increasing width).
+ * that fall into each bucket. The boundaries of the buckets are given either
+ * explicitly or by formulas for buckets of fixed or exponentially increasing
+ * widths.
  * Although it is not forbidden, it is generally a bad idea to include
  * non-finite values (infinities or NaNs) in the population of values, as this
  * will render the `mean` and `sum_of_squared_deviation` fields meaningless.
@@ -27,7 +27,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Distribution extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The number of values in the population. Must be non-negative.
+     * The number of values in the population. Must be non-negative. This value
+     * must equal the sum of the values in `bucket_counts` if a histogram is
+     * provided.
      *
      * Generated from protobuf field <code>int64 count = 1;</code>
      */
@@ -41,7 +43,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
     private $mean = 0.0;
     /**
      * The sum of squared deviations from the mean of the values in the
-     * population.  For values x_i this is:
+     * population. For values x_i this is:
      *     Sum[i=1..n]((x_i - mean)^2)
      * Knuth, "The Art of Computer Programming", Vol. 2, page 323, 3rd edition
      * describes Welford's method for accumulating this sum in one pass.
@@ -58,25 +60,36 @@ class Distribution extends \Google\Protobuf\Internal\Message
      */
     private $range = null;
     /**
-     * Defines the histogram bucket boundaries.
+     * Defines the histogram bucket boundaries. If the distribution does not
+     * contain a histogram, then omit this field.
      *
      * Generated from protobuf field <code>.google.api.Distribution.BucketOptions bucket_options = 6;</code>
      */
     private $bucket_options = null;
     /**
-     * If `bucket_options` is given, then the sum of the values in `bucket_counts`
-     * must equal the value in `count`.  If `bucket_options` is not given, no
-     * `bucket_counts` fields may be given.
-     * Bucket counts are given in order under the numbering scheme described
-     * above (the underflow bucket has number 0; the finite buckets, if any,
-     * have numbers 1 through N-2; the overflow bucket has number N-1).
-     * The size of `bucket_counts` must be no greater than N as defined in
-     * `bucket_options`.
-     * Any suffix of trailing zero bucket_count fields may be omitted.
+     * The number of values in each bucket of the histogram, as described in
+     * `bucket_options`. If the distribution does not have a histogram, then omit
+     * this field. If there is a histogram, then the sum of the values in
+     * `bucket_counts` must equal the value in the `count` field of the
+     * distribution.
+     * If present, `bucket_counts` should contain N values, where N is the number
+     * of buckets specified in `bucket_options`. If you supply fewer than N
+     * values, the remaining values are assumed to be 0.
+     * The order of the values in `bucket_counts` follows the bucket numbering
+     * schemes described for the three bucket types. The first value must be the
+     * count for the underflow bucket (number 0). The next N-2 values are the
+     * counts for the finite buckets (number 1 through N-2). The N'th value in
+     * `bucket_counts` is the count for the overflow bucket (number N-1).
      *
      * Generated from protobuf field <code>repeated int64 bucket_counts = 7;</code>
      */
     private $bucket_counts;
+    /**
+     * Must be in increasing order of `value` field.
+     *
+     * Generated from protobuf field <code>repeated .google.api.Distribution.Exemplar exemplars = 10;</code>
+     */
+    private $exemplars;
 
     /**
      * Constructor.
@@ -85,13 +98,15 @@ class Distribution extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $count
-     *           The number of values in the population. Must be non-negative.
+     *           The number of values in the population. Must be non-negative. This value
+     *           must equal the sum of the values in `bucket_counts` if a histogram is
+     *           provided.
      *     @type float $mean
      *           The arithmetic mean of the values in the population. If `count` is zero
      *           then this field must be zero.
      *     @type float $sum_of_squared_deviation
      *           The sum of squared deviations from the mean of the values in the
-     *           population.  For values x_i this is:
+     *           population. For values x_i this is:
      *               Sum[i=1..n]((x_i - mean)^2)
      *           Knuth, "The Art of Computer Programming", Vol. 2, page 323, 3rd edition
      *           describes Welford's method for accumulating this sum in one pass.
@@ -100,17 +115,24 @@ class Distribution extends \Google\Protobuf\Internal\Message
      *           If specified, contains the range of the population values. The field
      *           must not be present if the `count` is zero.
      *     @type \Google\Api\Distribution\BucketOptions $bucket_options
-     *           Defines the histogram bucket boundaries.
+     *           Defines the histogram bucket boundaries. If the distribution does not
+     *           contain a histogram, then omit this field.
      *     @type int[]|string[]|\Google\Protobuf\Internal\RepeatedField $bucket_counts
-     *           If `bucket_options` is given, then the sum of the values in `bucket_counts`
-     *           must equal the value in `count`.  If `bucket_options` is not given, no
-     *           `bucket_counts` fields may be given.
-     *           Bucket counts are given in order under the numbering scheme described
-     *           above (the underflow bucket has number 0; the finite buckets, if any,
-     *           have numbers 1 through N-2; the overflow bucket has number N-1).
-     *           The size of `bucket_counts` must be no greater than N as defined in
-     *           `bucket_options`.
-     *           Any suffix of trailing zero bucket_count fields may be omitted.
+     *           The number of values in each bucket of the histogram, as described in
+     *           `bucket_options`. If the distribution does not have a histogram, then omit
+     *           this field. If there is a histogram, then the sum of the values in
+     *           `bucket_counts` must equal the value in the `count` field of the
+     *           distribution.
+     *           If present, `bucket_counts` should contain N values, where N is the number
+     *           of buckets specified in `bucket_options`. If you supply fewer than N
+     *           values, the remaining values are assumed to be 0.
+     *           The order of the values in `bucket_counts` follows the bucket numbering
+     *           schemes described for the three bucket types. The first value must be the
+     *           count for the underflow bucket (number 0). The next N-2 values are the
+     *           counts for the finite buckets (number 1 through N-2). The N'th value in
+     *           `bucket_counts` is the count for the overflow bucket (number N-1).
+     *     @type \Google\Api\Distribution\Exemplar[]|\Google\Protobuf\Internal\RepeatedField $exemplars
+     *           Must be in increasing order of `value` field.
      * }
      */
     public function __construct($data = NULL) {
@@ -119,7 +141,9 @@ class Distribution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of values in the population. Must be non-negative.
+     * The number of values in the population. Must be non-negative. This value
+     * must equal the sum of the values in `bucket_counts` if a histogram is
+     * provided.
      *
      * Generated from protobuf field <code>int64 count = 1;</code>
      * @return int|string
@@ -130,7 +154,9 @@ class Distribution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of values in the population. Must be non-negative.
+     * The number of values in the population. Must be non-negative. This value
+     * must equal the sum of the values in `bucket_counts` if a histogram is
+     * provided.
      *
      * Generated from protobuf field <code>int64 count = 1;</code>
      * @param int|string $var
@@ -174,7 +200,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
 
     /**
      * The sum of squared deviations from the mean of the values in the
-     * population.  For values x_i this is:
+     * population. For values x_i this is:
      *     Sum[i=1..n]((x_i - mean)^2)
      * Knuth, "The Art of Computer Programming", Vol. 2, page 323, 3rd edition
      * describes Welford's method for accumulating this sum in one pass.
@@ -190,7 +216,7 @@ class Distribution extends \Google\Protobuf\Internal\Message
 
     /**
      * The sum of squared deviations from the mean of the values in the
-     * population.  For values x_i this is:
+     * population. For values x_i this is:
      *     Sum[i=1..n]((x_i - mean)^2)
      * Knuth, "The Art of Computer Programming", Vol. 2, page 323, 3rd edition
      * describes Welford's method for accumulating this sum in one pass.
@@ -237,7 +263,8 @@ class Distribution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Defines the histogram bucket boundaries.
+     * Defines the histogram bucket boundaries. If the distribution does not
+     * contain a histogram, then omit this field.
      *
      * Generated from protobuf field <code>.google.api.Distribution.BucketOptions bucket_options = 6;</code>
      * @return \Google\Api\Distribution\BucketOptions
@@ -248,7 +275,8 @@ class Distribution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Defines the histogram bucket boundaries.
+     * Defines the histogram bucket boundaries. If the distribution does not
+     * contain a histogram, then omit this field.
      *
      * Generated from protobuf field <code>.google.api.Distribution.BucketOptions bucket_options = 6;</code>
      * @param \Google\Api\Distribution\BucketOptions $var
@@ -263,15 +291,19 @@ class Distribution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If `bucket_options` is given, then the sum of the values in `bucket_counts`
-     * must equal the value in `count`.  If `bucket_options` is not given, no
-     * `bucket_counts` fields may be given.
-     * Bucket counts are given in order under the numbering scheme described
-     * above (the underflow bucket has number 0; the finite buckets, if any,
-     * have numbers 1 through N-2; the overflow bucket has number N-1).
-     * The size of `bucket_counts` must be no greater than N as defined in
-     * `bucket_options`.
-     * Any suffix of trailing zero bucket_count fields may be omitted.
+     * The number of values in each bucket of the histogram, as described in
+     * `bucket_options`. If the distribution does not have a histogram, then omit
+     * this field. If there is a histogram, then the sum of the values in
+     * `bucket_counts` must equal the value in the `count` field of the
+     * distribution.
+     * If present, `bucket_counts` should contain N values, where N is the number
+     * of buckets specified in `bucket_options`. If you supply fewer than N
+     * values, the remaining values are assumed to be 0.
+     * The order of the values in `bucket_counts` follows the bucket numbering
+     * schemes described for the three bucket types. The first value must be the
+     * count for the underflow bucket (number 0). The next N-2 values are the
+     * counts for the finite buckets (number 1 through N-2). The N'th value in
+     * `bucket_counts` is the count for the overflow bucket (number N-1).
      *
      * Generated from protobuf field <code>repeated int64 bucket_counts = 7;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -282,15 +314,19 @@ class Distribution extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If `bucket_options` is given, then the sum of the values in `bucket_counts`
-     * must equal the value in `count`.  If `bucket_options` is not given, no
-     * `bucket_counts` fields may be given.
-     * Bucket counts are given in order under the numbering scheme described
-     * above (the underflow bucket has number 0; the finite buckets, if any,
-     * have numbers 1 through N-2; the overflow bucket has number N-1).
-     * The size of `bucket_counts` must be no greater than N as defined in
-     * `bucket_options`.
-     * Any suffix of trailing zero bucket_count fields may be omitted.
+     * The number of values in each bucket of the histogram, as described in
+     * `bucket_options`. If the distribution does not have a histogram, then omit
+     * this field. If there is a histogram, then the sum of the values in
+     * `bucket_counts` must equal the value in the `count` field of the
+     * distribution.
+     * If present, `bucket_counts` should contain N values, where N is the number
+     * of buckets specified in `bucket_options`. If you supply fewer than N
+     * values, the remaining values are assumed to be 0.
+     * The order of the values in `bucket_counts` follows the bucket numbering
+     * schemes described for the three bucket types. The first value must be the
+     * count for the underflow bucket (number 0). The next N-2 values are the
+     * counts for the finite buckets (number 1 through N-2). The N'th value in
+     * `bucket_counts` is the count for the overflow bucket (number N-1).
      *
      * Generated from protobuf field <code>repeated int64 bucket_counts = 7;</code>
      * @param int[]|string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -300,6 +336,32 @@ class Distribution extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::INT64);
         $this->bucket_counts = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Must be in increasing order of `value` field.
+     *
+     * Generated from protobuf field <code>repeated .google.api.Distribution.Exemplar exemplars = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getExemplars()
+    {
+        return $this->exemplars;
+    }
+
+    /**
+     * Must be in increasing order of `value` field.
+     *
+     * Generated from protobuf field <code>repeated .google.api.Distribution.Exemplar exemplars = 10;</code>
+     * @param \Google\Api\Distribution\Exemplar[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setExemplars($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Api\Distribution\Exemplar::class);
+        $this->exemplars = $arr;
 
         return $this;
     }
