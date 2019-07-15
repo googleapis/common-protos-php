@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Constants
-REQUIRED_PROTOC_VERSION="libprotoc 3.6.1"
+REQUIRED_PROTOC_VERSION="libprotoc 3.9.0"
 COMMON_PROTOS_REPO="https://github.com/googleapis/api-common-protos.git"
 
 # Directories
