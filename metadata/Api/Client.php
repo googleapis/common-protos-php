@@ -22,7 +22,7 @@ class Client
             "6e672e6f72672f67656e70726f746f2f676f6f676c65617069732f617069" .
             "2f616e6e6f746174696f6e733b616e6e6f746174696f6e73a20204474150" .
             "49620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

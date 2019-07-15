@@ -24,8 +24,8 @@ class MonitoringDestination extends \Google\Protobuf\Internal\Message
      */
     private $monitored_resource = '';
     /**
-     * Names of the metrics to report to this monitoring destination.
-     * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     * Types of the metrics to report to this monitoring destination.
+     * Each type must be defined in [Service.metrics][google.api.Service.metrics] section.
      *
      * Generated from protobuf field <code>repeated string metrics = 2;</code>
      */
@@ -41,8 +41,8 @@ class MonitoringDestination extends \Google\Protobuf\Internal\Message
      *           The monitored resource type. The type must be defined in
      *           [Service.monitored_resources][google.api.Service.monitored_resources] section.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $metrics
-     *           Names of the metrics to report to this monitoring destination.
-     *           Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     *           Types of the metrics to report to this monitoring destination.
+     *           Each type must be defined in [Service.metrics][google.api.Service.metrics] section.
      * }
      */
     public function __construct($data = NULL) {
@@ -79,8 +79,8 @@ class MonitoringDestination extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Names of the metrics to report to this monitoring destination.
-     * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     * Types of the metrics to report to this monitoring destination.
+     * Each type must be defined in [Service.metrics][google.api.Service.metrics] section.
      *
      * Generated from protobuf field <code>repeated string metrics = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -91,8 +91,8 @@ class MonitoringDestination extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Names of the metrics to report to this monitoring destination.
-     * Each name must be defined in [Service.metrics][google.api.Service.metrics] section.
+     * Types of the metrics to report to this monitoring destination.
+     * Each type must be defined in [Service.metrics][google.api.Service.metrics] section.
      *
      * Generated from protobuf field <code>repeated string metrics = 2;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

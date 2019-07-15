@@ -9,8 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Configuration for an anthentication provider, including support for
- * [JSON Web Token (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
+ * Configuration for an authentication provider, including support for
+ * [JSON Web Token
+ * (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
  *
  * Generated from protobuf message <code>google.api.AuthProvider</code>
  */
@@ -36,12 +37,15 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
     private $issuer = '';
     /**
      * URL of the provider's public key set to validate signature of the JWT. See
-     * [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
+     * [OpenID
+     * Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
      * Optional if the key set document:
      *  - can be retrieved from
-     *    [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html
-     *    of the issuer.
-     *  - can be inferred from the email domain of the issuer (e.g. a Google service account).
+     *    [OpenID
+     *    Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html of
+     *    the issuer.
+     *  - can be inferred from the email domain of the issuer (e.g. a Google
+     *  service account).
      * Example: https://www.googleapis.com/oauth2/v1/certs
      *
      * Generated from protobuf field <code>string jwks_uri = 3;</code>
@@ -64,7 +68,7 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
      */
     private $audiences = '';
     /**
-     * Redirect URL if JWT token is required but no present or is expired.
+     * Redirect URL if JWT token is required but not present or is expired.
      * Implement authorizationUrl of securityDefinitions in OpenAPI spec.
      *
      * Generated from protobuf field <code>string authorization_url = 5;</code>
@@ -89,12 +93,15 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
      *           Example: 1234567-compute&#64;developer.gserviceaccount.com
      *     @type string $jwks_uri
      *           URL of the provider's public key set to validate signature of the JWT. See
-     *           [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
+     *           [OpenID
+     *           Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
      *           Optional if the key set document:
      *            - can be retrieved from
-     *              [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html
-     *              of the issuer.
-     *            - can be inferred from the email domain of the issuer (e.g. a Google service account).
+     *              [OpenID
+     *              Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html of
+     *              the issuer.
+     *            - can be inferred from the email domain of the issuer (e.g. a Google
+     *            service account).
      *           Example: https://www.googleapis.com/oauth2/v1/certs
      *     @type string $audiences
      *           The list of JWT
@@ -109,7 +116,7 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
      *               audiences: bookstore_android.apps.googleusercontent.com,
      *                          bookstore_web.apps.googleusercontent.com
      *     @type string $authorization_url
-     *           Redirect URL if JWT token is required but no present or is expired.
+     *           Redirect URL if JWT token is required but not present or is expired.
      *           Implement authorizationUrl of securityDefinitions in OpenAPI spec.
      * }
      */
@@ -184,12 +191,15 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
 
     /**
      * URL of the provider's public key set to validate signature of the JWT. See
-     * [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
+     * [OpenID
+     * Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
      * Optional if the key set document:
      *  - can be retrieved from
-     *    [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html
-     *    of the issuer.
-     *  - can be inferred from the email domain of the issuer (e.g. a Google service account).
+     *    [OpenID
+     *    Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html of
+     *    the issuer.
+     *  - can be inferred from the email domain of the issuer (e.g. a Google
+     *  service account).
      * Example: https://www.googleapis.com/oauth2/v1/certs
      *
      * Generated from protobuf field <code>string jwks_uri = 3;</code>
@@ -202,12 +212,15 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
 
     /**
      * URL of the provider's public key set to validate signature of the JWT. See
-     * [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
+     * [OpenID
+     * Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
      * Optional if the key set document:
      *  - can be retrieved from
-     *    [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html
-     *    of the issuer.
-     *  - can be inferred from the email domain of the issuer (e.g. a Google service account).
+     *    [OpenID
+     *    Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html of
+     *    the issuer.
+     *  - can be inferred from the email domain of the issuer (e.g. a Google
+     *  service account).
      * Example: https://www.googleapis.com/oauth2/v1/certs
      *
      * Generated from protobuf field <code>string jwks_uri = 3;</code>
@@ -269,7 +282,7 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Redirect URL if JWT token is required but no present or is expired.
+     * Redirect URL if JWT token is required but not present or is expired.
      * Implement authorizationUrl of securityDefinitions in OpenAPI spec.
      *
      * Generated from protobuf field <code>string authorization_url = 5;</code>
@@ -281,7 +294,7 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Redirect URL if JWT token is required but no present or is expired.
+     * Redirect URL if JWT token is required but not present or is expired.
      * Implement authorizationUrl of securityDefinitions in OpenAPI spec.
      *
      * Generated from protobuf field <code>string authorization_url = 5;</code>

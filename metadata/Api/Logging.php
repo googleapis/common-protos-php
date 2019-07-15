@@ -14,7 +14,6 @@ class Logging
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(hex2bin(
             "0af8020a18676f6f676c652f6170692f6c6f6767696e672e70726f746f12" .
             "0a676f6f676c652e61706922d7010a074c6f6767696e6712450a1570726f" .
@@ -29,7 +28,7 @@ class Logging
             "652e676f6c616e672e6f72672f67656e70726f746f2f676f6f676c656170" .
             "69732f6170692f73657276696365636f6e6669673b73657276696365636f" .
             "6e666967a2020447415049620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

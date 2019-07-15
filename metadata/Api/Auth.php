@@ -14,7 +14,6 @@ class Auth
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(hex2bin(
             "0a88050a15676f6f676c652f6170692f617574682e70726f746f120a676f" .
             "6f676c652e617069226c0a0e41757468656e7469636174696f6e122d0a05" .
@@ -38,7 +37,7 @@ class Auth
             "676c652e676f6c616e672e6f72672f67656e70726f746f2f676f6f676c65" .
             "617069732f6170692f73657276696365636f6e6669673b73657276696365" .
             "636f6e666967a2020447415049620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

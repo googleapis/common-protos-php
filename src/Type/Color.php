@@ -15,7 +15,11 @@ use Google\Protobuf\Internal\GPBUtil;
  * can be trivially provided to the constructor of "java.awt.Color" in Java; it
  * can also be trivially provided to UIColor's "+colorWithRed:green:blue:alpha"
  * method in iOS; and, with just a little work, it can be easily formatted into
- * a CSS "rgba()" string in JavaScript, as well. Here are some examples:
+ * a CSS "rgba()" string in JavaScript, as well.
+ * Note: this proto does not carry information about the absolute color space
+ * that should be used to interpret the RGB value (e.g. sRGB, Adobe RGB,
+ * DCI-P3, BT.2020, etc.). By default, applications SHOULD assume the sRGB color
+ * space.
  * Example (Java):
  *      import com.google.type.Color;
  *      // ...
@@ -69,7 +73,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *          if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) {
  *            return nil;
  *          }
- *          Color* result = [Color alloc] init];
+ *          Color* result = [[Color alloc] init];
  *          [result setRed:red];
  *          [result setGreen:green];
  *          [result setBlue:blue];
@@ -273,6 +277,28 @@ class Color extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getAlpha()</code>
+
+     * The fraction of this color that should be applied to the pixel. That is,
+     * the final pixel color is defined by the equation:
+     *   pixel color = alpha * (this color) + (1.0 - alpha) * (background color)
+     * This means that a value of 1.0 corresponds to a solid color, whereas
+     * a value of 0.0 corresponds to a completely transparent color. This
+     * uses a wrapper message rather than a simple float scalar so that it is
+     * possible to distinguish between a default value and the value being unset.
+     * If omitted, this color object is to be rendered as a solid color
+     * (as if the alpha value had been explicitly given with a value of 1.0).
+     *
+     * Generated from protobuf field <code>.google.protobuf.FloatValue alpha = 4;</code>
+     * @return float|null
+     */
+    public function getAlphaUnwrapped()
+    {
+        $wrapper = $this->getAlpha();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The fraction of this color that should be applied to the pixel. That is,
      * the final pixel color is defined by the equation:
      *   pixel color = alpha * (this color) + (1.0 - alpha) * (background color)
@@ -293,6 +319,29 @@ class Color extends \Google\Protobuf\Internal\Message
         $this->alpha = $var;
 
         return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\FloatValue object.
+
+     * The fraction of this color that should be applied to the pixel. That is,
+     * the final pixel color is defined by the equation:
+     *   pixel color = alpha * (this color) + (1.0 - alpha) * (background color)
+     * This means that a value of 1.0 corresponds to a solid color, whereas
+     * a value of 0.0 corresponds to a completely transparent color. This
+     * uses a wrapper message rather than a simple float scalar so that it is
+     * possible to distinguish between a default value and the value being unset.
+     * If omitted, this color object is to be rendered as a solid color
+     * (as if the alpha value had been explicitly given with a value of 1.0).
+     *
+     * Generated from protobuf field <code>.google.protobuf.FloatValue alpha = 4;</code>
+     * @param float|null $var
+     * @return $this
+     */
+    public function setAlphaUnwrapped($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\FloatValue(['value' => $var]);
+        return $this->setAlpha($wrappedVar);
     }
 
 }

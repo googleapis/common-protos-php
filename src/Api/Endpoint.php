@@ -40,7 +40,7 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * aliases.
      * Additional names that this endpoint will be hosted on.
      *
-     * Generated from protobuf field <code>repeated string aliases = 2;</code>
+     * Generated from protobuf field <code>repeated string aliases = 2 [deprecated = true];</code>
      */
     private $aliases;
     /**
@@ -51,9 +51,10 @@ class Endpoint extends \Google\Protobuf\Internal\Message
     private $features;
     /**
      * The specification of an Internet routable address of API frontend that will
-     * handle requests to this [API Endpoint](https://cloud.google.com/apis/design/glossary).
-     * It should be either a valid IPv4 address or a fully-qualified domain name.
-     * For example, "8.8.8.8" or "myservice.appspot.com".
+     * handle requests to this [API
+     * Endpoint](https://cloud.google.com/apis/design/glossary). It should be
+     * either a valid IPv4 address or a fully-qualified domain name. For example,
+     * "8.8.8.8" or "myservice.appspot.com".
      *
      * Generated from protobuf field <code>string target = 101;</code>
      */
@@ -87,9 +88,10 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      *           The list of features enabled on this endpoint.
      *     @type string $target
      *           The specification of an Internet routable address of API frontend that will
-     *           handle requests to this [API Endpoint](https://cloud.google.com/apis/design/glossary).
-     *           It should be either a valid IPv4 address or a fully-qualified domain name.
-     *           For example, "8.8.8.8" or "myservice.appspot.com".
+     *           handle requests to this [API
+     *           Endpoint](https://cloud.google.com/apis/design/glossary). It should be
+     *           either a valid IPv4 address or a fully-qualified domain name. For example,
+     *           "8.8.8.8" or "myservice.appspot.com".
      *     @type bool $allow_cors
      *           Allowing
      *           [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing), aka
@@ -136,7 +138,7 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * aliases.
      * Additional names that this endpoint will be hosted on.
      *
-     * Generated from protobuf field <code>repeated string aliases = 2;</code>
+     * Generated from protobuf field <code>repeated string aliases = 2 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAliases()
@@ -150,7 +152,7 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * aliases.
      * Additional names that this endpoint will be hosted on.
      *
-     * Generated from protobuf field <code>repeated string aliases = 2;</code>
+     * Generated from protobuf field <code>repeated string aliases = 2 [deprecated = true];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -190,9 +192,10 @@ class Endpoint extends \Google\Protobuf\Internal\Message
 
     /**
      * The specification of an Internet routable address of API frontend that will
-     * handle requests to this [API Endpoint](https://cloud.google.com/apis/design/glossary).
-     * It should be either a valid IPv4 address or a fully-qualified domain name.
-     * For example, "8.8.8.8" or "myservice.appspot.com".
+     * handle requests to this [API
+     * Endpoint](https://cloud.google.com/apis/design/glossary). It should be
+     * either a valid IPv4 address or a fully-qualified domain name. For example,
+     * "8.8.8.8" or "myservice.appspot.com".
      *
      * Generated from protobuf field <code>string target = 101;</code>
      * @return string
@@ -204,9 +207,10 @@ class Endpoint extends \Google\Protobuf\Internal\Message
 
     /**
      * The specification of an Internet routable address of API frontend that will
-     * handle requests to this [API Endpoint](https://cloud.google.com/apis/design/glossary).
-     * It should be either a valid IPv4 address or a fully-qualified domain name.
-     * For example, "8.8.8.8" or "myservice.appspot.com".
+     * handle requests to this [API
+     * Endpoint](https://cloud.google.com/apis/design/glossary). It should be
+     * either a valid IPv4 address or a fully-qualified domain name. For example,
+     * "8.8.8.8" or "myservice.appspot.com".
      *
      * Generated from protobuf field <code>string target = 101;</code>
      * @param string $var

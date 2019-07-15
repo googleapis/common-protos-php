@@ -17,8 +17,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * REQUIRED: The resource for which the policy is being specified.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      *
      * Generated from protobuf field <code>string resource = 1;</code>
      */
@@ -41,8 +40,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource
      *           REQUIRED: The resource for which the policy is being specified.
-     *           `resource` is usually specified as a path. For example, a Project
-     *           resource is specified as `projects/{project}`.
+     *           See the operation documentation for the appropriate value for this field.
      *     @type \Google\Cloud\Iam\V1\Policy $policy
      *           REQUIRED: The complete policy to be applied to the `resource`. The size of
      *           the policy is limited to a few 10s of KB. An empty policy is a
@@ -57,8 +55,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * REQUIRED: The resource for which the policy is being specified.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      *
      * Generated from protobuf field <code>string resource = 1;</code>
      * @return string
@@ -70,8 +67,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * REQUIRED: The resource for which the policy is being specified.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      *
      * Generated from protobuf field <code>string resource = 1;</code>
      * @param string $var

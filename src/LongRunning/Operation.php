@@ -35,7 +35,7 @@ class Operation extends \Google\Protobuf\Internal\Message
     private $metadata = null;
     /**
      * If the value is `false`, it means the operation is still in progress.
-     * If true, the operation is completed, and either `error` or `response` is
+     * If `true`, the operation is completed, and either `error` or `response` is
      * available.
      *
      * Generated from protobuf field <code>bool done = 3;</code>
@@ -60,7 +60,7 @@ class Operation extends \Google\Protobuf\Internal\Message
      *           long-running operation should document the metadata type, if any.
      *     @type bool $done
      *           If the value is `false`, it means the operation is still in progress.
-     *           If true, the operation is completed, and either `error` or `response` is
+     *           If `true`, the operation is completed, and either `error` or `response` is
      *           available.
      *     @type \Google\Rpc\Status $error
      *           The error result of the operation in case of failure or cancellation.
@@ -144,7 +144,7 @@ class Operation extends \Google\Protobuf\Internal\Message
 
     /**
      * If the value is `false`, it means the operation is still in progress.
-     * If true, the operation is completed, and either `error` or `response` is
+     * If `true`, the operation is completed, and either `error` or `response` is
      * available.
      *
      * Generated from protobuf field <code>bool done = 3;</code>
@@ -157,7 +157,7 @@ class Operation extends \Google\Protobuf\Internal\Message
 
     /**
      * If the value is `false`, it means the operation is still in progress.
-     * If true, the operation is completed, and either `error` or `response` is
+     * If `true`, the operation is completed, and either `error` or `response` is
      * available.
      *
      * Generated from protobuf field <code>bool done = 3;</code>

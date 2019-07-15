@@ -14,7 +14,6 @@ class Monitoring
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(hex2bin(
             "0a93030a1b676f6f676c652f6170692f6d6f6e69746f72696e672e70726f" .
             "746f120a676f6f676c652e61706922ec010a0a4d6f6e69746f72696e6712" .
@@ -30,7 +29,7 @@ class Monitoring
             "6f6c616e672e6f72672f67656e70726f746f2f676f6f676c65617069732f" .
             "6170692f73657276696365636f6e6669673b73657276696365636f6e6669" .
             "67a2020447415049620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

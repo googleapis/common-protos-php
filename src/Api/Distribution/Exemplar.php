@@ -34,7 +34,7 @@ class Exemplar extends \Google\Protobuf\Internal\Message
     private $timestamp = null;
     /**
      * Contextual information about the example value. Examples are:
-     *   Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+     *   Trace: type.googleapis.com/google.monitoring.v3.SpanContext
      *   Literal string: type.googleapis.com/google.protobuf.StringValue
      *   Labels dropped during aggregation:
      *     type.googleapis.com/google.monitoring.v3.DroppedLabels
@@ -58,7 +58,7 @@ class Exemplar extends \Google\Protobuf\Internal\Message
      *           The observation (sampling) time of the above value.
      *     @type \Google\Protobuf\Any[]|\Google\Protobuf\Internal\RepeatedField $attachments
      *           Contextual information about the example value. Examples are:
-     *             Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+     *             Trace: type.googleapis.com/google.monitoring.v3.SpanContext
      *             Literal string: type.googleapis.com/google.protobuf.StringValue
      *             Labels dropped during aggregation:
      *               type.googleapis.com/google.monitoring.v3.DroppedLabels
@@ -127,7 +127,7 @@ class Exemplar extends \Google\Protobuf\Internal\Message
 
     /**
      * Contextual information about the example value. Examples are:
-     *   Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+     *   Trace: type.googleapis.com/google.monitoring.v3.SpanContext
      *   Literal string: type.googleapis.com/google.protobuf.StringValue
      *   Labels dropped during aggregation:
      *     type.googleapis.com/google.monitoring.v3.DroppedLabels
@@ -144,7 +144,7 @@ class Exemplar extends \Google\Protobuf\Internal\Message
 
     /**
      * Contextual information about the example value. Examples are:
-     *   Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+     *   Trace: type.googleapis.com/google.monitoring.v3.SpanContext
      *   Literal string: type.googleapis.com/google.protobuf.StringValue
      *   Labels dropped during aggregation:
      *     type.googleapis.com/google.monitoring.v3.DroppedLabels

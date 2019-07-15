@@ -10,7 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * User-defined authentication requirements, including support for
- * [JSON Web Token (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
+ * [JSON Web Token
+ * (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
  *
  * Generated from protobuf message <code>google.api.AuthRequirement</code>
  */

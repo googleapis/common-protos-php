@@ -4,6 +4,8 @@
 
 namespace Google\Api\MetricDescriptor;
 
+use UnexpectedValueException;
+
 /**
  * The value type of a metric.
  *
@@ -55,6 +57,36 @@ class ValueType
      * Generated from protobuf enum <code>MONEY = 6;</code>
      */
     const MONEY = 6;
+
+    private static $valueToName = [
+        self::VALUE_TYPE_UNSPECIFIED => 'VALUE_TYPE_UNSPECIFIED',
+        self::BOOL => 'BOOL',
+        self::INT64 => 'INT64',
+        self::DOUBLE => 'DOUBLE',
+        self::STRING => 'STRING',
+        self::DISTRIBUTION => 'DISTRIBUTION',
+        self::MONEY => 'MONEY',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

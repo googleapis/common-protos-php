@@ -4,6 +4,8 @@
 
 namespace Google\Api;
 
+use UnexpectedValueException;
+
 /**
  * An indicator of the behavior of a given field (for example, that a field
  * is required in requests, or given as output but ignored as input).
@@ -62,5 +64,34 @@ class FieldBehavior
      * Generated from protobuf enum <code>IMMUTABLE = 5;</code>
      */
     const IMMUTABLE = 5;
+
+    private static $valueToName = [
+        self::FIELD_BEHAVIOR_UNSPECIFIED => 'FIELD_BEHAVIOR_UNSPECIFIED',
+        self::OPTIONAL => 'OPTIONAL',
+        self::REQUIRED => 'REQUIRED',
+        self::OUTPUT_ONLY => 'OUTPUT_ONLY',
+        self::INPUT_ONLY => 'INPUT_ONLY',
+        self::IMMUTABLE => 'IMMUTABLE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 

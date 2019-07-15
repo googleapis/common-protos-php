@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Quota configuration helps to achieve fairness and budgeting in service
  * usage.
- * The quota configuration works this way:
+ * The metric based quota configuration works this way:
  * - The service configuration defines a set of metrics.
  * - For API calls, the quota.metric_rules maps methods to metrics with
  *   corresponding costs.
@@ -56,7 +56,6 @@ class Quota extends \Google\Protobuf\Internal\Message
 {
     /**
      * List of `QuotaLimit` definitions for the service.
-     * Used by metric-based quotas only.
      *
      * Generated from protobuf field <code>repeated .google.api.QuotaLimit limits = 3;</code>
      */
@@ -64,7 +63,6 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * List of `MetricRule` definitions, each one mapping a selected method to one
      * or more metrics.
-     * Used by metric-based quotas only.
      *
      * Generated from protobuf field <code>repeated .google.api.MetricRule metric_rules = 4;</code>
      */
@@ -78,11 +76,9 @@ class Quota extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Api\QuotaLimit[]|\Google\Protobuf\Internal\RepeatedField $limits
      *           List of `QuotaLimit` definitions for the service.
-     *           Used by metric-based quotas only.
      *     @type \Google\Api\MetricRule[]|\Google\Protobuf\Internal\RepeatedField $metric_rules
      *           List of `MetricRule` definitions, each one mapping a selected method to one
      *           or more metrics.
-     *           Used by metric-based quotas only.
      * }
      */
     public function __construct($data = NULL) {
@@ -92,7 +88,6 @@ class Quota extends \Google\Protobuf\Internal\Message
 
     /**
      * List of `QuotaLimit` definitions for the service.
-     * Used by metric-based quotas only.
      *
      * Generated from protobuf field <code>repeated .google.api.QuotaLimit limits = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -104,7 +99,6 @@ class Quota extends \Google\Protobuf\Internal\Message
 
     /**
      * List of `QuotaLimit` definitions for the service.
-     * Used by metric-based quotas only.
      *
      * Generated from protobuf field <code>repeated .google.api.QuotaLimit limits = 3;</code>
      * @param \Google\Api\QuotaLimit[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -121,7 +115,6 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * List of `MetricRule` definitions, each one mapping a selected method to one
      * or more metrics.
-     * Used by metric-based quotas only.
      *
      * Generated from protobuf field <code>repeated .google.api.MetricRule metric_rules = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -134,7 +127,6 @@ class Quota extends \Google\Protobuf\Internal\Message
     /**
      * List of `MetricRule` definitions, each one mapping a selected method to one
      * or more metrics.
-     * Used by metric-based quotas only.
      *
      * Generated from protobuf field <code>repeated .google.api.MetricRule metric_rules = 4;</code>
      * @param \Google\Api\MetricRule[]|\Google\Protobuf\Internal\RepeatedField $var

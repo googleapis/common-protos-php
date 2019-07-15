@@ -45,8 +45,10 @@ class Service extends \Google\Protobuf\Internal\Message
      */
     private $config_version = null;
     /**
-     * The DNS address at which this service is available,
-     * e.g. `calendar.googleapis.com`.
+     * The service name, which is a DNS-like logical identifier for the
+     * service, such as `calendar.googleapis.com`. The service name
+     * typically goes through DNS verification to make sure the owner
+     * of the service also owns the DNS name.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
@@ -54,7 +56,7 @@ class Service extends \Google\Protobuf\Internal\Message
     /**
      * A unique ID for a specific instance of this message, typically assigned
      * by the client for tracking purpose. If empty, the server may choose to
-     * generate one instead.
+     * generate one instead. Must be no longer than 60 characters.
      *
      * Generated from protobuf field <code>string id = 33;</code>
      */
@@ -222,12 +224,14 @@ class Service extends \Google\Protobuf\Internal\Message
      *           certain features are enabled by default for certain config versions.
      *           The latest config version is `3`.
      *     @type string $name
-     *           The DNS address at which this service is available,
-     *           e.g. `calendar.googleapis.com`.
+     *           The service name, which is a DNS-like logical identifier for the
+     *           service, such as `calendar.googleapis.com`. The service name
+     *           typically goes through DNS verification to make sure the owner
+     *           of the service also owns the DNS name.
      *     @type string $id
      *           A unique ID for a specific instance of this message, typically assigned
      *           by the client for tracking purpose. If empty, the server may choose to
-     *           generate one instead.
+     *           generate one instead. Must be no longer than 60 characters.
      *     @type string $title
      *           The product title for this service.
      *     @type string $producer_project_id
@@ -312,6 +316,23 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Returns the unboxed value from <code>getConfigVersion()</code>
+
+     * The semantic version of the service configuration. The config version
+     * affects the interpretation of the service configuration. For example,
+     * certain features are enabled by default for certain config versions.
+     * The latest config version is `3`.
+     *
+     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
+     * @return int|null
+     */
+    public function getConfigVersionUnwrapped()
+    {
+        $wrapper = $this->getConfigVersion();
+        return is_null($wrapper) ? null : $wrapper->getValue();
+    }
+
+    /**
      * The semantic version of the service configuration. The config version
      * affects the interpretation of the service configuration. For example,
      * certain features are enabled by default for certain config versions.
@@ -330,8 +351,28 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The DNS address at which this service is available,
-     * e.g. `calendar.googleapis.com`.
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\UInt32Value object.
+
+     * The semantic version of the service configuration. The config version
+     * affects the interpretation of the service configuration. For example,
+     * certain features are enabled by default for certain config versions.
+     * The latest config version is `3`.
+     *
+     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setConfigVersionUnwrapped($var)
+    {
+        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\UInt32Value(['value' => $var]);
+        return $this->setConfigVersion($wrappedVar);
+    }
+
+    /**
+     * The service name, which is a DNS-like logical identifier for the
+     * service, such as `calendar.googleapis.com`. The service name
+     * typically goes through DNS verification to make sure the owner
+     * of the service also owns the DNS name.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -342,8 +383,10 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The DNS address at which this service is available,
-     * e.g. `calendar.googleapis.com`.
+     * The service name, which is a DNS-like logical identifier for the
+     * service, such as `calendar.googleapis.com`. The service name
+     * typically goes through DNS verification to make sure the owner
+     * of the service also owns the DNS name.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
@@ -360,7 +403,7 @@ class Service extends \Google\Protobuf\Internal\Message
     /**
      * A unique ID for a specific instance of this message, typically assigned
      * by the client for tracking purpose. If empty, the server may choose to
-     * generate one instead.
+     * generate one instead. Must be no longer than 60 characters.
      *
      * Generated from protobuf field <code>string id = 33;</code>
      * @return string
@@ -373,7 +416,7 @@ class Service extends \Google\Protobuf\Internal\Message
     /**
      * A unique ID for a specific instance of this message, typically assigned
      * by the client for tracking purpose. If empty, the server may choose to
-     * generate one instead.
+     * generate one instead. Must be no longer than 60 characters.
      *
      * Generated from protobuf field <code>string id = 33;</code>
      * @param string $var

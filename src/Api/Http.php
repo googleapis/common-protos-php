@@ -25,7 +25,7 @@ class Http extends \Google\Protobuf\Internal\Message
      */
     private $rules;
     /**
-     * When set to true, URL path parmeters will be fully URI-decoded except in
+     * When set to true, URL path parameters will be fully URI-decoded except in
      * cases of single segment matches in reserved expansion, where "%2F" will be
      * left encoded.
      * The default behavior is to not decode RFC 6570 reserved characters in multi
@@ -45,7 +45,7 @@ class Http extends \Google\Protobuf\Internal\Message
      *           A list of HTTP configuration rules that apply to individual API methods.
      *           **NOTE:** All service configuration rules follow "last one wins" order.
      *     @type bool $fully_decode_reserved_expansion
-     *           When set to true, URL path parmeters will be fully URI-decoded except in
+     *           When set to true, URL path parameters will be fully URI-decoded except in
      *           cases of single segment matches in reserved expansion, where "%2F" will be
      *           left encoded.
      *           The default behavior is to not decode RFC 6570 reserved characters in multi
@@ -86,7 +86,7 @@ class Http extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When set to true, URL path parmeters will be fully URI-decoded except in
+     * When set to true, URL path parameters will be fully URI-decoded except in
      * cases of single segment matches in reserved expansion, where "%2F" will be
      * left encoded.
      * The default behavior is to not decode RFC 6570 reserved characters in multi
@@ -101,7 +101,7 @@ class Http extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When set to true, URL path parmeters will be fully URI-decoded except in
+     * When set to true, URL path parameters will be fully URI-decoded except in
      * cases of single segment matches in reserved expansion, where "%2F" will be
      * left encoded.
      * The default behavior is to not decode RFC 6570 reserved characters in multi

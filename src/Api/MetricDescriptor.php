@@ -25,10 +25,11 @@ class MetricDescriptor extends \Google\Protobuf\Internal\Message
     private $name = '';
     /**
      * The metric type, including its DNS name prefix. The type is not
-     * URL-encoded.  All user-defined custom metric types have the DNS name
-     * `custom.googleapis.com`.  Metric types should use a natural hierarchical
-     * grouping. For example:
+     * URL-encoded.  All user-defined metric types have the DNS name
+     * `custom.googleapis.com` or `external.googleapis.com`.  Metric types should
+     * use a natural hierarchical grouping. For example:
      *     "custom.googleapis.com/invoice/paid/amount"
+     *     "external.googleapis.com/prometheus/up"
      *     "appengine.googleapis.com/http/server/response_latencies"
      *
      * Generated from protobuf field <code>string type = 8;</code>
@@ -131,6 +132,18 @@ class MetricDescriptor extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string display_name = 7;</code>
      */
     private $display_name = '';
+    /**
+     * Optional. Metadata which can be used to guide usage of the metric.
+     *
+     * Generated from protobuf field <code>.google.api.MetricDescriptor.MetricDescriptorMetadata metadata = 10;</code>
+     */
+    private $metadata = null;
+    /**
+     * Optional. The launch stage of the metric definition.
+     *
+     * Generated from protobuf field <code>.google.api.LaunchStage launch_stage = 12;</code>
+     */
+    private $launch_stage = 0;
 
     /**
      * Constructor.
@@ -142,10 +155,11 @@ class MetricDescriptor extends \Google\Protobuf\Internal\Message
      *           The resource name of the metric descriptor.
      *     @type string $type
      *           The metric type, including its DNS name prefix. The type is not
-     *           URL-encoded.  All user-defined custom metric types have the DNS name
-     *           `custom.googleapis.com`.  Metric types should use a natural hierarchical
-     *           grouping. For example:
+     *           URL-encoded.  All user-defined metric types have the DNS name
+     *           `custom.googleapis.com` or `external.googleapis.com`.  Metric types should
+     *           use a natural hierarchical grouping. For example:
      *               "custom.googleapis.com/invoice/paid/amount"
+     *               "external.googleapis.com/prometheus/up"
      *               "appengine.googleapis.com/http/server/response_latencies"
      *     @type \Google\Api\LabelDescriptor[]|\Google\Protobuf\Internal\RepeatedField $labels
      *           The set of labels that can be used to describe a specific
@@ -220,6 +234,10 @@ class MetricDescriptor extends \Google\Protobuf\Internal\Message
      *           Use sentence case without an ending period, for example "Request count".
      *           This field is optional but it is recommended to be set for any metrics
      *           associated with user-visible concepts, such as Quota.
+     *     @type \Google\Api\MetricDescriptor\MetricDescriptorMetadata $metadata
+     *           Optional. Metadata which can be used to guide usage of the metric.
+     *     @type int $launch_stage
+     *           Optional. The launch stage of the metric definition.
      * }
      */
     public function __construct($data = NULL) {
@@ -255,10 +273,11 @@ class MetricDescriptor extends \Google\Protobuf\Internal\Message
 
     /**
      * The metric type, including its DNS name prefix. The type is not
-     * URL-encoded.  All user-defined custom metric types have the DNS name
-     * `custom.googleapis.com`.  Metric types should use a natural hierarchical
-     * grouping. For example:
+     * URL-encoded.  All user-defined metric types have the DNS name
+     * `custom.googleapis.com` or `external.googleapis.com`.  Metric types should
+     * use a natural hierarchical grouping. For example:
      *     "custom.googleapis.com/invoice/paid/amount"
+     *     "external.googleapis.com/prometheus/up"
      *     "appengine.googleapis.com/http/server/response_latencies"
      *
      * Generated from protobuf field <code>string type = 8;</code>
@@ -271,10 +290,11 @@ class MetricDescriptor extends \Google\Protobuf\Internal\Message
 
     /**
      * The metric type, including its DNS name prefix. The type is not
-     * URL-encoded.  All user-defined custom metric types have the DNS name
-     * `custom.googleapis.com`.  Metric types should use a natural hierarchical
-     * grouping. For example:
+     * URL-encoded.  All user-defined metric types have the DNS name
+     * `custom.googleapis.com` or `external.googleapis.com`.  Metric types should
+     * use a natural hierarchical grouping. For example:
      *     "custom.googleapis.com/invoice/paid/amount"
+     *     "external.googleapis.com/prometheus/up"
      *     "appengine.googleapis.com/http/server/response_latencies"
      *
      * Generated from protobuf field <code>string type = 8;</code>
@@ -563,6 +583,58 @@ class MetricDescriptor extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->display_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Metadata which can be used to guide usage of the metric.
+     *
+     * Generated from protobuf field <code>.google.api.MetricDescriptor.MetricDescriptorMetadata metadata = 10;</code>
+     * @return \Google\Api\MetricDescriptor\MetricDescriptorMetadata
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * Optional. Metadata which can be used to guide usage of the metric.
+     *
+     * Generated from protobuf field <code>.google.api.MetricDescriptor.MetricDescriptorMetadata metadata = 10;</code>
+     * @param \Google\Api\MetricDescriptor\MetricDescriptorMetadata $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Api\MetricDescriptor_MetricDescriptorMetadata::class);
+        $this->metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. The launch stage of the metric definition.
+     *
+     * Generated from protobuf field <code>.google.api.LaunchStage launch_stage = 12;</code>
+     * @return int
+     */
+    public function getLaunchStage()
+    {
+        return $this->launch_stage;
+    }
+
+    /**
+     * Optional. The launch stage of the metric definition.
+     *
+     * Generated from protobuf field <code>.google.api.LaunchStage launch_stage = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLaunchStage($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Api\LaunchStage::class);
+        $this->launch_stage = $var;
 
         return $this;
     }

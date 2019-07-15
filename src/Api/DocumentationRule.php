@@ -19,9 +19,9 @@ class DocumentationRule extends \Google\Protobuf\Internal\Message
      * The selector is a comma-separated list of patterns. Each pattern is a
      * qualified name of the element which may end in "*", indicating a wildcard.
      * Wildcards are only allowed at the end and for a whole component of the
-     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". To
-     * specify a default for all applicable elements, the whole pattern "*"
-     * is used.
+     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". A
+     * wildcard will match one or more components. To specify a default for all
+     * applicable elements, the whole pattern "*" is used.
      *
      * Generated from protobuf field <code>string selector = 1;</code>
      */
@@ -33,8 +33,8 @@ class DocumentationRule extends \Google\Protobuf\Internal\Message
      */
     private $description = '';
     /**
-     * Deprecation description of the selected element(s). It can be provided if an
-     * element is marked as `deprecated`.
+     * Deprecation description of the selected element(s). It can be provided if
+     * an element is marked as `deprecated`.
      *
      * Generated from protobuf field <code>string deprecation_description = 3;</code>
      */
@@ -50,14 +50,14 @@ class DocumentationRule extends \Google\Protobuf\Internal\Message
      *           The selector is a comma-separated list of patterns. Each pattern is a
      *           qualified name of the element which may end in "*", indicating a wildcard.
      *           Wildcards are only allowed at the end and for a whole component of the
-     *           qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". To
-     *           specify a default for all applicable elements, the whole pattern "*"
-     *           is used.
+     *           qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". A
+     *           wildcard will match one or more components. To specify a default for all
+     *           applicable elements, the whole pattern "*" is used.
      *     @type string $description
      *           Description of the selected API(s).
      *     @type string $deprecation_description
-     *           Deprecation description of the selected element(s). It can be provided if an
-     *           element is marked as `deprecated`.
+     *           Deprecation description of the selected element(s). It can be provided if
+     *           an element is marked as `deprecated`.
      * }
      */
     public function __construct($data = NULL) {
@@ -69,9 +69,9 @@ class DocumentationRule extends \Google\Protobuf\Internal\Message
      * The selector is a comma-separated list of patterns. Each pattern is a
      * qualified name of the element which may end in "*", indicating a wildcard.
      * Wildcards are only allowed at the end and for a whole component of the
-     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". To
-     * specify a default for all applicable elements, the whole pattern "*"
-     * is used.
+     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". A
+     * wildcard will match one or more components. To specify a default for all
+     * applicable elements, the whole pattern "*" is used.
      *
      * Generated from protobuf field <code>string selector = 1;</code>
      * @return string
@@ -85,9 +85,9 @@ class DocumentationRule extends \Google\Protobuf\Internal\Message
      * The selector is a comma-separated list of patterns. Each pattern is a
      * qualified name of the element which may end in "*", indicating a wildcard.
      * Wildcards are only allowed at the end and for a whole component of the
-     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". To
-     * specify a default for all applicable elements, the whole pattern "*"
-     * is used.
+     * qualified name, i.e. "foo.*" is ok, but not "foo.b*" or "foo.*.bar". A
+     * wildcard will match one or more components. To specify a default for all
+     * applicable elements, the whole pattern "*" is used.
      *
      * Generated from protobuf field <code>string selector = 1;</code>
      * @param string $var
@@ -128,8 +128,8 @@ class DocumentationRule extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecation description of the selected element(s). It can be provided if an
-     * element is marked as `deprecated`.
+     * Deprecation description of the selected element(s). It can be provided if
+     * an element is marked as `deprecated`.
      *
      * Generated from protobuf field <code>string deprecation_description = 3;</code>
      * @return string
@@ -140,8 +140,8 @@ class DocumentationRule extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecation description of the selected element(s). It can be provided if an
-     * element is marked as `deprecated`.
+     * Deprecation description of the selected element(s). It can be provided if
+     * an element is marked as `deprecated`.
      *
      * Generated from protobuf field <code>string deprecation_description = 3;</code>
      * @param string $var

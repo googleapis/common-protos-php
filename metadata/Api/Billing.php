@@ -14,7 +14,7 @@ class Billing
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Annotations::initOnce();
+        \GPBMetadata\Google\Api\Metric::initOnce();
         $pool->internalAddGeneratedFile(hex2bin(
             "0ab4020a18676f6f676c652f6170692f62696c6c696e672e70726f746f12" .
             "0a676f6f676c652e6170692293010a0742696c6c696e6712450a15636f6e" .
@@ -27,7 +27,7 @@ class Billing
             "2e6f72672f67656e70726f746f2f676f6f676c65617069732f6170692f73" .
             "657276696365636f6e6669673b73657276696365636f6e666967a2020447" .
             "415049620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

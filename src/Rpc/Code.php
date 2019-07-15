@@ -4,6 +4,8 @@
 
 namespace Google\Rpc;
 
+use UnexpectedValueException;
+
 /**
  * The canonical error codes for Google APIs.
  * Sometimes multiple error codes may apply.  Services should return
@@ -196,5 +198,45 @@ class Code
      * Generated from protobuf enum <code>DATA_LOSS = 15;</code>
      */
     const DATA_LOSS = 15;
+
+    private static $valueToName = [
+        self::OK => 'OK',
+        self::CANCELLED => 'CANCELLED',
+        self::UNKNOWN => 'UNKNOWN',
+        self::INVALID_ARGUMENT => 'INVALID_ARGUMENT',
+        self::DEADLINE_EXCEEDED => 'DEADLINE_EXCEEDED',
+        self::NOT_FOUND => 'NOT_FOUND',
+        self::ALREADY_EXISTS => 'ALREADY_EXISTS',
+        self::PERMISSION_DENIED => 'PERMISSION_DENIED',
+        self::UNAUTHENTICATED => 'UNAUTHENTICATED',
+        self::RESOURCE_EXHAUSTED => 'RESOURCE_EXHAUSTED',
+        self::FAILED_PRECONDITION => 'FAILED_PRECONDITION',
+        self::ABORTED => 'ABORTED',
+        self::OUT_OF_RANGE => 'OUT_OF_RANGE',
+        self::UNIMPLEMENTED => 'UNIMPLEMENTED',
+        self::INTERNAL => 'INTERNAL',
+        self::UNAVAILABLE => 'UNAVAILABLE',
+        self::DATA_LOSS => 'DATA_LOSS',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 

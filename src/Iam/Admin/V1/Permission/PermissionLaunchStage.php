@@ -4,6 +4,8 @@
 
 namespace Google\Iam\Admin\V1\Permission;
 
+use UnexpectedValueException;
+
 /**
  * A stage representing a permission's lifecycle phase.
  *
@@ -35,6 +37,33 @@ class PermissionLaunchStage
      * Generated from protobuf enum <code>DEPRECATED = 3;</code>
      */
     const DEPRECATED = 3;
+
+    private static $valueToName = [
+        self::ALPHA => 'ALPHA',
+        self::BETA => 'BETA',
+        self::GA => 'GA',
+        self::DEPRECATED => 'DEPRECATED',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.

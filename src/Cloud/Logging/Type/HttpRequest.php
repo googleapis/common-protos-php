@@ -54,7 +54,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
     private $response_size = 0;
     /**
      * The user agent sent by the client. Example:
-     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`.
+     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
+     * CLR 1.0.3705)"`.
      *
      * Generated from protobuf field <code>string user_agent = 6;</code>
      */
@@ -75,7 +76,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
     private $server_ip = '';
     /**
      * The referer URL of the request, as defined in
-     * [HTTP/1.1 Header Field Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+     * [HTTP/1.1 Header Field
+     * Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
      *
      * Generated from protobuf field <code>string referer = 8;</code>
      */
@@ -145,7 +147,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
      *           including the response headers and the response body.
      *     @type string $user_agent
      *           The user agent sent by the client. Example:
-     *           `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`.
+     *           `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
+     *           CLR 1.0.3705)"`.
      *     @type string $remote_ip
      *           The IP address (IPv4 or IPv6) of the client that issued the HTTP
      *           request. Examples: `"192.168.1.1"`, `"FE80::0202:B3FF:FE1E:8329"`.
@@ -154,7 +157,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
      *           sent to.
      *     @type string $referer
      *           The referer URL of the request, as defined in
-     *           [HTTP/1.1 Header Field Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+     *           [HTTP/1.1 Header Field
+     *           Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
      *     @type \Google\Protobuf\Duration $latency
      *           The request processing latency on the server, from the time the request was
      *           received until the response was sent.
@@ -321,7 +325,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The user agent sent by the client. Example:
-     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`.
+     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
+     * CLR 1.0.3705)"`.
      *
      * Generated from protobuf field <code>string user_agent = 6;</code>
      * @return string
@@ -333,7 +338,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The user agent sent by the client. Example:
-     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`.
+     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
+     * CLR 1.0.3705)"`.
      *
      * Generated from protobuf field <code>string user_agent = 6;</code>
      * @param string $var
@@ -405,7 +411,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The referer URL of the request, as defined in
-     * [HTTP/1.1 Header Field Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+     * [HTTP/1.1 Header Field
+     * Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
      *
      * Generated from protobuf field <code>string referer = 8;</code>
      * @return string
@@ -417,7 +424,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The referer URL of the request, as defined in
-     * [HTTP/1.1 Header Field Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+     * [HTTP/1.1 Header Field
+     * Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
      *
      * Generated from protobuf field <code>string referer = 8;</code>
      * @param string $var

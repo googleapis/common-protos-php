@@ -4,6 +4,8 @@
 
 namespace Google\Iam\Admin\V1;
 
+use UnexpectedValueException;
+
 /**
  * Supported private key output formats.
  *
@@ -31,5 +33,31 @@ class ServiceAccountPrivateKeyType
      * Generated from protobuf enum <code>TYPE_GOOGLE_CREDENTIALS_FILE = 2;</code>
      */
     const TYPE_GOOGLE_CREDENTIALS_FILE = 2;
+
+    private static $valueToName = [
+        self::TYPE_UNSPECIFIED => 'TYPE_UNSPECIFIED',
+        self::TYPE_PKCS12_FILE => 'TYPE_PKCS12_FILE',
+        self::TYPE_GOOGLE_CREDENTIALS_FILE => 'TYPE_GOOGLE_CREDENTIALS_FILE',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
