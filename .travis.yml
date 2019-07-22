@@ -29,7 +29,7 @@ stages:
 
 install:
   - travis_retry pecl install grpc
-  - if [[ $PROTOBUF_C_EXT =~ ^true ]]; then travis_retry pecl install protobuf-3.6.1; fi
+  - if [[ $PROTOBUF_C_EXT =~ ^true ]]; then travis_retry pecl install protobuf-3.9.0; fi
   - travis_retry composer install
 script:
   - vendor/bin/phpunit
