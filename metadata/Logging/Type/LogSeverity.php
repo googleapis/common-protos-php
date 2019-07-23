@@ -29,7 +29,7 @@ class LogSeverity
             "797065aa0219476f6f676c652e436c6f75642e4c6f6767696e672e547970" .
             "65ca0219476f6f676c655c436c6f75645c4c6f6767696e675c5479706562" .
             "0670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

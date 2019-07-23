@@ -4,6 +4,8 @@
 
 namespace Google\Iam\Admin\V1;
 
+use UnexpectedValueException;
+
 /**
  * Supported public key output formats.
  *
@@ -29,5 +31,31 @@ class ServiceAccountPublicKeyType
      * Generated from protobuf enum <code>TYPE_RAW_PUBLIC_KEY = 2;</code>
      */
     const TYPE_RAW_PUBLIC_KEY = 2;
+
+    private static $valueToName = [
+        self::TYPE_NONE => 'TYPE_NONE',
+        self::TYPE_X509_PEM_FILE => 'TYPE_X509_PEM_FILE',
+        self::TYPE_RAW_PUBLIC_KEY => 'TYPE_RAW_PUBLIC_KEY',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 

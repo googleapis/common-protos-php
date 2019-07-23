@@ -32,8 +32,8 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
      */
     private $account_id = '';
     /**
-     * The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to create.
-     * Currently, only the following values are user assignable:
+     * The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to
+     * create. Currently, only the following values are user assignable:
      * `display_name` .
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccount service_account = 3;</code>
@@ -55,8 +55,8 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
      *           must be 6-30 characters long, and match the regular expression
      *           `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
      *     @type \Google\Iam\Admin\V1\ServiceAccount $service_account
-     *           The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to create.
-     *           Currently, only the following values are user assignable:
+     *           The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to
+     *           create. Currently, only the following values are user assignable:
      *           `display_name` .
      * }
      */
@@ -126,8 +126,8 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to create.
-     * Currently, only the following values are user assignable:
+     * The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to
+     * create. Currently, only the following values are user assignable:
      * `display_name` .
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccount service_account = 3;</code>
@@ -139,8 +139,8 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to create.
-     * Currently, only the following values are user assignable:
+     * The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to
+     * create. Currently, only the following values are user assignable:
      * `display_name` .
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccount service_account = 3;</code>

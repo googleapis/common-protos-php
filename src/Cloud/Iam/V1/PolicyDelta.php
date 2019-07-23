@@ -21,6 +21,12 @@ class PolicyDelta extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.iam.v1.BindingDelta binding_deltas = 1;</code>
      */
     private $binding_deltas;
+    /**
+     * The delta for AuditConfigs between two policies.
+     *
+     * Generated from protobuf field <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     */
+    private $audit_config_deltas;
 
     /**
      * Constructor.
@@ -30,6 +36,8 @@ class PolicyDelta extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\Iam\V1\BindingDelta[]|\Google\Protobuf\Internal\RepeatedField $binding_deltas
      *           The delta for Bindings between two policies.
+     *     @type \Google\Cloud\Iam\V1\AuditConfigDelta[]|\Google\Protobuf\Internal\RepeatedField $audit_config_deltas
+     *           The delta for AuditConfigs between two policies.
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +67,32 @@ class PolicyDelta extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Iam\V1\BindingDelta::class);
         $this->binding_deltas = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The delta for AuditConfigs between two policies.
+     *
+     * Generated from protobuf field <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAuditConfigDeltas()
+    {
+        return $this->audit_config_deltas;
+    }
+
+    /**
+     * The delta for AuditConfigs between two policies.
+     *
+     * Generated from protobuf field <code>repeated .google.iam.v1.AuditConfigDelta audit_config_deltas = 2;</code>
+     * @param \Google\Cloud\Iam\V1\AuditConfigDelta[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAuditConfigDeltas($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Iam\V1\AuditConfigDelta::class);
+        $this->audit_config_deltas = $arr;
 
         return $this;
     }

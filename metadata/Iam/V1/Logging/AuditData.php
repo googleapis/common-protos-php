@@ -28,7 +28,7 @@ class AuditData
             "617069732f69616d2f76312f6c6f6767696e673b6c6f6767696e67aa021b" .
             "476f6f676c652e436c6f75642e49616d2e56312e4c6f6767696e67620670" .
             "726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

@@ -4,6 +4,8 @@
 
 namespace Google\Cloud\Logging\Type;
 
+use UnexpectedValueException;
+
 /**
  * The severity of the event described in a log entry, expressed as one of the
  * standard severity levels listed below.  For your reference, the levels are
@@ -77,5 +79,37 @@ class LogSeverity
      * Generated from protobuf enum <code>EMERGENCY = 800;</code>
      */
     const EMERGENCY = 800;
+
+    private static $valueToName = [
+        self::PBDEFAULT => 'PBDEFAULT',
+        self::DEBUG => 'DEBUG',
+        self::INFO => 'INFO',
+        self::NOTICE => 'NOTICE',
+        self::WARNING => 'WARNING',
+        self::ERROR => 'ERROR',
+        self::CRITICAL => 'CRITICAL',
+        self::ALERT => 'ALERT',
+        self::EMERGENCY => 'EMERGENCY',
+    ];
+
+    public static function name($value)
+    {
+        if (!isset(self::$valueToName[$value])) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no name defined for value %s', __CLASS__, $value));
+        }
+        return self::$valueToName[$value];
+    }
+
+
+    public static function value($name)
+    {
+        $const = __CLASS__ . '::' . strtoupper($name);
+        if (!defined($const)) {
+            throw new UnexpectedValueException(sprintf(
+                    'Enum %s has no value defined for name %s', __CLASS__, $name));
+        }
+        return constant($const);
+    }
 }
 
