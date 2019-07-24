@@ -18,7 +18,6 @@ class Binding extends \Google\Protobuf\Internal\Message
     /**
      * Role that is assigned to `members`.
      * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-     * Required
      *
      * Generated from protobuf field <code>string role = 1;</code>
      */
@@ -31,17 +30,26 @@ class Binding extends \Google\Protobuf\Internal\Message
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;gmail.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      *
      * Generated from protobuf field <code>repeated string members = 2;</code>
      */
     private $members;
+    /**
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     *
+     * Generated from protobuf field <code>.google.type.Expr condition = 3;</code>
+     */
+    private $condition = null;
 
     /**
      * Constructor.
@@ -52,7 +60,6 @@ class Binding extends \Google\Protobuf\Internal\Message
      *     @type string $role
      *           Role that is assigned to `members`.
      *           For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-     *           Required
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $members
      *           Specifies the identities requesting access for a Cloud Platform resource.
      *           `members` can have the following values:
@@ -61,13 +68,18 @@ class Binding extends \Google\Protobuf\Internal\Message
      *           * `allAuthenticatedUsers`: A special identifier that represents anyone
      *              who is authenticated with a Google account or a service account.
      *           * `user:{emailid}`: An email address that represents a specific Google
-     *              account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *              account. For example, `alice&#64;gmail.com` .
      *           * `serviceAccount:{emailid}`: An email address that represents a service
      *              account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      *           * `group:{emailid}`: An email address that represents a Google group.
      *              For example, `admins&#64;example.com`.
-     *           * `domain:{domain}`: A Google Apps domain name that represents all the
+     *           * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *              users of that domain. For example, `google.com` or `example.com`.
+     *     @type \Google\Type\Expr $condition
+     *           The condition that is associated with this binding.
+     *           NOTE: An unsatisfied condition will not allow user access via current
+     *           binding. Different bindings, including their conditions, are examined
+     *           independently.
      * }
      */
     public function __construct($data = NULL) {
@@ -78,7 +90,6 @@ class Binding extends \Google\Protobuf\Internal\Message
     /**
      * Role that is assigned to `members`.
      * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-     * Required
      *
      * Generated from protobuf field <code>string role = 1;</code>
      * @return string
@@ -91,7 +102,6 @@ class Binding extends \Google\Protobuf\Internal\Message
     /**
      * Role that is assigned to `members`.
      * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
-     * Required
      *
      * Generated from protobuf field <code>string role = 1;</code>
      * @param string $var
@@ -113,12 +123,12 @@ class Binding extends \Google\Protobuf\Internal\Message
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;gmail.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      *
      * Generated from protobuf field <code>repeated string members = 2;</code>
@@ -137,12 +147,12 @@ class Binding extends \Google\Protobuf\Internal\Message
      * * `allAuthenticatedUsers`: A special identifier that represents anyone
      *    who is authenticated with a Google account or a service account.
      * * `user:{emailid}`: An email address that represents a specific Google
-     *    account. For example, `alice&#64;gmail.com` or `joe&#64;example.com`.
+     *    account. For example, `alice&#64;gmail.com` .
      * * `serviceAccount:{emailid}`: An email address that represents a service
      *    account. For example, `my-other-app&#64;appspot.gserviceaccount.com`.
      * * `group:{emailid}`: An email address that represents a Google group.
      *    For example, `admins&#64;example.com`.
-     * * `domain:{domain}`: A Google Apps domain name that represents all the
+     * * `domain:{domain}`: The G Suite domain (primary) that represents all the
      *    users of that domain. For example, `google.com` or `example.com`.
      *
      * Generated from protobuf field <code>repeated string members = 2;</code>
@@ -153,6 +163,38 @@ class Binding extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->members = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     *
+     * Generated from protobuf field <code>.google.type.Expr condition = 3;</code>
+     * @return \Google\Type\Expr
+     */
+    public function getCondition()
+    {
+        return $this->condition;
+    }
+
+    /**
+     * The condition that is associated with this binding.
+     * NOTE: An unsatisfied condition will not allow user access via current
+     * binding. Different bindings, including their conditions, are examined
+     * independently.
+     *
+     * Generated from protobuf field <code>.google.type.Expr condition = 3;</code>
+     * @param \Google\Type\Expr $var
+     * @return $this
+     */
+    public function setCondition($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Type\Expr::class);
+        $this->condition = $var;
 
         return $this;
     }

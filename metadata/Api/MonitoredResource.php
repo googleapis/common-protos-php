@@ -41,7 +41,7 @@ class MonitoredResource
             "676f6c616e672e6f72672f67656e70726f746f2f676f6f676c6561706973" .
             "2f6170692f6d6f6e69746f7265647265733b6d6f6e69746f726564726573" .
             "f80101a2020447415049620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

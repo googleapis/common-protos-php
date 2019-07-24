@@ -66,7 +66,7 @@ class Operations
             "6f746f2f676f6f676c65617069732f6c6f6e6772756e6e696e673b6c6f6e" .
             "6772756e6e696e67aa0212476f6f676c652e4c6f6e6752756e6e696e67ca" .
             "0212476f6f676c655c4c6f6e6752756e6e696e67620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

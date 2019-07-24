@@ -26,7 +26,7 @@ class FieldBehavior
             "50726f746f50015a41676f6f676c652e676f6c616e672e6f72672f67656e" .
             "70726f746f2f676f6f676c65617069732f6170692f616e6e6f746174696f" .
             "6e733b616e6e6f746174696f6e73a2020447415049620670726f746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }

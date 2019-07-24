@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Represents a time of day. The date and time zone are either not significant
- * or are specified elsewhere. An API may chose to allow leap seconds. Related
+ * or are specified elsewhere. An API may choose to allow leap seconds. Related
  * types are [google.type.Date][google.type.Date] and `google.protobuf.Timestamp`.
  *
  * Generated from protobuf message <code>google.type.TimeOfDay</code>

@@ -26,7 +26,7 @@ class Label
             "6f6c616e672e6f72672f67656e70726f746f2f676f6f676c65617069732f" .
             "6170692f6c6162656c3b6c6162656cf80101a2020447415049620670726f" .
             "746f33"
-        ));
+        ), true);
 
         static::$is_initialized = true;
     }
