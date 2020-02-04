@@ -29,7 +29,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class PostalAddress extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The schema revision of the `PostalAddress`.
+     * The schema revision of the `PostalAddress`. This must be set to 0, which is
+     * the latest revision.
      * All new revisions **must** be backward compatible with old revisions.
      *
      * Generated from protobuf field <code>int32 revision = 1;</code>
@@ -153,7 +154,8 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $revision
-     *           The schema revision of the `PostalAddress`.
+     *           The schema revision of the `PostalAddress`. This must be set to 0, which is
+     *           the latest revision.
      *           All new revisions **must** be backward compatible with old revisions.
      *     @type string $region_code
      *           Required. CLDR region code of the country/region of the address. This
@@ -233,7 +235,8 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The schema revision of the `PostalAddress`.
+     * The schema revision of the `PostalAddress`. This must be set to 0, which is
+     * the latest revision.
      * All new revisions **must** be backward compatible with old revisions.
      *
      * Generated from protobuf field <code>int32 revision = 1;</code>
@@ -245,7 +248,8 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The schema revision of the `PostalAddress`.
+     * The schema revision of the `PostalAddress`. This must be set to 0, which is
+     * the latest revision.
      * All new revisions **must** be backward compatible with old revisions.
      *
      * Generated from protobuf field <code>int32 revision = 1;</code>

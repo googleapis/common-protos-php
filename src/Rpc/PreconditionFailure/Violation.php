@@ -17,7 +17,7 @@ class Violation extends \Google\Protobuf\Internal\Message
 {
     /**
      * The type of PreconditionFailure. We recommend using a service-specific
-     * enum type to define the supported precondition violation types. For
+     * enum type to define the supported precondition violation subjects. For
      * example, "TOS" for "Terms of Service violation".
      *
      * Generated from protobuf field <code>string type = 1;</code>
@@ -25,8 +25,8 @@ class Violation extends \Google\Protobuf\Internal\Message
     private $type = '';
     /**
      * The subject, relative to the type, that failed.
-     * For example, "google.com/cloud" relative to the "TOS" type would
-     * indicate which terms of service is being referenced.
+     * For example, "google.com/cloud" relative to the "TOS" type would indicate
+     * which terms of service is being referenced.
      *
      * Generated from protobuf field <code>string subject = 2;</code>
      */
@@ -48,12 +48,12 @@ class Violation extends \Google\Protobuf\Internal\Message
      *
      *     @type string $type
      *           The type of PreconditionFailure. We recommend using a service-specific
-     *           enum type to define the supported precondition violation types. For
+     *           enum type to define the supported precondition violation subjects. For
      *           example, "TOS" for "Terms of Service violation".
      *     @type string $subject
      *           The subject, relative to the type, that failed.
-     *           For example, "google.com/cloud" relative to the "TOS" type would
-     *           indicate which terms of service is being referenced.
+     *           For example, "google.com/cloud" relative to the "TOS" type would indicate
+     *           which terms of service is being referenced.
      *     @type string $description
      *           A description of how the precondition failed. Developers can use this
      *           description to understand how to fix the failure.
@@ -67,7 +67,7 @@ class Violation extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of PreconditionFailure. We recommend using a service-specific
-     * enum type to define the supported precondition violation types. For
+     * enum type to define the supported precondition violation subjects. For
      * example, "TOS" for "Terms of Service violation".
      *
      * Generated from protobuf field <code>string type = 1;</code>
@@ -80,7 +80,7 @@ class Violation extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of PreconditionFailure. We recommend using a service-specific
-     * enum type to define the supported precondition violation types. For
+     * enum type to define the supported precondition violation subjects. For
      * example, "TOS" for "Terms of Service violation".
      *
      * Generated from protobuf field <code>string type = 1;</code>
@@ -97,8 +97,8 @@ class Violation extends \Google\Protobuf\Internal\Message
 
     /**
      * The subject, relative to the type, that failed.
-     * For example, "google.com/cloud" relative to the "TOS" type would
-     * indicate which terms of service is being referenced.
+     * For example, "google.com/cloud" relative to the "TOS" type would indicate
+     * which terms of service is being referenced.
      *
      * Generated from protobuf field <code>string subject = 2;</code>
      * @return string
@@ -110,8 +110,8 @@ class Violation extends \Google\Protobuf\Internal\Message
 
     /**
      * The subject, relative to the type, that failed.
-     * For example, "google.com/cloud" relative to the "TOS" type would
-     * indicate which terms of service is being referenced.
+     * For example, "google.com/cloud" relative to the "TOS" type would indicate
+     * which terms of service is being referenced.
      *
      * Generated from protobuf field <code>string subject = 2;</code>
      * @param string $var

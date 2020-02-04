@@ -17,18 +17,12 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * REQUIRED: The resource for which the policy is being requested.
-     * See the operation documentation for the appropriate value for this field.
+     * `resource` is usually specified as a path. For example, a Project
+     * resource is specified as `projects/{project}`.
      *
      * Generated from protobuf field <code>string resource = 1;</code>
      */
     private $resource = '';
-    /**
-     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
-     *
-     * Generated from protobuf field <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
-     */
-    private $options = null;
 
     /**
      * Constructor.
@@ -38,10 +32,8 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource
      *           REQUIRED: The resource for which the policy is being requested.
-     *           See the operation documentation for the appropriate value for this field.
-     *     @type \Google\Cloud\Iam\V1\GetPolicyOptions $options
-     *           OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     *           `GetIamPolicy`. This field is only used by Cloud IAM.
+     *           `resource` is usually specified as a path. For example, a Project
+     *           resource is specified as `projects/{project}`.
      * }
      */
     public function __construct($data = NULL) {
@@ -51,7 +43,8 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * REQUIRED: The resource for which the policy is being requested.
-     * See the operation documentation for the appropriate value for this field.
+     * `resource` is usually specified as a path. For example, a Project
+     * resource is specified as `projects/{project}`.
      *
      * Generated from protobuf field <code>string resource = 1;</code>
      * @return string
@@ -63,7 +56,8 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * REQUIRED: The resource for which the policy is being requested.
-     * See the operation documentation for the appropriate value for this field.
+     * `resource` is usually specified as a path. For example, a Project
+     * resource is specified as `projects/{project}`.
      *
      * Generated from protobuf field <code>string resource = 1;</code>
      * @param string $var
@@ -73,34 +67,6 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->resource = $var;
-
-        return $this;
-    }
-
-    /**
-     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
-     *
-     * Generated from protobuf field <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
-     * @return \Google\Cloud\Iam\V1\GetPolicyOptions
-     */
-    public function getOptions()
-    {
-        return $this->options;
-    }
-
-    /**
-     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
-     *
-     * Generated from protobuf field <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
-     * @param \Google\Cloud\Iam\V1\GetPolicyOptions $var
-     * @return $this
-     */
-    public function setOptions($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Cloud\Iam\V1\GetPolicyOptions::class);
-        $this->options = $var;
 
         return $this;
     }

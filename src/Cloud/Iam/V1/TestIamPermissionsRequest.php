@@ -17,7 +17,8 @@ class TestIamPermissionsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * REQUIRED: The resource for which the policy detail is being requested.
-     * See the operation documentation for the appropriate value for this field.
+     * `resource` is usually specified as a path. For example, a Project
+     * resource is specified as `projects/{project}`.
      *
      * Generated from protobuf field <code>string resource = 1;</code>
      */
@@ -40,7 +41,8 @@ class TestIamPermissionsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource
      *           REQUIRED: The resource for which the policy detail is being requested.
-     *           See the operation documentation for the appropriate value for this field.
+     *           `resource` is usually specified as a path. For example, a Project
+     *           resource is specified as `projects/{project}`.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $permissions
      *           The set of permissions to check for the `resource`. Permissions with
      *           wildcards (such as '*' or 'storage.*') are not allowed. For more
@@ -55,7 +57,8 @@ class TestIamPermissionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * REQUIRED: The resource for which the policy detail is being requested.
-     * See the operation documentation for the appropriate value for this field.
+     * `resource` is usually specified as a path. For example, a Project
+     * resource is specified as `projects/{project}`.
      *
      * Generated from protobuf field <code>string resource = 1;</code>
      * @return string
@@ -67,7 +70,8 @@ class TestIamPermissionsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * REQUIRED: The resource for which the policy detail is being requested.
-     * See the operation documentation for the appropriate value for this field.
+     * `resource` is usually specified as a path. For example, a Project
+     * resource is specified as `projects/{project}`.
      *
      * Generated from protobuf field <code>string resource = 1;</code>
      * @param string $var

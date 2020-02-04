@@ -11,11 +11,11 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Defines an Identity and Access Management (IAM) policy. It is used to
  * specify access control policies for Cloud Platform resources.
- * A `Policy` consists of a list of `bindings`. A `binding` binds a list of
+ * A `Policy` consists of a list of `bindings`. A `Binding` binds a list of
  * `members` to a `role`, where the members can be user accounts, Google groups,
  * Google domains, and service accounts. A `role` is a named list of permissions
  * defined by IAM.
- * **JSON Example**
+ * **Example**
  *     {
  *       "bindings": [
  *         {
@@ -24,7 +24,7 @@ use Google\Protobuf\Internal\GPBUtil;
  *             "user:mike&#64;example.com",
  *             "group:admins&#64;example.com",
  *             "domain:google.com",
- *             "serviceAccount:my-other-app&#64;appspot.gserviceaccount.com"
+ *             "serviceAccount:my-other-app&#64;appspot.gserviceaccount.com",
  *           ]
  *         },
  *         {
@@ -33,32 +33,22 @@ use Google\Protobuf\Internal\GPBUtil;
  *         }
  *       ]
  *     }
- * **YAML Example**
- *     bindings:
- *     - members:
- *       - user:mike&#64;example.com
- *       - group:admins&#64;example.com
- *       - domain:google.com
- *       - serviceAccount:my-other-app&#64;appspot.gserviceaccount.com
- *       role: roles/owner
- *     - members:
- *       - user:sean&#64;example.com
- *       role: roles/viewer
  * For a description of IAM and its features, see the
- * [IAM developer's guide](https://cloud.google.com/iam/docs).
+ * [IAM developer's guide](https://cloud.google.com/iam).
  *
  * Generated from protobuf message <code>google.iam.v1.Policy</code>
  */
 class Policy extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Deprecated.
+     * Version of the `Policy`. The default version is 0.
      *
      * Generated from protobuf field <code>int32 version = 1;</code>
      */
     private $version = 0;
     /**
      * Associates a list of `members` to a `role`.
+     * Multiple `bindings` must not be specified for the same `role`.
      * `bindings` with no members will result in an error.
      *
      * Generated from protobuf field <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -86,9 +76,10 @@ class Policy extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $version
-     *           Deprecated.
+     *           Version of the `Policy`. The default version is 0.
      *     @type \Google\Cloud\Iam\V1\Binding[]|\Google\Protobuf\Internal\RepeatedField $bindings
      *           Associates a list of `members` to a `role`.
+     *           Multiple `bindings` must not be specified for the same `role`.
      *           `bindings` with no members will result in an error.
      *     @type string $etag
      *           `etag` is used for optimistic concurrency control as a way to help
@@ -108,7 +99,7 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated.
+     * Version of the `Policy`. The default version is 0.
      *
      * Generated from protobuf field <code>int32 version = 1;</code>
      * @return int
@@ -119,7 +110,7 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated.
+     * Version of the `Policy`. The default version is 0.
      *
      * Generated from protobuf field <code>int32 version = 1;</code>
      * @param int $var
@@ -135,6 +126,7 @@ class Policy extends \Google\Protobuf\Internal\Message
 
     /**
      * Associates a list of `members` to a `role`.
+     * Multiple `bindings` must not be specified for the same `role`.
      * `bindings` with no members will result in an error.
      *
      * Generated from protobuf field <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -147,6 +139,7 @@ class Policy extends \Google\Protobuf\Internal\Message
 
     /**
      * Associates a list of `members` to a `role`.
+     * Multiple `bindings` must not be specified for the same `role`.
      * `bindings` with no members will result in an error.
      *
      * Generated from protobuf field <code>repeated .google.iam.v1.Binding bindings = 4;</code>
