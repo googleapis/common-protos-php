@@ -16,19 +16,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class SignBlobRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Using `-` as a wildcard for the project will infer the project from
-     * the account. The `account` value can be the `email` address or the
+     * Required. The resource name of the service account in the following format:
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     private $name = '';
     /**
-     * The bytes to sign.
+     * Required. The bytes to sign.
      *
-     * Generated from protobuf field <code>bytes bytes_to_sign = 2;</code>
+     * Generated from protobuf field <code>bytes bytes_to_sign = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $bytes_to_sign = '';
 
@@ -39,13 +39,13 @@ class SignBlobRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The resource name of the service account in the following format:
-     *           `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     *           Using `-` as a wildcard for the project will infer the project from
-     *           the account. The `account` value can be the `email` address or the
+     *           Required. The resource name of the service account in the following format:
+     *           `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     *           Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     *           the account. The `ACCOUNT` value can be the `email` address or the
      *           `unique_id` of the service account.
      *     @type string $bytes_to_sign
-     *           The bytes to sign.
+     *           Required. The bytes to sign.
      * }
      */
     public function __construct($data = NULL) {
@@ -54,13 +54,13 @@ class SignBlobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Using `-` as a wildcard for the project will infer the project from
-     * the account. The `account` value can be the `email` address or the
+     * Required. The resource name of the service account in the following format:
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -69,13 +69,13 @@ class SignBlobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Using `-` as a wildcard for the project will infer the project from
-     * the account. The `account` value can be the `email` address or the
+     * Required. The resource name of the service account in the following format:
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -88,9 +88,9 @@ class SignBlobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The bytes to sign.
+     * Required. The bytes to sign.
      *
-     * Generated from protobuf field <code>bytes bytes_to_sign = 2;</code>
+     * Generated from protobuf field <code>bytes bytes_to_sign = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getBytesToSign()
@@ -99,9 +99,9 @@ class SignBlobRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The bytes to sign.
+     * Required. The bytes to sign.
      *
-     * Generated from protobuf field <code>bytes bytes_to_sign = 2;</code>
+     * Generated from protobuf field <code>bytes bytes_to_sign = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

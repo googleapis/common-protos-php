@@ -17,9 +17,11 @@ class GetPolicyOptions extends \Google\Protobuf\Internal\Message
 {
     /**
      * Optional. The policy format version to be returned.
-     * Acceptable values are 0 and 1.
-     * If the value is 0, or the field is omitted, policy format version 1 will be
-     * returned.
+     * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+     * rejected.
+     * Requests for policies with any conditional bindings must specify version 3.
+     * Policies without any conditional bindings may specify any valid value or
+     * leave the field unset.
      *
      * Generated from protobuf field <code>int32 requested_policy_version = 1;</code>
      */
@@ -33,9 +35,11 @@ class GetPolicyOptions extends \Google\Protobuf\Internal\Message
      *
      *     @type int $requested_policy_version
      *           Optional. The policy format version to be returned.
-     *           Acceptable values are 0 and 1.
-     *           If the value is 0, or the field is omitted, policy format version 1 will be
-     *           returned.
+     *           Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+     *           rejected.
+     *           Requests for policies with any conditional bindings must specify version 3.
+     *           Policies without any conditional bindings may specify any valid value or
+     *           leave the field unset.
      * }
      */
     public function __construct($data = NULL) {
@@ -45,9 +49,11 @@ class GetPolicyOptions extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. The policy format version to be returned.
-     * Acceptable values are 0 and 1.
-     * If the value is 0, or the field is omitted, policy format version 1 will be
-     * returned.
+     * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+     * rejected.
+     * Requests for policies with any conditional bindings must specify version 3.
+     * Policies without any conditional bindings may specify any valid value or
+     * leave the field unset.
      *
      * Generated from protobuf field <code>int32 requested_policy_version = 1;</code>
      * @return int
@@ -59,9 +65,11 @@ class GetPolicyOptions extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. The policy format version to be returned.
-     * Acceptable values are 0 and 1.
-     * If the value is 0, or the field is omitted, policy format version 1 will be
-     * returned.
+     * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+     * rejected.
+     * Requests for policies with any conditional bindings must specify version 3.
+     * Policies without any conditional bindings may specify any valid value or
+     * leave the field unset.
      *
      * Generated from protobuf field <code>int32 requested_policy_version = 1;</code>
      * @param int $var

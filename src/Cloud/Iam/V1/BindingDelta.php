@@ -39,6 +39,12 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string member = 3;</code>
      */
     private $member = '';
+    /**
+     * The condition that is associated with this binding.
+     *
+     * Generated from protobuf field <code>.google.type.Expr condition = 4;</code>
+     */
+    private $condition = null;
 
     /**
      * Constructor.
@@ -57,6 +63,8 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
      *           A single identity requesting access for a Cloud Platform resource.
      *           Follows the same format of Binding.members.
      *           Required
+     *     @type \Google\Type\Expr $condition
+     *           The condition that is associated with this binding.
      * }
      */
     public function __construct($data = NULL) {
@@ -148,6 +156,32 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->member = $var;
+
+        return $this;
+    }
+
+    /**
+     * The condition that is associated with this binding.
+     *
+     * Generated from protobuf field <code>.google.type.Expr condition = 4;</code>
+     * @return \Google\Type\Expr
+     */
+    public function getCondition()
+    {
+        return $this->condition;
+    }
+
+    /**
+     * The condition that is associated with this binding.
+     *
+     * Generated from protobuf field <code>.google.type.Expr condition = 4;</code>
+     * @param \Google\Type\Expr $var
+     * @return $this
+     */
+    public function setCondition($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Type\Expr::class);
+        $this->condition = $var;
 
         return $this;
     }

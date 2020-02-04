@@ -16,13 +16,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListServiceAccountKeysRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Using `-` as a wildcard for the project, will infer the project from
-     * the account. The `account` value can be the `email` address or the
+     * Required. The resource name of the service account in the following format:
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Using `-` as a wildcard for the `PROJECT_ID`, will infer the project from
+     * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     private $name = '';
     /**
@@ -41,10 +41,10 @@ class ListServiceAccountKeysRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The resource name of the service account in the following format:
-     *           `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     *           Using `-` as a wildcard for the project, will infer the project from
-     *           the account. The `account` value can be the `email` address or the
+     *           Required. The resource name of the service account in the following format:
+     *           `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     *           Using `-` as a wildcard for the `PROJECT_ID`, will infer the project from
+     *           the account. The `ACCOUNT` value can be the `email` address or the
      *           `unique_id` of the service account.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $key_types
      *           Filters the types of keys the user wants to include in the list
@@ -58,13 +58,13 @@ class ListServiceAccountKeysRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Using `-` as a wildcard for the project, will infer the project from
-     * the account. The `account` value can be the `email` address or the
+     * Required. The resource name of the service account in the following format:
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Using `-` as a wildcard for the `PROJECT_ID`, will infer the project from
+     * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -73,13 +73,13 @@ class ListServiceAccountKeysRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Using `-` as a wildcard for the project, will infer the project from
-     * the account. The `account` value can be the `email` address or the
+     * Required. The resource name of the service account in the following format:
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Using `-` as a wildcard for the `PROJECT_ID`, will infer the project from
+     * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

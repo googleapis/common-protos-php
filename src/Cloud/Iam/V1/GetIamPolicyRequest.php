@@ -17,12 +17,18 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * REQUIRED: The resource for which the policy is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      *
-     * Generated from protobuf field <code>string resource = 1;</code>
+     * Generated from protobuf field <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     private $resource = '';
+    /**
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     *
+     * Generated from protobuf field <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     */
+    private $options = null;
 
     /**
      * Constructor.
@@ -32,8 +38,10 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $resource
      *           REQUIRED: The resource for which the policy is being requested.
-     *           `resource` is usually specified as a path. For example, a Project
-     *           resource is specified as `projects/{project}`.
+     *           See the operation documentation for the appropriate value for this field.
+     *     @type \Google\Cloud\Iam\V1\GetPolicyOptions $options
+     *           OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     *           `GetIamPolicy`. This field is only used by Cloud IAM.
      * }
      */
     public function __construct($data = NULL) {
@@ -43,10 +51,9 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * REQUIRED: The resource for which the policy is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      *
-     * Generated from protobuf field <code>string resource = 1;</code>
+     * Generated from protobuf field <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResource()
@@ -56,10 +63,9 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * REQUIRED: The resource for which the policy is being requested.
-     * `resource` is usually specified as a path. For example, a Project
-     * resource is specified as `projects/{project}`.
+     * See the operation documentation for the appropriate value for this field.
      *
-     * Generated from protobuf field <code>string resource = 1;</code>
+     * Generated from protobuf field <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -67,6 +73,34 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->resource = $var;
+
+        return $this;
+    }
+
+    /**
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     *
+     * Generated from protobuf field <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     * @return \Google\Cloud\Iam\V1\GetPolicyOptions
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+
+    /**
+     * OPTIONAL: A `GetPolicyOptions` object for specifying options to
+     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     *
+     * Generated from protobuf field <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
+     * @param \Google\Cloud\Iam\V1\GetPolicyOptions $var
+     * @return $this
+     */
+    public function setOptions($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Iam\V1\GetPolicyOptions::class);
+        $this->options = $var;
 
         return $this;
     }

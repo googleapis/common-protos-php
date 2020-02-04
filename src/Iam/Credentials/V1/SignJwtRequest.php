@@ -14,11 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class SignJwtRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the service account for which the credentials
+     * Required. The resource name of the service account for which the credentials
      * are requested, in the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     private $name = '';
     /**
@@ -29,15 +30,16 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
      * Generated from protobuf field <code>repeated string delegates = 3;</code>
      */
     private $delegates;
     /**
-     * The JWT payload to sign: a JSON object that contains a JWT Claims Set.
+     * Required. The JWT payload to sign: a JSON object that contains a JWT Claims Set.
      *
-     * Generated from protobuf field <code>string payload = 5;</code>
+     * Generated from protobuf field <code>string payload = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $payload = '';
 
@@ -48,9 +50,10 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The resource name of the service account for which the credentials
+     *           Required. The resource name of the service account for which the credentials
      *           are requested, in the following format:
-     *           `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     *           `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     *           character is required; replacing it with a project ID is invalid.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $delegates
      *           The sequence of service accounts in a delegation chain. Each service
      *           account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -59,9 +62,10 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
      *           on the service account that is specified in the `name` field of the
      *           request.
      *           The delegates must have the following format:
-     *           `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     *           `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     *           character is required; replacing it with a project ID is invalid.
      *     @type string $payload
-     *           The JWT payload to sign: a JSON object that contains a JWT Claims Set.
+     *           Required. The JWT payload to sign: a JSON object that contains a JWT Claims Set.
      * }
      */
     public function __construct($data = NULL) {
@@ -70,11 +74,12 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account for which the credentials
+     * Required. The resource name of the service account for which the credentials
      * are requested, in the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -83,11 +88,12 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account for which the credentials
+     * Required. The resource name of the service account for which the credentials
      * are requested, in the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -107,7 +113,8 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
      * Generated from protobuf field <code>repeated string delegates = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -125,7 +132,8 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
      * Generated from protobuf field <code>repeated string delegates = 3;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -140,9 +148,9 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The JWT payload to sign: a JSON object that contains a JWT Claims Set.
+     * Required. The JWT payload to sign: a JSON object that contains a JWT Claims Set.
      *
-     * Generated from protobuf field <code>string payload = 5;</code>
+     * Generated from protobuf field <code>string payload = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getPayload()
@@ -151,9 +159,9 @@ class SignJwtRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The JWT payload to sign: a JSON object that contains a JWT Claims Set.
+     * Required. The JWT payload to sign: a JSON object that contains a JWT Claims Set.
      *
-     * Generated from protobuf field <code>string payload = 5;</code>
+     * Generated from protobuf field <code>string payload = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

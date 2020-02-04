@@ -16,15 +16,29 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateRoleRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the parent resource in one of the following formats:
-     * `organizations/{ORGANIZATION_ID}`
-     * `projects/{PROJECT_ID}`
+     * The `parent` parameter's value depends on the target resource for the
+     * request, namely
+     * [`projects`](/iam/reference/rest/v1/projects.roles) or
+     * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+     * resource type's `parent` value format is described below:
+     * * [`projects.roles.create()`](/iam/reference/rest/v1/projects.roles/create):
+     *   `projects/{PROJECT_ID}`. This method creates project-level
+     *   [custom roles](/iam/docs/understanding-custom-roles).
+     *   Example request URL:
+     *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+     * * [`organizations.roles.create()`](/iam/reference/rest/v1/organizations.roles/create):
+     *   `organizations/{ORGANIZATION_ID}`. This method creates organization-level
+     *   [custom roles](/iam/docs/understanding-custom-roles). Example request
+     *   URL:
+     *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+     * Note: Wildcard (*) values are invalid; you must specify a complete project
+     * ID or organization ID.
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.resource_reference) = {</code>
      */
     private $parent = '';
     /**
-     * The role id to use for this role.
+     * The role ID to use for this role.
      *
      * Generated from protobuf field <code>string role_id = 2;</code>
      */
@@ -43,11 +57,25 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           The resource name of the parent resource in one of the following formats:
-     *           `organizations/{ORGANIZATION_ID}`
-     *           `projects/{PROJECT_ID}`
+     *           The `parent` parameter's value depends on the target resource for the
+     *           request, namely
+     *           [`projects`](/iam/reference/rest/v1/projects.roles) or
+     *           [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+     *           resource type's `parent` value format is described below:
+     *           * [`projects.roles.create()`](/iam/reference/rest/v1/projects.roles/create):
+     *             `projects/{PROJECT_ID}`. This method creates project-level
+     *             [custom roles](/iam/docs/understanding-custom-roles).
+     *             Example request URL:
+     *             `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+     *           * [`organizations.roles.create()`](/iam/reference/rest/v1/organizations.roles/create):
+     *             `organizations/{ORGANIZATION_ID}`. This method creates organization-level
+     *             [custom roles](/iam/docs/understanding-custom-roles). Example request
+     *             URL:
+     *             `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+     *           Note: Wildcard (*) values are invalid; you must specify a complete project
+     *           ID or organization ID.
      *     @type string $role_id
-     *           The role id to use for this role.
+     *           The role ID to use for this role.
      *     @type \Google\Iam\Admin\V1\Role $role
      *           The Role resource to create.
      * }
@@ -58,11 +86,25 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the parent resource in one of the following formats:
-     * `organizations/{ORGANIZATION_ID}`
-     * `projects/{PROJECT_ID}`
+     * The `parent` parameter's value depends on the target resource for the
+     * request, namely
+     * [`projects`](/iam/reference/rest/v1/projects.roles) or
+     * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+     * resource type's `parent` value format is described below:
+     * * [`projects.roles.create()`](/iam/reference/rest/v1/projects.roles/create):
+     *   `projects/{PROJECT_ID}`. This method creates project-level
+     *   [custom roles](/iam/docs/understanding-custom-roles).
+     *   Example request URL:
+     *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+     * * [`organizations.roles.create()`](/iam/reference/rest/v1/organizations.roles/create):
+     *   `organizations/{ORGANIZATION_ID}`. This method creates organization-level
+     *   [custom roles](/iam/docs/understanding-custom-roles). Example request
+     *   URL:
+     *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+     * Note: Wildcard (*) values are invalid; you must specify a complete project
+     * ID or organization ID.
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -71,11 +113,25 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the parent resource in one of the following formats:
-     * `organizations/{ORGANIZATION_ID}`
-     * `projects/{PROJECT_ID}`
+     * The `parent` parameter's value depends on the target resource for the
+     * request, namely
+     * [`projects`](/iam/reference/rest/v1/projects.roles) or
+     * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+     * resource type's `parent` value format is described below:
+     * * [`projects.roles.create()`](/iam/reference/rest/v1/projects.roles/create):
+     *   `projects/{PROJECT_ID}`. This method creates project-level
+     *   [custom roles](/iam/docs/understanding-custom-roles).
+     *   Example request URL:
+     *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
+     * * [`organizations.roles.create()`](/iam/reference/rest/v1/organizations.roles/create):
+     *   `organizations/{ORGANIZATION_ID}`. This method creates organization-level
+     *   [custom roles](/iam/docs/understanding-custom-roles). Example request
+     *   URL:
+     *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
+     * Note: Wildcard (*) values are invalid; you must specify a complete project
+     * ID or organization ID.
      *
-     * Generated from protobuf field <code>string parent = 1;</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -88,7 +144,7 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The role id to use for this role.
+     * The role ID to use for this role.
      *
      * Generated from protobuf field <code>string role_id = 2;</code>
      * @return string
@@ -99,7 +155,7 @@ class CreateRoleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The role id to use for this role.
+     * The role ID to use for this role.
      *
      * Generated from protobuf field <code>string role_id = 2;</code>
      * @param string $var

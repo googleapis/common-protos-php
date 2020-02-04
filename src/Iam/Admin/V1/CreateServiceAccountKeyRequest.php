@@ -16,18 +16,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateServiceAccountKeyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Using `-` as a wildcard for the project will infer the project from
-     * the account. The `account` value can be the `email` address or the
+     * Required. The resource name of the service account in the following format:
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     private $name = '';
     /**
-     * The output format of the private key. `GOOGLE_CREDENTIALS_FILE` is the
-     * default output format.
+     * The output format of the private key. The default value is
+     * `TYPE_GOOGLE_CREDENTIALS_FILE`, which is the Google Credentials File
+     * format.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccountPrivateKeyType private_key_type = 2;</code>
      */
@@ -48,14 +49,15 @@ class CreateServiceAccountKeyRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The resource name of the service account in the following format:
-     *           `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     *           Using `-` as a wildcard for the project will infer the project from
-     *           the account. The `account` value can be the `email` address or the
+     *           Required. The resource name of the service account in the following format:
+     *           `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     *           Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     *           the account. The `ACCOUNT` value can be the `email` address or the
      *           `unique_id` of the service account.
      *     @type int $private_key_type
-     *           The output format of the private key. `GOOGLE_CREDENTIALS_FILE` is the
-     *           default output format.
+     *           The output format of the private key. The default value is
+     *           `TYPE_GOOGLE_CREDENTIALS_FILE`, which is the Google Credentials File
+     *           format.
      *     @type int $key_algorithm
      *           Which type of key and algorithm to use for the key.
      *           The default is currently a 2K RSA key.  However this may change in the
@@ -68,13 +70,13 @@ class CreateServiceAccountKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Using `-` as a wildcard for the project will infer the project from
-     * the account. The `account` value can be the `email` address or the
+     * Required. The resource name of the service account in the following format:
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -83,13 +85,13 @@ class CreateServiceAccountKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Using `-` as a wildcard for the project will infer the project from
-     * the account. The `account` value can be the `email` address or the
+     * Required. The resource name of the service account in the following format:
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+     * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -102,8 +104,9 @@ class CreateServiceAccountKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The output format of the private key. `GOOGLE_CREDENTIALS_FILE` is the
-     * default output format.
+     * The output format of the private key. The default value is
+     * `TYPE_GOOGLE_CREDENTIALS_FILE`, which is the Google Credentials File
+     * format.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccountPrivateKeyType private_key_type = 2;</code>
      * @return int
@@ -114,8 +117,9 @@ class CreateServiceAccountKeyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The output format of the private key. `GOOGLE_CREDENTIALS_FILE` is the
-     * default output format.
+     * The output format of the private key. The default value is
+     * `TYPE_GOOGLE_CREDENTIALS_FILE`, which is the Google Credentials File
+     * format.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccountPrivateKeyType private_key_type = 2;</code>
      * @param int $var

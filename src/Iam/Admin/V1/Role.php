@@ -19,21 +19,21 @@ class Role extends \Google\Protobuf\Internal\Message
      * The name of the role.
      * When Role is used in CreateRole, the role name must not be set.
      * When Role is used in output and other input such as UpdateRole, the role
-     * name is the complete path, e.g., roles/logging.viewer for curated roles
+     * name is the complete path, e.g., roles/logging.viewer for predefined roles
      * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
     private $name = '';
     /**
-     * Optional.  A human-readable title for the role.  Typically this
+     * Optional. A human-readable title for the role.  Typically this
      * is limited to 100 UTF-8 bytes.
      *
      * Generated from protobuf field <code>string title = 2;</code>
      */
     private $title = '';
     /**
-     * Optional.  A human-readable description for the role.
+     * Optional. A human-readable description for the role.
      *
      * Generated from protobuf field <code>string description = 3;</code>
      */
@@ -45,7 +45,9 @@ class Role extends \Google\Protobuf\Internal\Message
      */
     private $included_permissions;
     /**
-     * The current launch stage of the role.
+     * The current launch stage of the role. If the `ALPHA` launch stage has been
+     * selected for a role, the `stage` field will not be included in the
+     * returned definition for the role.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.Role.RoleLaunchStage stage = 8;</code>
      */
@@ -74,17 +76,19 @@ class Role extends \Google\Protobuf\Internal\Message
      *           The name of the role.
      *           When Role is used in CreateRole, the role name must not be set.
      *           When Role is used in output and other input such as UpdateRole, the role
-     *           name is the complete path, e.g., roles/logging.viewer for curated roles
+     *           name is the complete path, e.g., roles/logging.viewer for predefined roles
      *           and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
      *     @type string $title
-     *           Optional.  A human-readable title for the role.  Typically this
+     *           Optional. A human-readable title for the role.  Typically this
      *           is limited to 100 UTF-8 bytes.
      *     @type string $description
-     *           Optional.  A human-readable description for the role.
+     *           Optional. A human-readable description for the role.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $included_permissions
      *           The names of the permissions this role grants when bound in an IAM policy.
      *     @type int $stage
-     *           The current launch stage of the role.
+     *           The current launch stage of the role. If the `ALPHA` launch stage has been
+     *           selected for a role, the `stage` field will not be included in the
+     *           returned definition for the role.
      *     @type string $etag
      *           Used to perform a consistent read-modify-write.
      *     @type bool $deleted
@@ -101,7 +105,7 @@ class Role extends \Google\Protobuf\Internal\Message
      * The name of the role.
      * When Role is used in CreateRole, the role name must not be set.
      * When Role is used in output and other input such as UpdateRole, the role
-     * name is the complete path, e.g., roles/logging.viewer for curated roles
+     * name is the complete path, e.g., roles/logging.viewer for predefined roles
      * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
      *
      * Generated from protobuf field <code>string name = 1;</code>
@@ -116,7 +120,7 @@ class Role extends \Google\Protobuf\Internal\Message
      * The name of the role.
      * When Role is used in CreateRole, the role name must not be set.
      * When Role is used in output and other input such as UpdateRole, the role
-     * name is the complete path, e.g., roles/logging.viewer for curated roles
+     * name is the complete path, e.g., roles/logging.viewer for predefined roles
      * and organizations/{ORGANIZATION_ID}/roles/logging.viewer for custom roles.
      *
      * Generated from protobuf field <code>string name = 1;</code>
@@ -132,7 +136,7 @@ class Role extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional.  A human-readable title for the role.  Typically this
+     * Optional. A human-readable title for the role.  Typically this
      * is limited to 100 UTF-8 bytes.
      *
      * Generated from protobuf field <code>string title = 2;</code>
@@ -144,7 +148,7 @@ class Role extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional.  A human-readable title for the role.  Typically this
+     * Optional. A human-readable title for the role.  Typically this
      * is limited to 100 UTF-8 bytes.
      *
      * Generated from protobuf field <code>string title = 2;</code>
@@ -160,7 +164,7 @@ class Role extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional.  A human-readable description for the role.
+     * Optional. A human-readable description for the role.
      *
      * Generated from protobuf field <code>string description = 3;</code>
      * @return string
@@ -171,7 +175,7 @@ class Role extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional.  A human-readable description for the role.
+     * Optional. A human-readable description for the role.
      *
      * Generated from protobuf field <code>string description = 3;</code>
      * @param string $var
@@ -212,7 +216,9 @@ class Role extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The current launch stage of the role.
+     * The current launch stage of the role. If the `ALPHA` launch stage has been
+     * selected for a role, the `stage` field will not be included in the
+     * returned definition for the role.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.Role.RoleLaunchStage stage = 8;</code>
      * @return int
@@ -223,7 +229,9 @@ class Role extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The current launch stage of the role.
+     * The current launch stage of the role. If the `ALPHA` launch stage has been
+     * selected for a role, the `stage` field will not be included in the
+     * returned definition for the role.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.Role.RoleLaunchStage stage = 8;</code>
      * @param int $var
