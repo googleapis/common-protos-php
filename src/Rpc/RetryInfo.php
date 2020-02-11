@@ -18,7 +18,7 @@ use Google\Protobuf\Internal\GPBUtil;
  * receiving the error response before retrying.  If retrying requests also
  * fail, clients should use an exponential backoff scheme to gradually increase
  * the delay between retries based on `retry_delay`, until either a maximum
- * number of retires have been reached or a maximum retry delay cap has been
+ * number of retries have been reached or a maximum retry delay cap has been
  * reached.
  *
  * Generated from protobuf message <code>google.rpc.RetryInfo</code>

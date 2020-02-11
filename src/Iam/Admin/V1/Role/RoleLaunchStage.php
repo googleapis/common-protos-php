@@ -14,13 +14,15 @@ use UnexpectedValueException;
 class RoleLaunchStage
 {
     /**
-     * The user has indicated this role is currently in an alpha phase.
+     * The user has indicated this role is currently in an Alpha phase. If this
+     * launch stage is selected, the `stage` field will not be included when
+     * requesting the definition for a given role.
      *
      * Generated from protobuf enum <code>ALPHA = 0;</code>
      */
     const ALPHA = 0;
     /**
-     * The user has indicated this role is currently in a beta phase.
+     * The user has indicated this role is currently in a Beta phase.
      *
      * Generated from protobuf enum <code>BETA = 1;</code>
      */
@@ -45,7 +47,7 @@ class RoleLaunchStage
      */
     const DISABLED = 5;
     /**
-     * The user has indicated this role is currently in an eap phase.
+     * The user has indicated this role is currently in an EAP phase.
      *
      * Generated from protobuf enum <code>EAP = 6;</code>
      */

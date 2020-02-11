@@ -15,13 +15,12 @@ use Google\Protobuf\Internal\GPBUtil;
  * to generate the service account email address and a stable
  * `unique_id`.
  * If the account already exists, the account's resource name is returned
- * in util::Status's ResourceInfo.resource_name in the format of
- * projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}. The caller can
- * use the name in other methods to access the account.
+ * in the format of projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}. The caller
+ * can use the name in other methods to access the account.
  * All other methods can identify the service account using the format
- * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
- * Using `-` as a wildcard for the project will infer the project from
- * the account. The `account` value can be the `email` address or the
+ * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+ * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+ * the account. The `ACCOUNT` value can be the `email` address or the
  * `unique_id` of the service account.
  *
  * Generated from protobuf message <code>google.iam.admin.v1.ServiceAccount</code>
@@ -30,12 +29,12 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Requests using `-` as a wildcard for the project will infer the project
-     * from the `account` and the `account` value can be the `email` address or
-     * the `unique_id` of the service account.
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
+     * project from the `account` and the `ACCOUNT` value can be the `email`
+     * address or the `unique_id` of the service account.
      * In responses the resource name will always be in the format
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
@@ -59,14 +58,15 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
      */
     private $email = '';
     /**
-     * Optional. A user-specified description of the service account.  Must be
-     * fewer than 100 UTF-8 bytes.
+     * Optional. A user-specified name for the service account.
+     * Must be less than or equal to 100 UTF-8 bytes.
      *
      * Generated from protobuf field <code>string display_name = 6;</code>
      */
     private $display_name = '';
     /**
-     * Used to perform a consistent read-modify-write.
+     * Optional. Note: `etag` is an inoperable legacy field that is only returned
+     * for backwards compatibility.
      *
      * Generated from protobuf field <code>bytes etag = 7;</code>
      */
@@ -88,12 +88,12 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           The resource name of the service account in the following format:
-     *           `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     *           Requests using `-` as a wildcard for the project will infer the project
-     *           from the `account` and the `account` value can be the `email` address or
-     *           the `unique_id` of the service account.
+     *           `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     *           Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
+     *           project from the `account` and the `ACCOUNT` value can be the `email`
+     *           address or the `unique_id` of the service account.
      *           In responses the resource name will always be in the format
-     *           `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
+     *           `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      *     @type string $project_id
      *           &#64;OutputOnly The id of the project that owns the service account.
      *     @type string $unique_id
@@ -101,10 +101,11 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
      *     @type string $email
      *           &#64;OutputOnly The email address of the service account.
      *     @type string $display_name
-     *           Optional. A user-specified description of the service account.  Must be
-     *           fewer than 100 UTF-8 bytes.
+     *           Optional. A user-specified name for the service account.
+     *           Must be less than or equal to 100 UTF-8 bytes.
      *     @type string $etag
-     *           Used to perform a consistent read-modify-write.
+     *           Optional. Note: `etag` is an inoperable legacy field that is only returned
+     *           for backwards compatibility.
      *     @type string $oauth2_client_id
      *           &#64;OutputOnly. The OAuth2 client id for the service account.
      *           This is used in conjunction with the OAuth2 clientconfig API to make
@@ -118,12 +119,12 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Requests using `-` as a wildcard for the project will infer the project
-     * from the `account` and the `account` value can be the `email` address or
-     * the `unique_id` of the service account.
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
+     * project from the `account` and the `ACCOUNT` value can be the `email`
+     * address or the `unique_id` of the service account.
      * In responses the resource name will always be in the format
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -135,12 +136,12 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the service account in the following format:
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
-     * Requests using `-` as a wildcard for the project will infer the project
-     * from the `account` and the `account` value can be the `email` address or
-     * the `unique_id` of the service account.
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+     * Requests using `-` as a wildcard for the `PROJECT_ID` will infer the
+     * project from the `account` and the `ACCOUNT` value can be the `email`
+     * address or the `unique_id` of the service account.
      * In responses the resource name will always be in the format
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}`.
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
@@ -233,8 +234,8 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. A user-specified description of the service account.  Must be
-     * fewer than 100 UTF-8 bytes.
+     * Optional. A user-specified name for the service account.
+     * Must be less than or equal to 100 UTF-8 bytes.
      *
      * Generated from protobuf field <code>string display_name = 6;</code>
      * @return string
@@ -245,8 +246,8 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. A user-specified description of the service account.  Must be
-     * fewer than 100 UTF-8 bytes.
+     * Optional. A user-specified name for the service account.
+     * Must be less than or equal to 100 UTF-8 bytes.
      *
      * Generated from protobuf field <code>string display_name = 6;</code>
      * @param string $var
@@ -261,7 +262,8 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Used to perform a consistent read-modify-write.
+     * Optional. Note: `etag` is an inoperable legacy field that is only returned
+     * for backwards compatibility.
      *
      * Generated from protobuf field <code>bytes etag = 7;</code>
      * @return string
@@ -272,7 +274,8 @@ class ServiceAccount extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Used to perform a consistent read-modify-write.
+     * Optional. Note: `etag` is an inoperable legacy field that is only returned
+     * for backwards compatibility.
      *
      * Generated from protobuf field <code>bytes etag = 7;</code>
      * @param string $var

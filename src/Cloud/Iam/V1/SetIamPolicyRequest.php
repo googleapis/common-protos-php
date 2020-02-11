@@ -19,7 +19,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * REQUIRED: The resource for which the policy is being specified.
      * See the operation documentation for the appropriate value for this field.
      *
-     * Generated from protobuf field <code>string resource = 1;</code>
+     * Generated from protobuf field <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     private $resource = '';
     /**
@@ -28,7 +28,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * valid policy but certain Cloud Platform services (such as Projects)
      * might reject them.
      *
-     * Generated from protobuf field <code>.google.iam.v1.Policy policy = 2;</code>
+     * Generated from protobuf field <code>.google.iam.v1.Policy policy = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $policy = null;
 
@@ -57,7 +57,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * REQUIRED: The resource for which the policy is being specified.
      * See the operation documentation for the appropriate value for this field.
      *
-     * Generated from protobuf field <code>string resource = 1;</code>
+     * Generated from protobuf field <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getResource()
@@ -69,7 +69,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * REQUIRED: The resource for which the policy is being specified.
      * See the operation documentation for the appropriate value for this field.
      *
-     * Generated from protobuf field <code>string resource = 1;</code>
+     * Generated from protobuf field <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -87,7 +87,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * valid policy but certain Cloud Platform services (such as Projects)
      * might reject them.
      *
-     * Generated from protobuf field <code>.google.iam.v1.Policy policy = 2;</code>
+     * Generated from protobuf field <code>.google.iam.v1.Policy policy = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Iam\V1\Policy
      */
     public function getPolicy()
@@ -101,7 +101,7 @@ class SetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      * valid policy but certain Cloud Platform services (such as Projects)
      * might reject them.
      *
-     * Generated from protobuf field <code>.google.iam.v1.Policy policy = 2;</code>
+     * Generated from protobuf field <code>.google.iam.v1.Policy policy = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Iam\V1\Policy $var
      * @return $this
      */

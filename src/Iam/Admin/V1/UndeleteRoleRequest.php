@@ -16,11 +16,25 @@ use Google\Protobuf\Internal\GPBUtil;
 class UndeleteRoleRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the role in one of the following formats:
-     * `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
-     * `projects/{PROJECT_ID}/roles/{ROLE_NAME}`
+     * The `name` parameter's value depends on the target resource for the
+     * request, namely
+     * [`projects`](/iam/reference/rest/v1/projects.roles) or
+     * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+     * resource type's `name` value format is described below:
+     * * [`projects.roles.undelete()`](/iam/reference/rest/v1/projects.roles/undelete):
+     *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method undeletes
+     *   only [custom roles](/iam/docs/understanding-custom-roles) that have been
+     *   created at the project level. Example request URL:
+     *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     * * [`organizations.roles.undelete()`](/iam/reference/rest/v1/organizations.roles/undelete):
+     *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
+     *   undeletes only [custom roles](/iam/docs/understanding-custom-roles) that
+     *   have been created at the organization level. Example request URL:
+     *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     * Note: Wildcard (*) values are invalid; you must specify a complete project
+     * ID or organization ID.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.resource_reference) = {</code>
      */
     private $name = '';
     /**
@@ -37,9 +51,23 @@ class UndeleteRoleRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The resource name of the role in one of the following formats:
-     *           `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
-     *           `projects/{PROJECT_ID}/roles/{ROLE_NAME}`
+     *           The `name` parameter's value depends on the target resource for the
+     *           request, namely
+     *           [`projects`](/iam/reference/rest/v1/projects.roles) or
+     *           [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+     *           resource type's `name` value format is described below:
+     *           * [`projects.roles.undelete()`](/iam/reference/rest/v1/projects.roles/undelete):
+     *             `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method undeletes
+     *             only [custom roles](/iam/docs/understanding-custom-roles) that have been
+     *             created at the project level. Example request URL:
+     *             `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     *           * [`organizations.roles.undelete()`](/iam/reference/rest/v1/organizations.roles/undelete):
+     *             `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
+     *             undeletes only [custom roles](/iam/docs/understanding-custom-roles) that
+     *             have been created at the organization level. Example request URL:
+     *             `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     *           Note: Wildcard (*) values are invalid; you must specify a complete project
+     *           ID or organization ID.
      *     @type string $etag
      *           Used to perform a consistent read-modify-write.
      * }
@@ -50,11 +78,25 @@ class UndeleteRoleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the role in one of the following formats:
-     * `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
-     * `projects/{PROJECT_ID}/roles/{ROLE_NAME}`
+     * The `name` parameter's value depends on the target resource for the
+     * request, namely
+     * [`projects`](/iam/reference/rest/v1/projects.roles) or
+     * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+     * resource type's `name` value format is described below:
+     * * [`projects.roles.undelete()`](/iam/reference/rest/v1/projects.roles/undelete):
+     *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method undeletes
+     *   only [custom roles](/iam/docs/understanding-custom-roles) that have been
+     *   created at the project level. Example request URL:
+     *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     * * [`organizations.roles.undelete()`](/iam/reference/rest/v1/organizations.roles/undelete):
+     *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
+     *   undeletes only [custom roles](/iam/docs/understanding-custom-roles) that
+     *   have been created at the organization level. Example request URL:
+     *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     * Note: Wildcard (*) values are invalid; you must specify a complete project
+     * ID or organization ID.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -63,11 +105,25 @@ class UndeleteRoleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the role in one of the following formats:
-     * `organizations/{ORGANIZATION_ID}/roles/{ROLE_NAME}`
-     * `projects/{PROJECT_ID}/roles/{ROLE_NAME}`
+     * The `name` parameter's value depends on the target resource for the
+     * request, namely
+     * [`projects`](/iam/reference/rest/v1/projects.roles) or
+     * [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+     * resource type's `name` value format is described below:
+     * * [`projects.roles.undelete()`](/iam/reference/rest/v1/projects.roles/undelete):
+     *   `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method undeletes
+     *   only [custom roles](/iam/docs/understanding-custom-roles) that have been
+     *   created at the project level. Example request URL:
+     *   `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+     * * [`organizations.roles.undelete()`](/iam/reference/rest/v1/organizations.roles/undelete):
+     *   `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
+     *   undeletes only [custom roles](/iam/docs/understanding-custom-roles) that
+     *   have been created at the organization level. Example request URL:
+     *   `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+     * Note: Wildcard (*) values are invalid; you must specify a complete project
+     * ID or organization ID.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

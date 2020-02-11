@@ -14,50 +14,123 @@ use Google\Protobuf\Internal\GPBUtil;
  * protobuf annotation or use in the service config), and associates the
  * resource's schema, the resource type, and the pattern of the resource name.
  * Example:
- *   message Topic {
- *     // Indicates this message defines a resource schema.
- *     // Declares the resource type in the format of {service}/{kind}.
- *     // For Kubernetes resources, the format is {api group}/{kind}.
- *     option (google.api.resource) = {
- *       type: "pubsub.googleapis.com/Topic"
- *       pattern: "projects/{project}/topics/{topic}"
- *     };
- *   }
+ *     message Topic {
+ *       // Indicates this message defines a resource schema.
+ *       // Declares the resource type in the format of {service}/{kind}.
+ *       // For Kubernetes resources, the format is {api group}/{kind}.
+ *       option (google.api.resource) = {
+ *         type: "pubsub.googleapis.com/Topic"
+ *         name_descriptor: {
+ *           pattern: "projects/{project}/topics/{topic}"
+ *           parent_type: "cloudresourcemanager.googleapis.com/Project"
+ *           parent_name_extractor: "projects/{project}"
+ *         }
+ *       };
+ *     }
+ * The ResourceDescriptor Yaml config will look like:
+ *    resources:
+ *    - type: "pubsub.googleapis.com/Topic"
+ *      name_descriptor:
+ *        - pattern: "projects/{project}/topics/{topic}"
+ *          parent_type: "cloudresourcemanager.googleapis.com/Project"
+ *          parent_name_extractor: "projects/{project}"
  * Sometimes, resources have multiple patterns, typically because they can
  * live under multiple parents.
  * Example:
- *   message LogEntry {
- *     option (google.api.resource) = {
- *       type: "logging.googleapis.com/LogEntry"
- *       pattern: "projects/{project}/logs/{log}"
- *       pattern: "organizations/{organization}/logs/{log}"
- *       pattern: "folders/{folder}/logs/{log}"
- *       pattern: "billingAccounts/{billing_account}/logs/{log}"
- *     };
- *   }
+ *     message LogEntry {
+ *       option (google.api.resource) = {
+ *         type: "logging.googleapis.com/LogEntry"
+ *         name_descriptor: {
+ *           pattern: "projects/{project}/logs/{log}"
+ *           parent_type: "cloudresourcemanager.googleapis.com/Project"
+ *           parent_name_extractor: "projects/{project}"
+ *         }
+ *         name_descriptor: {
+ *           pattern: "folders/{folder}/logs/{log}"
+ *           parent_type: "cloudresourcemanager.googleapis.com/Folder"
+ *           parent_name_extractor: "folders/{folder}"
+ *         }
+ *         name_descriptor: {
+ *           pattern: "organizations/{organization}/logs/{log}"
+ *           parent_type: "cloudresourcemanager.googleapis.com/Organization"
+ *           parent_name_extractor: "organizations/{organization}"
+ *         }
+ *         name_descriptor: {
+ *           pattern: "billingAccounts/{billing_account}/logs/{log}"
+ *           parent_type: "billing.googleapis.com/BillingAccount"
+ *           parent_name_extractor: "billingAccounts/{billing_account}"
+ *         }
+ *       };
+ *     }
+ * The ResourceDescriptor Yaml config will look like:
+ *     resources:
+ *     - type: 'logging.googleapis.com/LogEntry'
+ *       name_descriptor:
+ *         - pattern: "projects/{project}/logs/{log}"
+ *           parent_type: "cloudresourcemanager.googleapis.com/Project"
+ *           parent_name_extractor: "projects/{project}"
+ *         - pattern: "folders/{folder}/logs/{log}"
+ *           parent_type: "cloudresourcemanager.googleapis.com/Folder"
+ *           parent_name_extractor: "folders/{folder}"
+ *         - pattern: "organizations/{organization}/logs/{log}"
+ *           parent_type: "cloudresourcemanager.googleapis.com/Organization"
+ *           parent_name_extractor: "organizations/{organization}"
+ *         - pattern: "billingAccounts/{billing_account}/logs/{log}"
+ *           parent_type: "billing.googleapis.com/BillingAccount"
+ *           parent_name_extractor: "billingAccounts/{billing_account}"
+ * For flexible resources, the resource name doesn't contain parent names, but
+ * the resource itself has parents for policy evaluation.
+ * Example:
+ *     message Shelf {
+ *       option (google.api.resource) = {
+ *         type: "library.googleapis.com/Shelf"
+ *         name_descriptor: {
+ *           pattern: "shelves/{shelf}"
+ *           parent_type: "cloudresourcemanager.googleapis.com/Project"
+ *         }
+ *         name_descriptor: {
+ *           pattern: "shelves/{shelf}"
+ *           parent_type: "cloudresourcemanager.googleapis.com/Folder"
+ *         }
+ *       };
+ *     }
+ * The ResourceDescriptor Yaml config will look like:
+ *     resources:
+ *     - type: 'library.googleapis.com/Shelf'
+ *       name_descriptor:
+ *         - pattern: "shelves/{shelf}"
+ *           parent_type: "cloudresourcemanager.googleapis.com/Project"
+ *         - pattern: "shelves/{shelf}"
+ *           parent_type: "cloudresourcemanager.googleapis.com/Folder"
  *
  * Generated from protobuf message <code>google.api.ResourceDescriptor</code>
  */
 class ResourceDescriptor extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The full name of the resource type. It must be in the format of
-     * {service_name}/{resource_type_kind}. The resource type names are
-     * singular and do not contain version numbers.
-     * For example: `storage.googleapis.com/Bucket`
+     * The resource type. It must be in the format of
+     * {service_name}/{resource_type_kind}. The `resource_type_kind` must be
+     * singular and must not include version numbers.
+     * Example: `storage.googleapis.com/Bucket`
      * The value of the resource_type_kind must follow the regular expression
-     * /[A-Z][a-zA-Z0-9]+/. It must start with upper case character and
-     * recommended to use PascalCase (UpperCamelCase). The maximum number of
-     * characters allowed for the resource_type_kind is 100.
+     * /[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and
+     * should use PascalCase (UpperCamelCase). The maximum number of
+     * characters allowed for the `resource_type_kind` is 100.
      *
      * Generated from protobuf field <code>string type = 1;</code>
      */
     private $type = '';
     /**
-     * Required. The valid pattern or patterns for this resource's names.
+     * Optional. The relative resource name pattern associated with this resource
+     * type. The DNS prefix of the full resource name shouldn't be specified here.
+     * The path pattern must follow the syntax, which aligns with HTTP binding
+     * syntax:
+     *     Template = Segment { "/" Segment } ;
+     *     Segment = LITERAL | Variable ;
+     *     Variable = "{" LITERAL "}" ;
      * Examples:
-     *   - "projects/{project}/topics/{topic}"
-     *   - "projects/{project}/knowledgeBases/{knowledge_base}"
+     *     - "projects/{project}/topics/{topic}"
+     *     - "projects/{project}/knowledgeBases/{knowledge_base}"
      * The components in braces correspond to the IDs for each resource in the
      * hierarchy. It is expected that, if multiple patterns are provided,
      * the same component name (e.g. "project") refers to IDs of the same
@@ -76,20 +149,38 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
     /**
      * Optional. The historical or future-looking state of the resource pattern.
      * Example:
-     *   // The InspectTemplate message originally only supported resource
-     *   // names with organization, and project was added later.
-     *   message InspectTemplate {
-     *     option (google.api.resource) = {
-     *       type: "dlp.googleapis.com/InspectTemplate"
-     *       pattern: "organizations/{organization}/inspectTemplates/{inspect_template}"
-     *       pattern: "projects/{project}/inspectTemplates/{inspect_template}"
-     *       history: ORIGINALLY_SINGLE_PATTERN
-     *     };
-     *   }
+     *     // The InspectTemplate message originally only supported resource
+     *     // names with organization, and project was added later.
+     *     message InspectTemplate {
+     *       option (google.api.resource) = {
+     *         type: "dlp.googleapis.com/InspectTemplate"
+     *         pattern:
+     *         "organizations/{organization}/inspectTemplates/{inspect_template}"
+     *         pattern: "projects/{project}/inspectTemplates/{inspect_template}"
+     *         history: ORIGINALLY_SINGLE_PATTERN
+     *       };
+     *     }
      *
      * Generated from protobuf field <code>.google.api.ResourceDescriptor.History history = 4;</code>
      */
     private $history = 0;
+    /**
+     * The plural name used in the resource name, such as 'projects' for
+     * the name of 'projects/{project}'. It is the same concept of the `plural`
+     * field in k8s CRD spec
+     * https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     *
+     * Generated from protobuf field <code>string plural = 5;</code>
+     */
+    private $plural = '';
+    /**
+     * The same concept of the `singular` field in k8s CRD spec
+     * https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     * Such as "project" for the `resourcemanager.googleapis.com/Project` type.
+     *
+     * Generated from protobuf field <code>string singular = 6;</code>
+     */
+    private $singular = '';
 
     /**
      * Constructor.
@@ -98,19 +189,25 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $type
-     *           The full name of the resource type. It must be in the format of
-     *           {service_name}/{resource_type_kind}. The resource type names are
-     *           singular and do not contain version numbers.
-     *           For example: `storage.googleapis.com/Bucket`
+     *           The resource type. It must be in the format of
+     *           {service_name}/{resource_type_kind}. The `resource_type_kind` must be
+     *           singular and must not include version numbers.
+     *           Example: `storage.googleapis.com/Bucket`
      *           The value of the resource_type_kind must follow the regular expression
-     *           /[A-Z][a-zA-Z0-9]+/. It must start with upper case character and
-     *           recommended to use PascalCase (UpperCamelCase). The maximum number of
-     *           characters allowed for the resource_type_kind is 100.
+     *           /[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and
+     *           should use PascalCase (UpperCamelCase). The maximum number of
+     *           characters allowed for the `resource_type_kind` is 100.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $pattern
-     *           Required. The valid pattern or patterns for this resource's names.
+     *           Optional. The relative resource name pattern associated with this resource
+     *           type. The DNS prefix of the full resource name shouldn't be specified here.
+     *           The path pattern must follow the syntax, which aligns with HTTP binding
+     *           syntax:
+     *               Template = Segment { "/" Segment } ;
+     *               Segment = LITERAL | Variable ;
+     *               Variable = "{" LITERAL "}" ;
      *           Examples:
-     *             - "projects/{project}/topics/{topic}"
-     *             - "projects/{project}/knowledgeBases/{knowledge_base}"
+     *               - "projects/{project}/topics/{topic}"
+     *               - "projects/{project}/knowledgeBases/{knowledge_base}"
      *           The components in braces correspond to the IDs for each resource in the
      *           hierarchy. It is expected that, if multiple patterns are provided,
      *           the same component name (e.g. "project") refers to IDs of the same
@@ -121,16 +218,26 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
      *     @type int $history
      *           Optional. The historical or future-looking state of the resource pattern.
      *           Example:
-     *             // The InspectTemplate message originally only supported resource
-     *             // names with organization, and project was added later.
-     *             message InspectTemplate {
-     *               option (google.api.resource) = {
-     *                 type: "dlp.googleapis.com/InspectTemplate"
-     *                 pattern: "organizations/{organization}/inspectTemplates/{inspect_template}"
-     *                 pattern: "projects/{project}/inspectTemplates/{inspect_template}"
-     *                 history: ORIGINALLY_SINGLE_PATTERN
-     *               };
-     *             }
+     *               // The InspectTemplate message originally only supported resource
+     *               // names with organization, and project was added later.
+     *               message InspectTemplate {
+     *                 option (google.api.resource) = {
+     *                   type: "dlp.googleapis.com/InspectTemplate"
+     *                   pattern:
+     *                   "organizations/{organization}/inspectTemplates/{inspect_template}"
+     *                   pattern: "projects/{project}/inspectTemplates/{inspect_template}"
+     *                   history: ORIGINALLY_SINGLE_PATTERN
+     *                 };
+     *               }
+     *     @type string $plural
+     *           The plural name used in the resource name, such as 'projects' for
+     *           the name of 'projects/{project}'. It is the same concept of the `plural`
+     *           field in k8s CRD spec
+     *           https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     *     @type string $singular
+     *           The same concept of the `singular` field in k8s CRD spec
+     *           https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     *           Such as "project" for the `resourcemanager.googleapis.com/Project` type.
      * }
      */
     public function __construct($data = NULL) {
@@ -139,14 +246,14 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The full name of the resource type. It must be in the format of
-     * {service_name}/{resource_type_kind}. The resource type names are
-     * singular and do not contain version numbers.
-     * For example: `storage.googleapis.com/Bucket`
+     * The resource type. It must be in the format of
+     * {service_name}/{resource_type_kind}. The `resource_type_kind` must be
+     * singular and must not include version numbers.
+     * Example: `storage.googleapis.com/Bucket`
      * The value of the resource_type_kind must follow the regular expression
-     * /[A-Z][a-zA-Z0-9]+/. It must start with upper case character and
-     * recommended to use PascalCase (UpperCamelCase). The maximum number of
-     * characters allowed for the resource_type_kind is 100.
+     * /[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and
+     * should use PascalCase (UpperCamelCase). The maximum number of
+     * characters allowed for the `resource_type_kind` is 100.
      *
      * Generated from protobuf field <code>string type = 1;</code>
      * @return string
@@ -157,14 +264,14 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The full name of the resource type. It must be in the format of
-     * {service_name}/{resource_type_kind}. The resource type names are
-     * singular and do not contain version numbers.
-     * For example: `storage.googleapis.com/Bucket`
+     * The resource type. It must be in the format of
+     * {service_name}/{resource_type_kind}. The `resource_type_kind` must be
+     * singular and must not include version numbers.
+     * Example: `storage.googleapis.com/Bucket`
      * The value of the resource_type_kind must follow the regular expression
-     * /[A-Z][a-zA-Z0-9]+/. It must start with upper case character and
-     * recommended to use PascalCase (UpperCamelCase). The maximum number of
-     * characters allowed for the resource_type_kind is 100.
+     * /[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and
+     * should use PascalCase (UpperCamelCase). The maximum number of
+     * characters allowed for the `resource_type_kind` is 100.
      *
      * Generated from protobuf field <code>string type = 1;</code>
      * @param string $var
@@ -179,10 +286,16 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The valid pattern or patterns for this resource's names.
+     * Optional. The relative resource name pattern associated with this resource
+     * type. The DNS prefix of the full resource name shouldn't be specified here.
+     * The path pattern must follow the syntax, which aligns with HTTP binding
+     * syntax:
+     *     Template = Segment { "/" Segment } ;
+     *     Segment = LITERAL | Variable ;
+     *     Variable = "{" LITERAL "}" ;
      * Examples:
-     *   - "projects/{project}/topics/{topic}"
-     *   - "projects/{project}/knowledgeBases/{knowledge_base}"
+     *     - "projects/{project}/topics/{topic}"
+     *     - "projects/{project}/knowledgeBases/{knowledge_base}"
      * The components in braces correspond to the IDs for each resource in the
      * hierarchy. It is expected that, if multiple patterns are provided,
      * the same component name (e.g. "project") refers to IDs of the same
@@ -197,10 +310,16 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The valid pattern or patterns for this resource's names.
+     * Optional. The relative resource name pattern associated with this resource
+     * type. The DNS prefix of the full resource name shouldn't be specified here.
+     * The path pattern must follow the syntax, which aligns with HTTP binding
+     * syntax:
+     *     Template = Segment { "/" Segment } ;
+     *     Segment = LITERAL | Variable ;
+     *     Variable = "{" LITERAL "}" ;
      * Examples:
-     *   - "projects/{project}/topics/{topic}"
-     *   - "projects/{project}/knowledgeBases/{knowledge_base}"
+     *     - "projects/{project}/topics/{topic}"
+     *     - "projects/{project}/knowledgeBases/{knowledge_base}"
      * The components in braces correspond to the IDs for each resource in the
      * hierarchy. It is expected that, if multiple patterns are provided,
      * the same component name (e.g. "project") refers to IDs of the same
@@ -249,16 +368,17 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
     /**
      * Optional. The historical or future-looking state of the resource pattern.
      * Example:
-     *   // The InspectTemplate message originally only supported resource
-     *   // names with organization, and project was added later.
-     *   message InspectTemplate {
-     *     option (google.api.resource) = {
-     *       type: "dlp.googleapis.com/InspectTemplate"
-     *       pattern: "organizations/{organization}/inspectTemplates/{inspect_template}"
-     *       pattern: "projects/{project}/inspectTemplates/{inspect_template}"
-     *       history: ORIGINALLY_SINGLE_PATTERN
-     *     };
-     *   }
+     *     // The InspectTemplate message originally only supported resource
+     *     // names with organization, and project was added later.
+     *     message InspectTemplate {
+     *       option (google.api.resource) = {
+     *         type: "dlp.googleapis.com/InspectTemplate"
+     *         pattern:
+     *         "organizations/{organization}/inspectTemplates/{inspect_template}"
+     *         pattern: "projects/{project}/inspectTemplates/{inspect_template}"
+     *         history: ORIGINALLY_SINGLE_PATTERN
+     *       };
+     *     }
      *
      * Generated from protobuf field <code>.google.api.ResourceDescriptor.History history = 4;</code>
      * @return int
@@ -271,16 +391,17 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
     /**
      * Optional. The historical or future-looking state of the resource pattern.
      * Example:
-     *   // The InspectTemplate message originally only supported resource
-     *   // names with organization, and project was added later.
-     *   message InspectTemplate {
-     *     option (google.api.resource) = {
-     *       type: "dlp.googleapis.com/InspectTemplate"
-     *       pattern: "organizations/{organization}/inspectTemplates/{inspect_template}"
-     *       pattern: "projects/{project}/inspectTemplates/{inspect_template}"
-     *       history: ORIGINALLY_SINGLE_PATTERN
-     *     };
-     *   }
+     *     // The InspectTemplate message originally only supported resource
+     *     // names with organization, and project was added later.
+     *     message InspectTemplate {
+     *       option (google.api.resource) = {
+     *         type: "dlp.googleapis.com/InspectTemplate"
+     *         pattern:
+     *         "organizations/{organization}/inspectTemplates/{inspect_template}"
+     *         pattern: "projects/{project}/inspectTemplates/{inspect_template}"
+     *         history: ORIGINALLY_SINGLE_PATTERN
+     *       };
+     *     }
      *
      * Generated from protobuf field <code>.google.api.ResourceDescriptor.History history = 4;</code>
      * @param int $var
@@ -290,6 +411,68 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Api\ResourceDescriptor_History::class);
         $this->history = $var;
+
+        return $this;
+    }
+
+    /**
+     * The plural name used in the resource name, such as 'projects' for
+     * the name of 'projects/{project}'. It is the same concept of the `plural`
+     * field in k8s CRD spec
+     * https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     *
+     * Generated from protobuf field <code>string plural = 5;</code>
+     * @return string
+     */
+    public function getPlural()
+    {
+        return $this->plural;
+    }
+
+    /**
+     * The plural name used in the resource name, such as 'projects' for
+     * the name of 'projects/{project}'. It is the same concept of the `plural`
+     * field in k8s CRD spec
+     * https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     *
+     * Generated from protobuf field <code>string plural = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPlural($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->plural = $var;
+
+        return $this;
+    }
+
+    /**
+     * The same concept of the `singular` field in k8s CRD spec
+     * https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     * Such as "project" for the `resourcemanager.googleapis.com/Project` type.
+     *
+     * Generated from protobuf field <code>string singular = 6;</code>
+     * @return string
+     */
+    public function getSingular()
+    {
+        return $this->singular;
+    }
+
+    /**
+     * The same concept of the `singular` field in k8s CRD spec
+     * https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     * Such as "project" for the `resourcemanager.googleapis.com/Project` type.
+     *
+     * Generated from protobuf field <code>string singular = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSingular($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->singular = $var;
 
         return $this;
     }

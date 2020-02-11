@@ -16,9 +16,11 @@ use Google\Protobuf\Internal\GPBUtil;
  * responsible for rotating these keys periodically to ensure security of
  * their service accounts.  Users retain the private key of these key-pairs,
  * and Google retains ONLY the public key.
- * System-managed key-pairs are managed automatically by Google, and rotated
- * daily without user intervention.  The private key never leaves Google's
- * servers to maximize security.
+ * System-managed keys are automatically rotated by Google, and are used for
+ * signing for a maximum of two weeks. The rotation process is probabilistic,
+ * and usage of the new key will gradually ramp up and down over the key's
+ * lifetime. We recommend caching the public key set for a service account for
+ * no more than 24 hours to ensure you have access to the latest keys.
  * Public keys for all service accounts are also published at the OAuth2
  * Service Account API.
  *
@@ -28,7 +30,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
 {
     /**
      * The resource name of the service account key in the following format
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}/keys/{key}`.
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
@@ -53,7 +55,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      * The private key data. Only provided in `CreateServiceAccountKey`
      * responses. Make sure to keep the private key data secure because it
      * allows for the assertion of the service account identity.
-     * When decoded, the private key data can be used to authenticate with
+     * When base64 decoded, the private key data can be used to authenticate with
      * Google API client libraries and with
      * <a href="/sdk/gcloud/reference/auth/activate-service-account">gcloud
      * auth activate-service-account</a>.
@@ -75,6 +77,9 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
     private $valid_after_time = null;
     /**
      * The key can be used before this timestamp.
+     * For system-managed key pairs, this timestamp is the end time for the
+     * private key signing operation. The public key could still be used
+     * for verification for a few hours after this time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp valid_before_time = 5;</code>
      */
@@ -88,7 +93,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           The resource name of the service account key in the following format
-     *           `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}/keys/{key}`.
+     *           `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
      *     @type int $private_key_type
      *           The output format for the private key.
      *           Only provided in `CreateServiceAccountKey` responses, not
@@ -101,7 +106,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      *           The private key data. Only provided in `CreateServiceAccountKey`
      *           responses. Make sure to keep the private key data secure because it
      *           allows for the assertion of the service account identity.
-     *           When decoded, the private key data can be used to authenticate with
+     *           When base64 decoded, the private key data can be used to authenticate with
      *           Google API client libraries and with
      *           <a href="/sdk/gcloud/reference/auth/activate-service-account">gcloud
      *           auth activate-service-account</a>.
@@ -111,6 +116,9 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      *           The key can be used after this timestamp.
      *     @type \Google\Protobuf\Timestamp $valid_before_time
      *           The key can be used before this timestamp.
+     *           For system-managed key pairs, this timestamp is the end time for the
+     *           private key signing operation. The public key could still be used
+     *           for verification for a few hours after this time.
      * }
      */
     public function __construct($data = NULL) {
@@ -120,7 +128,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the service account key in the following format
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}/keys/{key}`.
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -132,7 +140,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the service account key in the following format
-     * `projects/{PROJECT_ID}/serviceAccounts/{SERVICE_ACCOUNT_EMAIL}/keys/{key}`.
+     * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
@@ -210,7 +218,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      * The private key data. Only provided in `CreateServiceAccountKey`
      * responses. Make sure to keep the private key data secure because it
      * allows for the assertion of the service account identity.
-     * When decoded, the private key data can be used to authenticate with
+     * When base64 decoded, the private key data can be used to authenticate with
      * Google API client libraries and with
      * <a href="/sdk/gcloud/reference/auth/activate-service-account">gcloud
      * auth activate-service-account</a>.
@@ -227,7 +235,7 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
      * The private key data. Only provided in `CreateServiceAccountKey`
      * responses. Make sure to keep the private key data secure because it
      * allows for the assertion of the service account identity.
-     * When decoded, the private key data can be used to authenticate with
+     * When base64 decoded, the private key data can be used to authenticate with
      * Google API client libraries and with
      * <a href="/sdk/gcloud/reference/auth/activate-service-account">gcloud
      * auth activate-service-account</a>.
@@ -298,6 +306,9 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
 
     /**
      * The key can be used before this timestamp.
+     * For system-managed key pairs, this timestamp is the end time for the
+     * private key signing operation. The public key could still be used
+     * for verification for a few hours after this time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp valid_before_time = 5;</code>
      * @return \Google\Protobuf\Timestamp
@@ -309,6 +320,9 @@ class ServiceAccountKey extends \Google\Protobuf\Internal\Message
 
     /**
      * The key can be used before this timestamp.
+     * For system-managed key pairs, this timestamp is the end time for the
+     * private key signing operation. The public key could still be used
+     * for verification for a few hours after this time.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp valid_before_time = 5;</code>
      * @param \Google\Protobuf\Timestamp $var

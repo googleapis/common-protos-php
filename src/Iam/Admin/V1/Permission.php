@@ -29,6 +29,7 @@ class Permission extends \Google\Protobuf\Internal\Message
     private $title = '';
     /**
      * A brief description of what this Permission is used for.
+     * This permission can ONLY be used in predefined roles.
      *
      * Generated from protobuf field <code>string description = 3;</code>
      */
@@ -64,6 +65,7 @@ class Permission extends \Google\Protobuf\Internal\Message
      *           The title of this Permission.
      *     @type string $description
      *           A brief description of what this Permission is used for.
+     *           This permission can ONLY be used in predefined roles.
      *     @type bool $only_in_predefined_roles
      *           This permission can ONLY be used in predefined roles.
      *     @type int $stage
@@ -131,6 +133,7 @@ class Permission extends \Google\Protobuf\Internal\Message
 
     /**
      * A brief description of what this Permission is used for.
+     * This permission can ONLY be used in predefined roles.
      *
      * Generated from protobuf field <code>string description = 3;</code>
      * @return string
@@ -142,6 +145,7 @@ class Permission extends \Google\Protobuf\Internal\Message
 
     /**
      * A brief description of what this Permission is used for.
+     * This permission can ONLY be used in predefined roles.
      *
      * Generated from protobuf field <code>string description = 3;</code>
      * @param string $var

@@ -40,8 +40,7 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
      */
     private $member = '';
     /**
-     * Unimplemented. The condition that is associated with this binding.
-     * This field is logged only for Cloud Audit Logging.
+     * The condition that is associated with this binding.
      *
      * Generated from protobuf field <code>.google.type.Expr condition = 4;</code>
      */
@@ -65,8 +64,7 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
      *           Follows the same format of Binding.members.
      *           Required
      *     @type \Google\Type\Expr $condition
-     *           Unimplemented. The condition that is associated with this binding.
-     *           This field is logged only for Cloud Audit Logging.
+     *           The condition that is associated with this binding.
      * }
      */
     public function __construct($data = NULL) {
@@ -163,8 +161,7 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unimplemented. The condition that is associated with this binding.
-     * This field is logged only for Cloud Audit Logging.
+     * The condition that is associated with this binding.
      *
      * Generated from protobuf field <code>.google.type.Expr condition = 4;</code>
      * @return \Google\Type\Expr
@@ -175,8 +172,7 @@ class BindingDelta extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unimplemented. The condition that is associated with this binding.
-     * This field is logged only for Cloud Audit Logging.
+     * The condition that is associated with this binding.
      *
      * Generated from protobuf field <code>.google.type.Expr condition = 4;</code>
      * @param \Google\Type\Expr $var

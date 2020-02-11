@@ -19,7 +19,7 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
      * Required. The resource name of the project associated with the service
      * accounts, such as `projects/my-project-123`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     private $name = '';
     /**
@@ -28,13 +28,13 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
      * must be 6-30 characters long, and match the regular expression
      * `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
      *
-     * Generated from protobuf field <code>string account_id = 2;</code>
+     * Generated from protobuf field <code>string account_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $account_id = '';
     /**
      * The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to
      * create. Currently, only the following values are user assignable:
-     * `display_name` .
+     * `display_name` and `description`.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccount service_account = 3;</code>
      */
@@ -57,7 +57,7 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Iam\Admin\V1\ServiceAccount $service_account
      *           The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to
      *           create. Currently, only the following values are user assignable:
-     *           `display_name` .
+     *           `display_name` and `description`.
      * }
      */
     public function __construct($data = NULL) {
@@ -69,7 +69,7 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
      * Required. The resource name of the project associated with the service
      * accounts, such as `projects/my-project-123`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -81,7 +81,7 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
      * Required. The resource name of the project associated with the service
      * accounts, such as `projects/my-project-123`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -99,7 +99,7 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
      * must be 6-30 characters long, and match the regular expression
      * `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
      *
-     * Generated from protobuf field <code>string account_id = 2;</code>
+     * Generated from protobuf field <code>string account_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getAccountId()
@@ -113,7 +113,7 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
      * must be 6-30 characters long, and match the regular expression
      * `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
      *
-     * Generated from protobuf field <code>string account_id = 2;</code>
+     * Generated from protobuf field <code>string account_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -128,7 +128,7 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
     /**
      * The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to
      * create. Currently, only the following values are user assignable:
-     * `display_name` .
+     * `display_name` and `description`.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccount service_account = 3;</code>
      * @return \Google\Iam\Admin\V1\ServiceAccount
@@ -141,7 +141,7 @@ class CreateServiceAccountRequest extends \Google\Protobuf\Internal\Message
     /**
      * The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to
      * create. Currently, only the following values are user assignable:
-     * `display_name` .
+     * `display_name` and `description`.
      *
      * Generated from protobuf field <code>.google.iam.admin.v1.ServiceAccount service_account = 3;</code>
      * @param \Google\Iam\Admin\V1\ServiceAccount $var

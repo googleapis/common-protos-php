@@ -14,11 +14,12 @@ use Google\Protobuf\Internal\GPBUtil;
 class GenerateIdTokenRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The resource name of the service account for which the credentials
+     * Required. The resource name of the service account for which the credentials
      * are requested, in the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     private $name = '';
     /**
@@ -29,16 +30,17 @@ class GenerateIdTokenRequest extends \Google\Protobuf\Internal\Message
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
      * Generated from protobuf field <code>repeated string delegates = 2;</code>
      */
     private $delegates;
     /**
-     * The audience for the token, such as the API or account that this token
+     * Required. The audience for the token, such as the API or account that this token
      * grants access to.
      *
-     * Generated from protobuf field <code>string audience = 3;</code>
+     * Generated from protobuf field <code>string audience = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $audience = '';
     /**
@@ -56,9 +58,10 @@ class GenerateIdTokenRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The resource name of the service account for which the credentials
+     *           Required. The resource name of the service account for which the credentials
      *           are requested, in the following format:
-     *           `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     *           `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     *           character is required; replacing it with a project ID is invalid.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $delegates
      *           The sequence of service accounts in a delegation chain. Each service
      *           account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -67,9 +70,10 @@ class GenerateIdTokenRequest extends \Google\Protobuf\Internal\Message
      *           on the service account that is specified in the `name` field of the
      *           request.
      *           The delegates must have the following format:
-     *           `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     *           `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     *           character is required; replacing it with a project ID is invalid.
      *     @type string $audience
-     *           The audience for the token, such as the API or account that this token
+     *           Required. The audience for the token, such as the API or account that this token
      *           grants access to.
      *     @type bool $include_email
      *           Include the service account email in the token. If set to `true`, the
@@ -82,11 +86,12 @@ class GenerateIdTokenRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account for which the credentials
+     * Required. The resource name of the service account for which the credentials
      * are requested, in the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getName()
@@ -95,11 +100,12 @@ class GenerateIdTokenRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The resource name of the service account for which the credentials
+     * Required. The resource name of the service account for which the credentials
      * are requested, in the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`.
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -119,7 +125,8 @@ class GenerateIdTokenRequest extends \Google\Protobuf\Internal\Message
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
      * Generated from protobuf field <code>repeated string delegates = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -137,7 +144,8 @@ class GenerateIdTokenRequest extends \Google\Protobuf\Internal\Message
      * on the service account that is specified in the `name` field of the
      * request.
      * The delegates must have the following format:
-     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`
+     * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
+     * character is required; replacing it with a project ID is invalid.
      *
      * Generated from protobuf field <code>repeated string delegates = 2;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -152,10 +160,10 @@ class GenerateIdTokenRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The audience for the token, such as the API or account that this token
+     * Required. The audience for the token, such as the API or account that this token
      * grants access to.
      *
-     * Generated from protobuf field <code>string audience = 3;</code>
+     * Generated from protobuf field <code>string audience = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getAudience()
@@ -164,10 +172,10 @@ class GenerateIdTokenRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The audience for the token, such as the API or account that this token
+     * Required. The audience for the token, such as the API or account that this token
      * grants access to.
      *
-     * Generated from protobuf field <code>string audience = 3;</code>
+     * Generated from protobuf field <code>string audience = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

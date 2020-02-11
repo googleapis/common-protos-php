@@ -11,25 +11,34 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Defines an Identity and Access Management (IAM) policy. It is used to
  * specify access control policies for Cloud Platform resources.
- * A `Policy` consists of a list of `bindings`. A `binding` binds a list of
- * `members` to a `role`, where the members can be user accounts, Google groups,
- * Google domains, and service accounts. A `role` is a named list of permissions
- * defined by IAM.
+ * A `Policy` is a collection of `bindings`. A `binding` binds one or more
+ * `members` to a single `role`. Members can be user accounts, service accounts,
+ * Google groups, and domains (such as G Suite). A `role` is a named list of
+ * permissions (defined by IAM or configured by users). A `binding` can
+ * optionally specify a `condition`, which is a logic expression that further
+ * constrains the role binding based on attributes about the request and/or
+ * target resource.
  * **JSON Example**
  *     {
  *       "bindings": [
  *         {
- *           "role": "roles/owner",
+ *           "role": "roles/resourcemanager.organizationAdmin",
  *           "members": [
  *             "user:mike&#64;example.com",
  *             "group:admins&#64;example.com",
  *             "domain:google.com",
- *             "serviceAccount:my-other-app&#64;appspot.gserviceaccount.com"
+ *             "serviceAccount:my-project-id&#64;appspot.gserviceaccount.com"
  *           ]
  *         },
  *         {
- *           "role": "roles/viewer",
- *           "members": ["user:sean&#64;example.com"]
+ *           "role": "roles/resourcemanager.organizationViewer",
+ *           "members": ["user:eve&#64;example.com"],
+ *           "condition": {
+ *             "title": "expirable access",
+ *             "description": "Does not grant access after Sep 2020",
+ *             "expression": "request.time <
+ *             timestamp('2020-10-01T00:00:00.000Z')",
+ *           }
  *         }
  *       ]
  *     }
@@ -39,11 +48,15 @@ use Google\Protobuf\Internal\GPBUtil;
  *       - user:mike&#64;example.com
  *       - group:admins&#64;example.com
  *       - domain:google.com
- *       - serviceAccount:my-other-app&#64;appspot.gserviceaccount.com
- *       role: roles/owner
+ *       - serviceAccount:my-project-id&#64;appspot.gserviceaccount.com
+ *       role: roles/resourcemanager.organizationAdmin
  *     - members:
- *       - user:sean&#64;example.com
- *       role: roles/viewer
+ *       - user:eve&#64;example.com
+ *       role: roles/resourcemanager.organizationViewer
+ *       condition:
+ *         title: expirable access
+ *         description: Does not grant access after Sep 2020
+ *         expression: request.time < timestamp('2020-10-01T00:00:00.000Z')
  * For a description of IAM and its features, see the
  * [IAM developer's guide](https://cloud.google.com/iam/docs).
  *
@@ -52,13 +65,24 @@ use Google\Protobuf\Internal\GPBUtil;
 class Policy extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Deprecated.
+     * Specifies the format of the policy.
+     * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+     * rejected.
+     * Operations affecting conditional bindings must specify version 3. This can
+     * be either setting a conditional policy, modifying a conditional binding,
+     * or removing a binding (conditional or unconditional) from the stored
+     * conditional policy.
+     * Operations on non-conditional policies may specify any valid value or
+     * leave the field unset.
+     * If no etag is provided in the call to `setIamPolicy`, version compliance
+     * checks against the stored policy is skipped.
      *
      * Generated from protobuf field <code>int32 version = 1;</code>
      */
     private $version = 0;
     /**
-     * Associates a list of `members` to a `role`.
+     * Associates a list of `members` to a `role`. Optionally may specify a
+     * `condition` that determines when binding is in effect.
      * `bindings` with no members will result in an error.
      *
      * Generated from protobuf field <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -73,7 +97,9 @@ class Policy extends \Google\Protobuf\Internal\Message
      * systems are expected to put that etag in the request to `setIamPolicy` to
      * ensure that their change will be applied to the same version of the policy.
      * If no `etag` is provided in the call to `setIamPolicy`, then the existing
-     * policy is overwritten blindly.
+     * policy is overwritten. Due to blind-set semantics of an etag-less policy,
+     * 'setIamPolicy' will not fail even if the incoming policy version does not
+     * meet the requirements for modifying the stored policy.
      *
      * Generated from protobuf field <code>bytes etag = 3;</code>
      */
@@ -86,9 +112,20 @@ class Policy extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $version
-     *           Deprecated.
+     *           Specifies the format of the policy.
+     *           Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+     *           rejected.
+     *           Operations affecting conditional bindings must specify version 3. This can
+     *           be either setting a conditional policy, modifying a conditional binding,
+     *           or removing a binding (conditional or unconditional) from the stored
+     *           conditional policy.
+     *           Operations on non-conditional policies may specify any valid value or
+     *           leave the field unset.
+     *           If no etag is provided in the call to `setIamPolicy`, version compliance
+     *           checks against the stored policy is skipped.
      *     @type \Google\Cloud\Iam\V1\Binding[]|\Google\Protobuf\Internal\RepeatedField $bindings
-     *           Associates a list of `members` to a `role`.
+     *           Associates a list of `members` to a `role`. Optionally may specify a
+     *           `condition` that determines when binding is in effect.
      *           `bindings` with no members will result in an error.
      *     @type string $etag
      *           `etag` is used for optimistic concurrency control as a way to help
@@ -99,7 +136,9 @@ class Policy extends \Google\Protobuf\Internal\Message
      *           systems are expected to put that etag in the request to `setIamPolicy` to
      *           ensure that their change will be applied to the same version of the policy.
      *           If no `etag` is provided in the call to `setIamPolicy`, then the existing
-     *           policy is overwritten blindly.
+     *           policy is overwritten. Due to blind-set semantics of an etag-less policy,
+     *           'setIamPolicy' will not fail even if the incoming policy version does not
+     *           meet the requirements for modifying the stored policy.
      * }
      */
     public function __construct($data = NULL) {
@@ -108,7 +147,17 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated.
+     * Specifies the format of the policy.
+     * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+     * rejected.
+     * Operations affecting conditional bindings must specify version 3. This can
+     * be either setting a conditional policy, modifying a conditional binding,
+     * or removing a binding (conditional or unconditional) from the stored
+     * conditional policy.
+     * Operations on non-conditional policies may specify any valid value or
+     * leave the field unset.
+     * If no etag is provided in the call to `setIamPolicy`, version compliance
+     * checks against the stored policy is skipped.
      *
      * Generated from protobuf field <code>int32 version = 1;</code>
      * @return int
@@ -119,7 +168,17 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated.
+     * Specifies the format of the policy.
+     * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+     * rejected.
+     * Operations affecting conditional bindings must specify version 3. This can
+     * be either setting a conditional policy, modifying a conditional binding,
+     * or removing a binding (conditional or unconditional) from the stored
+     * conditional policy.
+     * Operations on non-conditional policies may specify any valid value or
+     * leave the field unset.
+     * If no etag is provided in the call to `setIamPolicy`, version compliance
+     * checks against the stored policy is skipped.
      *
      * Generated from protobuf field <code>int32 version = 1;</code>
      * @param int $var
@@ -134,7 +193,8 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Associates a list of `members` to a `role`.
+     * Associates a list of `members` to a `role`. Optionally may specify a
+     * `condition` that determines when binding is in effect.
      * `bindings` with no members will result in an error.
      *
      * Generated from protobuf field <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -146,7 +206,8 @@ class Policy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Associates a list of `members` to a `role`.
+     * Associates a list of `members` to a `role`. Optionally may specify a
+     * `condition` that determines when binding is in effect.
      * `bindings` with no members will result in an error.
      *
      * Generated from protobuf field <code>repeated .google.iam.v1.Binding bindings = 4;</code>
@@ -170,7 +231,9 @@ class Policy extends \Google\Protobuf\Internal\Message
      * systems are expected to put that etag in the request to `setIamPolicy` to
      * ensure that their change will be applied to the same version of the policy.
      * If no `etag` is provided in the call to `setIamPolicy`, then the existing
-     * policy is overwritten blindly.
+     * policy is overwritten. Due to blind-set semantics of an etag-less policy,
+     * 'setIamPolicy' will not fail even if the incoming policy version does not
+     * meet the requirements for modifying the stored policy.
      *
      * Generated from protobuf field <code>bytes etag = 3;</code>
      * @return string
@@ -189,7 +252,9 @@ class Policy extends \Google\Protobuf\Internal\Message
      * systems are expected to put that etag in the request to `setIamPolicy` to
      * ensure that their change will be applied to the same version of the policy.
      * If no `etag` is provided in the call to `setIamPolicy`, then the existing
-     * policy is overwritten blindly.
+     * policy is overwritten. Due to blind-set semantics of an etag-less policy,
+     * 'setIamPolicy' will not fail even if the incoming policy version does not
+     * meet the requirements for modifying the stored policy.
      *
      * Generated from protobuf field <code>bytes etag = 3;</code>
      * @param string $var

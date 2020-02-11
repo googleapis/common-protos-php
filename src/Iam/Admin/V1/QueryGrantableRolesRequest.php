@@ -21,7 +21,7 @@ class QueryGrantableRolesRequest extends \Google\Protobuf\Internal\Message
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
      *
-     * Generated from protobuf field <code>string full_resource_name = 1;</code>
+     * Generated from protobuf field <code>string full_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $full_resource_name = '';
     /**
@@ -72,7 +72,7 @@ class QueryGrantableRolesRequest extends \Google\Protobuf\Internal\Message
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
      *
-     * Generated from protobuf field <code>string full_resource_name = 1;</code>
+     * Generated from protobuf field <code>string full_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getFullResourceName()
@@ -86,7 +86,7 @@ class QueryGrantableRolesRequest extends \Google\Protobuf\Internal\Message
      * For example, a Cloud Platform project with id `my-project` will be named
      * `//cloudresourcemanager.googleapis.com/projects/my-project`.
      *
-     * Generated from protobuf field <code>string full_resource_name = 1;</code>
+     * Generated from protobuf field <code>string full_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
