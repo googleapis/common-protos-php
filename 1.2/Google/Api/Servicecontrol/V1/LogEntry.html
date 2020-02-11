@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Api\Servicecontrol\V1\LogEntry | Common Protos PHP - 1.2</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/sami.css">
+        <script src="../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../js/typeahead.min.js"></script>
+        <script src="../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Api_Servicecontrol_V1_LogEntry" data-root-path="../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../index.html">Common Protos PHP - 1.2</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../../../Google/Api.html">Api</a></li><li class="backslash">\</li><li><a href="../../../../Google/Api/Servicecontrol.html">Servicecontrol</a></li><li class="backslash">\</li><li><a href="../../../../Google/Api/Servicecontrol/V1.html">V1</a></li><li class="backslash">\</li><li>LogEntry</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            LogEntry
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>LogEntry</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>An individual log entry.</p>            <p>Generated from protobuf message <code>google.api.servicecontrol.v1.LogEntry</code></p>                    </div>
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_payload">
+                                        protected                                        
+                </td>
+                <td>$payload</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getName">getName</a>()
+        
+                                            <p>Required. The log to which this log entry belongs. Examples: <code>"syslog"</code>,
+<code>"book_log"</code>.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setName">setName</a>(string $var)
+        
+                                            <p>Required. The log to which this log entry belongs. Examples: <code>"syslog"</code>,
+<code>"book_log"</code>.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Protobuf\Timestamp">Timestamp</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getTimestamp">getTimestamp</a>()
+        
+                                            <p>The time the event described by the log entry occurred. If
+omitted, defaults to operation start time.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setTimestamp">setTimestamp</a>(<abbr title="Google\Protobuf\Timestamp">Timestamp</abbr> $var)
+        
+                                            <p>The time the event described by the log entry occurred. If
+omitted, defaults to operation start time.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSeverity">getSeverity</a>()
+        
+                                            <p>The severity of the log entry. The default value is
+<code>LogSeverity.DEFAULT</code>.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setSeverity">setSeverity</a>(int $var)
+        
+                                            <p>The severity of the log entry. The default value is
+<code>LogSeverity.DEFAULT</code>.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getInsertId">getInsertId</a>()
+        
+                                            <p>A unique ID for the log entry used for deduplication. If omitted,
+the implementation will generate one based on operation_id.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setInsertId">setInsertId</a>(string $var)
+        
+                                            <p>A unique ID for the log entry used for deduplication. If omitted,
+the implementation will generate one based on operation_id.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Protobuf\Internal\MapField">MapField</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLabels">getLabels</a>()
+        
+                                            <p>A set of user-defined (key, value) data that provides additional
+information about the log entry.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLabels">setLabels</a>(array|<abbr title="Google\Protobuf\Internal\MapField">MapField</abbr> $var)
+        
+                                            <p>A set of user-defined (key, value) data that provides additional
+information about the log entry.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Protobuf\Any">Any</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getProtoPayload">getProtoPayload</a>()
+        
+                                            <p>The log entry payload, represented as a protocol buffer that is
+expressed as a JSON object. The only accepted type currently is
+[AuditLog][google.cloud.audit.AuditLog].</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setProtoPayload">setProtoPayload</a>(<abbr title="Google\Protobuf\Any">Any</abbr> $var)
+        
+                                            <p>The log entry payload, represented as a protocol buffer that is
+expressed as a JSON object. The only accepted type currently is
+[AuditLog][google.cloud.audit.AuditLog].</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getTextPayload">getTextPayload</a>()
+        
+                                            <p>The log entry payload, represented as a Unicode string (UTF-8).</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setTextPayload">setTextPayload</a>(string $var)
+        
+                                            <p>The log entry payload, represented as a Unicode string (UTF-8).</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Protobuf\Struct">Struct</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getStructPayload">getStructPayload</a>()
+        
+                                            <p>The log entry payload, represented as a structure that
+is expressed as a JSON object.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setStructPayload">setStructPayload</a>(<abbr title="Google\Protobuf\Struct">Struct</abbr> $var)
+        
+                                            <p>The log entry payload, represented as a structure that
+is expressed as a JSON object.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getPayload">getPayload</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 87</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type string $name
+      Required. The log to which this log entry belongs. Examples: `"syslog"`,
+      `"book_log"`.
+@type \Google\Protobuf\Timestamp $timestamp
+      The time the event described by the log entry occurred. If
+      omitted, defaults to operation start time.
+@type int $severity
+      The severity of the log entry. The default value is
+      `LogSeverity.DEFAULT`.
+@type string $insert_id
+      A unique ID for the log entry used for deduplication. If omitted,
+      the implementation will generate one based on operation_id.
+@type array|\Google\Protobuf\Internal\MapField $labels
+      A set of user-defined (key, value) data that provides additional
+      information about the log entry.
+@type \Google\Protobuf\Any $proto_payload
+      The log entry payload, represented as a protocol buffer that is
+      expressed as a JSON object. The only accepted type currently is
+      [AuditLog][google.cloud.audit.AuditLog].
+@type string $text_payload
+      The log entry payload, represented as a Unicode string (UTF-8).
+@type \Google\Protobuf\Struct $struct_payload
+      The log entry payload, represented as a structure that
+      is expressed as a JSON object.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getName">
+        <div class="location">at         line 99</div>
+        <code>                    string
+    <strong>getName</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. The log to which this log entry belongs. Examples: <code>"syslog"</code>,
+<code>"book_log"</code>.</p>                    <p>Generated from protobuf field <code>string name = 10;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setName">
+        <div class="location">at         line 112</div>
+        <code>                    $this
+    <strong>setName</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. The log to which this log entry belongs. Examples: <code>"syslog"</code>,
+<code>"book_log"</code>.</p>                    <p>Generated from protobuf field <code>string name = 10;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getTimestamp">
+        <div class="location">at         line 127</div>
+        <code>                    <abbr title="Google\Protobuf\Timestamp">Timestamp</abbr>
+    <strong>getTimestamp</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The time the event described by the log entry occurred. If
+omitted, defaults to operation start time.</p>                    <p>Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 11;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Protobuf\Timestamp">Timestamp</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setTimestamp">
+        <div class="location">at         line 140</div>
+        <code>                    $this
+    <strong>setTimestamp</strong>(<abbr title="Google\Protobuf\Timestamp">Timestamp</abbr> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The time the event described by the log entry occurred. If
+omitted, defaults to operation start time.</p>                    <p>Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 11;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Google\Protobuf\Timestamp">Timestamp</abbr></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSeverity">
+        <div class="location">at         line 155</div>
+        <code>                    int
+    <strong>getSeverity</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The severity of the log entry. The default value is
+<code>LogSeverity.DEFAULT</code>.</p>                    <p>Generated from protobuf field <code>.google.logging.type.LogSeverity severity = 12;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setSeverity">
+        <div class="location">at         line 168</div>
+        <code>                    $this
+    <strong>setSeverity</strong>(int $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The severity of the log entry. The default value is
+<code>LogSeverity.DEFAULT</code>.</p>                    <p>Generated from protobuf field <code>.google.logging.type.LogSeverity severity = 12;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getInsertId">
+        <div class="location">at         line 183</div>
+        <code>                    string
+    <strong>getInsertId</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A unique ID for the log entry used for deduplication. If omitted,
+the implementation will generate one based on operation_id.</p>                    <p>Generated from protobuf field <code>string insert_id = 4;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setInsertId">
+        <div class="location">at         line 196</div>
+        <code>                    $this
+    <strong>setInsertId</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A unique ID for the log entry used for deduplication. If omitted,
+the implementation will generate one based on operation_id.</p>                    <p>Generated from protobuf field <code>string insert_id = 4;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLabels">
+        <div class="location">at         line 211</div>
+        <code>                    <abbr title="Google\Protobuf\Internal\MapField">MapField</abbr>
+    <strong>getLabels</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A set of user-defined (key, value) data that provides additional
+information about the log entry.</p>                    <p>Generated from protobuf field <code>map&lt;string, string> labels = 13;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Protobuf\Internal\MapField">MapField</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLabels">
+        <div class="location">at         line 224</div>
+        <code>                    $this
+    <strong>setLabels</strong>(array|<abbr title="Google\Protobuf\Internal\MapField">MapField</abbr> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A set of user-defined (key, value) data that provides additional
+information about the log entry.</p>                    <p>Generated from protobuf field <code>map&lt;string, string> labels = 13;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array|<abbr title="Google\Protobuf\Internal\MapField">MapField</abbr></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getProtoPayload">
+        <div class="location">at         line 240</div>
+        <code>                    <abbr title="Google\Protobuf\Any">Any</abbr>
+    <strong>getProtoPayload</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The log entry payload, represented as a protocol buffer that is
+expressed as a JSON object. The only accepted type currently is
+[AuditLog][google.cloud.audit.AuditLog].</p>                    <p>Generated from protobuf field <code>.google.protobuf.Any proto_payload = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Protobuf\Any">Any</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setProtoPayload">
+        <div class="location">at         line 254</div>
+        <code>                    $this
+    <strong>setProtoPayload</strong>(<abbr title="Google\Protobuf\Any">Any</abbr> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The log entry payload, represented as a protocol buffer that is
+expressed as a JSON object. The only accepted type currently is
+[AuditLog][google.cloud.audit.AuditLog].</p>                    <p>Generated from protobuf field <code>.google.protobuf.Any proto_payload = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Google\Protobuf\Any">Any</abbr></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getTextPayload">
+        <div class="location">at         line 268</div>
+        <code>                    string
+    <strong>getTextPayload</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The log entry payload, represented as a Unicode string (UTF-8).</p>                    <p>Generated from protobuf field <code>string text_payload = 3;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setTextPayload">
+        <div class="location">at         line 280</div>
+        <code>                    $this
+    <strong>setTextPayload</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The log entry payload, represented as a Unicode string (UTF-8).</p>                    <p>Generated from protobuf field <code>string text_payload = 3;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getStructPayload">
+        <div class="location">at         line 295</div>
+        <code>                    <abbr title="Google\Protobuf\Struct">Struct</abbr>
+    <strong>getStructPayload</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The log entry payload, represented as a structure that
+is expressed as a JSON object.</p>                    <p>Generated from protobuf field <code>.google.protobuf.Struct struct_payload = 6;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Protobuf\Struct">Struct</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setStructPayload">
+        <div class="location">at         line 308</div>
+        <code>                    $this
+    <strong>setStructPayload</strong>(<abbr title="Google\Protobuf\Struct">Struct</abbr> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The log entry payload, represented as a structure that
+is expressed as a JSON object.</p>                    <p>Generated from protobuf field <code>.google.protobuf.Struct struct_payload = 6;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Google\Protobuf\Struct">Struct</abbr></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPayload">
+        <div class="location">at         line 319</div>
+        <code>                    string
+    <strong>getPayload</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
