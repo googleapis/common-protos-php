@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Iam\Admin\V1\DeleteRoleRequest | Common Protos PHP - 1.3</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/sami.css">
+        <script src="../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../js/typeahead.min.js"></script>
+        <script src="../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Iam_Admin_V1_DeleteRoleRequest" data-root-path="../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../index.html">Common Protos PHP - 1.3</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../../../Google/Iam.html">Iam</a></li><li class="backslash">\</li><li><a href="../../../../Google/Iam/Admin.html">Admin</a></li><li class="backslash">\</li><li><a href="../../../../Google/Iam/Admin/V1.html">V1</a></li><li class="backslash">\</li><li>DeleteRoleRequest</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            DeleteRoleRequest
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>DeleteRoleRequest</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>The request to delete an existing role.</p>            <p>Generated from protobuf message <code>google.iam.admin.v1.DeleteRoleRequest</code></p>                    </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getName">getName</a>()
+        
+                                            <p>The <code>name</code> parameter's value depends on the target resource for the
+request, namely
+<a href="/iam/reference/rest/v1/projects.roles"><code>projects</code></a> or
+<a href="/iam/reference/rest/v1/organizations.roles"><code>organizations</code></a>. Each
+resource type's <code>name</code> value format is described below:
+* <a href="/iam/reference/rest/v1/projects.roles/delete"><code>projects.roles.delete()</code></a>:
+  <code>projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}</code>. This method deletes only
+  <a href="/iam/docs/understanding-custom-roles">custom roles</a> that have been
+  created at the project level. Example request URL:
+  <code>https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}</code>
+* <a href="/iam/reference/rest/v1/organizations.roles/delete"><code>organizations.roles.delete()</code></a>:
+  <code>organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}</code>. This method
+  deletes only <a href="/iam/docs/understanding-custom-roles">custom roles</a> that
+  have been created at the organization level. Example request URL:
+  <code>https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}</code>
+Note: Wildcard (*) values are invalid; you must specify a complete project
+ID or organization ID.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setName">setName</a>(string $var)
+        
+                                            <p>The <code>name</code> parameter's value depends on the target resource for the
+request, namely
+<a href="/iam/reference/rest/v1/projects.roles"><code>projects</code></a> or
+<a href="/iam/reference/rest/v1/organizations.roles"><code>organizations</code></a>. Each
+resource type's <code>name</code> value format is described below:
+* <a href="/iam/reference/rest/v1/projects.roles/delete"><code>projects.roles.delete()</code></a>:
+  <code>projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}</code>. This method deletes only
+  <a href="/iam/docs/understanding-custom-roles">custom roles</a> that have been
+  created at the project level. Example request URL:
+  <code>https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}</code>
+* <a href="/iam/reference/rest/v1/organizations.roles/delete"><code>organizations.roles.delete()</code></a>:
+  <code>organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}</code>. This method
+  deletes only <a href="/iam/docs/understanding-custom-roles">custom roles</a> that
+  have been created at the organization level. Example request URL:
+  <code>https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}</code>
+Note: Wildcard (*) values are invalid; you must specify a complete project
+ID or organization ID.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getEtag">getEtag</a>()
+        
+                                            <p>Used to perform a consistent read-modify-write.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setEtag">setEtag</a>(string $var)
+        
+                                            <p>Used to perform a consistent read-modify-write.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 75</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type string $name
+      The `name` parameter's value depends on the target resource for the
+      request, namely
+      [`projects`](/iam/reference/rest/v1/projects.roles) or
+      [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+      resource type's `name` value format is described below:
+      * [`projects.roles.delete()`](/iam/reference/rest/v1/projects.roles/delete):
+        `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
+        [custom roles](/iam/docs/understanding-custom-roles) that have been
+        created at the project level. Example request URL:
+        `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
+      * [`organizations.roles.delete()`](/iam/reference/rest/v1/organizations.roles/delete):
+        `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
+        deletes only [custom roles](/iam/docs/understanding-custom-roles) that
+        have been created at the organization level. Example request URL:
+        `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
+      Note: Wildcard (*) values are invalid; you must specify a complete project
+      ID or organization ID.
+@type string $etag
+      Used to perform a consistent read-modify-write.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getName">
+        <div class="location">at         line 102</div>
+        <code>                    string
+    <strong>getName</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The <code>name</code> parameter's value depends on the target resource for the
+request, namely
+<a href="/iam/reference/rest/v1/projects.roles"><code>projects</code></a> or
+<a href="/iam/reference/rest/v1/organizations.roles"><code>organizations</code></a>. Each
+resource type's <code>name</code> value format is described below:
+* <a href="/iam/reference/rest/v1/projects.roles/delete"><code>projects.roles.delete()</code></a>:
+  <code>projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}</code>. This method deletes only
+  <a href="/iam/docs/understanding-custom-roles">custom roles</a> that have been
+  created at the project level. Example request URL:
+  <code>https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}</code>
+* <a href="/iam/reference/rest/v1/organizations.roles/delete"><code>organizations.roles.delete()</code></a>:
+  <code>organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}</code>. This method
+  deletes only <a href="/iam/docs/understanding-custom-roles">custom roles</a> that
+  have been created at the organization level. Example request URL:
+  <code>https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}</code>
+Note: Wildcard (*) values are invalid; you must specify a complete project
+ID or organization ID.</p>                    <p>Generated from protobuf field <code>string name = 1 [(.google.api.resource_reference) = {</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setName">
+        <div class="location">at         line 130</div>
+        <code>                    $this
+    <strong>setName</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The <code>name</code> parameter's value depends on the target resource for the
+request, namely
+<a href="/iam/reference/rest/v1/projects.roles"><code>projects</code></a> or
+<a href="/iam/reference/rest/v1/organizations.roles"><code>organizations</code></a>. Each
+resource type's <code>name</code> value format is described below:
+* <a href="/iam/reference/rest/v1/projects.roles/delete"><code>projects.roles.delete()</code></a>:
+  <code>projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}</code>. This method deletes only
+  <a href="/iam/docs/understanding-custom-roles">custom roles</a> that have been
+  created at the project level. Example request URL:
+  <code>https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}</code>
+* <a href="/iam/reference/rest/v1/organizations.roles/delete"><code>organizations.roles.delete()</code></a>:
+  <code>organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}</code>. This method
+  deletes only <a href="/iam/docs/understanding-custom-roles">custom roles</a> that
+  have been created at the organization level. Example request URL:
+  <code>https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}</code>
+Note: Wildcard (*) values are invalid; you must specify a complete project
+ID or organization ID.</p>                    <p>Generated from protobuf field <code>string name = 1 [(.google.api.resource_reference) = {</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getEtag">
+        <div class="location">at         line 144</div>
+        <code>                    string
+    <strong>getEtag</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Used to perform a consistent read-modify-write.</p>                    <p>Generated from protobuf field <code>bytes etag = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setEtag">
+        <div class="location">at         line 156</div>
+        <code>                    $this
+    <strong>setEtag</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Used to perform a consistent read-modify-write.</p>                    <p>Generated from protobuf field <code>bytes etag = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

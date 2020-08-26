@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Type\Quaternion | Common Protos PHP - 1.3</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Type_Quaternion" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Common Protos PHP - 1.3</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../Google/Type.html">Type</a></li><li class="backslash">\</li><li>Quaternion</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Quaternion
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Quaternion</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>A quaternion is defined as the quotient of two directed lines in a
+three-dimensional space or equivalently as the quotient of two Euclidean
+vectors (https://en.wikipedia.org/wiki/Quaternion).</p>            <p>Quaternions are often used in calculations involving three-dimensional
+rotations (https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation),
+as they provide greater mathematical robustness by avoiding the gimbal lock
+problems that can be encountered when using Euler angles
+(https://en.wikipedia.org/wiki/Gimbal_lock).
+Quaternions are generally represented in this form:
+    w + xi + yj + zk
+where x, y, z, and w are real numbers, and i, j, and k are three imaginary
+numbers.
+Our naming choice <code>(x, y, z, w)</code> comes from the desire to avoid confusion for
+those interested in the geometric properties of the quaternion in the 3D
+Cartesian space. Other texts often use alternative names or subscripts, such
+as <code>(a, b, c, d)</code>, <code>(1, i, j, k)</code>, or <code>(0, 1, 2, 3)</code>, which are perhaps
+better suited for mathematical interpretations.
+To avoid any confusion, as well as to maintain compatibility with a large
+number of software libraries, the quaternions represented using the protocol
+buffer below <em>must</em> follow the Hamilton convention, which defines <code>ij = k</code>
+(i.e. a right-handed algebra), and therefore:
+    i^2 = j^2 = k^2 = ijk = −1
+    ij = −ji = k
+    jk = −kj = i
+    ki = −ik = j
+Please DO NOT use this to represent quaternions that follow the JPL
+convention, or any of the other quaternion flavors out there.
+Definitions:
+  - Quaternion norm (or magnitude): <code>sqrt(x^2 + y^2 + z^2 + w^2)</code>.
+  - Unit (or normalized) quaternion: a quaternion whose norm is 1.
+  - Pure quaternion: a quaternion whose scalar component (<code>w</code>) is 0.
+  - Rotation quaternion: a unit quaternion used to represent rotation.
+  - Orientation quaternion: a unit quaternion used to represent orientation.
+A quaternion can be normalized by dividing it by its norm. The resulting
+quaternion maintains the same direction, but has a norm of 1, i.e. it moves
+on the unit sphere. This is generally necessary for rotation and orientation
+quaternions, to avoid rounding errors:
+https://en.wikipedia.org/wiki/Rotation_formalisms_in_three_dimensions
+Note that <code>(x, y, z, w)</code> and <code>(-x, -y, -z, -w)</code> represent the same rotation,
+but normalization would be even more useful, e.g. for comparison purposes, if
+it would produce a unique representation. It is thus recommended that <code>w</code> be
+kept positive, which can be achieved by changing all the signs when <code>w</code> is
+negative.</p>
+
+<p>Generated from protobuf message <code>google.type.Quaternion</code></p>                    </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    float
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getX">getX</a>()
+        
+                                            <p>The x component.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setX">setX</a>(float $var)
+        
+                                            <p>The x component.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    float
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getY">getY</a>()
+        
+                                            <p>The y component.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setY">setY</a>(float $var)
+        
+                                            <p>The y component.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    float
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getZ">getZ</a>()
+        
+                                            <p>The z component.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setZ">setZ</a>(float $var)
+        
+                                            <p>The z component.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    float
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getW">getW</a>()
+        
+                                            <p>The scalar component.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setW">setW</a>(float $var)
+        
+                                            <p>The scalar component.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 101</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type float $x
+      The x component.
+@type float $y
+      The y component.
+@type float $z
+      The z component.
+@type float $w
+      The scalar component.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getX">
+        <div class="location">at         line 112</div>
+        <code>                    float
+    <strong>getX</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The x component.</p>                    <p>Generated from protobuf field <code>double x = 1;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setX">
+        <div class="location">at         line 124</div>
+        <code>                    $this
+    <strong>setX</strong>(float $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The x component.</p>                    <p>Generated from protobuf field <code>double x = 1;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>float</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getY">
+        <div class="location">at         line 138</div>
+        <code>                    float
+    <strong>getY</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The y component.</p>                    <p>Generated from protobuf field <code>double y = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setY">
+        <div class="location">at         line 150</div>
+        <code>                    $this
+    <strong>setY</strong>(float $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The y component.</p>                    <p>Generated from protobuf field <code>double y = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>float</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getZ">
+        <div class="location">at         line 164</div>
+        <code>                    float
+    <strong>getZ</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The z component.</p>                    <p>Generated from protobuf field <code>double z = 3;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setZ">
+        <div class="location">at         line 176</div>
+        <code>                    $this
+    <strong>setZ</strong>(float $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The z component.</p>                    <p>Generated from protobuf field <code>double z = 3;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>float</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getW">
+        <div class="location">at         line 190</div>
+        <code>                    float
+    <strong>getW</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The scalar component.</p>                    <p>Generated from protobuf field <code>double w = 4;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setW">
+        <div class="location">at         line 202</div>
+        <code>                    $this
+    <strong>setW</strong>(float $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The scalar component.</p>                    <p>Generated from protobuf field <code>double w = 4;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>float</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Api\Servicecontrol\V1\Distribution | Common Protos PHP - 1.3</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/sami.css">
+        <script src="../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../js/typeahead.min.js"></script>
+        <script src="../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Api_Servicecontrol_V1_Distribution" data-root-path="../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../index.html">Common Protos PHP - 1.3</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../../../Google/Api.html">Api</a></li><li class="backslash">\</li><li><a href="../../../../Google/Api/Servicecontrol.html">Servicecontrol</a></li><li class="backslash">\</li><li><a href="../../../../Google/Api/Servicecontrol/V1.html">V1</a></li><li class="backslash">\</li><li>Distribution</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Distribution
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Distribution</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Distribution represents a frequency distribution of double-valued sample
+points. It contains the size of the population of sample points plus
+additional optional information:
+  - the arithmetic mean of the samples
+  - the minimum and maximum of the samples
+  - the sum-squared-deviation of the samples, used to compute variance
+  - a histogram of the values of the sample points</p>            <p>Generated from protobuf message <code>google.api.servicecontrol.v1.Distribution</code></p>                    </div>
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_bucket_option">
+                                        protected                                        
+                </td>
+                <td>$bucket_option</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int|string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getCount">getCount</a>()
+        
+                                            <p>The total number of samples in the distribution. Must be >= 0.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setCount">setCount</a>(int|string $var)
+        
+                                            <p>The total number of samples in the distribution. Must be >= 0.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    float
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getMean">getMean</a>()
+        
+                                            <p>The arithmetic mean of the samples in the distribution. If <code>count</code> is
+zero then this field must be zero.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setMean">setMean</a>(float $var)
+        
+                                            <p>The arithmetic mean of the samples in the distribution. If <code>count</code> is
+zero then this field must be zero.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    float
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getMinimum">getMinimum</a>()
+        
+                                            <p>The minimum of the population of values. Ignored if <code>count</code> is zero.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setMinimum">setMinimum</a>(float $var)
+        
+                                            <p>The minimum of the population of values. Ignored if <code>count</code> is zero.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    float
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getMaximum">getMaximum</a>()
+        
+                                            <p>The maximum of the population of values. Ignored if <code>count</code> is zero.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setMaximum">setMaximum</a>(float $var)
+        
+                                            <p>The maximum of the population of values. Ignored if <code>count</code> is zero.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    float
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSumOfSquaredDeviation">getSumOfSquaredDeviation</a>()
+        
+                                            <p>The sum of squared deviations from the mean:
+  Sum[i=1.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setSumOfSquaredDeviation">setSumOfSquaredDeviation</a>(float $var)
+        
+                                            <p>The sum of squared deviations from the mean:
+  Sum[i=1.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getBucketCounts">getBucketCounts</a>()
+        
+                                            <p>The number of samples in each histogram bucket. <code>bucket_counts</code> are
+optional. If present, they must sum to the <code>count</code> value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setBucketCounts">setBucketCounts</a>(int[]|string[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr> $var)
+        
+                                            <p>The number of samples in each histogram bucket. <code>bucket_counts</code> are
+optional. If present, they must sum to the <code>count</code> value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Google/Api/Servicecontrol/V1/Distribution/LinearBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\LinearBuckets">LinearBuckets</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLinearBuckets">getLinearBuckets</a>()
+        
+                                            <p>Buckets with constant width.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLinearBuckets">setLinearBuckets</a>(<a href="../../../../Google/Api/Servicecontrol/V1/Distribution/LinearBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\LinearBuckets">LinearBuckets</abbr></a> $var)
+        
+                                            <p>Buckets with constant width.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExponentialBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExponentialBuckets">ExponentialBuckets</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getExponentialBuckets">getExponentialBuckets</a>()
+        
+                                            <p>Buckets with exponentially growing width.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setExponentialBuckets">setExponentialBuckets</a>(<a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExponentialBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExponentialBuckets">ExponentialBuckets</abbr></a> $var)
+        
+                                            <p>Buckets with exponentially growing width.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExplicitBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExplicitBuckets">ExplicitBuckets</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getExplicitBuckets">getExplicitBuckets</a>()
+        
+                                            <p>Buckets with arbitrary user-provided width.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setExplicitBuckets">setExplicitBuckets</a>(<a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExplicitBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExplicitBuckets">ExplicitBuckets</abbr></a> $var)
+        
+                                            <p>Buckets with arbitrary user-provided width.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getBucketOption">getBucketOption</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 112</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type int|string $count
+      The total number of samples in the distribution. Must be &gt;= 0.
+@type float $mean
+      The arithmetic mean of the samples in the distribution. If `count` is
+      zero then this field must be zero.
+@type float $minimum
+      The minimum of the population of values. Ignored if `count` is zero.
+@type float $maximum
+      The maximum of the population of values. Ignored if `count` is zero.
+@type float $sum_of_squared_deviation
+      The sum of squared deviations from the mean:
+        Sum[i=1..count]((x_i - mean)^2)
+      where each x_i is a sample values. If `count` is zero then this field
+      must be zero, otherwise validation of the request fails.
+@type int[]|string[]|\Google\Protobuf\Internal\RepeatedField $bucket_counts
+      The number of samples in each histogram bucket. `bucket_counts` are
+      optional. If present, they must sum to the `count` value.
+      The buckets are defined below in `bucket_option`. There are N buckets.
+      `bucket_counts[0]` is the number of samples in the underflow bucket.
+      `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples
+      in each of the finite buckets. And `bucket_counts[N] is the number
+      of samples in the overflow bucket. See the comments of `bucket_option`
+      below for more details.
+      Any suffix of trailing zeros may be omitted.
+@type \Google\Api\Servicecontrol\V1\Distribution\LinearBuckets $linear_buckets
+      Buckets with constant width.
+@type \Google\Api\Servicecontrol\V1\Distribution\ExponentialBuckets $exponential_buckets
+      Buckets with exponentially growing width.
+@type \Google\Api\Servicecontrol\V1\Distribution\ExplicitBuckets $explicit_buckets
+      Buckets with arbitrary user-provided width.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCount">
+        <div class="location">at         line 123</div>
+        <code>                    int|string
+    <strong>getCount</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The total number of samples in the distribution. Must be >= 0.</p>                    <p>Generated from protobuf field <code>int64 count = 1;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int|string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setCount">
+        <div class="location">at         line 135</div>
+        <code>                    $this
+    <strong>setCount</strong>(int|string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The total number of samples in the distribution. Must be >= 0.</p>                    <p>Generated from protobuf field <code>int64 count = 1;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getMean">
+        <div class="location">at         line 150</div>
+        <code>                    float
+    <strong>getMean</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The arithmetic mean of the samples in the distribution. If <code>count</code> is
+zero then this field must be zero.</p>                    <p>Generated from protobuf field <code>double mean = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setMean">
+        <div class="location">at         line 163</div>
+        <code>                    $this
+    <strong>setMean</strong>(float $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The arithmetic mean of the samples in the distribution. If <code>count</code> is
+zero then this field must be zero.</p>                    <p>Generated from protobuf field <code>double mean = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>float</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getMinimum">
+        <div class="location">at         line 177</div>
+        <code>                    float
+    <strong>getMinimum</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The minimum of the population of values. Ignored if <code>count</code> is zero.</p>                    <p>Generated from protobuf field <code>double minimum = 3;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setMinimum">
+        <div class="location">at         line 189</div>
+        <code>                    $this
+    <strong>setMinimum</strong>(float $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The minimum of the population of values. Ignored if <code>count</code> is zero.</p>                    <p>Generated from protobuf field <code>double minimum = 3;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>float</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getMaximum">
+        <div class="location">at         line 203</div>
+        <code>                    float
+    <strong>getMaximum</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The maximum of the population of values. Ignored if <code>count</code> is zero.</p>                    <p>Generated from protobuf field <code>double maximum = 4;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setMaximum">
+        <div class="location">at         line 215</div>
+        <code>                    $this
+    <strong>setMaximum</strong>(float $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The maximum of the population of values. Ignored if <code>count</code> is zero.</p>                    <p>Generated from protobuf field <code>double maximum = 4;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>float</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSumOfSquaredDeviation">
+        <div class="location">at         line 232</div>
+        <code>                    float
+    <strong>getSumOfSquaredDeviation</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The sum of squared deviations from the mean:
+  Sum[i=1.</p>                    <p>.count]((x_i - mean)^2)
+where each x_i is a sample values. If <code>count</code> is zero then this field
+must be zero, otherwise validation of the request fails.</p>
+
+<p>Generated from protobuf field <code>double sum_of_squared_deviation = 5;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>float</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setSumOfSquaredDeviation">
+        <div class="location">at         line 247</div>
+        <code>                    $this
+    <strong>setSumOfSquaredDeviation</strong>(float $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The sum of squared deviations from the mean:
+  Sum[i=1.</p>                    <p>.count]((x_i - mean)^2)
+where each x_i is a sample values. If <code>count</code> is zero then this field
+must be zero, otherwise validation of the request fails.</p>
+
+<p>Generated from protobuf field <code>double sum_of_squared_deviation = 5;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>float</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getBucketCounts">
+        <div class="location">at         line 269</div>
+        <code>                    <abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr>
+    <strong>getBucketCounts</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The number of samples in each histogram bucket. <code>bucket_counts</code> are
+optional. If present, they must sum to the <code>count</code> value.</p>                    <p>The buckets are defined below in <code>bucket_option</code>. There are N buckets.
+<code>bucket_counts[0]</code> is the number of samples in the underflow bucket.
+<code>bucket_counts[1]</code> to <code>bucket_counts[N-1]</code> are the numbers of samples
+in each of the finite buckets. And <code>bucket_counts[N] is the number
+of samples in the overflow bucket. See the comments of</code>bucket_option`
+below for more details.
+Any suffix of trailing zeros may be omitted.</p>
+
+<p>Generated from protobuf field <code>repeated int64 bucket_counts = 6;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setBucketCounts">
+        <div class="location">at         line 289</div>
+        <code>                    $this
+    <strong>setBucketCounts</strong>(int[]|string[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The number of samples in each histogram bucket. <code>bucket_counts</code> are
+optional. If present, they must sum to the <code>count</code> value.</p>                    <p>The buckets are defined below in <code>bucket_option</code>. There are N buckets.
+<code>bucket_counts[0]</code> is the number of samples in the underflow bucket.
+<code>bucket_counts[1]</code> to <code>bucket_counts[N-1]</code> are the numbers of samples
+in each of the finite buckets. And <code>bucket_counts[N] is the number
+of samples in the overflow bucket. See the comments of</code>bucket_option`
+below for more details.
+Any suffix of trailing zeros may be omitted.</p>
+
+<p>Generated from protobuf field <code>repeated int64 bucket_counts = 6;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int[]|string[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLinearBuckets">
+        <div class="location">at         line 303</div>
+        <code>                    <a href="../../../../Google/Api/Servicecontrol/V1/Distribution/LinearBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\LinearBuckets">LinearBuckets</abbr></a>
+    <strong>getLinearBuckets</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Buckets with constant width.</p>                    <p>Generated from protobuf field <code>.google.api.servicecontrol.v1.Distribution.LinearBuckets linear_buckets = 7;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Google/Api/Servicecontrol/V1/Distribution/LinearBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\LinearBuckets">LinearBuckets</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLinearBuckets">
+        <div class="location">at         line 315</div>
+        <code>                    $this
+    <strong>setLinearBuckets</strong>(<a href="../../../../Google/Api/Servicecontrol/V1/Distribution/LinearBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\LinearBuckets">LinearBuckets</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Buckets with constant width.</p>                    <p>Generated from protobuf field <code>.google.api.servicecontrol.v1.Distribution.LinearBuckets linear_buckets = 7;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Google/Api/Servicecontrol/V1/Distribution/LinearBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\LinearBuckets">LinearBuckets</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getExponentialBuckets">
+        <div class="location">at         line 329</div>
+        <code>                    <a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExponentialBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExponentialBuckets">ExponentialBuckets</abbr></a>
+    <strong>getExponentialBuckets</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Buckets with exponentially growing width.</p>                    <p>Generated from protobuf field <code>.google.api.servicecontrol.v1.Distribution.ExponentialBuckets exponential_buckets = 8;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExponentialBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExponentialBuckets">ExponentialBuckets</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setExponentialBuckets">
+        <div class="location">at         line 341</div>
+        <code>                    $this
+    <strong>setExponentialBuckets</strong>(<a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExponentialBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExponentialBuckets">ExponentialBuckets</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Buckets with exponentially growing width.</p>                    <p>Generated from protobuf field <code>.google.api.servicecontrol.v1.Distribution.ExponentialBuckets exponential_buckets = 8;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExponentialBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExponentialBuckets">ExponentialBuckets</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getExplicitBuckets">
+        <div class="location">at         line 355</div>
+        <code>                    <a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExplicitBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExplicitBuckets">ExplicitBuckets</abbr></a>
+    <strong>getExplicitBuckets</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Buckets with arbitrary user-provided width.</p>                    <p>Generated from protobuf field <code>.google.api.servicecontrol.v1.Distribution.ExplicitBuckets explicit_buckets = 9;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExplicitBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExplicitBuckets">ExplicitBuckets</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setExplicitBuckets">
+        <div class="location">at         line 367</div>
+        <code>                    $this
+    <strong>setExplicitBuckets</strong>(<a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExplicitBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExplicitBuckets">ExplicitBuckets</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Buckets with arbitrary user-provided width.</p>                    <p>Generated from protobuf field <code>.google.api.servicecontrol.v1.Distribution.ExplicitBuckets explicit_buckets = 9;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Google/Api/Servicecontrol/V1/Distribution/ExplicitBuckets.html"><abbr title="Google\Api\Servicecontrol\V1\Distribution\ExplicitBuckets">ExplicitBuckets</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getBucketOption">
+        <div class="location">at         line 378</div>
+        <code>                    string
+    <strong>getBucketOption</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

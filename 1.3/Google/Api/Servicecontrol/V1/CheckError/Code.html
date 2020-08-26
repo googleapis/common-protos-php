@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Api\Servicecontrol\V1\CheckError\Code | Common Protos PHP - 1.3</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/sami.css">
+        <script src="../../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../../js/typeahead.min.js"></script>
+        <script src="../../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Api_Servicecontrol_V1_CheckError_Code" data-root-path="../../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../../index.html">Common Protos PHP - 1.3</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../../../../Google/Api.html">Api</a></li><li class="backslash">\</li><li><a href="../../../../../Google/Api/Servicecontrol.html">Servicecontrol</a></li><li class="backslash">\</li><li><a href="../../../../../Google/Api/Servicecontrol/V1.html">V1</a></li><li class="backslash">\</li><li><a href="../../../../../Google/Api/Servicecontrol/V1/CheckError.html">CheckError</a></li><li class="backslash">\</li><li>Code</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Code
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Code</strong>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Error codes for Check responses.</p>            <p>Protobuf type <code>google.api.servicecontrol.v1.CheckError.Code</code></p>                    </div>
+    
+    
+            <h2>Constants</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td>ERROR_CODE_UNSPECIFIED</td>
+                <td class="last">
+                    <p><em>This is never used in <code>CheckResponse</code>.</em></p>
+                    <p>Generated from protobuf enum <code>ERROR_CODE_UNSPECIFIED = 0;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>NOT_FOUND</td>
+                <td class="last">
+                    <p><em>The consumer's project id, network container, or resource container was
+not found. Same as [google.rpc.Code.NOT_FOUND][].</em></p>
+                    <p>Generated from protobuf enum <code>NOT_FOUND = 5;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>PERMISSION_DENIED</td>
+                <td class="last">
+                    <p><em>The consumer doesn't have access to the specified resource.</em></p>
+                    <p>Same as [google.rpc.Code.PERMISSION_DENIED][].</p>
+
+<p>Generated from protobuf enum <code>PERMISSION_DENIED = 7;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>RESOURCE_EXHAUSTED</td>
+                <td class="last">
+                    <p><em>Quota check failed. Same as [google.rpc.Code.RESOURCE_EXHAUSTED][].</em></p>
+                    <p>Generated from protobuf enum <code>RESOURCE_EXHAUSTED = 8;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>ABUSER_DETECTED</td>
+                <td class="last">
+                    <p><em>The consumer has been flagged as an abuser.</em></p>
+                    <p>Generated from protobuf enum <code>ABUSER_DETECTED = 103;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>SERVICE_NOT_ACTIVATED</td>
+                <td class="last">
+                    <p><em>The consumer hasn't activated the service.</em></p>
+                    <p>Generated from protobuf enum <code>SERVICE_NOT_ACTIVATED = 104;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>BILLING_DISABLED</td>
+                <td class="last">
+                    <p><em>The consumer cannot access the service because billing is disabled.</em></p>
+                    <p>Generated from protobuf enum <code>BILLING_DISABLED = 107;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>PROJECT_DELETED</td>
+                <td class="last">
+                    <p><em>The consumer's project has been marked as deleted (soft deletion).</em></p>
+                    <p>Generated from protobuf enum <code>PROJECT_DELETED = 108;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>PROJECT_INVALID</td>
+                <td class="last">
+                    <p><em>The consumer's project number or id does not represent a valid project.</em></p>
+                    <p>Generated from protobuf enum <code>PROJECT_INVALID = 114;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>IP_ADDRESS_BLOCKED</td>
+                <td class="last">
+                    <p><em>The IP address of the consumer is invalid for the specific consumer
+project.</em></p>
+                    <p>Generated from protobuf enum <code>IP_ADDRESS_BLOCKED = 109;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>REFERER_BLOCKED</td>
+                <td class="last">
+                    <p><em>The referer address of the consumer request is invalid for the specific
+consumer project.</em></p>
+                    <p>Generated from protobuf enum <code>REFERER_BLOCKED = 110;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>CLIENT_APP_BLOCKED</td>
+                <td class="last">
+                    <p><em>The client application of the consumer request is invalid for the
+specific consumer project.</em></p>
+                    <p>Generated from protobuf enum <code>CLIENT_APP_BLOCKED = 111;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>API_TARGET_BLOCKED</td>
+                <td class="last">
+                    <p><em>The API targeted by this request is invalid for the specified consumer
+project.</em></p>
+                    <p>Generated from protobuf enum <code>API_TARGET_BLOCKED = 122;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>API_KEY_INVALID</td>
+                <td class="last">
+                    <p><em>The consumer's API key is invalid.</em></p>
+                    <p>Generated from protobuf enum <code>API_KEY_INVALID = 105;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>API_KEY_EXPIRED</td>
+                <td class="last">
+                    <p><em>The consumer's API Key has expired.</em></p>
+                    <p>Generated from protobuf enum <code>API_KEY_EXPIRED = 112;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>API_KEY_NOT_FOUND</td>
+                <td class="last">
+                    <p><em>The consumer's API Key was not found in config record.</em></p>
+                    <p>Generated from protobuf enum <code>API_KEY_NOT_FOUND = 113;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>SECURITY_POLICY_VIOLATED</td>
+                <td class="last">
+                    <p><em>Request is not allowed as per security policies defined in Org Policy.</em></p>
+                    <p>Generated from protobuf enum <code>SECURITY_POLICY_VIOLATED = 121;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>INVALID_CREDENTIAL</td>
+                <td class="last">
+                    <p><em>The credential in the request can not be verified.</em></p>
+                    <p>Generated from protobuf enum <code>INVALID_CREDENTIAL = 123;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>LOCATION_POLICY_VIOLATED</td>
+                <td class="last">
+                    <p><em>Request is not allowed as per location policies defined in Org Policy.</em></p>
+                    <p>Generated from protobuf enum <code>LOCATION_POLICY_VIOLATED = 124;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>CONSUMER_INVALID</td>
+                <td class="last">
+                    <p><em>The input consumer info does not represent a valid consumer folder or
+organization.</em></p>
+                    <p>Generated from protobuf enum <code>CONSUMER_INVALID = 125;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>NAMESPACE_LOOKUP_UNAVAILABLE</td>
+                <td class="last">
+                    <p><em>The backend server for looking up project id/number is unavailable.</em></p>
+                    <p>Generated from protobuf enum <code>NAMESPACE_LOOKUP_UNAVAILABLE = 300;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>SERVICE_STATUS_UNAVAILABLE</td>
+                <td class="last">
+                    <p><em>The backend server for checking service status is unavailable.</em></p>
+                    <p>Generated from protobuf enum <code>SERVICE_STATUS_UNAVAILABLE = 301;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>BILLING_STATUS_UNAVAILABLE</td>
+                <td class="last">
+                    <p><em>The backend server for checking billing status is unavailable.</em></p>
+                    <p>Generated from protobuf enum <code>BILLING_STATUS_UNAVAILABLE = 302;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>QUOTA_CHECK_UNAVAILABLE</td>
+                <td class="last">
+                    <p><em>The backend server for checking quota limits is unavailable.</em></p>
+                    <p>Generated from protobuf enum <code>QUOTA_CHECK_UNAVAILABLE = 303;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>CLOUD_RESOURCE_MANAGER_BACKEND_UNAVAILABLE</td>
+                <td class="last">
+                    <p><em>Cloud Resource Manager backend server is unavailable.</em></p>
+                    <p>Generated from protobuf enum <code>CLOUD_RESOURCE_MANAGER_BACKEND_UNAVAILABLE = 305;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>SECURITY_POLICY_BACKEND_UNAVAILABLE</td>
+                <td class="last">
+                    <p><em>Backend server for evaluating security policy is unavailable.</em></p>
+                    <p>Generated from protobuf enum <code>SECURITY_POLICY_BACKEND_UNAVAILABLE = 306;</code></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>LOCATION_POLICY_BACKEND_UNAVAILABLE</td>
+                <td class="last">
+                    <p><em>Backend server for evaluating location policy is unavailable.</em></p>
+                    <p>Generated from protobuf enum <code>LOCATION_POLICY_BACKEND_UNAVAILABLE = 307;</code></p>
+                </td>
+            </tr>
+            </table>
+
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_name">name</a>($value)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_value">value</a>($name)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_name">
+        <div class="location">at         line 216</div>
+        <code>        static            
+    <strong>name</strong>($value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_value">
+        <div class="location">at         line 226</div>
+        <code>        static            
+    <strong>value</strong>($name)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
