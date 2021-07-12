@@ -29,8 +29,8 @@ class BackendRule extends \Google\Protobuf\Internal\Message
      */
     private $address = '';
     /**
-     * The number of seconds to wait for a response from a request.  The default
-     * deadline for gRPC is infinite (no deadline) and HTTP requests is 5 seconds.
+     * The number of seconds to wait for a response from a request. The default
+     * varies based on the request protocol and deployment environment.
      *
      * Generated from protobuf field <code>double deadline = 3;</code>
      */
@@ -42,6 +42,18 @@ class BackendRule extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>double min_deadline = 4;</code>
      */
     private $min_deadline = 0.0;
+    /**
+     * The number of seconds to wait for the completion of a long running
+     * operation. The default is no deadline.
+     *
+     * Generated from protobuf field <code>double operation_deadline = 5;</code>
+     */
+    private $operation_deadline = 0.0;
+    /**
+     * Generated from protobuf field <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
+     */
+    private $path_translation = 0;
+    protected $authentication;
 
     /**
      * Constructor.
@@ -55,11 +67,27 @@ class BackendRule extends \Google\Protobuf\Internal\Message
      *     @type string $address
      *           The address of the API backend.
      *     @type float $deadline
-     *           The number of seconds to wait for a response from a request.  The default
-     *           deadline for gRPC is infinite (no deadline) and HTTP requests is 5 seconds.
+     *           The number of seconds to wait for a response from a request. The default
+     *           varies based on the request protocol and deployment environment.
      *     @type float $min_deadline
      *           Minimum deadline in seconds needed for this method. Calls having deadline
      *           value lower than this will be rejected.
+     *     @type float $operation_deadline
+     *           The number of seconds to wait for the completion of a long running
+     *           operation. The default is no deadline.
+     *     @type int $path_translation
+     *     @type string $jwt_audience
+     *           The JWT audience is used when generating a JWT ID token for the backend.
+     *           This ID token will be added in the HTTP "authorization" header, and sent
+     *           to the backend.
+     *     @type bool $disable_auth
+     *           When disable_auth is false,  a JWT ID token will be generated with the
+     *           value from [BackendRule.address][google.api.BackendRule.address] as jwt_audience, overrode to the HTTP
+     *           "Authorization" request header and sent to the backend.
+     *           When disable_auth is true, a JWT ID token won't be generated and the
+     *           original "Authorization" HTTP header will be preserved. If the header is
+     *           used to carry the original token and is expected by the backend, this
+     *           field must be set to true to preserve the header.
      * }
      */
     public function __construct($data = NULL) {
@@ -122,8 +150,8 @@ class BackendRule extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of seconds to wait for a response from a request.  The default
-     * deadline for gRPC is infinite (no deadline) and HTTP requests is 5 seconds.
+     * The number of seconds to wait for a response from a request. The default
+     * varies based on the request protocol and deployment environment.
      *
      * Generated from protobuf field <code>double deadline = 3;</code>
      * @return float
@@ -134,8 +162,8 @@ class BackendRule extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The number of seconds to wait for a response from a request.  The default
-     * deadline for gRPC is infinite (no deadline) and HTTP requests is 5 seconds.
+     * The number of seconds to wait for a response from a request. The default
+     * varies based on the request protocol and deployment environment.
      *
      * Generated from protobuf field <code>double deadline = 3;</code>
      * @param float $var
@@ -175,6 +203,132 @@ class BackendRule extends \Google\Protobuf\Internal\Message
         $this->min_deadline = $var;
 
         return $this;
+    }
+
+    /**
+     * The number of seconds to wait for the completion of a long running
+     * operation. The default is no deadline.
+     *
+     * Generated from protobuf field <code>double operation_deadline = 5;</code>
+     * @return float
+     */
+    public function getOperationDeadline()
+    {
+        return $this->operation_deadline;
+    }
+
+    /**
+     * The number of seconds to wait for the completion of a long running
+     * operation. The default is no deadline.
+     *
+     * Generated from protobuf field <code>double operation_deadline = 5;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setOperationDeadline($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->operation_deadline = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
+     * @return int
+     */
+    public function getPathTranslation()
+    {
+        return $this->path_translation;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPathTranslation($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Api\BackendRule_PathTranslation::class);
+        $this->path_translation = $var;
+
+        return $this;
+    }
+
+    /**
+     * The JWT audience is used when generating a JWT ID token for the backend.
+     * This ID token will be added in the HTTP "authorization" header, and sent
+     * to the backend.
+     *
+     * Generated from protobuf field <code>string jwt_audience = 7;</code>
+     * @return string
+     */
+    public function getJwtAudience()
+    {
+        return $this->readOneof(7);
+    }
+
+    /**
+     * The JWT audience is used when generating a JWT ID token for the backend.
+     * This ID token will be added in the HTTP "authorization" header, and sent
+     * to the backend.
+     *
+     * Generated from protobuf field <code>string jwt_audience = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setJwtAudience($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * When disable_auth is false,  a JWT ID token will be generated with the
+     * value from [BackendRule.address][google.api.BackendRule.address] as jwt_audience, overrode to the HTTP
+     * "Authorization" request header and sent to the backend.
+     * When disable_auth is true, a JWT ID token won't be generated and the
+     * original "Authorization" HTTP header will be preserved. If the header is
+     * used to carry the original token and is expected by the backend, this
+     * field must be set to true to preserve the header.
+     *
+     * Generated from protobuf field <code>bool disable_auth = 8;</code>
+     * @return bool
+     */
+    public function getDisableAuth()
+    {
+        return $this->readOneof(8);
+    }
+
+    /**
+     * When disable_auth is false,  a JWT ID token will be generated with the
+     * value from [BackendRule.address][google.api.BackendRule.address] as jwt_audience, overrode to the HTTP
+     * "Authorization" request header and sent to the backend.
+     * When disable_auth is true, a JWT ID token won't be generated and the
+     * original "Authorization" HTTP header will be preserved. If the header is
+     * used to carry the original token and is expected by the backend, this
+     * field must be set to true to preserve the header.
+     *
+     * Generated from protobuf field <code>bool disable_auth = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDisableAuth($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthentication()
+    {
+        return $this->whichOneof("authentication");
     }
 
 }

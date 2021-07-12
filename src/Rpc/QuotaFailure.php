@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
  * calling project hasn't enabled the service in the developer console, then
  * a service could respond with the project id and set `service_disabled`
  * to true.
- * Also see RetryDetail and Help types for other details about handling a
+ * Also see RetryInfo and Help types for other details about handling a
  * quota failure.
  *
  * Generated from protobuf message <code>google.rpc.QuotaFailure</code>
