@@ -30,7 +30,7 @@ class RetryInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Duration retry_delay = 1;</code>
      */
-    private $retry_delay = null;
+    protected $retry_delay = null;
 
     /**
      * Constructor.

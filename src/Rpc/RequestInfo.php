@@ -22,14 +22,14 @@ class RequestInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string request_id = 1;</code>
      */
-    private $request_id = '';
+    protected $request_id = '';
     /**
      * Any data that was used to serve this request. For example, an encrypted
      * stack trace that can be sent back to the service provider for debugging.
      *
      * Generated from protobuf field <code>string serving_data = 2;</code>
      */
-    private $serving_data = '';
+    protected $serving_data = '';
 
     /**
      * Constructor.

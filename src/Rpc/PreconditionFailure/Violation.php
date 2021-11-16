@@ -22,7 +22,7 @@ class Violation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string type = 1;</code>
      */
-    private $type = '';
+    protected $type = '';
     /**
      * The subject, relative to the type, that failed.
      * For example, "google.com/cloud" relative to the "TOS" type would indicate
@@ -30,7 +30,7 @@ class Violation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string subject = 2;</code>
      */
-    private $subject = '';
+    protected $subject = '';
     /**
      * A description of how the precondition failed. Developers can use this
      * description to understand how to fix the failure.
@@ -38,7 +38,7 @@ class Violation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string description = 3;</code>
      */
-    private $description = '';
+    protected $description = '';
 
     /**
      * Constructor.

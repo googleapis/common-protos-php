@@ -20,13 +20,13 @@ class Link extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string description = 1;</code>
      */
-    private $description = '';
+    protected $description = '';
     /**
      * The URL of the link.
      *
      * Generated from protobuf field <code>string url = 2;</code>
      */
-    private $url = '';
+    protected $url = '';
 
     /**
      * Constructor.

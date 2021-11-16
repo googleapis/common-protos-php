@@ -22,13 +22,13 @@ class FieldViolation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string field = 1;</code>
      */
-    private $field = '';
+    protected $field = '';
     /**
      * A description of why the request element is bad.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      */
-    private $description = '';
+    protected $description = '';
 
     /**
      * Constructor.

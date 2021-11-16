@@ -25,7 +25,7 @@ class Status extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 code = 1;</code>
      */
-    private $code = 0;
+    protected $code = 0;
     /**
      * A developer-facing error message, which should be in English. Any
      * user-facing error message should be localized and sent in the
@@ -33,7 +33,7 @@ class Status extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string message = 2;</code>
      */
-    private $message = '';
+    protected $message = '';
     /**
      * A list of messages that carry the error details.  There is a common set of
      * message types for APIs to use.
