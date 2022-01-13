@@ -30,7 +30,7 @@ class RetryInfo extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.protobuf.Duration retry_delay = 1;</code>
      */
-    private $retry_delay = null;
+    protected $retry_delay = null;
 
     /**
      * Constructor.
@@ -51,11 +51,21 @@ class RetryInfo extends \Google\Protobuf\Internal\Message
      * Clients should wait at least this long between retrying the same request.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration retry_delay = 1;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getRetryDelay()
     {
         return $this->retry_delay;
+    }
+
+    public function hasRetryDelay()
+    {
+        return isset($this->retry_delay);
+    }
+
+    public function clearRetryDelay()
+    {
+        unset($this->retry_delay);
     }
 
     /**
