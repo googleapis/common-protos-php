@@ -21,7 +21,7 @@ jobs:
         name: "PHP ${{ matrix.php }} Unit Test ${{ matrix.extensions }}"
         steps:
             - uses: actions/checkout@v3
-            - uses: codecov/codecov-action@v1
+            - uses: codecov/codecov-action@v2
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
               with:
