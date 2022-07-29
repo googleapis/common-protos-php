@@ -22,7 +22,7 @@ In order to depend on these classes, add the following line to your
 composer.json file in the `requires` section:
 
 ```
-  "google/common-protos": "^1.0"
+  "google/common-protos": "^2.0"
 ```
 
 Or else use composer from the command line:
