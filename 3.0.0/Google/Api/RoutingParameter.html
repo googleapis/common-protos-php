@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Api\RoutingParameter | Common Protos PHP - 3.0.0</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Api_RoutingParameter" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Common Protos PHP - 3.0.0</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../Google/Api.html">Api</a></li><li class="backslash">\</li><li>RoutingParameter</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            RoutingParameter
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>RoutingParameter</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>A projection from an input message to the GRPC or REST header.</p>            <p>Generated from protobuf message <code>google.api.RoutingParameter</code></p>                    </div>
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_field">
+                                        protected                                        
+                </td>
+                <td>$field</td>
+                <td class="last">A request field to extract the header key-value pair from.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_path_template">
+                                        protected                                        
+                </td>
+                <td>$path_template</td>
+                <td class="last">A pattern matching the key-value field. Optional.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getField">getField</a>()
+        
+                                            <p>A request field to extract the header key-value pair from.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setField">setField</a>(string $var)
+        
+                                            <p>A request field to extract the header key-value pair from.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getPathTemplate">getPathTemplate</a>()
+        
+                                            <p>A pattern matching the key-value field. Optional.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setPathTemplate">setPathTemplate</a>(string $var)
+        
+                                            <p>A pattern matching the key-value field. Optional.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 133</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type string $field
+      A request field to extract the header key-value pair from.
+@type string $path_template
+      A pattern matching the key-value field. Optional.
+      If not specified, the whole field specified in the `field` field will be
+      taken as value, and its name used as key. If specified, it MUST contain
+      exactly one named segment (along with any number of unnamed segments) The
+      pattern will be matched over the field specified in the `field` field, then
+      if the match is successful:
+      - the name of the single named segment will be used as a header name,
+      - the match value of the segment will be used as a header value;
+      if the match is NOT successful, nothing will be sent.
+      Example:
+                    -- This is a field in the request message
+                   |   that the header value will be extracted from.
+                   |
+                   |                     -- This is the key name in the
+                   |                    |   routing header.
+                   V                    |
+          field: "table_name"           v
+          path_template: "projects/&amp;#42;&amp;#47;{table_location=instances/&amp;#42;}/tables/&amp;#42;"
+                                                     ^            ^
+                                                     |            |
+            In the {} brackets is the pattern that --             |
+            specifies what to extract from the                    |
+            field as a value to be sent.                          |
+                                                                  |
+           The string in the field must match the whole pattern --
+           before brackets, inside brackets, after brackets.
+      When looking at this specific example, we can see that:
+      - A key-value pair with the key `table_location`
+        and the value matching `instances/&amp;#42;` should be added
+        to the x-goog-request-params routing header.
+      - The value is extracted from the request message's `table_name` field
+        if it matches the full pattern specified:
+        `projects/&amp;#42;&amp;#47;instances/&amp;#42;&amp;#47;tables/&amp;#42;`.
+      **NB:** If the `path_template` field is not provided, the key name is
+      equal to the field name, and the whole field should be sent as a value.
+      This makes the pattern for the field and the value functionally equivalent
+      to `**`, and the configuration
+          {
+            field: "table_name"
+          }
+      is a functionally equivalent shorthand to:
+          {
+            field: "table_name"
+            path_template: "{table_name=**}"
+          }
+      See Example 1 for more details.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getField">
+        <div class="location">at         line 144</div>
+        <code>                    string
+    <strong>getField</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A request field to extract the header key-value pair from.</p>                    <p>Generated from protobuf field <code>string field = 1;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setField">
+        <div class="location">at         line 156</div>
+        <code>                    $this
+    <strong>setField</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A request field to extract the header key-value pair from.</p>                    <p>Generated from protobuf field <code>string field = 1;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPathTemplate">
+        <div class="location">at         line 215</div>
+        <code>                    string
+    <strong>getPathTemplate</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A pattern matching the key-value field. Optional.</p>                    <p>If not specified, the whole field specified in the <code>field</code> field will be
+taken as value, and its name used as key. If specified, it MUST contain
+exactly one named segment (along with any number of unnamed segments) The
+pattern will be matched over the field specified in the <code>field</code> field, then
+if the match is successful:
+- the name of the single named segment will be used as a header name,
+- the match value of the segment will be used as a header value;
+if the match is NOT successful, nothing will be sent.
+Example:
+              -- This is a field in the request message
+             |   that the header value will be extracted from.
+             |
+             |                     -- This is the key name in the
+             |                    |   routing header.
+             V                    |
+    field: "table_name"           v
+    path_template: "projects/&#42;&#47;{table_location=instances/&#42;}/tables/&#42;"
+                                               ^            ^
+                                               |            |
+      In the {} brackets is the pattern that --             |
+      specifies what to extract from the                    |
+      field as a value to be sent.                          |
+                                                            |
+     The string in the field must match the whole pattern --
+     before brackets, inside brackets, after brackets.
+When looking at this specific example, we can see that:
+- A key-value pair with the key <code>table_location</code>
+  and the value matching <code>instances/&amp;#42;</code> should be added
+  to the x-goog-request-params routing header.
+- The value is extracted from the request message's <code>table_name</code> field
+  if it matches the full pattern specified:
+  <code>projects/&amp;#42;&amp;#47;instances/&amp;#42;&amp;#47;tables/&amp;#42;</code>.
+<strong>NB:</strong> If the <code>path_template</code> field is not provided, the key name is
+equal to the field name, and the whole field should be sent as a value.
+This makes the pattern for the field and the value functionally equivalent
+to <code>**</code>, and the configuration
+    {
+      field: "table_name"
+    }
+is a functionally equivalent shorthand to:
+    {
+      field: "table_name"
+      path_template: "{table_name=**}"
+    }
+See Example 1 for more details.</p>
+
+<p>Generated from protobuf field <code>string path_template = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setPathTemplate">
+        <div class="location">at         line 272</div>
+        <code>                    $this
+    <strong>setPathTemplate</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A pattern matching the key-value field. Optional.</p>                    <p>If not specified, the whole field specified in the <code>field</code> field will be
+taken as value, and its name used as key. If specified, it MUST contain
+exactly one named segment (along with any number of unnamed segments) The
+pattern will be matched over the field specified in the <code>field</code> field, then
+if the match is successful:
+- the name of the single named segment will be used as a header name,
+- the match value of the segment will be used as a header value;
+if the match is NOT successful, nothing will be sent.
+Example:
+              -- This is a field in the request message
+             |   that the header value will be extracted from.
+             |
+             |                     -- This is the key name in the
+             |                    |   routing header.
+             V                    |
+    field: "table_name"           v
+    path_template: "projects/&#42;&#47;{table_location=instances/&#42;}/tables/&#42;"
+                                               ^            ^
+                                               |            |
+      In the {} brackets is the pattern that --             |
+      specifies what to extract from the                    |
+      field as a value to be sent.                          |
+                                                            |
+     The string in the field must match the whole pattern --
+     before brackets, inside brackets, after brackets.
+When looking at this specific example, we can see that:
+- A key-value pair with the key <code>table_location</code>
+  and the value matching <code>instances/&amp;#42;</code> should be added
+  to the x-goog-request-params routing header.
+- The value is extracted from the request message's <code>table_name</code> field
+  if it matches the full pattern specified:
+  <code>projects/&amp;#42;&amp;#47;instances/&amp;#42;&amp;#47;tables/&amp;#42;</code>.
+<strong>NB:</strong> If the <code>path_template</code> field is not provided, the key name is
+equal to the field name, and the whole field should be sent as a value.
+This makes the pattern for the field and the value functionally equivalent
+to <code>**</code>, and the configuration
+    {
+      field: "table_name"
+    }
+is a functionally equivalent shorthand to:
+    {
+      field: "table_name"
+      path_template: "{table_name=**}"
+    }
+See Example 1 for more details.</p>
+
+<p>Generated from protobuf field <code>string path_template = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

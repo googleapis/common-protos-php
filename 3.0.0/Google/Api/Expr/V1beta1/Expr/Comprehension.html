@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Api\Expr\V1beta1\Expr\Comprehension | Common Protos PHP - 3.0.0</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/sami.css">
+        <script src="../../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../../js/typeahead.min.js"></script>
+        <script src="../../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Api_Expr_V1beta1_Expr_Comprehension" data-root-path="../../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../../index.html">Common Protos PHP - 3.0.0</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../../../../Google/Api.html">Api</a></li><li class="backslash">\</li><li><a href="../../../../../Google/Api/Expr.html">Expr</a></li><li class="backslash">\</li><li><a href="../../../../../Google/Api/Expr/V1beta1.html">V1beta1</a></li><li class="backslash">\</li><li><a href="../../../../../Google/Api/Expr/V1beta1/Expr.html">Expr</a></li><li class="backslash">\</li><li>Comprehension</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Comprehension
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Comprehension</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>A comprehension expression applied to a list or map.</p>            <p>Comprehensions are not part of the core syntax, but enabled with macros.
+A macro matches a specific call signature within a parsed AST and replaces
+the call with an alternate AST block. Macro expansion happens at parse
+time.
+The following macros are supported within CEL:
+Aggregate type macros may be applied to all elements in a list or all keys
+in a map:
+*  <code>all</code>, <code>exists</code>, <code>exists_one</code> -  test a predicate expression against
+   the inputs and return <code>true</code> if the predicate is satisfied for all,
+   any, or only one value <code>list.all(x, x &lt; 10)</code>.
+*  <code>filter</code> - test a predicate expression against the inputs and return
+   the subset of elements which satisfy the predicate:
+   <code>payments.filter(p, p &gt; 1000)</code>.
+*  <code>map</code> - apply an expression to all elements in the input and return the
+   output aggregate type: <code>[1, 2, 3].map(i, i * i)</code>.
+The <code>has(m.x)</code> macro tests whether the property <code>x</code> is present in struct
+<code>m</code>. The semantics of this macro depend on the type of <code>m</code>. For proto2
+messages <code>has(m.x)</code> is defined as 'defined, but not set<code>. For proto3, the
+macro tests whether the property is set to its default. For map and struct
+types, the macro tests whether the property</code>x<code>is defined on</code>m`.</p>
+
+<p>Generated from protobuf message <code>google.api.expr.v1beta1.Expr.Comprehension</code></p>                    </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getIterVar">getIterVar</a>()
+        
+                                            <p>The name of the iteration variable.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setIterVar">setIterVar</a>(string $var)
+        
+                                            <p>The name of the iteration variable.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getIterRange">getIterRange</a>()
+        
+                                            <p>The range over which var iterates.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setIterRange">setIterRange</a>(<a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a> $var)
+        
+                                            <p>The range over which var iterates.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAccuVar">getAccuVar</a>()
+        
+                                            <p>The name of the variable used for accumulation of the result.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setAccuVar">setAccuVar</a>(string $var)
+        
+                                            <p>The name of the variable used for accumulation of the result.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAccuInit">getAccuInit</a>()
+        
+                                            <p>The initial value of the accumulator.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setAccuInit">setAccuInit</a>(<a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a> $var)
+        
+                                            <p>The initial value of the accumulator.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLoopCondition">getLoopCondition</a>()
+        
+                                            <p>An expression which can contain iter_var and accu_var.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLoopCondition">setLoopCondition</a>(<a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a> $var)
+        
+                                            <p>An expression which can contain iter_var and accu_var.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLoopStep">getLoopStep</a>()
+        
+                                            <p>An expression which can contain iter_var and accu_var.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLoopStep">setLoopStep</a>(<a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a> $var)
+        
+                                            <p>An expression which can contain iter_var and accu_var.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getResult">getResult</a>()
+        
+                                            <p>An expression which can contain accu_var.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    $this
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setResult">setResult</a>(<a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a> $var)
+        
+                                            <p>An expression which can contain accu_var.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 111</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type string $iter_var
+      The name of the iteration variable.
+@type \Google\Api\Expr\V1beta1\Expr $iter_range
+      The range over which var iterates.
+@type string $accu_var
+      The name of the variable used for accumulation of the result.
+@type \Google\Api\Expr\V1beta1\Expr $accu_init
+      The initial value of the accumulator.
+@type \Google\Api\Expr\V1beta1\Expr $loop_condition
+      An expression which can contain iter_var and accu_var.
+      Returns false when the result has been computed and may be used as
+      a hint to short-circuit the remainder of the comprehension.
+@type \Google\Api\Expr\V1beta1\Expr $loop_step
+      An expression which can contain iter_var and accu_var.
+      Computes the next value of accu_var.
+@type \Google\Api\Expr\V1beta1\Expr $result
+      An expression which can contain accu_var.
+      Computes the result.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getIterVar">
+        <div class="location">at         line 122</div>
+        <code>                    string
+    <strong>getIterVar</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The name of the iteration variable.</p>                    <p>Generated from protobuf field <code>string iter_var = 1;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setIterVar">
+        <div class="location">at         line 134</div>
+        <code>                    $this
+    <strong>setIterVar</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The name of the iteration variable.</p>                    <p>Generated from protobuf field <code>string iter_var = 1;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getIterRange">
+        <div class="location">at         line 148</div>
+        <code>                    <a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a>
+    <strong>getIterRange</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The range over which var iterates.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr iter_range = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setIterRange">
+        <div class="location">at         line 160</div>
+        <code>                    $this
+    <strong>setIterRange</strong>(<a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The range over which var iterates.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr iter_range = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAccuVar">
+        <div class="location">at         line 174</div>
+        <code>                    string
+    <strong>getAccuVar</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The name of the variable used for accumulation of the result.</p>                    <p>Generated from protobuf field <code>string accu_var = 3;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setAccuVar">
+        <div class="location">at         line 186</div>
+        <code>                    $this
+    <strong>setAccuVar</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The name of the variable used for accumulation of the result.</p>                    <p>Generated from protobuf field <code>string accu_var = 3;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAccuInit">
+        <div class="location">at         line 200</div>
+        <code>                    <a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a>
+    <strong>getAccuInit</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The initial value of the accumulator.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr accu_init = 4;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setAccuInit">
+        <div class="location">at         line 212</div>
+        <code>                    $this
+    <strong>setAccuInit</strong>(<a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The initial value of the accumulator.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr accu_init = 4;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLoopCondition">
+        <div class="location">at         line 228</div>
+        <code>                    <a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a>
+    <strong>getLoopCondition</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>An expression which can contain iter_var and accu_var.</p>                    <p>Returns false when the result has been computed and may be used as
+a hint to short-circuit the remainder of the comprehension.</p>
+
+<p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr loop_condition = 5;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLoopCondition">
+        <div class="location">at         line 242</div>
+        <code>                    $this
+    <strong>setLoopCondition</strong>(<a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>An expression which can contain iter_var and accu_var.</p>                    <p>Returns false when the result has been computed and may be used as
+a hint to short-circuit the remainder of the comprehension.</p>
+
+<p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr loop_condition = 5;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLoopStep">
+        <div class="location">at         line 257</div>
+        <code>                    <a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a>
+    <strong>getLoopStep</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>An expression which can contain iter_var and accu_var.</p>                    <p>Computes the next value of accu_var.</p>
+
+<p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr loop_step = 6;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLoopStep">
+        <div class="location">at         line 270</div>
+        <code>                    $this
+    <strong>setLoopStep</strong>(<a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>An expression which can contain iter_var and accu_var.</p>                    <p>Computes the next value of accu_var.</p>
+
+<p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr loop_step = 6;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getResult">
+        <div class="location">at         line 285</div>
+        <code>                    <a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a>
+    <strong>getResult</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>An expression which can contain accu_var.</p>                    <p>Computes the result.</p>
+
+<p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr result = 7;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setResult">
+        <div class="location">at         line 298</div>
+        <code>                    $this
+    <strong>setResult</strong>(<a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>An expression which can contain accu_var.</p>                    <p>Computes the result.</p>
+
+<p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr result = 7;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../Google/Api/Expr/V1beta1/Expr.html"><abbr title="Google\Api\Expr\V1beta1\Expr">Expr</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>$this</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
