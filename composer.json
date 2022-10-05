@@ -14,8 +14,17 @@
   },
   "autoload": {
     "psr-4": {
-      "Google\\": "src",
-      "GPBMetadata\\Google\\": "metadata"
+      "Google\\Api\\": "src/Api",
+      "Google\\Cloud\\": "src/Cloud",
+      "Google\\Iam\\": "src/Iam",
+      "Google\\Rpc\\": "src/Rpc",
+      "Google\\Type\\": "src/Type",
+      "GPBMetadata\\Google\\Api\\": "metadata/Api",
+      "GPBMetadata\\Google\\Cloud\\": "metadata/Cloud",
+      "GPBMetadata\\Google\\Iam\\": "metadata/Iam",
+      "GPBMetadata\\Google\\Logging\\": "metadata/Logging",
+      "GPBMetadata\\Google\\Rpc\\": "metadata/Rpc",
+      "GPBMetadata\\Google\\Type\\": "metadata/Type"
     }
   }
 }
