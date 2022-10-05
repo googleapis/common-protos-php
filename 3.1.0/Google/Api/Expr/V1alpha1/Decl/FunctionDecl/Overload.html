@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Api\Expr\V1alpha1\Decl\FunctionDecl\Overload | Common Protos PHP - 3.1.0</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/sami.css">
+        <script src="../../../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../../../js/typeahead.min.js"></script>
+        <script src="../../../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Api_Expr_V1alpha1_Decl_FunctionDecl_Overload" data-root-path="../../../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../../../index.html">Common Protos PHP - 3.1.0</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../../../../../Google/Api.html">Api</a></li><li class="backslash">\</li><li><a href="../../../../../../Google/Api/Expr.html">Expr</a></li><li class="backslash">\</li><li><a href="../../../../../../Google/Api/Expr/V1alpha1.html">V1alpha1</a></li><li class="backslash">\</li><li><a href="../../../../../../Google/Api/Expr/V1alpha1/Decl.html">Decl</a></li><li class="backslash">\</li><li><a href="../../../../../../Google/Api/Expr/V1alpha1/Decl/FunctionDecl.html">FunctionDecl</a></li><li class="backslash">\</li><li>Overload</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Overload
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Overload</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>An overload indicates a function's parameter types and return type, and
+may optionally include a function body described in terms of [Expr][google.api.expr.v1alpha1.Expr]
+values.</p>            <p>Functions overloads are declared in either a function or method
+call-style. For methods, the <code>params[0]</code> is the expected type of the
+target receiver.
+Overloads must have non-overlapping argument types after erasure of all
+parameterized type variables (similar as type erasure in Java).</p>
+
+<p>Generated from protobuf message <code>google.api.expr.v1alpha1.Decl.FunctionDecl.Overload</code></p>                    </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getOverloadId">getOverloadId</a>()
+        
+                                            <p>Required. Globally unique overload name of the function which reflects
+the function name and argument types.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setOverloadId">setOverloadId</a>(string $var)
+        
+                                            <p>Required. Globally unique overload name of the function which reflects
+the function name and argument types.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getParams">getParams</a>()
+        
+                                            <p>List of function parameter [Type][google.api.expr.v1alpha1.Type] values.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setParams">setParams</a>(<a href="../../../../../../Google/Api/Expr/V1alpha1/Type.html"><abbr title="Google\Api\Expr\V1alpha1\Type">Type</abbr></a>[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr> $var)
+        
+                                            <p>List of function parameter [Type][google.api.expr.v1alpha1.Type] values.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getTypeParams">getTypeParams</a>()
+        
+                                            <p>The type param names associated with the function declaration.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setTypeParams">setTypeParams</a>(string[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr> $var)
+        
+                                            <p>The type param names associated with the function declaration.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../../../Google/Api/Expr/V1alpha1/Type.html"><abbr title="Google\Api\Expr\V1alpha1\Type">Type</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getResultType">getResultType</a>()
+        
+                                            <p>Required. The result type of the function. For example, the operator
+<code>string.isEmpty()</code> would have <code>result_type</code> of <code>kind: BOOL</code>.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setResultType">setResultType</a>(<a href="../../../../../../Google/Api/Expr/V1alpha1/Type.html"><abbr title="Google\Api\Expr\V1alpha1\Type">Type</abbr></a> $var)
+        
+                                            <p>Required. The result type of the function. For example, the operator
+<code>string.isEmpty()</code> would have <code>result_type</code> of <code>kind: BOOL</code>.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getIsInstanceFunction">getIsInstanceFunction</a>()
+        
+                                            <p>Whether the function is to be used in a method call-style `x.f(.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setIsInstanceFunction">setIsInstanceFunction</a>(bool $var)
+        
+                                            <p>Whether the function is to be used in a method call-style `x.f(.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getDoc">getDoc</a>()
+        
+                                            <p>Documentation string for the overload.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDoc">setDoc</a>(string $var)
+        
+                                            <p>Documentation string for the overload.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 114</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type string $overload_id
+      Required. Globally unique overload name of the function which reflects
+      the function name and argument types.
+      This will be used by a [Reference][google.api.expr.v1alpha1.Reference] to indicate the `overload_id` that
+      was resolved for the function `name`.
+@type \Google\Api\Expr\V1alpha1\Type[]|\Google\Protobuf\Internal\RepeatedField $params
+      List of function parameter [Type][google.api.expr.v1alpha1.Type] values.
+      Param types are disjoint after generic type parameters have been
+      replaced with the type `DYN`. Since the `DYN` type is compatible with
+      any other type, this means that if `A` is a type parameter, the
+      function types `int&lt;A&gt;` and `int&lt;int&gt;` are not disjoint. Likewise,
+      `map&lt;string, string&gt;` is not disjoint from `map&lt;K, V&gt;`.
+      When the `result_type` of a function is a generic type param, the
+      type param name also appears as the `type` of on at least one params.
+@type string[]|\Google\Protobuf\Internal\RepeatedField $type_params
+      The type param names associated with the function declaration.
+      For example, `function ex&lt;K,V&gt;(K key, map&lt;K, V&gt; map) : V` would yield
+      the type params of `K, V`.
+@type \Google\Api\Expr\V1alpha1\Type $result_type
+      Required. The result type of the function. For example, the operator
+      `string.isEmpty()` would have `result_type` of `kind: BOOL`.
+@type bool $is_instance_function
+      Whether the function is to be used in a method call-style `x.f(...)`
+      of a function call-style `f(x, ...)`.
+      For methods, the first parameter declaration, `params[0]` is the
+      expected type of the target receiver.
+@type string $doc
+      Documentation string for the overload.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getOverloadId">
+        <div class="location">at         line 128</div>
+        <code>                    string
+    <strong>getOverloadId</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Globally unique overload name of the function which reflects
+the function name and argument types.</p>                    <p>This will be used by a [Reference][google.api.expr.v1alpha1.Reference] to indicate the <code>overload_id</code> that
+was resolved for the function <code>name</code>.</p>
+
+<p>Generated from protobuf field <code>string overload_id = 1;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setOverloadId">
+        <div class="location">at         line 143</div>
+        <code>                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+    <strong>setOverloadId</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Globally unique overload name of the function which reflects
+the function name and argument types.</p>                    <p>This will be used by a [Reference][google.api.expr.v1alpha1.Reference] to indicate the <code>overload_id</code> that
+was resolved for the function <code>name</code>.</p>
+
+<p>Generated from protobuf field <code>string overload_id = 1;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getParams">
+        <div class="location">at         line 164</div>
+        <code>                    <abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr>
+    <strong>getParams</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>List of function parameter [Type][google.api.expr.v1alpha1.Type] values.</p>                    <p>Param types are disjoint after generic type parameters have been
+replaced with the type <code>DYN</code>. Since the <code>DYN</code> type is compatible with
+any other type, this means that if <code>A</code> is a type parameter, the
+function types <code>int&lt;A&gt;</code> and <code>int&lt;int&gt;</code> are not disjoint. Likewise,
+<code>map&lt;string, string&gt;</code> is not disjoint from <code>map&lt;K, V&gt;</code>.
+When the <code>result_type</code> of a function is a generic type param, the
+type param name also appears as the <code>type</code> of on at least one params.</p>
+
+<p>Generated from protobuf field <code>repeated .google.api.expr.v1alpha1.Type params = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setParams">
+        <div class="location">at         line 183</div>
+        <code>                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+    <strong>setParams</strong>(<a href="../../../../../../Google/Api/Expr/V1alpha1/Type.html"><abbr title="Google\Api\Expr\V1alpha1\Type">Type</abbr></a>[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>List of function parameter [Type][google.api.expr.v1alpha1.Type] values.</p>                    <p>Param types are disjoint after generic type parameters have been
+replaced with the type <code>DYN</code>. Since the <code>DYN</code> type is compatible with
+any other type, this means that if <code>A</code> is a type parameter, the
+function types <code>int&lt;A&gt;</code> and <code>int&lt;int&gt;</code> are not disjoint. Likewise,
+<code>map&lt;string, string&gt;</code> is not disjoint from <code>map&lt;K, V&gt;</code>.
+When the <code>result_type</code> of a function is a generic type param, the
+type param name also appears as the <code>type</code> of on at least one params.</p>
+
+<p>Generated from protobuf field <code>repeated .google.api.expr.v1alpha1.Type params = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../../Google/Api/Expr/V1alpha1/Type.html"><abbr title="Google\Api\Expr\V1alpha1\Type">Type</abbr></a>[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getTypeParams">
+        <div class="location">at         line 199</div>
+        <code>                    <abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr>
+    <strong>getTypeParams</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The type param names associated with the function declaration.</p>                    <p>For example, <code>function ex&lt;K,V&gt;(K key, map&lt;K, V&gt; map) : V</code> would yield
+the type params of <code>K, V</code>.</p>
+
+<p>Generated from protobuf field <code>repeated string type_params = 3;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setTypeParams">
+        <div class="location">at         line 213</div>
+        <code>                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+    <strong>setTypeParams</strong>(string[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The type param names associated with the function declaration.</p>                    <p>For example, <code>function ex&lt;K,V&gt;(K key, map&lt;K, V&gt; map) : V</code> would yield
+the type params of <code>K, V</code>.</p>
+
+<p>Generated from protobuf field <code>repeated string type_params = 3;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getResultType">
+        <div class="location">at         line 228</div>
+        <code>                    <a href="../../../../../../Google/Api/Expr/V1alpha1/Type.html"><abbr title="Google\Api\Expr\V1alpha1\Type">Type</abbr></a>
+    <strong>getResultType</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. The result type of the function. For example, the operator
+<code>string.isEmpty()</code> would have <code>result_type</code> of <code>kind: BOOL</code>.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1alpha1.Type result_type = 4;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../../../Google/Api/Expr/V1alpha1/Type.html"><abbr title="Google\Api\Expr\V1alpha1\Type">Type</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setResultType">
+        <div class="location">at         line 241</div>
+        <code>                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+    <strong>setResultType</strong>(<a href="../../../../../../Google/Api/Expr/V1alpha1/Type.html"><abbr title="Google\Api\Expr\V1alpha1\Type">Type</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. The result type of the function. For example, the operator
+<code>string.isEmpty()</code> would have <code>result_type</code> of <code>kind: BOOL</code>.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1alpha1.Type result_type = 4;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../../../Google/Api/Expr/V1alpha1/Type.html"><abbr title="Google\Api\Expr\V1alpha1\Type">Type</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getIsInstanceFunction">
+        <div class="location">at         line 258</div>
+        <code>                    bool
+    <strong>getIsInstanceFunction</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Whether the function is to be used in a method call-style `x.f(.</p>                    <p>..)<code>of a function call-style</code>f(x, ...)<code>.
+For methods, the first parameter declaration,</code>params[0]` is the
+expected type of the target receiver.</p>
+
+<p>Generated from protobuf field <code>bool is_instance_function = 5;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setIsInstanceFunction">
+        <div class="location">at         line 273</div>
+        <code>                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+    <strong>setIsInstanceFunction</strong>(bool $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Whether the function is to be used in a method call-style `x.f(.</p>                    <p>..)<code>of a function call-style</code>f(x, ...)<code>.
+For methods, the first parameter declaration,</code>params[0]` is the
+expected type of the target receiver.</p>
+
+<p>Generated from protobuf field <code>bool is_instance_function = 5;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getDoc">
+        <div class="location">at         line 287</div>
+        <code>                    string
+    <strong>getDoc</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Documentation string for the overload.</p>                    <p>Generated from protobuf field <code>string doc = 6;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setDoc">
+        <div class="location">at         line 299</div>
+        <code>                    <abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr>
+    <strong>setDoc</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Documentation string for the overload.</p>                    <p>Generated from protobuf field <code>string doc = 6;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1alpha1\Decl\FunctionDecl\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

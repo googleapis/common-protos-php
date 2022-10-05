@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Type\DateTime | Common Protos PHP - 3.1.0</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Type_DateTime" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Common Protos PHP - 3.1.0</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../Google/Type.html">Type</a></li><li class="backslash">\</li><li>DateTime</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            DateTime
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>DateTime</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Represents civil time in one of a few possible ways:
+ * When utc_offset is set and time_zone is unset: a civil time on a calendar
+   day with a particular offset from UTC.</p>            <p><ul>
+<li>When time_zone is set and utc_offset is unset: a civil time on a calendar
+day in a particular time zone.
+
+<ul>
+<li>When neither time_zone nor utc_offset is set: a civil time on a calendar
+day in local time.
+The date is relative to the Proleptic Gregorian Calendar.
+If year is 0, the DateTime is considered not to have a specific year. month
+and day must have valid, non-zero values.
+This type is more flexible than some applications may want. Make sure to
+document and validate your application's limitations.</li>
+</ul></li>
+</ul>
+
+<p>Generated from protobuf message <code>google.type.DateTime</code></p>                    </div>
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_time_offset">
+                                        protected                                        
+                </td>
+                <td>$time_offset</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getYear">getYear</a>()
+        
+                                            <p>Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a
+datetime without a year.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setYear">setYear</a>(int $var)
+        
+                                            <p>Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a
+datetime without a year.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getMonth">getMonth</a>()
+        
+                                            <p>Required. Month of year. Must be from 1 to 12.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setMonth">setMonth</a>(int $var)
+        
+                                            <p>Required. Month of year. Must be from 1 to 12.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getDay">getDay</a>()
+        
+                                            <p>Required. Day of month. Must be from 1 to 31 and valid for the year and
+month.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDay">setDay</a>(int $var)
+        
+                                            <p>Required. Day of month. Must be from 1 to 31 and valid for the year and
+month.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getHours">getHours</a>()
+        
+                                            <p>Required. Hours of day in 24 hour format. Should be from 0 to 23. An API
+may choose to allow the value "24:00:00" for scenarios like business
+closing time.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setHours">setHours</a>(int $var)
+        
+                                            <p>Required. Hours of day in 24 hour format. Should be from 0 to 23. An API
+may choose to allow the value "24:00:00" for scenarios like business
+closing time.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getMinutes">getMinutes</a>()
+        
+                                            <p>Required. Minutes of hour of day. Must be from 0 to 59.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setMinutes">setMinutes</a>(int $var)
+        
+                                            <p>Required. Minutes of hour of day. Must be from 0 to 59.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSeconds">getSeconds</a>()
+        
+                                            <p>Required. Seconds of minutes of the time. Must normally be from 0 to 59. An
+API may allow the value 60 if it allows leap-seconds.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setSeconds">setSeconds</a>(int $var)
+        
+                                            <p>Required. Seconds of minutes of the time. Must normally be from 0 to 59. An
+API may allow the value 60 if it allows leap-seconds.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getNanos">getNanos</a>()
+        
+                                            <p>Required. Fractions of seconds in nanoseconds. Must be from 0 to
+999,999,999.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setNanos">setNanos</a>(int $var)
+        
+                                            <p>Required. Fractions of seconds in nanoseconds. Must be from 0 to
+999,999,999.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Protobuf\Duration">Duration</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getUtcOffset">getUtcOffset</a>()
+        
+                                            <p>UTC offset. Must be whole seconds, between -18 hours and +18 hours.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setUtcOffset">setUtcOffset</a>(<abbr title="Google\Protobuf\Duration">Duration</abbr> $var)
+        
+                                            <p>UTC offset. Must be whole seconds, between -18 hours and +18 hours.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Google/Type/TimeZone.html"><abbr title="Google\Type\TimeZone">TimeZone</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getTimeZone">getTimeZone</a>()
+        
+                                            <p>Time zone.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setTimeZone">setTimeZone</a>(<a href="../../Google/Type/TimeZone.html"><abbr title="Google\Type\TimeZone">TimeZone</abbr></a> $var)
+        
+                                            <p>Time zone.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getTimeOffset">getTimeOffset</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 113</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type int $year
+      Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a
+      datetime without a year.
+@type int $month
+      Required. Month of year. Must be from 1 to 12.
+@type int $day
+      Required. Day of month. Must be from 1 to 31 and valid for the year and
+      month.
+@type int $hours
+      Required. Hours of day in 24 hour format. Should be from 0 to 23. An API
+      may choose to allow the value "24:00:00" for scenarios like business
+      closing time.
+@type int $minutes
+      Required. Minutes of hour of day. Must be from 0 to 59.
+@type int $seconds
+      Required. Seconds of minutes of the time. Must normally be from 0 to 59. An
+      API may allow the value 60 if it allows leap-seconds.
+@type int $nanos
+      Required. Fractions of seconds in nanoseconds. Must be from 0 to
+      999,999,999.
+@type \Google\Protobuf\Duration $utc_offset
+      UTC offset. Must be whole seconds, between -18 hours and +18 hours.
+      For example, a UTC offset of -4:00 would be represented as
+      { seconds: -14400 }.
+@type \Google\Type\TimeZone $time_zone
+      Time zone.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getYear">
+        <div class="location">at         line 125</div>
+        <code>                    int
+    <strong>getYear</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a
+datetime without a year.</p>                    <p>Generated from protobuf field <code>int32 year = 1;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setYear">
+        <div class="location">at         line 138</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setYear</strong>(int $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a
+datetime without a year.</p>                    <p>Generated from protobuf field <code>int32 year = 1;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getMonth">
+        <div class="location">at         line 152</div>
+        <code>                    int
+    <strong>getMonth</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Month of year. Must be from 1 to 12.</p>                    <p>Generated from protobuf field <code>int32 month = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setMonth">
+        <div class="location">at         line 164</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setMonth</strong>(int $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Month of year. Must be from 1 to 12.</p>                    <p>Generated from protobuf field <code>int32 month = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getDay">
+        <div class="location">at         line 179</div>
+        <code>                    int
+    <strong>getDay</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Day of month. Must be from 1 to 31 and valid for the year and
+month.</p>                    <p>Generated from protobuf field <code>int32 day = 3;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setDay">
+        <div class="location">at         line 192</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setDay</strong>(int $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Day of month. Must be from 1 to 31 and valid for the year and
+month.</p>                    <p>Generated from protobuf field <code>int32 day = 3;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getHours">
+        <div class="location">at         line 208</div>
+        <code>                    int
+    <strong>getHours</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Hours of day in 24 hour format. Should be from 0 to 23. An API
+may choose to allow the value "24:00:00" for scenarios like business
+closing time.</p>                    <p>Generated from protobuf field <code>int32 hours = 4;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setHours">
+        <div class="location">at         line 222</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setHours</strong>(int $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Hours of day in 24 hour format. Should be from 0 to 23. An API
+may choose to allow the value "24:00:00" for scenarios like business
+closing time.</p>                    <p>Generated from protobuf field <code>int32 hours = 4;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getMinutes">
+        <div class="location">at         line 236</div>
+        <code>                    int
+    <strong>getMinutes</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Minutes of hour of day. Must be from 0 to 59.</p>                    <p>Generated from protobuf field <code>int32 minutes = 5;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setMinutes">
+        <div class="location">at         line 248</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setMinutes</strong>(int $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Minutes of hour of day. Must be from 0 to 59.</p>                    <p>Generated from protobuf field <code>int32 minutes = 5;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSeconds">
+        <div class="location">at         line 263</div>
+        <code>                    int
+    <strong>getSeconds</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Seconds of minutes of the time. Must normally be from 0 to 59. An
+API may allow the value 60 if it allows leap-seconds.</p>                    <p>Generated from protobuf field <code>int32 seconds = 6;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setSeconds">
+        <div class="location">at         line 276</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setSeconds</strong>(int $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Seconds of minutes of the time. Must normally be from 0 to 59. An
+API may allow the value 60 if it allows leap-seconds.</p>                    <p>Generated from protobuf field <code>int32 seconds = 6;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getNanos">
+        <div class="location">at         line 291</div>
+        <code>                    int
+    <strong>getNanos</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Fractions of seconds in nanoseconds. Must be from 0 to
+999,999,999.</p>                    <p>Generated from protobuf field <code>int32 nanos = 7;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setNanos">
+        <div class="location">at         line 304</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setNanos</strong>(int $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. Fractions of seconds in nanoseconds. Must be from 0 to
+999,999,999.</p>                    <p>Generated from protobuf field <code>int32 nanos = 7;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getUtcOffset">
+        <div class="location">at         line 320</div>
+        <code>                    <abbr title="Google\Protobuf\Duration">Duration</abbr>
+    <strong>getUtcOffset</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>UTC offset. Must be whole seconds, between -18 hours and +18 hours.</p>                    <p>For example, a UTC offset of -4:00 would be represented as
+{ seconds: -14400 }.</p>
+
+<p>Generated from protobuf field <code>.google.protobuf.Duration utc_offset = 8;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Protobuf\Duration">Duration</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setUtcOffset">
+        <div class="location">at         line 334</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setUtcOffset</strong>(<abbr title="Google\Protobuf\Duration">Duration</abbr> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>UTC offset. Must be whole seconds, between -18 hours and +18 hours.</p>                    <p>For example, a UTC offset of -4:00 would be represented as
+{ seconds: -14400 }.</p>
+
+<p>Generated from protobuf field <code>.google.protobuf.Duration utc_offset = 8;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Google\Protobuf\Duration">Duration</abbr></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getTimeZone">
+        <div class="location">at         line 348</div>
+        <code>                    <a href="../../Google/Type/TimeZone.html"><abbr title="Google\Type\TimeZone">TimeZone</abbr></a>
+    <strong>getTimeZone</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Time zone.</p>                    <p>Generated from protobuf field <code>.google.type.TimeZone time_zone = 9;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Google/Type/TimeZone.html"><abbr title="Google\Type\TimeZone">TimeZone</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setTimeZone">
+        <div class="location">at         line 360</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setTimeZone</strong>(<a href="../../Google/Type/TimeZone.html"><abbr title="Google\Type\TimeZone">TimeZone</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Time zone.</p>                    <p>Generated from protobuf field <code>.google.type.TimeZone time_zone = 9;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../Google/Type/TimeZone.html"><abbr title="Google\Type\TimeZone">TimeZone</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getTimeOffset">
+        <div class="location">at         line 371</div>
+        <code>                    string
+    <strong>getTimeOffset</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
