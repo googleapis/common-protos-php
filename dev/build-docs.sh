@@ -26,6 +26,11 @@ then
 fi
 
 GIT_TAG_NAME=$1
+# Remove "v" from start of the version string if it exists
+if [[ ${GIT_TAG_NAME::1} == "v" ]]
+then
+  GIT_TAG_NAME="${GIT_TAG_NAME:1}"
+fi
 
 ROOT_DIR=$(pwd)
 DOC_OUTPUT_DIR=${ROOT_DIR}/tmp_gh-pages
