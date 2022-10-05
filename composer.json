@@ -19,7 +19,12 @@
       "Google\\Iam\\": "src/Iam",
       "Google\\Rpc\\": "src/Rpc",
       "Google\\Type\\": "src/Type",
-      "GPBMetadata\\Google\\": "metadata"
+      "GPBMetadata\\Google\\Api\\": "metadata/Api",
+      "GPBMetadata\\Google\\Cloud\\": "metadata/Cloud",
+      "GPBMetadata\\Google\\Iam\\": "metadata/Iam",
+      "GPBMetadata\\Google\\Logging\\": "metadata/Logging",
+      "GPBMetadata\\Google\\Rpc\\": "metadata/Rpc",
+      "GPBMetadata\\Google\\Type\\": "metadata/Type"
     }
   }
 }
