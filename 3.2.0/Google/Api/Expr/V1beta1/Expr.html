@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Api\Expr\V1beta1\Expr | Common Protos PHP - 3.2.0</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/sami.css">
+        <script src="../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../js/typeahead.min.js"></script>
+        <script src="../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Api_Expr_V1beta1_Expr" data-root-path="../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../index.html">Common Protos PHP - 3.2.0</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../../../Google/Api.html">Api</a></li><li class="backslash">\</li><li><a href="../../../../Google/Api/Expr.html">Expr</a></li><li class="backslash">\</li><li><a href="../../../../Google/Api/Expr/V1beta1.html">V1beta1</a></li><li class="backslash">\</li><li>Expr</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Expr
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Expr</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>An abstract representation of a common expression.</p>            <p>Expressions are abstractly represented as a collection of identifiers,
+select statements, function calls, literals, and comprehensions. All
+operators with the exception of the '.' operator are modelled as function
+calls. This makes it easy to represent new operators into the existing AST.
+All references within expressions must resolve to a [Decl][google.api.expr.v1beta1.Decl] provided at
+type-check for an expression to be valid. A reference may either be a bare
+identifier <code>name</code> or a qualified identifier <code>google.api.name</code>. References
+may either refer to a value or a function declaration.
+For example, the expression <code>google.api.name.startsWith('expr')</code> references
+the declaration <code>google.api.name</code> within a [Expr.Select][google.api.expr.v1beta1.Expr.Select] expression, and
+the function declaration <code>startsWith</code>.</p>
+
+<p>Generated from protobuf message <code>google.api.expr.v1beta1.Expr</code></p>                    </div>
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_expr_kind">
+                                        protected                                        
+                </td>
+                <td>$expr_kind</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getId">getId</a>()
+        
+                                            <p>Required. An id assigned to this node by the parser which is unique in a
+given expression tree. This is used to associate type information and other
+attributes to a node in the parse tree.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setId">setId</a>(int $var)
+        
+                                            <p>Required. An id assigned to this node by the parser which is unique in a
+given expression tree. This is used to associate type information and other
+attributes to a node in the parse tree.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Google/Api/Expr/V1beta1/Literal.html"><abbr title="Google\Api\Expr\V1beta1\Literal">Literal</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLiteralExpr">getLiteralExpr</a>()
+        
+                                            <p>A literal expression.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLiteralExpr">setLiteralExpr</a>(<a href="../../../../Google/Api/Expr/V1beta1/Literal.html"><abbr title="Google\Api\Expr\V1beta1\Literal">Literal</abbr></a> $var)
+        
+                                            <p>A literal expression.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/Ident.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Ident">Ident</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getIdentExpr">getIdentExpr</a>()
+        
+                                            <p>An identifier expression.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setIdentExpr">setIdentExpr</a>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/Ident.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Ident">Ident</abbr></a> $var)
+        
+                                            <p>An identifier expression.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/Select.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Select">Select</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSelectExpr">getSelectExpr</a>()
+        
+                                            <p>A field selection expression, e.g. <code>request.auth</code>.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setSelectExpr">setSelectExpr</a>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/Select.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Select">Select</abbr></a> $var)
+        
+                                            <p>A field selection expression, e.g. <code>request.auth</code>.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/Call.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Call">Call</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getCallExpr">getCallExpr</a>()
+        
+                                            <p>A call expression, including calls to predefined functions and operators.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setCallExpr">setCallExpr</a>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/Call.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Call">Call</abbr></a> $var)
+        
+                                            <p>A call expression, including calls to predefined functions and operators.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateList.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateList">CreateList</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getListExpr">getListExpr</a>()
+        
+                                            <p>A list creation expression.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setListExpr">setListExpr</a>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateList.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateList">CreateList</abbr></a> $var)
+        
+                                            <p>A list creation expression.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateStruct.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateStruct">CreateStruct</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getStructExpr">getStructExpr</a>()
+        
+                                            <p>A map or object creation expression.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setStructExpr">setStructExpr</a>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateStruct.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateStruct">CreateStruct</abbr></a> $var)
+        
+                                            <p>A map or object creation expression.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/Comprehension.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Comprehension">Comprehension</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getComprehensionExpr">getComprehensionExpr</a>()
+        
+                                            <p>A comprehension expression.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setComprehensionExpr">setComprehensionExpr</a>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/Comprehension.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Comprehension">Comprehension</abbr></a> $var)
+        
+                                            <p>A comprehension expression.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getExprKind">getExprKind</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 65</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type int $id
+      Required. An id assigned to this node by the parser which is unique in a
+      given expression tree. This is used to associate type information and other
+      attributes to a node in the parse tree.
+@type \Google\Api\Expr\V1beta1\Literal $literal_expr
+      A literal expression.
+@type \Google\Api\Expr\V1beta1\Expr\Ident $ident_expr
+      An identifier expression.
+@type \Google\Api\Expr\V1beta1\Expr\Select $select_expr
+      A field selection expression, e.g. `request.auth`.
+@type \Google\Api\Expr\V1beta1\Expr\Call $call_expr
+      A call expression, including calls to predefined functions and operators.
+@type \Google\Api\Expr\V1beta1\Expr\CreateList $list_expr
+      A list creation expression.
+@type \Google\Api\Expr\V1beta1\Expr\CreateStruct $struct_expr
+      A map or object creation expression.
+@type \Google\Api\Expr\V1beta1\Expr\Comprehension $comprehension_expr
+      A comprehension expression.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getId">
+        <div class="location">at         line 78</div>
+        <code>                    int
+    <strong>getId</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. An id assigned to this node by the parser which is unique in a
+given expression tree. This is used to associate type information and other
+attributes to a node in the parse tree.</p>                    <p>Generated from protobuf field <code>int32 id = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setId">
+        <div class="location">at         line 92</div>
+        <code>                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+    <strong>setId</strong>(int $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Required. An id assigned to this node by the parser which is unique in a
+given expression tree. This is used to associate type information and other
+attributes to a node in the parse tree.</p>                    <p>Generated from protobuf field <code>int32 id = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLiteralExpr">
+        <div class="location">at         line 106</div>
+        <code>                    <a href="../../../../Google/Api/Expr/V1beta1/Literal.html"><abbr title="Google\Api\Expr\V1beta1\Literal">Literal</abbr></a>
+    <strong>getLiteralExpr</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A literal expression.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Literal literal_expr = 3;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Google/Api/Expr/V1beta1/Literal.html"><abbr title="Google\Api\Expr\V1beta1\Literal">Literal</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLiteralExpr">
+        <div class="location">at         line 118</div>
+        <code>                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+    <strong>setLiteralExpr</strong>(<a href="../../../../Google/Api/Expr/V1beta1/Literal.html"><abbr title="Google\Api\Expr\V1beta1\Literal">Literal</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A literal expression.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Literal literal_expr = 3;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Google/Api/Expr/V1beta1/Literal.html"><abbr title="Google\Api\Expr\V1beta1\Literal">Literal</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getIdentExpr">
+        <div class="location">at         line 132</div>
+        <code>                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/Ident.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Ident">Ident</abbr></a>
+    <strong>getIdentExpr</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>An identifier expression.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.Ident ident_expr = 4;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/Ident.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Ident">Ident</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setIdentExpr">
+        <div class="location">at         line 144</div>
+        <code>                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+    <strong>setIdentExpr</strong>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/Ident.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Ident">Ident</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>An identifier expression.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.Ident ident_expr = 4;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/Ident.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Ident">Ident</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSelectExpr">
+        <div class="location">at         line 158</div>
+        <code>                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/Select.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Select">Select</abbr></a>
+    <strong>getSelectExpr</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A field selection expression, e.g. <code>request.auth</code>.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.Select select_expr = 5;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/Select.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Select">Select</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setSelectExpr">
+        <div class="location">at         line 170</div>
+        <code>                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+    <strong>setSelectExpr</strong>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/Select.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Select">Select</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A field selection expression, e.g. <code>request.auth</code>.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.Select select_expr = 5;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/Select.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Select">Select</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCallExpr">
+        <div class="location">at         line 184</div>
+        <code>                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/Call.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Call">Call</abbr></a>
+    <strong>getCallExpr</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A call expression, including calls to predefined functions and operators.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.Call call_expr = 6;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/Call.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Call">Call</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setCallExpr">
+        <div class="location">at         line 196</div>
+        <code>                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+    <strong>setCallExpr</strong>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/Call.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Call">Call</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A call expression, including calls to predefined functions and operators.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.Call call_expr = 6;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/Call.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Call">Call</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getListExpr">
+        <div class="location">at         line 210</div>
+        <code>                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateList.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateList">CreateList</abbr></a>
+    <strong>getListExpr</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A list creation expression.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.CreateList list_expr = 7;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateList.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateList">CreateList</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setListExpr">
+        <div class="location">at         line 222</div>
+        <code>                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+    <strong>setListExpr</strong>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateList.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateList">CreateList</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A list creation expression.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.CreateList list_expr = 7;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateList.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateList">CreateList</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getStructExpr">
+        <div class="location">at         line 236</div>
+        <code>                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateStruct.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateStruct">CreateStruct</abbr></a>
+    <strong>getStructExpr</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A map or object creation expression.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.CreateStruct struct_expr = 8;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateStruct.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateStruct">CreateStruct</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setStructExpr">
+        <div class="location">at         line 248</div>
+        <code>                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+    <strong>setStructExpr</strong>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateStruct.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateStruct">CreateStruct</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A map or object creation expression.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.CreateStruct struct_expr = 8;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/CreateStruct.html"><abbr title="Google\Api\Expr\V1beta1\Expr\CreateStruct">CreateStruct</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getComprehensionExpr">
+        <div class="location">at         line 262</div>
+        <code>                    <a href="../../../../Google/Api/Expr/V1beta1/Expr/Comprehension.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Comprehension">Comprehension</abbr></a>
+    <strong>getComprehensionExpr</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A comprehension expression.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.Comprehension comprehension_expr = 9;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/Comprehension.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Comprehension">Comprehension</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setComprehensionExpr">
+        <div class="location">at         line 274</div>
+        <code>                    <abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr>
+    <strong>setComprehensionExpr</strong>(<a href="../../../../Google/Api/Expr/V1beta1/Expr/Comprehension.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Comprehension">Comprehension</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A comprehension expression.</p>                    <p>Generated from protobuf field <code>.google.api.expr.v1beta1.Expr.Comprehension comprehension_expr = 9;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Google/Api/Expr/V1beta1/Expr/Comprehension.html"><abbr title="Google\Api\Expr\V1beta1\Expr\Comprehension">Comprehension</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\Expr\V1beta1\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getExprKind">
+        <div class="location">at         line 285</div>
+        <code>                    string
+    <strong>getExprKind</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

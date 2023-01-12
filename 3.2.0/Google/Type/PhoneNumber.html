@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Type\PhoneNumber | Common Protos PHP - 3.2.0</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Type_PhoneNumber" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Common Protos PHP - 3.2.0</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../Google/Type.html">Type</a></li><li class="backslash">\</li><li>PhoneNumber</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            PhoneNumber
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>PhoneNumber</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>An object representing a phone number, suitable as an API wire format.</p>            <p>This representation:
+ - should not be used for locale-specific formatting of a phone number, such
+   as "+1 (650) 253-0000 ext. 123"
+ - is not designed for efficient storage
+ - may not be suitable for dialing - specialized libraries (see references)
+   should be used to parse the number for that purpose
+To do something meaningful with this number, such as format it for various
+use-cases, convert it to an <code>i18n.phonenumbers.PhoneNumber</code> object first.
+For instance, in Java this would be:
+   com.google.type.PhoneNumber wireProto =
+       com.google.type.PhoneNumber.newBuilder().build();
+   com.google.i18n.phonenumbers.Phonenumber.PhoneNumber phoneNumber =
+       PhoneNumberUtil.getInstance().parse(wireProto.getE164Number(), "ZZ");
+   if (!wireProto.getExtension().isEmpty()) {
+     phoneNumber.setExtension(wireProto.getExtension());
+   }
+ Reference(s):
+  - https://github.com/google/libphonenumber</p>
+
+<p>Generated from protobuf message <code>google.type.PhoneNumber</code></p>                    </div>
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_extension">
+                                        protected                                        
+                </td>
+                <td>$extension</td>
+                <td class="last">The phone number's extension. The extension is not standardized in ITU
+recommendations, except for being defined as a series of numbers with a
+maximum length of 40 digits. Other than digits, some other dialing
+characters such as ',' (indicating a wait) or '#' may be stored here.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_kind">
+                                        protected                                        
+                </td>
+                <td>$kind</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getE164Number">getE164Number</a>()
+        
+                                            <p>The phone number, represented as a leading plus sign ('+'), followed by a
+phone number that uses a relaxed ITU E.164 format consisting of the
+country calling code (1 to 3 digits) and the subscriber number, with no
+additional spaces or formatting, e.g.:
+ - correct: "+15552220123"
+ - incorrect: "+1 (555) 222-01234 x123".</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasE164Number">hasE164Number</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setE164Number">setE164Number</a>(string $var)
+        
+                                            <p>The phone number, represented as a leading plus sign ('+'), followed by a
+phone number that uses a relaxed ITU E.164 format consisting of the
+country calling code (1 to 3 digits) and the subscriber number, with no
+additional spaces or formatting, e.g.:
+ - correct: "+15552220123"
+ - incorrect: "+1 (555) 222-01234 x123".</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../Google/Type/PhoneNumber/ShortCode.html"><abbr title="Google\Type\PhoneNumber\ShortCode">ShortCode</abbr></a>|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getShortCode">getShortCode</a>()
+        
+                                            <p>A short code.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasShortCode">hasShortCode</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setShortCode">setShortCode</a>(<a href="../../Google/Type/PhoneNumber/ShortCode.html"><abbr title="Google\Type\PhoneNumber\ShortCode">ShortCode</abbr></a> $var)
+        
+                                            <p>A short code.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getExtension">getExtension</a>()
+        
+                                            <p>The phone number's extension. The extension is not standardized in ITU
+recommendations, except for being defined as a series of numbers with a
+maximum length of 40 digits. Other than digits, some other dialing
+characters such as ',' (indicating a wait) or '#' may be stored here.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setExtension">setExtension</a>(string $var)
+        
+                                            <p>The phone number's extension. The extension is not standardized in ITU
+recommendations, except for being defined as a series of numbers with a
+maximum length of 40 digits. Other than digits, some other dialing
+characters such as ',' (indicating a wait) or '#' may be stored here.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getKind">getKind</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 86</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type string $e164_number
+      The phone number, represented as a leading plus sign ('+'), followed by a
+      phone number that uses a relaxed ITU E.164 format consisting of the
+      country calling code (1 to 3 digits) and the subscriber number, with no
+      additional spaces or formatting, e.g.:
+       - correct: "+15552220123"
+       - incorrect: "+1 (555) 222-01234 x123".
+      The ITU E.164 format limits the latter to 12 digits, but in practice not
+      all countries respect that, so we relax that restriction here.
+      National-only numbers are not allowed.
+      References:
+       - https://www.itu.int/rec/T-REC-E.164-201011-I
+       - https://en.wikipedia.org/wiki/E.164.
+       - https://en.wikipedia.org/wiki/List_of_country_calling_codes
+@type \Google\Type\PhoneNumber\ShortCode $short_code
+      A short code.
+      Reference(s):
+       - https://en.wikipedia.org/wiki/Short_code
+@type string $extension
+      The phone number's extension. The extension is not standardized in ITU
+      recommendations, except for being defined as a series of numbers with a
+      maximum length of 40 digits. Other than digits, some other dialing
+      characters such as ',' (indicating a wait) or '#' may be stored here.
+      Note that no regions currently use extensions with short codes, so this
+      field is normally only set in conjunction with an E.164 number. It is held
+      separately from the E.164 number to allow for short code extensions in the
+      future.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getE164Number">
+        <div class="location">at         line 109</div>
+        <code>                    string
+    <strong>getE164Number</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The phone number, represented as a leading plus sign ('+'), followed by a
+phone number that uses a relaxed ITU E.164 format consisting of the
+country calling code (1 to 3 digits) and the subscriber number, with no
+additional spaces or formatting, e.g.:
+ - correct: "+15552220123"
+ - incorrect: "+1 (555) 222-01234 x123".</p>                    <p>The ITU E.164 format limits the latter to 12 digits, but in practice not
+all countries respect that, so we relax that restriction here.
+National-only numbers are not allowed.
+References:
+ - https://www.itu.int/rec/T-REC-E.164-201011-I
+ - https://en.wikipedia.org/wiki/E.164.
+ - https://en.wikipedia.org/wiki/List_of_country_calling_codes</p>
+
+<p>Generated from protobuf field <code>string e164_number = 1;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasE164Number">
+        <div class="location">at         line 114</div>
+        <code>                    
+    <strong>hasE164Number</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setE164Number">
+        <div class="location">at         line 138</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setE164Number</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The phone number, represented as a leading plus sign ('+'), followed by a
+phone number that uses a relaxed ITU E.164 format consisting of the
+country calling code (1 to 3 digits) and the subscriber number, with no
+additional spaces or formatting, e.g.:
+ - correct: "+15552220123"
+ - incorrect: "+1 (555) 222-01234 x123".</p>                    <p>The ITU E.164 format limits the latter to 12 digits, but in practice not
+all countries respect that, so we relax that restriction here.
+National-only numbers are not allowed.
+References:
+ - https://www.itu.int/rec/T-REC-E.164-201011-I
+ - https://en.wikipedia.org/wiki/E.164.
+ - https://en.wikipedia.org/wiki/List_of_country_calling_codes</p>
+
+<p>Generated from protobuf field <code>string e164_number = 1;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getShortCode">
+        <div class="location">at         line 154</div>
+        <code>                    <a href="../../Google/Type/PhoneNumber/ShortCode.html"><abbr title="Google\Type\PhoneNumber\ShortCode">ShortCode</abbr></a>|null
+    <strong>getShortCode</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A short code.</p>                    <p>Reference(s):
+ - https://en.wikipedia.org/wiki/Short_code</p>
+
+<p>Generated from protobuf field <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../Google/Type/PhoneNumber/ShortCode.html"><abbr title="Google\Type\PhoneNumber\ShortCode">ShortCode</abbr></a>|null</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasShortCode">
+        <div class="location">at         line 159</div>
+        <code>                    
+    <strong>hasShortCode</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setShortCode">
+        <div class="location">at         line 173</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setShortCode</strong>(<a href="../../Google/Type/PhoneNumber/ShortCode.html"><abbr title="Google\Type\PhoneNumber\ShortCode">ShortCode</abbr></a> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A short code.</p>                    <p>Reference(s):
+ - https://en.wikipedia.org/wiki/Short_code</p>
+
+<p>Generated from protobuf field <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../Google/Type/PhoneNumber/ShortCode.html"><abbr title="Google\Type\PhoneNumber\ShortCode">ShortCode</abbr></a></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getExtension">
+        <div class="location">at         line 194</div>
+        <code>                    string
+    <strong>getExtension</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The phone number's extension. The extension is not standardized in ITU
+recommendations, except for being defined as a series of numbers with a
+maximum length of 40 digits. Other than digits, some other dialing
+characters such as ',' (indicating a wait) or '#' may be stored here.</p>                    <p>Note that no regions currently use extensions with short codes, so this
+field is normally only set in conjunction with an E.164 number. It is held
+separately from the E.164 number to allow for short code extensions in the
+future.</p>
+
+<p>Generated from protobuf field <code>string extension = 3;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setExtension">
+        <div class="location">at         line 213</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setExtension</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The phone number's extension. The extension is not standardized in ITU
+recommendations, except for being defined as a series of numbers with a
+maximum length of 40 digits. Other than digits, some other dialing
+characters such as ',' (indicating a wait) or '#' may be stored here.</p>                    <p>Note that no regions currently use extensions with short codes, so this
+field is normally only set in conjunction with an E.164 number. It is held
+separately from the E.164 number to allow for short code extensions in the
+future.</p>
+
+<p>Generated from protobuf field <code>string extension = 3;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getKind">
+        <div class="location">at         line 224</div>
+        <code>                    string
+    <strong>getKind</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

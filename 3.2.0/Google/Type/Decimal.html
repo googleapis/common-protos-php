@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Type\Decimal | Common Protos PHP - 3.2.0</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Type_Decimal" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Common Protos PHP - 3.2.0</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../Google/Type.html">Type</a></li><li class="backslash">\</li><li>Decimal</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            Decimal
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>Decimal</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>A representation of a decimal value, such as 2.5. Clients may convert values
+into language-native decimal formats, such as Java's [BigDecimal][] or
+Python's [decimal.Decimal][].</p>            <p>Generated from protobuf message <code>google.type.Decimal</code></p>                    </div>
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_value">
+                                        protected                                        
+                </td>
+                <td>$value</td>
+                <td class="last">The decimal value, as a string.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getValue">getValue</a>()
+        
+                                            <p>The decimal value, as a string.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Type\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setValue">setValue</a>(string $var)
+        
+                                            <p>The decimal value, as a string.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 126</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type string $value
+      The decimal value, as a string.
+      The string representation consists of an optional sign, `+` (`U+002B`)
+      or `-` (`U+002D`), followed by a sequence of zero or more decimal digits
+      ("the integer"), optionally followed by a fraction, optionally followed
+      by an exponent.
+      The fraction consists of a decimal point followed by zero or more decimal
+      digits. The string must contain at least one digit in either the integer
+      or the fraction. The number formed by the sign, the integer and the
+      fraction is referred to as the significand.
+      The exponent consists of the character `e` (`U+0065`) or `E` (`U+0045`)
+      followed by one or more decimal digits.
+      Services **should** normalize decimal values before storing them by:
+        - Removing an explicitly-provided `+` sign (`+2.5` -&gt; `2.5`).
+        - Replacing a zero-length integer value with `0` (`.5` -&gt; `0.5`).
+        - Coercing the exponent character to lower-case (`2.5E8` -&gt; `2.5e8`).
+        - Removing an explicitly-provided zero exponent (`2.5e0` -&gt; `2.5`).
+      Services **may** perform additional normalization based on its own needs
+      and the internal decimal implementation selected, such as shifting the
+      decimal point and exponent value together (example: `2.5e-1` &lt;-&gt; `0.25`).
+      Additionally, services **may** preserve trailing zeroes in the fraction
+      to indicate increased precision, but are not required to do so.
+      Note that only the `.` character is supported to divide the integer
+      and the fraction; `,` **should not** be supported regardless of locale.
+      Additionally, thousand separators **should not** be supported. If a
+      service does support them, values **must** be normalized.
+      The ENBF grammar is:
+          DecimalString =
+            [Sign] Significand [Exponent];
+          Sign = '+' | '-';
+          Significand =
+            Digits ['.'] [Digits] | [Digits] '.' Digits;
+          Exponent = ('e' | 'E') [Sign] Digits;
+          Digits = { '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' };
+      Services **should** clearly document the range of supported values, the
+      maximum supported precision (total number of digits), and, if applicable,
+      the scale (number of digits after the decimal point), as well as how it
+      behaves when receiving out-of-bounds values.
+      Services **may** choose to accept values passed as input even when the
+      value has a higher precision or scale than the service supports, and
+      **should** round the value to fit the supported scale. Alternatively, the
+      service **may** error with `400 Bad Request` (`INVALID_ARGUMENT` in gRPC)
+      if precision would be lost.
+      Services **should** error with `400 Bad Request` (`INVALID_ARGUMENT` in
+      gRPC) if the service receives a value outside of the supported range.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getValue">
+        <div class="location">at         line 180</div>
+        <code>                    string
+    <strong>getValue</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The decimal value, as a string.</p>                    <p>The string representation consists of an optional sign, <code>+</code> (<code>U+002B</code>)
+or <code>-</code> (<code>U+002D</code>), followed by a sequence of zero or more decimal digits
+("the integer"), optionally followed by a fraction, optionally followed
+by an exponent.
+The fraction consists of a decimal point followed by zero or more decimal
+digits. The string must contain at least one digit in either the integer
+or the fraction. The number formed by the sign, the integer and the
+fraction is referred to as the significand.
+The exponent consists of the character <code>e</code> (<code>U+0065</code>) or <code>E</code> (<code>U+0045</code>)
+followed by one or more decimal digits.
+Services <strong>should</strong> normalize decimal values before storing them by:
+  - Removing an explicitly-provided <code>+</code> sign (<code>+2.5</code> -> <code>2.5</code>).
+  - Replacing a zero-length integer value with <code>0</code> (<code>.5</code> -> <code>0.5</code>).
+  - Coercing the exponent character to lower-case (<code>2.5E8</code> -> <code>2.5e8</code>).
+  - Removing an explicitly-provided zero exponent (<code>2.5e0</code> -> <code>2.5</code>).
+Services <strong>may</strong> perform additional normalization based on its own needs
+and the internal decimal implementation selected, such as shifting the
+decimal point and exponent value together (example: <code>2.5e-1</code> <-> <code>0.25</code>).
+Additionally, services <strong>may</strong> preserve trailing zeroes in the fraction
+to indicate increased precision, but are not required to do so.
+Note that only the <code>.</code> character is supported to divide the integer
+and the fraction; <code>,</code> <strong>should not</strong> be supported regardless of locale.
+Additionally, thousand separators <strong>should not</strong> be supported. If a
+service does support them, values <strong>must</strong> be normalized.
+The ENBF grammar is:
+    DecimalString =
+      [Sign] Significand [Exponent];
+    Sign = '+' | '-';
+    Significand =
+      Digits ['.'] [Digits] | [Digits] '.' Digits;
+    Exponent = ('e' | 'E') [Sign] Digits;
+    Digits = { '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' };
+Services <strong>should</strong> clearly document the range of supported values, the
+maximum supported precision (total number of digits), and, if applicable,
+the scale (number of digits after the decimal point), as well as how it
+behaves when receiving out-of-bounds values.
+Services <strong>may</strong> choose to accept values passed as input even when the
+value has a higher precision or scale than the service supports, and
+<strong>should</strong> round the value to fit the supported scale. Alternatively, the
+service <strong>may</strong> error with <code>400 Bad Request</code> (<code>INVALID_ARGUMENT</code> in gRPC)
+if precision would be lost.
+Services <strong>should</strong> error with <code>400 Bad Request</code> (<code>INVALID_ARGUMENT</code> in
+gRPC) if the service receives a value outside of the supported range.</p>
+
+<p>Generated from protobuf field <code>string value = 1;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setValue">
+        <div class="location">at         line 235</div>
+        <code>                    <abbr title="Google\Type\$this">$this</abbr>
+    <strong>setValue</strong>(string $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>The decimal value, as a string.</p>                    <p>The string representation consists of an optional sign, <code>+</code> (<code>U+002B</code>)
+or <code>-</code> (<code>U+002D</code>), followed by a sequence of zero or more decimal digits
+("the integer"), optionally followed by a fraction, optionally followed
+by an exponent.
+The fraction consists of a decimal point followed by zero or more decimal
+digits. The string must contain at least one digit in either the integer
+or the fraction. The number formed by the sign, the integer and the
+fraction is referred to as the significand.
+The exponent consists of the character <code>e</code> (<code>U+0065</code>) or <code>E</code> (<code>U+0045</code>)
+followed by one or more decimal digits.
+Services <strong>should</strong> normalize decimal values before storing them by:
+  - Removing an explicitly-provided <code>+</code> sign (<code>+2.5</code> -> <code>2.5</code>).
+  - Replacing a zero-length integer value with <code>0</code> (<code>.5</code> -> <code>0.5</code>).
+  - Coercing the exponent character to lower-case (<code>2.5E8</code> -> <code>2.5e8</code>).
+  - Removing an explicitly-provided zero exponent (<code>2.5e0</code> -> <code>2.5</code>).
+Services <strong>may</strong> perform additional normalization based on its own needs
+and the internal decimal implementation selected, such as shifting the
+decimal point and exponent value together (example: <code>2.5e-1</code> <-> <code>0.25</code>).
+Additionally, services <strong>may</strong> preserve trailing zeroes in the fraction
+to indicate increased precision, but are not required to do so.
+Note that only the <code>.</code> character is supported to divide the integer
+and the fraction; <code>,</code> <strong>should not</strong> be supported regardless of locale.
+Additionally, thousand separators <strong>should not</strong> be supported. If a
+service does support them, values <strong>must</strong> be normalized.
+The ENBF grammar is:
+    DecimalString =
+      [Sign] Significand [Exponent];
+    Sign = '+' | '-';
+    Significand =
+      Digits ['.'] [Digits] | [Digits] '.' Digits;
+    Exponent = ('e' | 'E') [Sign] Digits;
+    Digits = { '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' };
+Services <strong>should</strong> clearly document the range of supported values, the
+maximum supported precision (total number of digits), and, if applicable,
+the scale (number of digits after the decimal point), as well as how it
+behaves when receiving out-of-bounds values.
+Services <strong>may</strong> choose to accept values passed as input even when the
+value has a higher precision or scale than the service supports, and
+<strong>should</strong> round the value to fit the supported scale. Alternatively, the
+service <strong>may</strong> error with <code>400 Bad Request</code> (<code>INVALID_ARGUMENT</code> in gRPC)
+if precision would be lost.
+Services <strong>should</strong> error with <code>400 Bad Request</code> (<code>INVALID_ARGUMENT</code> in
+gRPC) if the service receives a value outside of the supported range.</p>
+
+<p>Generated from protobuf field <code>string value = 1;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Type\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

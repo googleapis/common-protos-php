@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Google\Api\RoutingRule | Common Protos PHP - 3.2.0</title>
+
+            <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sami.css">
+        <script src="../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.min.js"></script>
+        <script src="../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Google_Api_RoutingRule" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">Common Protos PHP - 3.2.0</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../Google.html">Google</a></li><li class="backslash">\</li><li><a href="../../Google/Api.html">Api</a></li><li class="backslash">\</li><li>RoutingRule</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            RoutingRule
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>RoutingRule</strong>        extends <abbr title="Google\Protobuf\Internal\Message">Message</abbr>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Specifies the routing information that should be sent along with the request
+in the form of routing header.</p>            <p><strong>NOTE:</strong> All service configuration rules follow the "last one wins" order.
+The examples below will apply to an RPC which has the following request type:
+Message Definition:
+    message Request {
+      // The name of the Table
+      // Values can be of the following formats:
+      // - <code>projects/&lt;project&gt;/tables/&lt;table&gt;</code>
+      // - <code>projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;</code>
+      // - <code>region/&lt;region&gt;/zones/&lt;zone&gt;/tables/&lt;table&gt;</code>
+      string table_name = 1;
+      // This value specifies routing for replication.
+      // It can be in the following formats:
+      // - <code>profiles/&lt;profile_id&gt;</code>
+      // - a legacy <code>profile_id</code> that can be any string
+      string app_profile_id = 2;
+    }
+Example message:
+    {
+      table_name: projects/proj_foo/instances/instance_bar/table/table_baz,
+      app_profile_id: profiles/prof_qux
+    }
+The routing header consists of one or multiple key-value pairs. Every key
+and value must be percent-encoded, and joined together in the format of
+<code>key1=value1&amp;key2=value2</code>.
+In the examples below I am skipping the percent-encoding for readablity.
+Example 1
+Extracting a field from the request to put into the routing header
+unchanged, with the key equal to the field name.
+annotation:
+    option (google.api.routing) = {
+      // Take the <code>app_profile_id</code>.
+      routing_parameters {
+        field: "app_profile_id"
+      }
+    };
+result:
+    x-goog-request-params: app_profile_id=profiles/prof_qux
+Example 2
+Extracting a field from the request to put into the routing header
+unchanged, with the key different from the field name.
+annotation:
+    option (google.api.routing) = {
+      // Take the <code>app_profile_id</code>, but name it <code>routing_id</code> in the header.
+      routing_parameters {
+        field: "app_profile_id"
+        path_template: "{routing_id=<strong>}"
+      }
+    };
+result:
+    x-goog-request-params: routing_id=profiles/prof_qux
+Example 3
+Extracting a field from the request to put into the routing
+header, while matching a path template syntax on the field's value.
+NB: it is more useful to send nothing than to send garbage for the purpose
+of dynamic routing, since garbage pollutes cache. Thus the matching.
+Sub-example 3a
+The field matches the template.
+annotation:
+    option (google.api.routing) = {
+      // Take the <code>table_name</code>, if it's well-formed (with project-based
+      // syntax).
+      routing_parameters {
+        field: "table_name"
+        path_template: "{table_name=projects/&#42;&#47;instances/&#42;&#47;&#42;<em>}"
+      }
+    };
+result:
+    x-goog-request-params:
+    table_name=projects/proj_foo/instances/instance_bar/table/table_baz
+Sub-example 3b
+The field does not match the template.
+annotation:
+    option (google.api.routing) = {
+      // Take the <code>table_name</code>, if it's well-formed (with region-based
+      // syntax).
+      routing_parameters {
+        field: "table_name"
+        path_template: "{table_name=regions/&#42;&#47;zones/&#42;&#47;&#42;</em>}"
+      }
+    };
+result:
+    <no routing header will be sent>
+Sub-example 3c
+Multiple alternative conflictingly named path templates are
+specified. The one that matches is used to construct the header.
+annotation:
+    option (google.api.routing) = {
+      // Take the <code>table_name</code>, if it's well-formed, whether
+      // using the region- or projects-based syntax.
+      routing_parameters {
+        field: "table_name"
+        path_template: "{table_name=regions/&#42;&#47;zones/&#42;&#47;&#42;<em>}"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "{table_name=projects/&#42;&#47;instances/&#42;&#47;&#42;</em>}"
+      }
+    };
+result:
+    x-goog-request-params:
+    table_name=projects/proj_foo/instances/instance_bar/table/table_baz
+Example 4
+Extracting a single routing header key-value pair by matching a
+template syntax on (a part of) a single request field.
+annotation:
+    option (google.api.routing) = {
+      // Take just the project id from the <code>table_name</code> field.
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=projects/&#42;}/&#42;<em>"
+      }
+    };
+result:
+    x-goog-request-params: routing_id=projects/proj_foo
+Example 5
+Extracting a single routing header key-value pair by matching
+several conflictingly named path templates on (parts of) a single request
+field. The last template to match "wins" the conflict.
+annotation:
+    option (google.api.routing) = {
+      // If the <code>table_name</code> does not have instances information,
+      // take just the project id for routing.
+      // Otherwise take project + instance.
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=projects/&#42;}/&#42;</em>"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=projects/&#42;&#47;instances/&#42;}/&#42;<em>"
+      }
+    };
+result:
+    x-goog-request-params:
+    routing_id=projects/proj_foo/instances/instance_bar
+Example 6
+Extracting multiple routing header key-value pairs by matching
+several non-conflicting path templates on (parts of) a single request field.
+Sub-example 6a
+Make the templates strict, so that if the <code>table_name</code> does not
+have an instance information, nothing is sent.
+annotation:
+    option (google.api.routing) = {
+      // The routing code needs two keys instead of one composite
+      // but works only for the tables with the "project-instance" name
+      // syntax.
+      routing_parameters {
+        field: "table_name"
+        path_template: "{project_id=projects/&#42;}/instances/&#42;&#47;&#42;</em>"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "projects/&#42;&#47;{instance_id=instances/&#42;}/&#42;<em>"
+      }
+    };
+result:
+    x-goog-request-params:
+    project_id=projects/proj_foo&amp;instance_id=instances/instance_bar
+Sub-example 6b
+Make the templates loose, so that if the <code>table_name</code> does not
+have an instance information, just the project id part is sent.
+annotation:
+    option (google.api.routing) = {
+      // The routing code wants two keys instead of one composite
+      // but will work with just the <code>project_id</code> for tables without
+      // an instance in the <code>table_name</code>.
+      routing_parameters {
+        field: "table_name"
+        path_template: "{project_id=projects/&#42;}/&#42;</em>"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "projects/&#42;&#47;{instance_id=instances/&#42;}/&#42;<em>"
+      }
+    };
+result (is the same as 6a for our example message because it has the instance
+information):
+    x-goog-request-params:
+    project_id=projects/proj_foo&amp;instance_id=instances/instance_bar
+Example 7
+Extracting multiple routing header key-value pairs by matching
+several path templates on multiple request fields.
+NB: note that here there is no way to specify sending nothing if one of the
+fields does not match its template. E.g. if the <code>table_name</code> is in the wrong
+format, the <code>project_id</code> will not be sent, but the <code>routing_id</code> will be.
+The backend routing code has to be aware of that and be prepared to not
+receive a full complement of keys if it expects multiple.
+annotation:
+    option (google.api.routing) = {
+      // The routing needs both <code>project_id</code> and <code>routing_id</code>
+      // (from the <code>app_profile_id</code> field) for routing.
+      routing_parameters {
+        field: "table_name"
+        path_template: "{project_id=projects/&#42;}/&#42;</em>"
+      }
+      routing_parameters {
+        field: "app_profile_id"
+        path_template: "{routing_id=</strong>}"
+      }
+    };
+result:
+    x-goog-request-params:
+    project_id=projects/proj_foo&amp;routing_id=profiles/prof_qux
+Example 8
+Extracting a single routing header key-value pair by matching
+several conflictingly named path templates on several request fields. The
+last template to match "wins" the conflict.
+annotation:
+    option (google.api.routing) = {
+      // The <code>routing_id</code> can be a project id or a region id depending on
+      // the table name format, but only if the <code>app_profile_id</code> is not set.
+      // If <code>app_profile_id</code> is set it should be used instead.
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=projects/&#42;}/&#42;<em>"
+      }
+      routing_parameters {
+         field: "table_name"
+         path_template: "{routing_id=regions/&#42;}/&#42;</em>"
+      }
+      routing_parameters {
+        field: "app_profile_id"
+        path_template: "{routing_id=<strong>}"
+      }
+    };
+result:
+    x-goog-request-params: routing_id=profiles/prof_qux
+Example 9
+Bringing it all together.
+annotation:
+    option (google.api.routing) = {
+      // For routing both <code>table_location</code> and a <code>routing_id</code> are needed.
+      //
+      // table_location can be either an instance id or a region+zone id.
+      //
+      // For <code>routing_id</code>, take the value of <code>app_profile_id</code>
+      // - If it's in the format <code>profiles/&lt;profile_id&gt;</code>, send
+      // just the <code>&lt;profile_id&gt;</code> part.
+      // - If it's any other literal, send it as is.
+      // If the <code>app_profile_id</code> is empty, and the <code>table_name</code> starts with
+      // the project_id, send that instead.
+      routing_parameters {
+        field: "table_name"
+        path_template: "projects/&#42;&#47;{table_location=instances/&#42;}/tables/&#42;"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "{table_location=regions/&#42;&#47;zones/&#42;}/tables/&#42;"
+      }
+      routing_parameters {
+        field: "table_name"
+        path_template: "{routing_id=projects/&#42;}/&#42;*"
+      }
+      routing_parameters {
+        field: "app_profile_id"
+        path_template: "{routing_id=</strong>}"
+      }
+      routing_parameters {
+        field: "app_profile_id"
+        path_template: "profiles/{routing_id=*}"
+      }
+    };
+result:
+    x-goog-request-params:
+    table_location=instances/instance_bar&amp;routing_id=prof_qux</p>
+
+<p>Generated from protobuf message <code>google.api.RoutingRule</code></p>                    </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(array $data = NULL)
+        
+                                            <p>Constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRoutingParameters">getRoutingParameters</a>()
+        
+                                            <p>A collection of Routing Parameter specifications.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Google\Api\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setRoutingParameters">setRoutingParameters</a>(<a href="../../Google/Api/RoutingParameter.html"><abbr title="Google\Api\RoutingParameter">RoutingParameter</abbr></a>[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr> $var)
+        
+                                            <p>A collection of Routing Parameter specifications.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at         line 311</div>
+        <code>                    
+    <strong>__construct</strong>(array $data = NULL)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Constructor.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$data</td>
+                <td>{
+    Optional. Data for populating the Message object.</p>
+
+<pre><code>@type \Google\Api\RoutingParameter[]|\Google\Protobuf\Internal\RepeatedField $routing_parameters
+      A collection of Routing Parameter specifications.
+      **NOTE:** If multiple Routing Parameters describe the same key
+      (via the `path_template` field or via the `field` field when
+      `path_template` is not provided), "last one wins" rule
+      determines which Parameter gets used.
+      See the examples for more details.
+</code></pre>
+
+<p>}</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRoutingParameters">
+        <div class="location">at         line 327</div>
+        <code>                    <abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr>
+    <strong>getRoutingParameters</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A collection of Routing Parameter specifications.</p>                    <p><strong>NOTE:</strong> If multiple Routing Parameters describe the same key
+(via the <code>path_template</code> field or via the <code>field</code> field when
+<code>path_template</code> is not provided), "last one wins" rule
+determines which Parameter gets used.
+See the examples for more details.</p>
+
+<p>Generated from protobuf field <code>repeated .google.api.RoutingParameter routing_parameters = 2;</code></p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setRoutingParameters">
+        <div class="location">at         line 344</div>
+        <code>                    <abbr title="Google\Api\$this">$this</abbr>
+    <strong>setRoutingParameters</strong>(<a href="../../Google/Api/RoutingParameter.html"><abbr title="Google\Api\RoutingParameter">RoutingParameter</abbr></a>[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr> $var)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>A collection of Routing Parameter specifications.</p>                    <p><strong>NOTE:</strong> If multiple Routing Parameters describe the same key
+(via the <code>path_template</code> field or via the <code>field</code> field when
+<code>path_template</code> is not provided), "last one wins" rule
+determines which Parameter gets used.
+See the examples for more details.</p>
+
+<p>Generated from protobuf field <code>repeated .google.api.RoutingParameter routing_parameters = 2;</code></p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../Google/Api/RoutingParameter.html"><abbr title="Google\Api\RoutingParameter">RoutingParameter</abbr></a>[]|<abbr title="Google\Protobuf\Internal\RepeatedField">RepeatedField</abbr></td>
+                <td>$var</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Google\Api\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
