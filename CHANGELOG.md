@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/googleapis/common-protos-php/compare/v3.1.0...v3.2.0) (2023-01-12)
+
+
+### Features
+
+* Refresh types ([#49](https://github.com/googleapis/common-protos-php/issues/49)) ([bd71fc0](https://github.com/googleapis/common-protos-php/commit/bd71fc05cbca1ccd94b71a42c227f0d69c688f07))
+
 ## [3.1.0](https://github.com/googleapis/common-protos-php/compare/v3.0.0...v3.1.0) (2022-10-05)
 
 
