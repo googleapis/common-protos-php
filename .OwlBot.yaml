@@ -1,0 +1,9 @@
+deep-copy-regex:
+    - source: /google/api/.*-php/(.*)
+      dest: /owl-bot-staging/api-protos/$1
+    - source: /google/cloud/location/.*-php/(.*)
+      dest: /owl-bot-staging/location-protos/$1
+    - source: /google/google/iam/v1/.*-php/(.*)
+      dest: /owl-bot-staging/iam-protos/$1
+    - source: /google/google/logging/type/.*-php/(.*)
+      dest: /owl-bot-staging/loggingtype-protos/$1
