@@ -25,18 +25,20 @@ from synthtool import _tracked_paths
 
 logging.basicConfig(level=logging.DEBUG)
 
-protos = {
-#    "api": "api",
-#    "location": "location",
-#    "iam": "v1",
-#    "loggingtype": "type",
-    "rpc": "rpc",
-    "type": "type",
-}
+protos = [
+    ("api", "api"),
+    ("extendedoperations", "cloud"),
+    ("location", "cloud"),
+    ("logging", "logging"),
+    ("iam", "cloud"),
+    ("iam", "iam"), # we have to do do this twice because there are two different locations
+    ("rpc", "rpc"),
+    ("type", "type"),
+]
 
 dest = Path().resolve()
-for proto, version in protos.items():
-    src = Path(f"{php.STAGING_DIR}/{proto}-protos").resolve()
+for proto in protos:
+    src = Path(f"{php.STAGING_DIR}/{proto[0]}-protos").resolve()
 
     # Added so that we can pass copy_excludes in the owlbot_main() call
     _tracked_paths.add(src)
@@ -46,7 +48,7 @@ for proto, version in protos.items():
     php.owlbot_copy_version(
         src=src,
         dest=dest,
-        version_string=version,
+        version_string=proto[1],
         copy_excludes=[
             src / "**/[A-Z]*_*.php"
         ],
