@@ -25,13 +25,14 @@ from synthtool import _tracked_paths
 
 logging.basicConfig(level=logging.DEBUG)
 
+# (dirname, version)
 protos = [
     ("api", "api"),
     ("extendedoperations", "cloud"),
     ("location", "cloud"),
-    ("logging", "logging"),
+    ("logging", "cloud"),
     ("iam", "cloud"),
-    ("iam", "iam"), # we have to do do this twice because there are two different locations
+    ("iam", "iam"), # we have to do this twice because there are two different locations
     ("rpc", "rpc"),
     ("type", "type"),
 ]
