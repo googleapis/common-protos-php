@@ -35,7 +35,7 @@ protos = {
 
 dest = Path().resolve()
 for proto, version in protos.items():
-    src = Path(f"../{php.STAGING_DIR}/{proto}-protos").resolve()
+    src = Path(f"{php.STAGING_DIR}/{proto}-protos").resolve()
 
     # Added so that we can pass copy_excludes in the owlbot_main() call
     _tracked_paths.add(src)
