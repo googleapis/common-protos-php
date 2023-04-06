@@ -17,12 +17,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class Metric extends \Google\Protobuf\Internal\Message
 {
     /**
-     * An existing metric type, see [google.api.MetricDescriptor][google.api.MetricDescriptor].
-     * For example, `custom.googleapis.com/invoice/paid/amount`.
+     * An existing metric type, see
+     * [google.api.MetricDescriptor][google.api.MetricDescriptor]. For example,
+     * `custom.googleapis.com/invoice/paid/amount`.
      *
      * Generated from protobuf field <code>string type = 3;</code>
      */
-    private $type = '';
+    protected $type = '';
     /**
      * The set of label values that uniquely identify this metric. All
      * labels listed in the `MetricDescriptor` must be assigned values.
@@ -38,8 +39,9 @@ class Metric extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $type
-     *           An existing metric type, see [google.api.MetricDescriptor][google.api.MetricDescriptor].
-     *           For example, `custom.googleapis.com/invoice/paid/amount`.
+     *           An existing metric type, see
+     *           [google.api.MetricDescriptor][google.api.MetricDescriptor]. For example,
+     *           `custom.googleapis.com/invoice/paid/amount`.
      *     @type array|\Google\Protobuf\Internal\MapField $labels
      *           The set of label values that uniquely identify this metric. All
      *           labels listed in the `MetricDescriptor` must be assigned values.
@@ -51,8 +53,9 @@ class Metric extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An existing metric type, see [google.api.MetricDescriptor][google.api.MetricDescriptor].
-     * For example, `custom.googleapis.com/invoice/paid/amount`.
+     * An existing metric type, see
+     * [google.api.MetricDescriptor][google.api.MetricDescriptor]. For example,
+     * `custom.googleapis.com/invoice/paid/amount`.
      *
      * Generated from protobuf field <code>string type = 3;</code>
      * @return string
@@ -63,8 +66,9 @@ class Metric extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An existing metric type, see [google.api.MetricDescriptor][google.api.MetricDescriptor].
-     * For example, `custom.googleapis.com/invoice/paid/amount`.
+     * An existing metric type, see
+     * [google.api.MetricDescriptor][google.api.MetricDescriptor]. For example,
+     * `custom.googleapis.com/invoice/paid/amount`.
      *
      * Generated from protobuf field <code>string type = 3;</code>
      * @param string $var

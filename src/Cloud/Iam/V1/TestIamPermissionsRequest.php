@@ -21,7 +21,7 @@ class TestIamPermissionsRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $resource = '';
+    protected $resource = '';
     /**
      * The set of permissions to check for the `resource`. Permissions with
      * wildcards (such as '*' or 'storage.*') are not allowed. For more
@@ -41,7 +41,7 @@ class TestIamPermissionsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $resource
      *           REQUIRED: The resource for which the policy detail is being requested.
      *           See the operation documentation for the appropriate value for this field.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $permissions
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $permissions
      *           The set of permissions to check for the `resource`. Permissions with
      *           wildcards (such as '*' or 'storage.*') are not allowed. For more
      *           information see
@@ -102,7 +102,7 @@ class TestIamPermissionsRequest extends \Google\Protobuf\Internal\Message
      * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
      *
      * Generated from protobuf field <code>repeated string permissions = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPermissions($var)

@@ -34,7 +34,7 @@ class DebugInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $stack_entries
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $stack_entries
      *           The stack trace entries indicating where the error occurred.
      *     @type string $detail
      *           Additional debugging information provided by the server.
@@ -60,7 +60,7 @@ class DebugInfo extends \Google\Protobuf\Internal\Message
      * The stack trace entries indicating where the error occurred.
      *
      * Generated from protobuf field <code>repeated string stack_entries = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStackEntries($var)

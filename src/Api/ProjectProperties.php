@@ -41,7 +41,7 @@ class ProjectProperties extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Api\Property[]|\Google\Protobuf\Internal\RepeatedField $properties
+     *     @type array<\Google\Api\Property>|\Google\Protobuf\Internal\RepeatedField $properties
      *           List of per consumer project-specific properties.
      * }
      */
@@ -65,7 +65,7 @@ class ProjectProperties extends \Google\Protobuf\Internal\Message
      * List of per consumer project-specific properties.
      *
      * Generated from protobuf field <code>repeated .google.api.Property properties = 1;</code>
-     * @param \Google\Api\Property[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Api\Property>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProperties($var)

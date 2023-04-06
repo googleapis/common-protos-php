@@ -64,6 +64,24 @@ class FieldBehavior
      * Generated from protobuf enum <code>IMMUTABLE = 5;</code>
      */
     const IMMUTABLE = 5;
+    /**
+     * Denotes that a (repeated) field is an unordered list.
+     * This indicates that the service may provide the elements of the list
+     * in any arbitrary  order, rather than the order the user originally
+     * provided. Additionally, the list's order may or may not be stable.
+     *
+     * Generated from protobuf enum <code>UNORDERED_LIST = 6;</code>
+     */
+    const UNORDERED_LIST = 6;
+    /**
+     * Denotes that this field returns a non-empty default value if not set.
+     * This indicates that if the user provides the empty value in a request,
+     * a non-empty value will be returned. The user will not be aware of what
+     * non-empty value to expect.
+     *
+     * Generated from protobuf enum <code>NON_EMPTY_DEFAULT = 7;</code>
+     */
+    const NON_EMPTY_DEFAULT = 7;
 
     private static $valueToName = [
         self::FIELD_BEHAVIOR_UNSPECIFIED => 'FIELD_BEHAVIOR_UNSPECIFIED',
@@ -72,6 +90,8 @@ class FieldBehavior
         self::OUTPUT_ONLY => 'OUTPUT_ONLY',
         self::INPUT_ONLY => 'INPUT_ONLY',
         self::IMMUTABLE => 'IMMUTABLE',
+        self::UNORDERED_LIST => 'UNORDERED_LIST',
+        self::NON_EMPTY_DEFAULT => 'NON_EMPTY_DEFAULT',
     ];
 
     public static function name($value)

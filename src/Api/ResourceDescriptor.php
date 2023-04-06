@@ -20,88 +20,32 @@ use Google\Protobuf\Internal\GPBUtil;
  *       // For Kubernetes resources, the format is {api group}/{kind}.
  *       option (google.api.resource) = {
  *         type: "pubsub.googleapis.com/Topic"
- *         name_descriptor: {
- *           pattern: "projects/{project}/topics/{topic}"
- *           parent_type: "cloudresourcemanager.googleapis.com/Project"
- *           parent_name_extractor: "projects/{project}"
- *         }
+ *         pattern: "projects/{project}/topics/{topic}"
  *       };
  *     }
  * The ResourceDescriptor Yaml config will look like:
- *    resources:
- *    - type: "pubsub.googleapis.com/Topic"
- *      name_descriptor:
- *        - pattern: "projects/{project}/topics/{topic}"
- *          parent_type: "cloudresourcemanager.googleapis.com/Project"
- *          parent_name_extractor: "projects/{project}"
+ *     resources:
+ *     - type: "pubsub.googleapis.com/Topic"
+ *       pattern: "projects/{project}/topics/{topic}"
  * Sometimes, resources have multiple patterns, typically because they can
  * live under multiple parents.
  * Example:
  *     message LogEntry {
  *       option (google.api.resource) = {
  *         type: "logging.googleapis.com/LogEntry"
- *         name_descriptor: {
- *           pattern: "projects/{project}/logs/{log}"
- *           parent_type: "cloudresourcemanager.googleapis.com/Project"
- *           parent_name_extractor: "projects/{project}"
- *         }
- *         name_descriptor: {
- *           pattern: "folders/{folder}/logs/{log}"
- *           parent_type: "cloudresourcemanager.googleapis.com/Folder"
- *           parent_name_extractor: "folders/{folder}"
- *         }
- *         name_descriptor: {
- *           pattern: "organizations/{organization}/logs/{log}"
- *           parent_type: "cloudresourcemanager.googleapis.com/Organization"
- *           parent_name_extractor: "organizations/{organization}"
- *         }
- *         name_descriptor: {
- *           pattern: "billingAccounts/{billing_account}/logs/{log}"
- *           parent_type: "billing.googleapis.com/BillingAccount"
- *           parent_name_extractor: "billingAccounts/{billing_account}"
- *         }
+ *         pattern: "projects/{project}/logs/{log}"
+ *         pattern: "folders/{folder}/logs/{log}"
+ *         pattern: "organizations/{organization}/logs/{log}"
+ *         pattern: "billingAccounts/{billing_account}/logs/{log}"
  *       };
  *     }
  * The ResourceDescriptor Yaml config will look like:
  *     resources:
  *     - type: 'logging.googleapis.com/LogEntry'
- *       name_descriptor:
- *         - pattern: "projects/{project}/logs/{log}"
- *           parent_type: "cloudresourcemanager.googleapis.com/Project"
- *           parent_name_extractor: "projects/{project}"
- *         - pattern: "folders/{folder}/logs/{log}"
- *           parent_type: "cloudresourcemanager.googleapis.com/Folder"
- *           parent_name_extractor: "folders/{folder}"
- *         - pattern: "organizations/{organization}/logs/{log}"
- *           parent_type: "cloudresourcemanager.googleapis.com/Organization"
- *           parent_name_extractor: "organizations/{organization}"
- *         - pattern: "billingAccounts/{billing_account}/logs/{log}"
- *           parent_type: "billing.googleapis.com/BillingAccount"
- *           parent_name_extractor: "billingAccounts/{billing_account}"
- * For flexible resources, the resource name doesn't contain parent names, but
- * the resource itself has parents for policy evaluation.
- * Example:
- *     message Shelf {
- *       option (google.api.resource) = {
- *         type: "library.googleapis.com/Shelf"
- *         name_descriptor: {
- *           pattern: "shelves/{shelf}"
- *           parent_type: "cloudresourcemanager.googleapis.com/Project"
- *         }
- *         name_descriptor: {
- *           pattern: "shelves/{shelf}"
- *           parent_type: "cloudresourcemanager.googleapis.com/Folder"
- *         }
- *       };
- *     }
- * The ResourceDescriptor Yaml config will look like:
- *     resources:
- *     - type: 'library.googleapis.com/Shelf'
- *       name_descriptor:
- *         - pattern: "shelves/{shelf}"
- *           parent_type: "cloudresourcemanager.googleapis.com/Project"
- *         - pattern: "shelves/{shelf}"
- *           parent_type: "cloudresourcemanager.googleapis.com/Folder"
+ *       pattern: "projects/{project}/logs/{log}"
+ *       pattern: "folders/{folder}/logs/{log}"
+ *       pattern: "organizations/{organization}/logs/{log}"
+ *       pattern: "billingAccounts/{billing_account}/logs/{log}"
  *
  * Generated from protobuf message <code>google.api.ResourceDescriptor</code>
  */
@@ -119,7 +63,7 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string type = 1;</code>
      */
-    private $type = '';
+    protected $type = '';
     /**
      * Optional. The relative resource name pattern associated with this resource
      * type. The DNS prefix of the full resource name shouldn't be specified here.
@@ -145,7 +89,7 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name_field = 3;</code>
      */
-    private $name_field = '';
+    protected $name_field = '';
     /**
      * Optional. The historical or future-looking state of the resource pattern.
      * Example:
@@ -163,16 +107,19 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.api.ResourceDescriptor.History history = 4;</code>
      */
-    private $history = 0;
+    protected $history = 0;
     /**
-     * The plural name used in the resource name, such as 'projects' for
-     * the name of 'projects/{project}'. It is the same concept of the `plural`
-     * field in k8s CRD spec
+     * The plural name used in the resource name and permission names, such as
+     * 'projects' for the resource name of 'projects/{project}' and the permission
+     * name of 'cloudresourcemanager.googleapis.com/projects.get'. It is the same
+     * concept of the `plural` field in k8s CRD spec
      * https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     * Note: The plural form is required even for singleton resources. See
+     * https://aip.dev/156
      *
      * Generated from protobuf field <code>string plural = 5;</code>
      */
-    private $plural = '';
+    protected $plural = '';
     /**
      * The same concept of the `singular` field in k8s CRD spec
      * https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
@@ -180,7 +127,15 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string singular = 6;</code>
      */
-    private $singular = '';
+    protected $singular = '';
+    /**
+     * Style flag(s) for this resource.
+     * These indicate that a resource is expected to conform to a given
+     * style. See the specific style flags for additional information.
+     *
+     * Generated from protobuf field <code>repeated .google.api.ResourceDescriptor.Style style = 10;</code>
+     */
+    private $style;
 
     /**
      * Constructor.
@@ -197,7 +152,7 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
      *           /[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and
      *           should use PascalCase (UpperCamelCase). The maximum number of
      *           characters allowed for the `resource_type_kind` is 100.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $pattern
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $pattern
      *           Optional. The relative resource name pattern associated with this resource
      *           type. The DNS prefix of the full resource name shouldn't be specified here.
      *           The path pattern must follow the syntax, which aligns with HTTP binding
@@ -230,14 +185,21 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
      *                 };
      *               }
      *     @type string $plural
-     *           The plural name used in the resource name, such as 'projects' for
-     *           the name of 'projects/{project}'. It is the same concept of the `plural`
-     *           field in k8s CRD spec
+     *           The plural name used in the resource name and permission names, such as
+     *           'projects' for the resource name of 'projects/{project}' and the permission
+     *           name of 'cloudresourcemanager.googleapis.com/projects.get'. It is the same
+     *           concept of the `plural` field in k8s CRD spec
      *           https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     *           Note: The plural form is required even for singleton resources. See
+     *           https://aip.dev/156
      *     @type string $singular
      *           The same concept of the `singular` field in k8s CRD spec
      *           https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
      *           Such as "project" for the `resourcemanager.googleapis.com/Project` type.
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $style
+     *           Style flag(s) for this resource.
+     *           These indicate that a resource is expected to conform to a given
+     *           style. See the specific style flags for additional information.
      * }
      */
     public function __construct($data = NULL) {
@@ -326,7 +288,7 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
      * type of resource.
      *
      * Generated from protobuf field <code>repeated string pattern = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPattern($var)
@@ -409,17 +371,20 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
      */
     public function setHistory($var)
     {
-        GPBUtil::checkEnum($var, \Google\Api\ResourceDescriptor_History::class);
+        GPBUtil::checkEnum($var, \Google\Api\ResourceDescriptor\History::class);
         $this->history = $var;
 
         return $this;
     }
 
     /**
-     * The plural name used in the resource name, such as 'projects' for
-     * the name of 'projects/{project}'. It is the same concept of the `plural`
-     * field in k8s CRD spec
+     * The plural name used in the resource name and permission names, such as
+     * 'projects' for the resource name of 'projects/{project}' and the permission
+     * name of 'cloudresourcemanager.googleapis.com/projects.get'. It is the same
+     * concept of the `plural` field in k8s CRD spec
      * https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     * Note: The plural form is required even for singleton resources. See
+     * https://aip.dev/156
      *
      * Generated from protobuf field <code>string plural = 5;</code>
      * @return string
@@ -430,10 +395,13 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The plural name used in the resource name, such as 'projects' for
-     * the name of 'projects/{project}'. It is the same concept of the `plural`
-     * field in k8s CRD spec
+     * The plural name used in the resource name and permission names, such as
+     * 'projects' for the resource name of 'projects/{project}' and the permission
+     * name of 'cloudresourcemanager.googleapis.com/projects.get'. It is the same
+     * concept of the `plural` field in k8s CRD spec
      * https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+     * Note: The plural form is required even for singleton resources. See
+     * https://aip.dev/156
      *
      * Generated from protobuf field <code>string plural = 5;</code>
      * @param string $var
@@ -473,6 +441,36 @@ class ResourceDescriptor extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->singular = $var;
+
+        return $this;
+    }
+
+    /**
+     * Style flag(s) for this resource.
+     * These indicate that a resource is expected to conform to a given
+     * style. See the specific style flags for additional information.
+     *
+     * Generated from protobuf field <code>repeated .google.api.ResourceDescriptor.Style style = 10;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getStyle()
+    {
+        return $this->style;
+    }
+
+    /**
+     * Style flag(s) for this resource.
+     * These indicate that a resource is expected to conform to a given
+     * style. See the specific style flags for additional information.
+     *
+     * Generated from protobuf field <code>repeated .google.api.ResourceDescriptor.Style style = 10;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setStyle($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Api\ResourceDescriptor\Style::class);
+        $this->style = $arr;
 
         return $this;
     }

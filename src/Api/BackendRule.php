@@ -17,42 +17,84 @@ class BackendRule extends \Google\Protobuf\Internal\Message
 {
     /**
      * Selects the methods to which this rule applies.
-     * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+     * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+     * details.
      *
      * Generated from protobuf field <code>string selector = 1;</code>
      */
-    private $selector = '';
+    protected $selector = '';
     /**
      * The address of the API backend.
+     * The scheme is used to determine the backend protocol and security.
+     * The following schemes are accepted:
+     *    SCHEME        PROTOCOL    SECURITY
+     *    http://       HTTP        None
+     *    https://      HTTP        TLS
+     *    grpc://       gRPC        None
+     *    grpcs://      gRPC        TLS
+     * It is recommended to explicitly include a scheme. Leaving out the scheme
+     * may cause constrasting behaviors across platforms.
+     * If the port is unspecified, the default is:
+     * - 80 for schemes without TLS
+     * - 443 for schemes with TLS
+     * For HTTP backends, use [protocol][google.api.BackendRule.protocol]
+     * to specify the protocol version.
      *
      * Generated from protobuf field <code>string address = 2;</code>
      */
-    private $address = '';
+    protected $address = '';
     /**
      * The number of seconds to wait for a response from a request. The default
      * varies based on the request protocol and deployment environment.
      *
      * Generated from protobuf field <code>double deadline = 3;</code>
      */
-    private $deadline = 0.0;
+    protected $deadline = 0.0;
     /**
-     * Minimum deadline in seconds needed for this method. Calls having deadline
-     * value lower than this will be rejected.
+     * Deprecated, do not use.
      *
-     * Generated from protobuf field <code>double min_deadline = 4;</code>
+     * Generated from protobuf field <code>double min_deadline = 4 [deprecated = true];</code>
+     * @deprecated
      */
-    private $min_deadline = 0.0;
+    protected $min_deadline = 0.0;
     /**
      * The number of seconds to wait for the completion of a long running
      * operation. The default is no deadline.
      *
      * Generated from protobuf field <code>double operation_deadline = 5;</code>
      */
-    private $operation_deadline = 0.0;
+    protected $operation_deadline = 0.0;
     /**
      * Generated from protobuf field <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
      */
-    private $path_translation = 0;
+    protected $path_translation = 0;
+    /**
+     * The protocol used for sending a request to the backend.
+     * The supported values are "http/1.1" and "h2".
+     * The default value is inferred from the scheme in the
+     * [address][google.api.BackendRule.address] field:
+     *    SCHEME        PROTOCOL
+     *    http://       http/1.1
+     *    https://      http/1.1
+     *    grpc://       h2
+     *    grpcs://      h2
+     * For secure HTTP backends (https://) that support HTTP/2, set this field
+     * to "h2" for improved performance.
+     * Configuring this field to non-default values is only supported for secure
+     * HTTP backends. This field will be ignored for all other backends.
+     * See
+     * https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
+     * for more details on the supported values.
+     *
+     * Generated from protobuf field <code>string protocol = 9;</code>
+     */
+    protected $protocol = '';
+    /**
+     * The map between request protocol and the backend address.
+     *
+     * Generated from protobuf field <code>map<string, .google.api.BackendRule> overrides_by_request_protocol = 10;</code>
+     */
+    private $overrides_by_request_protocol;
     protected $authentication;
 
     /**
@@ -63,15 +105,29 @@ class BackendRule extends \Google\Protobuf\Internal\Message
      *
      *     @type string $selector
      *           Selects the methods to which this rule applies.
-     *           Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+     *           Refer to [selector][google.api.DocumentationRule.selector] for syntax
+     *           details.
      *     @type string $address
      *           The address of the API backend.
+     *           The scheme is used to determine the backend protocol and security.
+     *           The following schemes are accepted:
+     *              SCHEME        PROTOCOL    SECURITY
+     *              http://       HTTP        None
+     *              https://      HTTP        TLS
+     *              grpc://       gRPC        None
+     *              grpcs://      gRPC        TLS
+     *           It is recommended to explicitly include a scheme. Leaving out the scheme
+     *           may cause constrasting behaviors across platforms.
+     *           If the port is unspecified, the default is:
+     *           - 80 for schemes without TLS
+     *           - 443 for schemes with TLS
+     *           For HTTP backends, use [protocol][google.api.BackendRule.protocol]
+     *           to specify the protocol version.
      *     @type float $deadline
      *           The number of seconds to wait for a response from a request. The default
      *           varies based on the request protocol and deployment environment.
      *     @type float $min_deadline
-     *           Minimum deadline in seconds needed for this method. Calls having deadline
-     *           value lower than this will be rejected.
+     *           Deprecated, do not use.
      *     @type float $operation_deadline
      *           The number of seconds to wait for the completion of a long running
      *           operation. The default is no deadline.
@@ -81,13 +137,29 @@ class BackendRule extends \Google\Protobuf\Internal\Message
      *           This ID token will be added in the HTTP "authorization" header, and sent
      *           to the backend.
      *     @type bool $disable_auth
-     *           When disable_auth is false,  a JWT ID token will be generated with the
-     *           value from [BackendRule.address][google.api.BackendRule.address] as jwt_audience, overrode to the HTTP
-     *           "Authorization" request header and sent to the backend.
      *           When disable_auth is true, a JWT ID token won't be generated and the
      *           original "Authorization" HTTP header will be preserved. If the header is
      *           used to carry the original token and is expected by the backend, this
      *           field must be set to true to preserve the header.
+     *     @type string $protocol
+     *           The protocol used for sending a request to the backend.
+     *           The supported values are "http/1.1" and "h2".
+     *           The default value is inferred from the scheme in the
+     *           [address][google.api.BackendRule.address] field:
+     *              SCHEME        PROTOCOL
+     *              http://       http/1.1
+     *              https://      http/1.1
+     *              grpc://       h2
+     *              grpcs://      h2
+     *           For secure HTTP backends (https://) that support HTTP/2, set this field
+     *           to "h2" for improved performance.
+     *           Configuring this field to non-default values is only supported for secure
+     *           HTTP backends. This field will be ignored for all other backends.
+     *           See
+     *           https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
+     *           for more details on the supported values.
+     *     @type array|\Google\Protobuf\Internal\MapField $overrides_by_request_protocol
+     *           The map between request protocol and the backend address.
      * }
      */
     public function __construct($data = NULL) {
@@ -97,7 +169,8 @@ class BackendRule extends \Google\Protobuf\Internal\Message
 
     /**
      * Selects the methods to which this rule applies.
-     * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+     * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+     * details.
      *
      * Generated from protobuf field <code>string selector = 1;</code>
      * @return string
@@ -109,7 +182,8 @@ class BackendRule extends \Google\Protobuf\Internal\Message
 
     /**
      * Selects the methods to which this rule applies.
-     * Refer to [selector][google.api.DocumentationRule.selector] for syntax details.
+     * Refer to [selector][google.api.DocumentationRule.selector] for syntax
+     * details.
      *
      * Generated from protobuf field <code>string selector = 1;</code>
      * @param string $var
@@ -125,6 +199,20 @@ class BackendRule extends \Google\Protobuf\Internal\Message
 
     /**
      * The address of the API backend.
+     * The scheme is used to determine the backend protocol and security.
+     * The following schemes are accepted:
+     *    SCHEME        PROTOCOL    SECURITY
+     *    http://       HTTP        None
+     *    https://      HTTP        TLS
+     *    grpc://       gRPC        None
+     *    grpcs://      gRPC        TLS
+     * It is recommended to explicitly include a scheme. Leaving out the scheme
+     * may cause constrasting behaviors across platforms.
+     * If the port is unspecified, the default is:
+     * - 80 for schemes without TLS
+     * - 443 for schemes with TLS
+     * For HTTP backends, use [protocol][google.api.BackendRule.protocol]
+     * to specify the protocol version.
      *
      * Generated from protobuf field <code>string address = 2;</code>
      * @return string
@@ -136,6 +224,20 @@ class BackendRule extends \Google\Protobuf\Internal\Message
 
     /**
      * The address of the API backend.
+     * The scheme is used to determine the backend protocol and security.
+     * The following schemes are accepted:
+     *    SCHEME        PROTOCOL    SECURITY
+     *    http://       HTTP        None
+     *    https://      HTTP        TLS
+     *    grpc://       gRPC        None
+     *    grpcs://      gRPC        TLS
+     * It is recommended to explicitly include a scheme. Leaving out the scheme
+     * may cause constrasting behaviors across platforms.
+     * If the port is unspecified, the default is:
+     * - 80 for schemes without TLS
+     * - 443 for schemes with TLS
+     * For HTTP backends, use [protocol][google.api.BackendRule.protocol]
+     * to specify the protocol version.
      *
      * Generated from protobuf field <code>string address = 2;</code>
      * @param string $var
@@ -178,27 +280,29 @@ class BackendRule extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Minimum deadline in seconds needed for this method. Calls having deadline
-     * value lower than this will be rejected.
+     * Deprecated, do not use.
      *
-     * Generated from protobuf field <code>double min_deadline = 4;</code>
+     * Generated from protobuf field <code>double min_deadline = 4 [deprecated = true];</code>
      * @return float
+     * @deprecated
      */
     public function getMinDeadline()
     {
+        @trigger_error('min_deadline is deprecated.', E_USER_DEPRECATED);
         return $this->min_deadline;
     }
 
     /**
-     * Minimum deadline in seconds needed for this method. Calls having deadline
-     * value lower than this will be rejected.
+     * Deprecated, do not use.
      *
-     * Generated from protobuf field <code>double min_deadline = 4;</code>
+     * Generated from protobuf field <code>double min_deadline = 4 [deprecated = true];</code>
      * @param float $var
      * @return $this
+     * @deprecated
      */
     public function setMinDeadline($var)
     {
+        @trigger_error('min_deadline is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkDouble($var);
         $this->min_deadline = $var;
 
@@ -249,7 +353,7 @@ class BackendRule extends \Google\Protobuf\Internal\Message
      */
     public function setPathTranslation($var)
     {
-        GPBUtil::checkEnum($var, \Google\Api\BackendRule_PathTranslation::class);
+        GPBUtil::checkEnum($var, \Google\Api\BackendRule\PathTranslation::class);
         $this->path_translation = $var;
 
         return $this;
@@ -266,6 +370,11 @@ class BackendRule extends \Google\Protobuf\Internal\Message
     public function getJwtAudience()
     {
         return $this->readOneof(7);
+    }
+
+    public function hasJwtAudience()
+    {
+        return $this->hasOneof(7);
     }
 
     /**
@@ -286,9 +395,6 @@ class BackendRule extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When disable_auth is false,  a JWT ID token will be generated with the
-     * value from [BackendRule.address][google.api.BackendRule.address] as jwt_audience, overrode to the HTTP
-     * "Authorization" request header and sent to the backend.
      * When disable_auth is true, a JWT ID token won't be generated and the
      * original "Authorization" HTTP header will be preserved. If the header is
      * used to carry the original token and is expected by the backend, this
@@ -302,10 +408,12 @@ class BackendRule extends \Google\Protobuf\Internal\Message
         return $this->readOneof(8);
     }
 
+    public function hasDisableAuth()
+    {
+        return $this->hasOneof(8);
+    }
+
     /**
-     * When disable_auth is false,  a JWT ID token will be generated with the
-     * value from [BackendRule.address][google.api.BackendRule.address] as jwt_audience, overrode to the HTTP
-     * "Authorization" request header and sent to the backend.
      * When disable_auth is true, a JWT ID token won't be generated and the
      * original "Authorization" HTTP header will be preserved. If the header is
      * used to carry the original token and is expected by the backend, this
@@ -319,6 +427,88 @@ class BackendRule extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(8, $var);
+
+        return $this;
+    }
+
+    /**
+     * The protocol used for sending a request to the backend.
+     * The supported values are "http/1.1" and "h2".
+     * The default value is inferred from the scheme in the
+     * [address][google.api.BackendRule.address] field:
+     *    SCHEME        PROTOCOL
+     *    http://       http/1.1
+     *    https://      http/1.1
+     *    grpc://       h2
+     *    grpcs://      h2
+     * For secure HTTP backends (https://) that support HTTP/2, set this field
+     * to "h2" for improved performance.
+     * Configuring this field to non-default values is only supported for secure
+     * HTTP backends. This field will be ignored for all other backends.
+     * See
+     * https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
+     * for more details on the supported values.
+     *
+     * Generated from protobuf field <code>string protocol = 9;</code>
+     * @return string
+     */
+    public function getProtocol()
+    {
+        return $this->protocol;
+    }
+
+    /**
+     * The protocol used for sending a request to the backend.
+     * The supported values are "http/1.1" and "h2".
+     * The default value is inferred from the scheme in the
+     * [address][google.api.BackendRule.address] field:
+     *    SCHEME        PROTOCOL
+     *    http://       http/1.1
+     *    https://      http/1.1
+     *    grpc://       h2
+     *    grpcs://      h2
+     * For secure HTTP backends (https://) that support HTTP/2, set this field
+     * to "h2" for improved performance.
+     * Configuring this field to non-default values is only supported for secure
+     * HTTP backends. This field will be ignored for all other backends.
+     * See
+     * https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids
+     * for more details on the supported values.
+     *
+     * Generated from protobuf field <code>string protocol = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProtocol($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->protocol = $var;
+
+        return $this;
+    }
+
+    /**
+     * The map between request protocol and the backend address.
+     *
+     * Generated from protobuf field <code>map<string, .google.api.BackendRule> overrides_by_request_protocol = 10;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getOverridesByRequestProtocol()
+    {
+        return $this->overrides_by_request_protocol;
+    }
+
+    /**
+     * The map between request protocol and the backend address.
+     *
+     * Generated from protobuf field <code>map<string, .google.api.BackendRule> overrides_by_request_protocol = 10;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setOverridesByRequestProtocol($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Api\BackendRule::class);
+        $this->overrides_by_request_protocol = $arr;
 
         return $this;
     }

@@ -31,7 +31,7 @@ class PreconditionFailure extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Rpc\PreconditionFailure\Violation[]|\Google\Protobuf\Internal\RepeatedField $violations
+     *     @type array<\Google\Rpc\PreconditionFailure\Violation>|\Google\Protobuf\Internal\RepeatedField $violations
      *           Describes all precondition violations.
      * }
      */
@@ -55,7 +55,7 @@ class PreconditionFailure extends \Google\Protobuf\Internal\Message
      * Describes all precondition violations.
      *
      * Generated from protobuf field <code>repeated .google.rpc.PreconditionFailure.Violation violations = 1;</code>
-     * @param \Google\Rpc\PreconditionFailure\Violation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Rpc\PreconditionFailure\Violation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setViolations($var)

@@ -11,21 +11,31 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Billing related configuration of the service.
  * The following example shows how to configure monitored resources and metrics
- * for billing:
+ * for billing, `consumer_destinations` is the only supported destination and
+ * the monitored resources need at least one label key
+ * `cloud.googleapis.com/location` to indicate the location of the billing
+ * usage, using different monitored resources between monitoring and billing is
+ * recommended so they can be evolved independently:
  *     monitored_resources:
- *     - type: library.googleapis.com/branch
+ *     - type: library.googleapis.com/billing_branch
  *       labels:
- *       - key: /city
- *         description: The city where the library branch is located in.
- *       - key: /name
- *         description: The name of the branch.
+ *       - key: cloud.googleapis.com/location
+ *         description: |
+ *           Predefined label to support billing location restriction.
+ *       - key: city
+ *         description: |
+ *           Custom label to define the city where the library branch is located
+ *           in.
+ *       - key: name
+ *         description: Custom label to define the name of the library branch.
  *     metrics:
  *     - name: library.googleapis.com/book/borrowed_count
  *       metric_kind: DELTA
  *       value_type: INT64
+ *       unit: "1"
  *     billing:
  *       consumer_destinations:
- *       - monitored_resource: library.googleapis.com/branch
+ *       - monitored_resource: library.googleapis.com/billing_branch
  *         metrics:
  *         - library.googleapis.com/book/borrowed_count
  *
@@ -49,7 +59,7 @@ class Billing extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Api\Billing\BillingDestination[]|\Google\Protobuf\Internal\RepeatedField $consumer_destinations
+     *     @type array<\Google\Api\Billing\BillingDestination>|\Google\Protobuf\Internal\RepeatedField $consumer_destinations
      *           Billing configurations for sending metrics to the consumer project.
      *           There can be multiple consumer destinations per service, each one must have
      *           a different monitored resource type. A metric can be used in at most
@@ -82,7 +92,7 @@ class Billing extends \Google\Protobuf\Internal\Message
      * one consumer destination.
      *
      * Generated from protobuf field <code>repeated .google.api.Billing.BillingDestination consumer_destinations = 8;</code>
-     * @param \Google\Api\Billing\BillingDestination[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Api\Billing\BillingDestination>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setConsumerDestinations($var)

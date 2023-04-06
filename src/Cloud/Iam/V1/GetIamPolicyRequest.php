@@ -21,14 +21,14 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
-    private $resource = '';
+    protected $resource = '';
     /**
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      *
      * Generated from protobuf field <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
      */
-    private $options = null;
+    protected $options = null;
 
     /**
      * Constructor.
@@ -41,7 +41,7 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
      *           See the operation documentation for the appropriate value for this field.
      *     @type \Google\Cloud\Iam\V1\GetPolicyOptions $options
      *           OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     *           `GetIamPolicy`. This field is only used by Cloud IAM.
+     *           `GetIamPolicy`.
      * }
      */
     public function __construct($data = NULL) {
@@ -79,19 +79,29 @@ class GetIamPolicyRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      *
      * Generated from protobuf field <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
-     * @return \Google\Cloud\Iam\V1\GetPolicyOptions
+     * @return \Google\Cloud\Iam\V1\GetPolicyOptions|null
      */
     public function getOptions()
     {
         return $this->options;
     }
 
+    public function hasOptions()
+    {
+        return isset($this->options);
+    }
+
+    public function clearOptions()
+    {
+        unset($this->options);
+    }
+
     /**
      * OPTIONAL: A `GetPolicyOptions` object for specifying options to
-     * `GetIamPolicy`. This field is only used by Cloud IAM.
+     * `GetIamPolicy`.
      *
      * Generated from protobuf field <code>.google.iam.v1.GetPolicyOptions options = 2;</code>
      * @param \Google\Cloud\Iam\V1\GetPolicyOptions $var

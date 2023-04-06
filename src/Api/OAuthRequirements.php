@@ -37,7 +37,7 @@ class OAuthRequirements extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string canonical_scopes = 1;</code>
      */
-    private $canonical_scopes = '';
+    protected $canonical_scopes = '';
 
     /**
      * Constructor.

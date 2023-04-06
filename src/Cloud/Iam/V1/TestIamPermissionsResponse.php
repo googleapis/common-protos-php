@@ -29,7 +29,7 @@ class TestIamPermissionsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $permissions
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $permissions
      *           A subset of `TestPermissionsRequest.permissions` that the caller is
      *           allowed.
      * }
@@ -56,7 +56,7 @@ class TestIamPermissionsResponse extends \Google\Protobuf\Internal\Message
      * allowed.
      *
      * Generated from protobuf field <code>repeated string permissions = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPermissions($var)
