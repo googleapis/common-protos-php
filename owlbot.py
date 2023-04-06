@@ -16,6 +16,7 @@
 
 import logging
 from pathlib import Path
+import shutil
 import subprocess
 
 import synthtool as s
@@ -25,10 +26,10 @@ from synthtool import _tracked_paths
 logging.basicConfig(level=logging.DEBUG)
 
 protos = {
-    "api": "api",
-    "location": "location",
-    "iam": "v1",
-    "loggingtype": "type",
+#    "api": "api",
+#    "location": "location",
+#    "iam": "v1",
+#    "loggingtype": "type",
     "rpc": "rpc",
     "type": "type",
 }
@@ -46,4 +47,18 @@ for proto, version in protos.items():
         src=src,
         dest=dest,
         version_string=version,
+        copy_excludes=[
+            src / "**/[A-Z]*_*.php"
+        ],
     )
+
+shutil.rmtree(Path(php.STAGING_DIR))
+
+s.replace(
+    "src/**/*.php",
+    r"^// Adding a class alias for backwards compatibility with the previous class name.$"
+    + "\n"
+    + r"^class_alias\(.*\);$"
+    + "\n",
+    '')
+
