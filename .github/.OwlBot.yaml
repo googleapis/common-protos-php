@@ -2,16 +2,18 @@ docker:
     image: gcr.io/cloud-devrel-public-resources/owlbot-php:latest
 deep-copy-regex:
       - source: /google/api/google-api-php/(.*)
-        dest: /owl-bot-staging/api-protos/$1
+        dest: /owl-bot-staging/api/$1
       - source: /google/cloud/extended-operations-php/(.*)
-        dest: /owl-bot-staging/extendedoperations-protos/$1
+        dest: /owl-bot-staging/extendedoperations/$1
       - source: /google/cloud/location/.*-php/(.*)
-        dest: /owl-bot-staging/location-protos/$1
+        dest: /owl-bot-staging/location/$1
       - source: /google/iam/v1/.*-php/(.*)
-        dest: /owl-bot-staging/iam-protos/$1
+        dest: /owl-bot-staging/iam/$1
+      - source: /google/iam/v1/logging/.*-php/(.*)
+        dest: /owl-bot-staging/iamlogging/$1
       - source: /google/logging/type/.*-php/(.*)
-        dest: /owl-bot-staging/logging-protos/$1
+        dest: /owl-bot-staging/logging/$1
       - source: /google/rpc/.*-php/(.*)
-        dest: /owl-bot-staging/rpc-protos/$1
+        dest: /owl-bot-staging/rpc/$1
       - source: /google/type/.*-php/(.*)
-        dest: /owl-bot-staging/type-protos/$1
+        dest: /owl-bot-staging/type/$1

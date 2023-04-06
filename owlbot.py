@@ -32,14 +32,14 @@ protos = [
     ("location", "cloud"),
     ("logging", "cloud"),
     ("iam", "cloud"),
-    ("iam", "iam"), # we have to do this twice because there are two different locations
+    ("iamlogging", "iam"),
     ("rpc", "rpc"),
     ("type", "type"),
 ]
 
 dest = Path().resolve()
 for proto in protos:
-    src = Path(f"{php.STAGING_DIR}/{proto[0]}-protos").resolve()
+    src = Path(f"{php.STAGING_DIR}/{proto[0]}").resolve()
 
     # Added so that we can pass copy_excludes in the owlbot_main() call
     _tracked_paths.add(src)
@@ -55,6 +55,7 @@ for proto in protos:
         ],
     )
 
+# remove owl-bot-staging dir
 shutil.rmtree(Path(php.STAGING_DIR))
 
 s.replace(
