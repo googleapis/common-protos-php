@@ -19,7 +19,7 @@ jobs:
           with:
             timeout_minutes: 10
             max_attempts: 3
-            command: composer install
+            command: composer require --dev sami/sami
         - name: Generate Documentation
           uses: docker://php:7.4-cli
           with:
