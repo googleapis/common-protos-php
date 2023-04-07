@@ -29,8 +29,10 @@ logging.basicConfig(level=logging.DEBUG)
 protos = [
     ("api", "api"),
     ("extendedoperations", "cloud"),
-    ("location", "cloud"),
+    ("location", "cloud"), 
+    ("logging", "google"), # for the metadata
     ("logging", "cloud"),
+    ("iam", "google"), # for the metadata
     ("iam", "cloud"),
     ("iamlogging", "iam"),
     ("rpc", "rpc"),
@@ -55,8 +57,14 @@ for proto in protos:
         ],
     )
 
+# move metadata to more specific directories (owlbot isnt smart enough to do this)
+s.move("metadata/Google/Iam/V1", "metadata/Iam/V1")
+s.move("metadata/Google/Logging/Type", "metadata/Logging/Type")
+
 # remove owl-bot-staging dir
 shutil.rmtree(Path(php.STAGING_DIR))
+# remove the metadata/Google files that we copied
+shutil.rmtree(Path("metadata/Google"))
 
 s.replace(
     "src/**/*.php",
