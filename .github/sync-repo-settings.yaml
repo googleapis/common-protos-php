@@ -10,6 +10,7 @@ branchProtectionRules:
     - 'PHP 8.0 Unit Test'
     - 'PHP 8.1 Unit Test'
     - 'PHP 8.2 Unit Test'
+    - 'PHP 8.2 Unit Test protobuf-3.12.2,grpc'
     - 'cla/google'
   requiredApprovingReviewCount: 1
   requiresCodeOwnerReviews: true
