@@ -69,6 +69,4 @@ class WellKnownType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(WellKnownType::class, \Google\Api\Expr\V1alpha1\Type_WellKnownType::class);
 

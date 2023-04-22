@@ -90,6 +90,4 @@ class PrimitiveType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PrimitiveType::class, \Google\Api\Expr\V1alpha1\Type_PrimitiveType::class);
 

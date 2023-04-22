@@ -139,6 +139,4 @@ class Linear extends \Google\Protobuf\Internal\Message
 
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Linear::class, \Google\Api\Distribution_BucketOptions_Linear::class);
 

@@ -165,6 +165,4 @@ class Exemplar extends \Google\Protobuf\Internal\Message
 
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Exemplar::class, \Google\Api\Distribution_Exemplar::class);
 

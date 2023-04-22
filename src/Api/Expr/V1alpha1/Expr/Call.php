@@ -138,6 +138,4 @@ class Call extends \Google\Protobuf\Internal\Message
 
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Call::class, \Google\Api\Expr\V1alpha1\Expr_Call::class);
 
