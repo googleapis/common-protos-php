@@ -36,6 +36,7 @@ protos = [
     ("iam", "cloud"),
     ("iamlogging", "iam"),
     ("rpc", "rpc"),
+    ("rpccontext", "context"),
     ("type", "type"),
 ]
 
