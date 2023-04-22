@@ -15,7 +15,5 @@ deep-copy-regex:
         dest: /owl-bot-staging/logging/$1
       - source: /google/rpc/.*-php/(.*)
         dest: /owl-bot-staging/rpc/$1
-      - source: /google/rpc/context/.*-php/(.*)
-        dest: /owl-bot-staging/rpccontext/$1
       - source: /google/type/.*-php/(.*)
         dest: /owl-bot-staging/type/$1
