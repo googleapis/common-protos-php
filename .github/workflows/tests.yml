@@ -15,7 +15,6 @@ jobs:
                   - php: 7.4
                     extensions: "protobuf-3.12.2,grpc"
                     tools: "pecl"
-                include:
                   - php: 8.2
                     extensions: "protobuf-3.12.2,grpc"
                     tools: "pecl"
