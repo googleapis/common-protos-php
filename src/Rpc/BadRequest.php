@@ -29,7 +29,7 @@ class BadRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Rpc\BadRequest\FieldViolation[]|\Google\Protobuf\Internal\RepeatedField $field_violations
+     *     @type array<\Google\Rpc\BadRequest\FieldViolation>|\Google\Protobuf\Internal\RepeatedField $field_violations
      *           Describes all violations in a client request.
      * }
      */
@@ -53,7 +53,7 @@ class BadRequest extends \Google\Protobuf\Internal\Message
      * Describes all violations in a client request.
      *
      * Generated from protobuf field <code>repeated .google.rpc.BadRequest.FieldViolation field_violations = 1;</code>
-     * @param \Google\Rpc\BadRequest\FieldViolation[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Rpc\BadRequest\FieldViolation>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFieldViolations($var)

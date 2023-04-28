@@ -21,13 +21,13 @@ class TimeZone extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
-    private $id = '';
+    protected $id = '';
     /**
      * Optional. IANA Time Zone Database version number, e.g. "2019a".
      *
      * Generated from protobuf field <code>string version = 2;</code>
      */
-    private $version = '';
+    protected $version = '';
 
     /**
      * Constructor.

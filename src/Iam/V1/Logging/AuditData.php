@@ -22,7 +22,7 @@ class AuditData extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.iam.v1.PolicyDelta policy_delta = 2;</code>
      */
-    private $policy_delta = null;
+    protected $policy_delta = null;
 
     /**
      * Constructor.
@@ -43,11 +43,21 @@ class AuditData extends \Google\Protobuf\Internal\Message
      * Policy delta between the original policy and the newly set policy.
      *
      * Generated from protobuf field <code>.google.iam.v1.PolicyDelta policy_delta = 2;</code>
-     * @return \Google\Cloud\Iam\V1\PolicyDelta
+     * @return \Google\Cloud\Iam\V1\PolicyDelta|null
      */
     public function getPolicyDelta()
     {
         return $this->policy_delta;
+    }
+
+    public function hasPolicyDelta()
+    {
+        return isset($this->policy_delta);
+    }
+
+    public function clearPolicyDelta()
+    {
+        unset($this->policy_delta);
     }
 
     /**

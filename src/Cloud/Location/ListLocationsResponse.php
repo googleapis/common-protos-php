@@ -34,7 +34,7 @@ class ListLocationsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Cloud\Location\Location[]|\Google\Protobuf\Internal\RepeatedField $locations
+     *     @type array<\Google\Cloud\Location\Location>|\Google\Protobuf\Internal\RepeatedField $locations
      *           A list of locations that matches the specified filter in the request.
      *     @type string $next_page_token
      *           The standard List next-page token.
@@ -60,7 +60,7 @@ class ListLocationsResponse extends \Google\Protobuf\Internal\Message
      * A list of locations that matches the specified filter in the request.
      *
      * Generated from protobuf field <code>repeated .google.cloud.location.Location locations = 1;</code>
-     * @param \Google\Cloud\Location\Location[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Cloud\Location\Location>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLocations($var)

@@ -20,19 +20,19 @@ class LabelDescriptor extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string key = 1;</code>
      */
-    private $key = '';
+    protected $key = '';
     /**
      * The type of data that can be assigned to the label.
      *
      * Generated from protobuf field <code>.google.api.LabelDescriptor.ValueType value_type = 2;</code>
      */
-    private $value_type = 0;
+    protected $value_type = 0;
     /**
      * A human-readable description for the label.
      *
      * Generated from protobuf field <code>string description = 3;</code>
      */
-    private $description = '';
+    protected $description = '';
 
     /**
      * Constructor.
@@ -99,7 +99,7 @@ class LabelDescriptor extends \Google\Protobuf\Internal\Message
      */
     public function setValueType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Api\LabelDescriptor_ValueType::class);
+        GPBUtil::checkEnum($var, \Google\Api\LabelDescriptor\ValueType::class);
         $this->value_type = $var;
 
         return $this;

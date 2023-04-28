@@ -31,7 +31,7 @@ class Help extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Rpc\Help\Link[]|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type array<\Google\Rpc\Help\Link>|\Google\Protobuf\Internal\RepeatedField $links
      *           URL(s) pointing to additional information on handling the current error.
      * }
      */
@@ -55,7 +55,7 @@ class Help extends \Google\Protobuf\Internal\Message
      * URL(s) pointing to additional information on handling the current error.
      *
      * Generated from protobuf field <code>repeated .google.rpc.Help.Link links = 1;</code>
-     * @param \Google\Rpc\Help\Link[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Rpc\Help\Link>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLinks($var)

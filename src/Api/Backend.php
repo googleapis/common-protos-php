@@ -29,7 +29,7 @@ class Backend extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Api\BackendRule[]|\Google\Protobuf\Internal\RepeatedField $rules
+     *     @type array<\Google\Api\BackendRule>|\Google\Protobuf\Internal\RepeatedField $rules
      *           A list of API backend rules that apply to individual API methods.
      *           **NOTE:** All service configuration rules follow "last one wins" order.
      * }
@@ -56,7 +56,7 @@ class Backend extends \Google\Protobuf\Internal\Message
      * **NOTE:** All service configuration rules follow "last one wins" order.
      *
      * Generated from protobuf field <code>repeated .google.api.BackendRule rules = 1;</code>
-     * @param \Google\Api\BackendRule[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Api\BackendRule>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRules($var)
