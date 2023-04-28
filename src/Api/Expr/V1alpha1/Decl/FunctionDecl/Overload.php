@@ -306,6 +306,4 @@ class Overload extends \Google\Protobuf\Internal\Message
 
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Overload::class, \Google\Api\Expr\V1alpha1\Decl_FunctionDecl_Overload::class);
 

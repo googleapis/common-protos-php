@@ -157,6 +157,4 @@ class MetricDescriptorMetadata extends \Google\Protobuf\Internal\Message
 
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MetricDescriptorMetadata::class, \Google\Api\MetricDescriptor_MetricDescriptorMetadata::class);
 

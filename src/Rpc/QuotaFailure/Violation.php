@@ -128,6 +128,4 @@ class Violation extends \Google\Protobuf\Internal\Message
 
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Violation::class, \Google\Rpc\QuotaFailure_Violation::class);
 

@@ -99,6 +99,4 @@ class Result extends \Google\Protobuf\Internal\Message
 
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Result::class, \Google\Api\Expr\V1beta1\EvalState_Result::class);
 

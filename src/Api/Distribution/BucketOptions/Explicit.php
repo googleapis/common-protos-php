@@ -72,6 +72,4 @@ class Explicit extends \Google\Protobuf\Internal\Message
 
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Explicit::class, \Google\Api\Distribution_BucketOptions_Explicit::class);
 

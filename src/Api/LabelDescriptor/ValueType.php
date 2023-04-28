@@ -59,6 +59,4 @@ class ValueType
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ValueType::class, \Google\Api\LabelDescriptor_ValueType::class);
 

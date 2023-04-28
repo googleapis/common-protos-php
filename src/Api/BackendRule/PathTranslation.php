@@ -90,6 +90,4 @@ class PathTranslation
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PathTranslation::class, \Google\Api\BackendRule_PathTranslation::class);
 
