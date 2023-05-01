@@ -9,18 +9,26 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * `Service` is the root object of Google service configuration schema. It
- * describes basic information about a service, such as the name and the
- * title, and delegates other aspects to sub-sections. Each sub-section is
- * either a proto message or a repeated proto message that configures a
- * specific aspect, such as auth. See each proto message definition for details.
+ * `Service` is the root object of Google API service configuration (service
+ * config). It describes the basic information about a logical service,
+ * such as the service name and the user-facing title, and delegates other
+ * aspects to sub-sections. Each sub-section is either a proto message or a
+ * repeated proto message that configures a specific aspect, such as auth.
+ * For more information, see each proto message definition.
  * Example:
  *     type: google.api.Service
- *     config_version: 3
  *     name: calendar.googleapis.com
  *     title: Google Calendar API
  *     apis:
  *     - name: google.calendar.v3.Calendar
+ *     visibility:
+ *       rules:
+ *       - selector: "google.calendar.v3.*"
+ *         restriction: PREVIEW
+ *     backend:
+ *       rules:
+ *       - selector: "google.calendar.v3.*"
+ *         address: calendar.example.com
  *     authentication:
  *       providers:
  *       - id: google_calendar_auth
@@ -36,57 +44,52 @@ use Google\Protobuf\Internal\GPBUtil;
 class Service extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The semantic version of the service configuration. The config version
-     * affects the interpretation of the service configuration. For example,
-     * certain features are enabled by default for certain config versions.
-     * The latest config version is `3`.
-     *
-     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
-     */
-    private $config_version = null;
-    /**
-     * The DNS address at which this service is available,
-     * e.g. `calendar.googleapis.com`.
+     * The service name, which is a DNS-like logical identifier for the
+     * service, such as `calendar.googleapis.com`. The service name
+     * typically goes through DNS verification to make sure the owner
+     * of the service also owns the DNS name.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
-     * A unique ID for a specific instance of this message, typically assigned
-     * by the client for tracking purpose. If empty, the server may choose to
-     * generate one instead.
-     *
-     * Generated from protobuf field <code>string id = 33;</code>
-     */
-    private $id = '';
-    /**
-     * The product title for this service.
+     * The product title for this service, it is the name displayed in Google
+     * Cloud Console.
      *
      * Generated from protobuf field <code>string title = 2;</code>
      */
-    private $title = '';
+    protected $title = '';
     /**
      * The Google project that owns this service.
      *
      * Generated from protobuf field <code>string producer_project_id = 22;</code>
      */
-    private $producer_project_id = '';
+    protected $producer_project_id = '';
+    /**
+     * A unique ID for a specific instance of this message, typically assigned
+     * by the client for tracking purpose. Must be no longer than 63 characters
+     * and only lower case letters, digits, '.', '_' and '-' are allowed. If
+     * empty, the server may choose to generate one instead.
+     *
+     * Generated from protobuf field <code>string id = 33;</code>
+     */
+    protected $id = '';
     /**
      * A list of API interfaces exported by this service. Only the `name` field
-     * of the [google.protobuf.Api][google.protobuf.Api] needs to be provided by the configuration
-     * author, as the remaining fields will be derived from the IDL during the
-     * normalization process. It is an error to specify an API interface here
-     * which cannot be resolved against the associated IDL files.
+     * of the [google.protobuf.Api][google.protobuf.Api] needs to be provided by
+     * the configuration author, as the remaining fields will be derived from the
+     * IDL during the normalization process. It is an error to specify an API
+     * interface here which cannot be resolved against the associated IDL files.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Api apis = 3;</code>
      */
     private $apis;
     /**
      * A list of all proto message types included in this API service.
-     * Types referenced directly or indirectly by the `apis` are
-     * automatically included.  Messages which are not referenced but
-     * shall be included, such as types used by the `google.protobuf.Any` type,
-     * should be listed here by name. Example:
+     * Types referenced directly or indirectly by the `apis` are automatically
+     * included.  Messages which are not referenced but shall be included, such as
+     * types used by the `google.protobuf.Any` type, should be listed here by
+     * name by the configuration author. Example:
      *     types:
      *     - name: google.protobuf.Int32
      *
@@ -94,10 +97,10 @@ class Service extends \Google\Protobuf\Internal\Message
      */
     private $types;
     /**
-     * A list of all enum types included in this API service.  Enums
-     * referenced directly or indirectly by the `apis` are automatically
-     * included.  Enums which are not referenced but shall be included
-     * should be listed here by name. Example:
+     * A list of all enum types included in this API service.  Enums referenced
+     * directly or indirectly by the `apis` are automatically included.  Enums
+     * which are not referenced but shall be included should be listed here by
+     * name by the configuration author. Example:
      *     enums:
      *     - name: google.someapi.v1.SomeEnum
      *
@@ -109,43 +112,43 @@ class Service extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.api.Documentation documentation = 6;</code>
      */
-    private $documentation = null;
+    protected $documentation = null;
     /**
      * API backend configuration.
      *
      * Generated from protobuf field <code>.google.api.Backend backend = 8;</code>
      */
-    private $backend = null;
+    protected $backend = null;
     /**
      * HTTP configuration.
      *
      * Generated from protobuf field <code>.google.api.Http http = 9;</code>
      */
-    private $http = null;
+    protected $http = null;
     /**
      * Quota configuration.
      *
      * Generated from protobuf field <code>.google.api.Quota quota = 10;</code>
      */
-    private $quota = null;
+    protected $quota = null;
     /**
      * Auth configuration.
      *
      * Generated from protobuf field <code>.google.api.Authentication authentication = 11;</code>
      */
-    private $authentication = null;
+    protected $authentication = null;
     /**
      * Context configuration.
      *
      * Generated from protobuf field <code>.google.api.Context context = 12;</code>
      */
-    private $context = null;
+    protected $context = null;
     /**
      * Configuration controlling usage of this service.
      *
      * Generated from protobuf field <code>.google.api.Usage usage = 15;</code>
      */
-    private $usage = null;
+    protected $usage = null;
     /**
      * Configuration for network endpoints.  If this is empty, then an endpoint
      * with the same name as the service is automatically generated to service all
@@ -159,7 +162,7 @@ class Service extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.api.Control control = 21;</code>
      */
-    private $control = null;
+    protected $control = null;
     /**
      * Defines the logs used by this service.
      *
@@ -174,7 +177,8 @@ class Service extends \Google\Protobuf\Internal\Message
     private $metrics;
     /**
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      *
      * Generated from protobuf field <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
      */
@@ -184,31 +188,47 @@ class Service extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>.google.api.Billing billing = 26;</code>
      */
-    private $billing = null;
+    protected $billing = null;
     /**
      * Logging configuration.
      *
      * Generated from protobuf field <code>.google.api.Logging logging = 27;</code>
      */
-    private $logging = null;
+    protected $logging = null;
     /**
      * Monitoring configuration.
      *
      * Generated from protobuf field <code>.google.api.Monitoring monitoring = 28;</code>
      */
-    private $monitoring = null;
+    protected $monitoring = null;
     /**
      * System parameter configuration.
      *
      * Generated from protobuf field <code>.google.api.SystemParameters system_parameters = 29;</code>
      */
-    private $system_parameters = null;
+    protected $system_parameters = null;
     /**
      * Output only. The source information for this configuration if available.
      *
      * Generated from protobuf field <code>.google.api.SourceInfo source_info = 37;</code>
      */
-    private $source_info = null;
+    protected $source_info = null;
+    /**
+     * Settings for [Google Cloud Client
+     * libraries](https://cloud.google.com/apis/docs/cloud-client-libraries)
+     * generated from APIs defined as protocol buffers.
+     *
+     * Generated from protobuf field <code>.google.api.Publishing publishing = 45;</code>
+     */
+    protected $publishing = null;
+    /**
+     * Obsolete. Do not use.
+     * This field has no semantic meaning. The service config compiler always
+     * sets this field to `3`.
+     *
+     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
+     */
+    protected $config_version = null;
 
     /**
      * Constructor.
@@ -216,41 +236,40 @@ class Service extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Protobuf\UInt32Value $config_version
-     *           The semantic version of the service configuration. The config version
-     *           affects the interpretation of the service configuration. For example,
-     *           certain features are enabled by default for certain config versions.
-     *           The latest config version is `3`.
      *     @type string $name
-     *           The DNS address at which this service is available,
-     *           e.g. `calendar.googleapis.com`.
-     *     @type string $id
-     *           A unique ID for a specific instance of this message, typically assigned
-     *           by the client for tracking purpose. If empty, the server may choose to
-     *           generate one instead.
+     *           The service name, which is a DNS-like logical identifier for the
+     *           service, such as `calendar.googleapis.com`. The service name
+     *           typically goes through DNS verification to make sure the owner
+     *           of the service also owns the DNS name.
      *     @type string $title
-     *           The product title for this service.
+     *           The product title for this service, it is the name displayed in Google
+     *           Cloud Console.
      *     @type string $producer_project_id
      *           The Google project that owns this service.
-     *     @type \Google\Protobuf\Api[]|\Google\Protobuf\Internal\RepeatedField $apis
+     *     @type string $id
+     *           A unique ID for a specific instance of this message, typically assigned
+     *           by the client for tracking purpose. Must be no longer than 63 characters
+     *           and only lower case letters, digits, '.', '_' and '-' are allowed. If
+     *           empty, the server may choose to generate one instead.
+     *     @type array<\Google\Protobuf\Api>|\Google\Protobuf\Internal\RepeatedField $apis
      *           A list of API interfaces exported by this service. Only the `name` field
-     *           of the [google.protobuf.Api][google.protobuf.Api] needs to be provided by the configuration
-     *           author, as the remaining fields will be derived from the IDL during the
-     *           normalization process. It is an error to specify an API interface here
-     *           which cannot be resolved against the associated IDL files.
-     *     @type \Google\Protobuf\Type[]|\Google\Protobuf\Internal\RepeatedField $types
+     *           of the [google.protobuf.Api][google.protobuf.Api] needs to be provided by
+     *           the configuration author, as the remaining fields will be derived from the
+     *           IDL during the normalization process. It is an error to specify an API
+     *           interface here which cannot be resolved against the associated IDL files.
+     *     @type array<\Google\Protobuf\Type>|\Google\Protobuf\Internal\RepeatedField $types
      *           A list of all proto message types included in this API service.
-     *           Types referenced directly or indirectly by the `apis` are
-     *           automatically included.  Messages which are not referenced but
-     *           shall be included, such as types used by the `google.protobuf.Any` type,
-     *           should be listed here by name. Example:
+     *           Types referenced directly or indirectly by the `apis` are automatically
+     *           included.  Messages which are not referenced but shall be included, such as
+     *           types used by the `google.protobuf.Any` type, should be listed here by
+     *           name by the configuration author. Example:
      *               types:
      *               - name: google.protobuf.Int32
-     *     @type \Google\Protobuf\Enum[]|\Google\Protobuf\Internal\RepeatedField $enums
-     *           A list of all enum types included in this API service.  Enums
-     *           referenced directly or indirectly by the `apis` are automatically
-     *           included.  Enums which are not referenced but shall be included
-     *           should be listed here by name. Example:
+     *     @type array<\Google\Protobuf\Enum>|\Google\Protobuf\Internal\RepeatedField $enums
+     *           A list of all enum types included in this API service.  Enums referenced
+     *           directly or indirectly by the `apis` are automatically included.  Enums
+     *           which are not referenced but shall be included should be listed here by
+     *           name by the configuration author. Example:
      *               enums:
      *               - name: google.someapi.v1.SomeEnum
      *     @type \Google\Api\Documentation $documentation
@@ -267,19 +286,20 @@ class Service extends \Google\Protobuf\Internal\Message
      *           Context configuration.
      *     @type \Google\Api\Usage $usage
      *           Configuration controlling usage of this service.
-     *     @type \Google\Api\Endpoint[]|\Google\Protobuf\Internal\RepeatedField $endpoints
+     *     @type array<\Google\Api\Endpoint>|\Google\Protobuf\Internal\RepeatedField $endpoints
      *           Configuration for network endpoints.  If this is empty, then an endpoint
      *           with the same name as the service is automatically generated to service all
      *           defined APIs.
      *     @type \Google\Api\Control $control
      *           Configuration for the service control plane.
-     *     @type \Google\Api\LogDescriptor[]|\Google\Protobuf\Internal\RepeatedField $logs
+     *     @type array<\Google\Api\LogDescriptor>|\Google\Protobuf\Internal\RepeatedField $logs
      *           Defines the logs used by this service.
-     *     @type \Google\Api\MetricDescriptor[]|\Google\Protobuf\Internal\RepeatedField $metrics
+     *     @type array<\Google\Api\MetricDescriptor>|\Google\Protobuf\Internal\RepeatedField $metrics
      *           Defines the metrics used by this service.
-     *     @type \Google\Api\MonitoredResourceDescriptor[]|\Google\Protobuf\Internal\RepeatedField $monitored_resources
+     *     @type array<\Google\Api\MonitoredResourceDescriptor>|\Google\Protobuf\Internal\RepeatedField $monitored_resources
      *           Defines the monitored resources used by this service. This is required
-     *           by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     *           by the [Service.monitoring][google.api.Service.monitoring] and
+     *           [Service.logging][google.api.Service.logging] configurations.
      *     @type \Google\Api\Billing $billing
      *           Billing configuration.
      *     @type \Google\Api\Logging $logging
@@ -290,6 +310,14 @@ class Service extends \Google\Protobuf\Internal\Message
      *           System parameter configuration.
      *     @type \Google\Api\SourceInfo $source_info
      *           Output only. The source information for this configuration if available.
+     *     @type \Google\Api\Publishing $publishing
+     *           Settings for [Google Cloud Client
+     *           libraries](https://cloud.google.com/apis/docs/cloud-client-libraries)
+     *           generated from APIs defined as protocol buffers.
+     *     @type \Google\Protobuf\UInt32Value $config_version
+     *           Obsolete. Do not use.
+     *           This field has no semantic meaning. The service config compiler always
+     *           sets this field to `3`.
      * }
      */
     public function __construct($data = NULL) {
@@ -298,75 +326,10 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The semantic version of the service configuration. The config version
-     * affects the interpretation of the service configuration. For example,
-     * certain features are enabled by default for certain config versions.
-     * The latest config version is `3`.
-     *
-     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
-     * @return \Google\Protobuf\UInt32Value
-     */
-    public function getConfigVersion()
-    {
-        return $this->config_version;
-    }
-
-    /**
-     * Returns the unboxed value from <code>getConfigVersion()</code>
-
-     * The semantic version of the service configuration. The config version
-     * affects the interpretation of the service configuration. For example,
-     * certain features are enabled by default for certain config versions.
-     * The latest config version is `3`.
-     *
-     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
-     * @return int|null
-     */
-    public function getConfigVersionUnwrapped()
-    {
-        $wrapper = $this->getConfigVersion();
-        return is_null($wrapper) ? null : $wrapper->getValue();
-    }
-
-    /**
-     * The semantic version of the service configuration. The config version
-     * affects the interpretation of the service configuration. For example,
-     * certain features are enabled by default for certain config versions.
-     * The latest config version is `3`.
-     *
-     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
-     * @param \Google\Protobuf\UInt32Value $var
-     * @return $this
-     */
-    public function setConfigVersion($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\UInt32Value::class);
-        $this->config_version = $var;
-
-        return $this;
-    }
-
-    /**
-     * Sets the field by wrapping a primitive type in a Google\Protobuf\UInt32Value object.
-
-     * The semantic version of the service configuration. The config version
-     * affects the interpretation of the service configuration. For example,
-     * certain features are enabled by default for certain config versions.
-     * The latest config version is `3`.
-     *
-     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
-     * @param int|null $var
-     * @return $this
-     */
-    public function setConfigVersionUnwrapped($var)
-    {
-        $wrappedVar = is_null($var) ? null : new \Google\Protobuf\UInt32Value(['value' => $var]);
-        return $this->setConfigVersion($wrappedVar);
-    }
-
-    /**
-     * The DNS address at which this service is available,
-     * e.g. `calendar.googleapis.com`.
+     * The service name, which is a DNS-like logical identifier for the
+     * service, such as `calendar.googleapis.com`. The service name
+     * typically goes through DNS verification to make sure the owner
+     * of the service also owns the DNS name.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -377,8 +340,10 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The DNS address at which this service is available,
-     * e.g. `calendar.googleapis.com`.
+     * The service name, which is a DNS-like logical identifier for the
+     * service, such as `calendar.googleapis.com`. The service name
+     * typically goes through DNS verification to make sure the owner
+     * of the service also owns the DNS name.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
@@ -393,37 +358,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A unique ID for a specific instance of this message, typically assigned
-     * by the client for tracking purpose. If empty, the server may choose to
-     * generate one instead.
-     *
-     * Generated from protobuf field <code>string id = 33;</code>
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * A unique ID for a specific instance of this message, typically assigned
-     * by the client for tracking purpose. If empty, the server may choose to
-     * generate one instead.
-     *
-     * Generated from protobuf field <code>string id = 33;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * The product title for this service.
+     * The product title for this service, it is the name displayed in Google
+     * Cloud Console.
      *
      * Generated from protobuf field <code>string title = 2;</code>
      * @return string
@@ -434,7 +370,8 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The product title for this service.
+     * The product title for this service, it is the name displayed in Google
+     * Cloud Console.
      *
      * Generated from protobuf field <code>string title = 2;</code>
      * @param string $var
@@ -475,11 +412,43 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A unique ID for a specific instance of this message, typically assigned
+     * by the client for tracking purpose. Must be no longer than 63 characters
+     * and only lower case letters, digits, '.', '_' and '-' are allowed. If
+     * empty, the server may choose to generate one instead.
+     *
+     * Generated from protobuf field <code>string id = 33;</code>
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * A unique ID for a specific instance of this message, typically assigned
+     * by the client for tracking purpose. Must be no longer than 63 characters
+     * and only lower case letters, digits, '.', '_' and '-' are allowed. If
+     * empty, the server may choose to generate one instead.
+     *
+     * Generated from protobuf field <code>string id = 33;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
      * A list of API interfaces exported by this service. Only the `name` field
-     * of the [google.protobuf.Api][google.protobuf.Api] needs to be provided by the configuration
-     * author, as the remaining fields will be derived from the IDL during the
-     * normalization process. It is an error to specify an API interface here
-     * which cannot be resolved against the associated IDL files.
+     * of the [google.protobuf.Api][google.protobuf.Api] needs to be provided by
+     * the configuration author, as the remaining fields will be derived from the
+     * IDL during the normalization process. It is an error to specify an API
+     * interface here which cannot be resolved against the associated IDL files.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Api apis = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -491,13 +460,13 @@ class Service extends \Google\Protobuf\Internal\Message
 
     /**
      * A list of API interfaces exported by this service. Only the `name` field
-     * of the [google.protobuf.Api][google.protobuf.Api] needs to be provided by the configuration
-     * author, as the remaining fields will be derived from the IDL during the
-     * normalization process. It is an error to specify an API interface here
-     * which cannot be resolved against the associated IDL files.
+     * of the [google.protobuf.Api][google.protobuf.Api] needs to be provided by
+     * the configuration author, as the remaining fields will be derived from the
+     * IDL during the normalization process. It is an error to specify an API
+     * interface here which cannot be resolved against the associated IDL files.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Api apis = 3;</code>
-     * @param \Google\Protobuf\Api[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Protobuf\Api>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setApis($var)
@@ -510,10 +479,10 @@ class Service extends \Google\Protobuf\Internal\Message
 
     /**
      * A list of all proto message types included in this API service.
-     * Types referenced directly or indirectly by the `apis` are
-     * automatically included.  Messages which are not referenced but
-     * shall be included, such as types used by the `google.protobuf.Any` type,
-     * should be listed here by name. Example:
+     * Types referenced directly or indirectly by the `apis` are automatically
+     * included.  Messages which are not referenced but shall be included, such as
+     * types used by the `google.protobuf.Any` type, should be listed here by
+     * name by the configuration author. Example:
      *     types:
      *     - name: google.protobuf.Int32
      *
@@ -527,15 +496,15 @@ class Service extends \Google\Protobuf\Internal\Message
 
     /**
      * A list of all proto message types included in this API service.
-     * Types referenced directly or indirectly by the `apis` are
-     * automatically included.  Messages which are not referenced but
-     * shall be included, such as types used by the `google.protobuf.Any` type,
-     * should be listed here by name. Example:
+     * Types referenced directly or indirectly by the `apis` are automatically
+     * included.  Messages which are not referenced but shall be included, such as
+     * types used by the `google.protobuf.Any` type, should be listed here by
+     * name by the configuration author. Example:
      *     types:
      *     - name: google.protobuf.Int32
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Type types = 4;</code>
-     * @param \Google\Protobuf\Type[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Protobuf\Type>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTypes($var)
@@ -547,10 +516,10 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A list of all enum types included in this API service.  Enums
-     * referenced directly or indirectly by the `apis` are automatically
-     * included.  Enums which are not referenced but shall be included
-     * should be listed here by name. Example:
+     * A list of all enum types included in this API service.  Enums referenced
+     * directly or indirectly by the `apis` are automatically included.  Enums
+     * which are not referenced but shall be included should be listed here by
+     * name by the configuration author. Example:
      *     enums:
      *     - name: google.someapi.v1.SomeEnum
      *
@@ -563,15 +532,15 @@ class Service extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A list of all enum types included in this API service.  Enums
-     * referenced directly or indirectly by the `apis` are automatically
-     * included.  Enums which are not referenced but shall be included
-     * should be listed here by name. Example:
+     * A list of all enum types included in this API service.  Enums referenced
+     * directly or indirectly by the `apis` are automatically included.  Enums
+     * which are not referenced but shall be included should be listed here by
+     * name by the configuration author. Example:
      *     enums:
      *     - name: google.someapi.v1.SomeEnum
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Enum enums = 5;</code>
-     * @param \Google\Protobuf\Enum[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Protobuf\Enum>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEnums($var)
@@ -586,11 +555,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * Additional API documentation.
      *
      * Generated from protobuf field <code>.google.api.Documentation documentation = 6;</code>
-     * @return \Google\Api\Documentation
+     * @return \Google\Api\Documentation|null
      */
     public function getDocumentation()
     {
         return $this->documentation;
+    }
+
+    public function hasDocumentation()
+    {
+        return isset($this->documentation);
+    }
+
+    public function clearDocumentation()
+    {
+        unset($this->documentation);
     }
 
     /**
@@ -612,11 +591,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * API backend configuration.
      *
      * Generated from protobuf field <code>.google.api.Backend backend = 8;</code>
-     * @return \Google\Api\Backend
+     * @return \Google\Api\Backend|null
      */
     public function getBackend()
     {
         return $this->backend;
+    }
+
+    public function hasBackend()
+    {
+        return isset($this->backend);
+    }
+
+    public function clearBackend()
+    {
+        unset($this->backend);
     }
 
     /**
@@ -638,11 +627,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * HTTP configuration.
      *
      * Generated from protobuf field <code>.google.api.Http http = 9;</code>
-     * @return \Google\Api\Http
+     * @return \Google\Api\Http|null
      */
     public function getHttp()
     {
         return $this->http;
+    }
+
+    public function hasHttp()
+    {
+        return isset($this->http);
+    }
+
+    public function clearHttp()
+    {
+        unset($this->http);
     }
 
     /**
@@ -664,11 +663,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * Quota configuration.
      *
      * Generated from protobuf field <code>.google.api.Quota quota = 10;</code>
-     * @return \Google\Api\Quota
+     * @return \Google\Api\Quota|null
      */
     public function getQuota()
     {
         return $this->quota;
+    }
+
+    public function hasQuota()
+    {
+        return isset($this->quota);
+    }
+
+    public function clearQuota()
+    {
+        unset($this->quota);
     }
 
     /**
@@ -690,11 +699,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * Auth configuration.
      *
      * Generated from protobuf field <code>.google.api.Authentication authentication = 11;</code>
-     * @return \Google\Api\Authentication
+     * @return \Google\Api\Authentication|null
      */
     public function getAuthentication()
     {
         return $this->authentication;
+    }
+
+    public function hasAuthentication()
+    {
+        return isset($this->authentication);
+    }
+
+    public function clearAuthentication()
+    {
+        unset($this->authentication);
     }
 
     /**
@@ -716,11 +735,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * Context configuration.
      *
      * Generated from protobuf field <code>.google.api.Context context = 12;</code>
-     * @return \Google\Api\Context
+     * @return \Google\Api\Context|null
      */
     public function getContext()
     {
         return $this->context;
+    }
+
+    public function hasContext()
+    {
+        return isset($this->context);
+    }
+
+    public function clearContext()
+    {
+        unset($this->context);
     }
 
     /**
@@ -742,11 +771,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * Configuration controlling usage of this service.
      *
      * Generated from protobuf field <code>.google.api.Usage usage = 15;</code>
-     * @return \Google\Api\Usage
+     * @return \Google\Api\Usage|null
      */
     public function getUsage()
     {
         return $this->usage;
+    }
+
+    public function hasUsage()
+    {
+        return isset($this->usage);
+    }
+
+    public function clearUsage()
+    {
+        unset($this->usage);
     }
 
     /**
@@ -783,7 +822,7 @@ class Service extends \Google\Protobuf\Internal\Message
      * defined APIs.
      *
      * Generated from protobuf field <code>repeated .google.api.Endpoint endpoints = 18;</code>
-     * @param \Google\Api\Endpoint[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Api\Endpoint>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setEndpoints($var)
@@ -798,11 +837,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * Configuration for the service control plane.
      *
      * Generated from protobuf field <code>.google.api.Control control = 21;</code>
-     * @return \Google\Api\Control
+     * @return \Google\Api\Control|null
      */
     public function getControl()
     {
         return $this->control;
+    }
+
+    public function hasControl()
+    {
+        return isset($this->control);
+    }
+
+    public function clearControl()
+    {
+        unset($this->control);
     }
 
     /**
@@ -835,7 +884,7 @@ class Service extends \Google\Protobuf\Internal\Message
      * Defines the logs used by this service.
      *
      * Generated from protobuf field <code>repeated .google.api.LogDescriptor logs = 23;</code>
-     * @param \Google\Api\LogDescriptor[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Api\LogDescriptor>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLogs($var)
@@ -861,7 +910,7 @@ class Service extends \Google\Protobuf\Internal\Message
      * Defines the metrics used by this service.
      *
      * Generated from protobuf field <code>repeated .google.api.MetricDescriptor metrics = 24;</code>
-     * @param \Google\Api\MetricDescriptor[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Api\MetricDescriptor>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMetrics($var)
@@ -874,7 +923,8 @@ class Service extends \Google\Protobuf\Internal\Message
 
     /**
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      *
      * Generated from protobuf field <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -886,10 +936,11 @@ class Service extends \Google\Protobuf\Internal\Message
 
     /**
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      *
      * Generated from protobuf field <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
-     * @param \Google\Api\MonitoredResourceDescriptor[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Api\MonitoredResourceDescriptor>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMonitoredResources($var)
@@ -904,11 +955,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * Billing configuration.
      *
      * Generated from protobuf field <code>.google.api.Billing billing = 26;</code>
-     * @return \Google\Api\Billing
+     * @return \Google\Api\Billing|null
      */
     public function getBilling()
     {
         return $this->billing;
+    }
+
+    public function hasBilling()
+    {
+        return isset($this->billing);
+    }
+
+    public function clearBilling()
+    {
+        unset($this->billing);
     }
 
     /**
@@ -930,11 +991,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * Logging configuration.
      *
      * Generated from protobuf field <code>.google.api.Logging logging = 27;</code>
-     * @return \Google\Api\Logging
+     * @return \Google\Api\Logging|null
      */
     public function getLogging()
     {
         return $this->logging;
+    }
+
+    public function hasLogging()
+    {
+        return isset($this->logging);
+    }
+
+    public function clearLogging()
+    {
+        unset($this->logging);
     }
 
     /**
@@ -956,11 +1027,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * Monitoring configuration.
      *
      * Generated from protobuf field <code>.google.api.Monitoring monitoring = 28;</code>
-     * @return \Google\Api\Monitoring
+     * @return \Google\Api\Monitoring|null
      */
     public function getMonitoring()
     {
         return $this->monitoring;
+    }
+
+    public function hasMonitoring()
+    {
+        return isset($this->monitoring);
+    }
+
+    public function clearMonitoring()
+    {
+        unset($this->monitoring);
     }
 
     /**
@@ -982,11 +1063,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * System parameter configuration.
      *
      * Generated from protobuf field <code>.google.api.SystemParameters system_parameters = 29;</code>
-     * @return \Google\Api\SystemParameters
+     * @return \Google\Api\SystemParameters|null
      */
     public function getSystemParameters()
     {
         return $this->system_parameters;
+    }
+
+    public function hasSystemParameters()
+    {
+        return isset($this->system_parameters);
+    }
+
+    public function clearSystemParameters()
+    {
+        unset($this->system_parameters);
     }
 
     /**
@@ -1008,11 +1099,21 @@ class Service extends \Google\Protobuf\Internal\Message
      * Output only. The source information for this configuration if available.
      *
      * Generated from protobuf field <code>.google.api.SourceInfo source_info = 37;</code>
-     * @return \Google\Api\SourceInfo
+     * @return \Google\Api\SourceInfo|null
      */
     public function getSourceInfo()
     {
         return $this->source_info;
+    }
+
+    public function hasSourceInfo()
+    {
+        return isset($this->source_info);
+    }
+
+    public function clearSourceInfo()
+    {
+        unset($this->source_info);
     }
 
     /**
@@ -1029,6 +1130,117 @@ class Service extends \Google\Protobuf\Internal\Message
 
         return $this;
     }
+
+    /**
+     * Settings for [Google Cloud Client
+     * libraries](https://cloud.google.com/apis/docs/cloud-client-libraries)
+     * generated from APIs defined as protocol buffers.
+     *
+     * Generated from protobuf field <code>.google.api.Publishing publishing = 45;</code>
+     * @return \Google\Api\Publishing|null
+     */
+    public function getPublishing()
+    {
+        return $this->publishing;
+    }
+
+    public function hasPublishing()
+    {
+        return isset($this->publishing);
+    }
+
+    public function clearPublishing()
+    {
+        unset($this->publishing);
+    }
+
+    /**
+     * Settings for [Google Cloud Client
+     * libraries](https://cloud.google.com/apis/docs/cloud-client-libraries)
+     * generated from APIs defined as protocol buffers.
+     *
+     * Generated from protobuf field <code>.google.api.Publishing publishing = 45;</code>
+     * @param \Google\Api\Publishing $var
+     * @return $this
+     */
+    public function setPublishing($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Api\Publishing::class);
+        $this->publishing = $var;
+
+        return $this;
+    }
+
+    /**
+     * Obsolete. Do not use.
+     * This field has no semantic meaning. The service config compiler always
+     * sets this field to `3`.
+     *
+     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
+     * @return \Google\Protobuf\UInt32Value|null
+     */
+    public function getConfigVersion()
+    {
+        return $this->config_version;
+    }
+
+    public function hasConfigVersion()
+    {
+        return isset($this->config_version);
+    }
+
+    public function clearConfigVersion()
+    {
+        unset($this->config_version);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getConfigVersion()</code>
+
+     * Obsolete. Do not use.
+     * This field has no semantic meaning. The service config compiler always
+     * sets this field to `3`.
+     *
+     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
+     * @return int|null
+     */
+    public function getConfigVersionUnwrapped()
+    {
+        return $this->readWrapperValue("config_version");
+    }
+
+    /**
+     * Obsolete. Do not use.
+     * This field has no semantic meaning. The service config compiler always
+     * sets this field to `3`.
+     *
+     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
+     * @param \Google\Protobuf\UInt32Value $var
+     * @return $this
+     */
+    public function setConfigVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\UInt32Value::class);
+        $this->config_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\UInt32Value object.
+
+     * Obsolete. Do not use.
+     * This field has no semantic meaning. The service config compiler always
+     * sets this field to `3`.
+     *
+     * Generated from protobuf field <code>.google.protobuf.UInt32Value config_version = 20;</code>
+     * @param int|null $var
+     * @return $this
+     */
+    public function setConfigVersionUnwrapped($var)
+    {
+        $this->writeWrapperValue("config_version", $var);
+        return $this;}
 
 }
 

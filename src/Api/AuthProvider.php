@@ -9,8 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Configuration for an anthentication provider, including support for
- * [JSON Web Token (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
+ * Configuration for an authentication provider, including support for
+ * [JSON Web Token
+ * (JWT)](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32).
  *
  * Generated from protobuf message <code>google.api.AuthProvider</code>
  */
@@ -23,7 +24,7 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string id = 1;</code>
      */
-    private $id = '';
+    protected $id = '';
     /**
      * Identifies the principal that issued the JWT. See
      * https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32#section-4.1.1
@@ -33,43 +34,70 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string issuer = 2;</code>
      */
-    private $issuer = '';
+    protected $issuer = '';
     /**
      * URL of the provider's public key set to validate signature of the JWT. See
-     * [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
+     * [OpenID
+     * Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
      * Optional if the key set document:
      *  - can be retrieved from
-     *    [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html
+     *    [OpenID
+     *    Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html)
      *    of the issuer.
-     *  - can be inferred from the email domain of the issuer (e.g. a Google service account).
+     *  - can be inferred from the email domain of the issuer (e.g. a Google
+     *  service account).
      * Example: https://www.googleapis.com/oauth2/v1/certs
      *
      * Generated from protobuf field <code>string jwks_uri = 3;</code>
      */
-    private $jwks_uri = '';
+    protected $jwks_uri = '';
     /**
      * The list of JWT
      * [audiences](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32#section-4.1.3).
      * that are allowed to access. A JWT containing any of these audiences will
-     * be accepted. When this setting is absent, only JWTs with audience
-     * "https://[Service_name][google.api.Service.name]/[API_name][google.protobuf.Api.name]"
-     * will be accepted. For example, if no audiences are in the setting,
-     * LibraryService API will only accept JWTs with the following audience
-     * "https://library-example.googleapis.com/google.example.library.v1.LibraryService".
+     * be accepted. When this setting is absent, JWTs with audiences:
+     *   - "https://[service.name]/[google.protobuf.Api.name]"
+     *   - "https://[service.name]/"
+     * will be accepted.
+     * For example, if no audiences are in the setting, LibraryService API will
+     * accept JWTs with the following audiences:
+     *   -
+     *   https://library-example.googleapis.com/google.example.library.v1.LibraryService
+     *   - https://library-example.googleapis.com/
      * Example:
      *     audiences: bookstore_android.apps.googleusercontent.com,
      *                bookstore_web.apps.googleusercontent.com
      *
      * Generated from protobuf field <code>string audiences = 4;</code>
      */
-    private $audiences = '';
+    protected $audiences = '';
     /**
-     * Redirect URL if JWT token is required but no present or is expired.
+     * Redirect URL if JWT token is required but not present or is expired.
      * Implement authorizationUrl of securityDefinitions in OpenAPI spec.
      *
      * Generated from protobuf field <code>string authorization_url = 5;</code>
      */
-    private $authorization_url = '';
+    protected $authorization_url = '';
+    /**
+     * Defines the locations to extract the JWT.  For now it is only used by the
+     * Cloud Endpoints to store the OpenAPI extension [x-google-jwt-locations]
+     * (https://cloud.google.com/endpoints/docs/openapi/openapi-extensions#x-google-jwt-locations)
+     * JWT locations can be one of HTTP headers, URL query parameters or
+     * cookies. The rule is that the first match wins.
+     * If not specified,  default to use following 3 locations:
+     *    1) Authorization: Bearer
+     *    2) x-goog-iap-jwt-assertion
+     *    3) access_token query parameter
+     * Default locations can be specified as followings:
+     *    jwt_locations:
+     *    - header: Authorization
+     *      value_prefix: "Bearer "
+     *    - header: x-goog-iap-jwt-assertion
+     *    - query: access_token
+     *
+     * Generated from protobuf field <code>repeated .google.api.JwtLocation jwt_locations = 6;</code>
+     */
+    private $jwt_locations;
 
     /**
      * Constructor.
@@ -89,28 +117,51 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
      *           Example: 1234567-compute&#64;developer.gserviceaccount.com
      *     @type string $jwks_uri
      *           URL of the provider's public key set to validate signature of the JWT. See
-     *           [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
+     *           [OpenID
+     *           Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
      *           Optional if the key set document:
      *            - can be retrieved from
-     *              [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html
+     *              [OpenID
+     *              Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html)
      *              of the issuer.
-     *            - can be inferred from the email domain of the issuer (e.g. a Google service account).
+     *            - can be inferred from the email domain of the issuer (e.g. a Google
+     *            service account).
      *           Example: https://www.googleapis.com/oauth2/v1/certs
      *     @type string $audiences
      *           The list of JWT
      *           [audiences](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32#section-4.1.3).
      *           that are allowed to access. A JWT containing any of these audiences will
-     *           be accepted. When this setting is absent, only JWTs with audience
-     *           "https://[Service_name][google.api.Service.name]/[API_name][google.protobuf.Api.name]"
-     *           will be accepted. For example, if no audiences are in the setting,
-     *           LibraryService API will only accept JWTs with the following audience
-     *           "https://library-example.googleapis.com/google.example.library.v1.LibraryService".
+     *           be accepted. When this setting is absent, JWTs with audiences:
+     *             - "https://[service.name]/[google.protobuf.Api.name]"
+     *             - "https://[service.name]/"
+     *           will be accepted.
+     *           For example, if no audiences are in the setting, LibraryService API will
+     *           accept JWTs with the following audiences:
+     *             -
+     *             https://library-example.googleapis.com/google.example.library.v1.LibraryService
+     *             - https://library-example.googleapis.com/
      *           Example:
      *               audiences: bookstore_android.apps.googleusercontent.com,
      *                          bookstore_web.apps.googleusercontent.com
      *     @type string $authorization_url
-     *           Redirect URL if JWT token is required but no present or is expired.
+     *           Redirect URL if JWT token is required but not present or is expired.
      *           Implement authorizationUrl of securityDefinitions in OpenAPI spec.
+     *     @type array<\Google\Api\JwtLocation>|\Google\Protobuf\Internal\RepeatedField $jwt_locations
+     *           Defines the locations to extract the JWT.  For now it is only used by the
+     *           Cloud Endpoints to store the OpenAPI extension [x-google-jwt-locations]
+     *           (https://cloud.google.com/endpoints/docs/openapi/openapi-extensions#x-google-jwt-locations)
+     *           JWT locations can be one of HTTP headers, URL query parameters or
+     *           cookies. The rule is that the first match wins.
+     *           If not specified,  default to use following 3 locations:
+     *              1) Authorization: Bearer
+     *              2) x-goog-iap-jwt-assertion
+     *              3) access_token query parameter
+     *           Default locations can be specified as followings:
+     *              jwt_locations:
+     *              - header: Authorization
+     *                value_prefix: "Bearer "
+     *              - header: x-goog-iap-jwt-assertion
+     *              - query: access_token
      * }
      */
     public function __construct($data = NULL) {
@@ -184,12 +235,15 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
 
     /**
      * URL of the provider's public key set to validate signature of the JWT. See
-     * [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
+     * [OpenID
+     * Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
      * Optional if the key set document:
      *  - can be retrieved from
-     *    [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html
+     *    [OpenID
+     *    Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html)
      *    of the issuer.
-     *  - can be inferred from the email domain of the issuer (e.g. a Google service account).
+     *  - can be inferred from the email domain of the issuer (e.g. a Google
+     *  service account).
      * Example: https://www.googleapis.com/oauth2/v1/certs
      *
      * Generated from protobuf field <code>string jwks_uri = 3;</code>
@@ -202,12 +256,15 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
 
     /**
      * URL of the provider's public key set to validate signature of the JWT. See
-     * [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
+     * [OpenID
+     * Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
      * Optional if the key set document:
      *  - can be retrieved from
-     *    [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html
+     *    [OpenID
+     *    Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html)
      *    of the issuer.
-     *  - can be inferred from the email domain of the issuer (e.g. a Google service account).
+     *  - can be inferred from the email domain of the issuer (e.g. a Google
+     *  service account).
      * Example: https://www.googleapis.com/oauth2/v1/certs
      *
      * Generated from protobuf field <code>string jwks_uri = 3;</code>
@@ -226,11 +283,15 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
      * The list of JWT
      * [audiences](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32#section-4.1.3).
      * that are allowed to access. A JWT containing any of these audiences will
-     * be accepted. When this setting is absent, only JWTs with audience
-     * "https://[Service_name][google.api.Service.name]/[API_name][google.protobuf.Api.name]"
-     * will be accepted. For example, if no audiences are in the setting,
-     * LibraryService API will only accept JWTs with the following audience
-     * "https://library-example.googleapis.com/google.example.library.v1.LibraryService".
+     * be accepted. When this setting is absent, JWTs with audiences:
+     *   - "https://[service.name]/[google.protobuf.Api.name]"
+     *   - "https://[service.name]/"
+     * will be accepted.
+     * For example, if no audiences are in the setting, LibraryService API will
+     * accept JWTs with the following audiences:
+     *   -
+     *   https://library-example.googleapis.com/google.example.library.v1.LibraryService
+     *   - https://library-example.googleapis.com/
      * Example:
      *     audiences: bookstore_android.apps.googleusercontent.com,
      *                bookstore_web.apps.googleusercontent.com
@@ -247,11 +308,15 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
      * The list of JWT
      * [audiences](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32#section-4.1.3).
      * that are allowed to access. A JWT containing any of these audiences will
-     * be accepted. When this setting is absent, only JWTs with audience
-     * "https://[Service_name][google.api.Service.name]/[API_name][google.protobuf.Api.name]"
-     * will be accepted. For example, if no audiences are in the setting,
-     * LibraryService API will only accept JWTs with the following audience
-     * "https://library-example.googleapis.com/google.example.library.v1.LibraryService".
+     * be accepted. When this setting is absent, JWTs with audiences:
+     *   - "https://[service.name]/[google.protobuf.Api.name]"
+     *   - "https://[service.name]/"
+     * will be accepted.
+     * For example, if no audiences are in the setting, LibraryService API will
+     * accept JWTs with the following audiences:
+     *   -
+     *   https://library-example.googleapis.com/google.example.library.v1.LibraryService
+     *   - https://library-example.googleapis.com/
      * Example:
      *     audiences: bookstore_android.apps.googleusercontent.com,
      *                bookstore_web.apps.googleusercontent.com
@@ -269,7 +334,7 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Redirect URL if JWT token is required but no present or is expired.
+     * Redirect URL if JWT token is required but not present or is expired.
      * Implement authorizationUrl of securityDefinitions in OpenAPI spec.
      *
      * Generated from protobuf field <code>string authorization_url = 5;</code>
@@ -281,7 +346,7 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Redirect URL if JWT token is required but no present or is expired.
+     * Redirect URL if JWT token is required but not present or is expired.
      * Implement authorizationUrl of securityDefinitions in OpenAPI spec.
      *
      * Generated from protobuf field <code>string authorization_url = 5;</code>
@@ -292,6 +357,60 @@ class AuthProvider extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->authorization_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Defines the locations to extract the JWT.  For now it is only used by the
+     * Cloud Endpoints to store the OpenAPI extension [x-google-jwt-locations]
+     * (https://cloud.google.com/endpoints/docs/openapi/openapi-extensions#x-google-jwt-locations)
+     * JWT locations can be one of HTTP headers, URL query parameters or
+     * cookies. The rule is that the first match wins.
+     * If not specified,  default to use following 3 locations:
+     *    1) Authorization: Bearer
+     *    2) x-goog-iap-jwt-assertion
+     *    3) access_token query parameter
+     * Default locations can be specified as followings:
+     *    jwt_locations:
+     *    - header: Authorization
+     *      value_prefix: "Bearer "
+     *    - header: x-goog-iap-jwt-assertion
+     *    - query: access_token
+     *
+     * Generated from protobuf field <code>repeated .google.api.JwtLocation jwt_locations = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getJwtLocations()
+    {
+        return $this->jwt_locations;
+    }
+
+    /**
+     * Defines the locations to extract the JWT.  For now it is only used by the
+     * Cloud Endpoints to store the OpenAPI extension [x-google-jwt-locations]
+     * (https://cloud.google.com/endpoints/docs/openapi/openapi-extensions#x-google-jwt-locations)
+     * JWT locations can be one of HTTP headers, URL query parameters or
+     * cookies. The rule is that the first match wins.
+     * If not specified,  default to use following 3 locations:
+     *    1) Authorization: Bearer
+     *    2) x-goog-iap-jwt-assertion
+     *    3) access_token query parameter
+     * Default locations can be specified as followings:
+     *    jwt_locations:
+     *    - header: Authorization
+     *      value_prefix: "Bearer "
+     *    - header: x-goog-iap-jwt-assertion
+     *    - query: access_token
+     *
+     * Generated from protobuf field <code>repeated .google.api.JwtLocation jwt_locations = 6;</code>
+     * @param array<\Google\Api\JwtLocation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setJwtLocations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Api\JwtLocation::class);
+        $this->jwt_locations = $arr;
 
         return $this;
     }

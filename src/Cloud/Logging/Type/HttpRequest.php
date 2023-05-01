@@ -22,7 +22,7 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string request_method = 1;</code>
      */
-    private $request_method = '';
+    protected $request_method = '';
     /**
      * The scheme (http, https), the host name, the path and the query
      * portion of the URL that was requested.
@@ -30,76 +30,80 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string request_url = 2;</code>
      */
-    private $request_url = '';
+    protected $request_url = '';
     /**
      * The size of the HTTP request message in bytes, including the request
      * headers and the request body.
      *
      * Generated from protobuf field <code>int64 request_size = 3;</code>
      */
-    private $request_size = 0;
+    protected $request_size = 0;
     /**
      * The response code indicating the status of response.
      * Examples: 200, 404.
      *
      * Generated from protobuf field <code>int32 status = 4;</code>
      */
-    private $status = 0;
+    protected $status = 0;
     /**
      * The size of the HTTP response message sent back to the client, in bytes,
      * including the response headers and the response body.
      *
      * Generated from protobuf field <code>int64 response_size = 5;</code>
      */
-    private $response_size = 0;
+    protected $response_size = 0;
     /**
      * The user agent sent by the client. Example:
-     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`.
+     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
+     * CLR 1.0.3705)"`.
      *
      * Generated from protobuf field <code>string user_agent = 6;</code>
      */
-    private $user_agent = '';
+    protected $user_agent = '';
     /**
      * The IP address (IPv4 or IPv6) of the client that issued the HTTP
-     * request. Examples: `"192.168.1.1"`, `"FE80::0202:B3FF:FE1E:8329"`.
+     * request. This field can include port information. Examples:
+     * `"192.168.1.1"`, `"10.0.0.1:80"`, `"FE80::0202:B3FF:FE1E:8329"`.
      *
      * Generated from protobuf field <code>string remote_ip = 7;</code>
      */
-    private $remote_ip = '';
+    protected $remote_ip = '';
     /**
      * The IP address (IPv4 or IPv6) of the origin server that the request was
-     * sent to.
+     * sent to. This field can include port information. Examples:
+     * `"192.168.1.1"`, `"10.0.0.1:80"`, `"FE80::0202:B3FF:FE1E:8329"`.
      *
      * Generated from protobuf field <code>string server_ip = 13;</code>
      */
-    private $server_ip = '';
+    protected $server_ip = '';
     /**
      * The referer URL of the request, as defined in
-     * [HTTP/1.1 Header Field Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+     * [HTTP/1.1 Header Field
+     * Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
      *
      * Generated from protobuf field <code>string referer = 8;</code>
      */
-    private $referer = '';
+    protected $referer = '';
     /**
      * The request processing latency on the server, from the time the request was
      * received until the response was sent.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration latency = 14;</code>
      */
-    private $latency = null;
+    protected $latency = null;
     /**
      * Whether or not a cache lookup was attempted.
      *
      * Generated from protobuf field <code>bool cache_lookup = 11;</code>
      */
-    private $cache_lookup = false;
+    protected $cache_lookup = false;
     /**
      * Whether or not an entity was served from cache
      * (with or without validation).
      *
      * Generated from protobuf field <code>bool cache_hit = 9;</code>
      */
-    private $cache_hit = false;
+    protected $cache_hit = false;
     /**
      * Whether or not the response was validated with the origin server before
      * being served from cache. This field is only meaningful if `cache_hit` is
@@ -107,20 +111,20 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>bool cache_validated_with_origin_server = 10;</code>
      */
-    private $cache_validated_with_origin_server = false;
+    protected $cache_validated_with_origin_server = false;
     /**
      * The number of HTTP response bytes inserted into cache. Set only when a
      * cache fill was attempted.
      *
      * Generated from protobuf field <code>int64 cache_fill_bytes = 12;</code>
      */
-    private $cache_fill_bytes = 0;
+    protected $cache_fill_bytes = 0;
     /**
      * Protocol used for the request. Examples: "HTTP/1.1", "HTTP/2", "websocket"
      *
      * Generated from protobuf field <code>string protocol = 15;</code>
      */
-    private $protocol = '';
+    protected $protocol = '';
 
     /**
      * Constructor.
@@ -145,16 +149,20 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
      *           including the response headers and the response body.
      *     @type string $user_agent
      *           The user agent sent by the client. Example:
-     *           `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`.
+     *           `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
+     *           CLR 1.0.3705)"`.
      *     @type string $remote_ip
      *           The IP address (IPv4 or IPv6) of the client that issued the HTTP
-     *           request. Examples: `"192.168.1.1"`, `"FE80::0202:B3FF:FE1E:8329"`.
+     *           request. This field can include port information. Examples:
+     *           `"192.168.1.1"`, `"10.0.0.1:80"`, `"FE80::0202:B3FF:FE1E:8329"`.
      *     @type string $server_ip
      *           The IP address (IPv4 or IPv6) of the origin server that the request was
-     *           sent to.
+     *           sent to. This field can include port information. Examples:
+     *           `"192.168.1.1"`, `"10.0.0.1:80"`, `"FE80::0202:B3FF:FE1E:8329"`.
      *     @type string $referer
      *           The referer URL of the request, as defined in
-     *           [HTTP/1.1 Header Field Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+     *           [HTTP/1.1 Header Field
+     *           Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
      *     @type \Google\Protobuf\Duration $latency
      *           The request processing latency on the server, from the time the request was
      *           received until the response was sent.
@@ -321,7 +329,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The user agent sent by the client. Example:
-     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`.
+     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
+     * CLR 1.0.3705)"`.
      *
      * Generated from protobuf field <code>string user_agent = 6;</code>
      * @return string
@@ -333,7 +342,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The user agent sent by the client. Example:
-     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)"`.
+     * `"Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET
+     * CLR 1.0.3705)"`.
      *
      * Generated from protobuf field <code>string user_agent = 6;</code>
      * @param string $var
@@ -349,7 +359,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The IP address (IPv4 or IPv6) of the client that issued the HTTP
-     * request. Examples: `"192.168.1.1"`, `"FE80::0202:B3FF:FE1E:8329"`.
+     * request. This field can include port information. Examples:
+     * `"192.168.1.1"`, `"10.0.0.1:80"`, `"FE80::0202:B3FF:FE1E:8329"`.
      *
      * Generated from protobuf field <code>string remote_ip = 7;</code>
      * @return string
@@ -361,7 +372,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The IP address (IPv4 or IPv6) of the client that issued the HTTP
-     * request. Examples: `"192.168.1.1"`, `"FE80::0202:B3FF:FE1E:8329"`.
+     * request. This field can include port information. Examples:
+     * `"192.168.1.1"`, `"10.0.0.1:80"`, `"FE80::0202:B3FF:FE1E:8329"`.
      *
      * Generated from protobuf field <code>string remote_ip = 7;</code>
      * @param string $var
@@ -377,7 +389,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The IP address (IPv4 or IPv6) of the origin server that the request was
-     * sent to.
+     * sent to. This field can include port information. Examples:
+     * `"192.168.1.1"`, `"10.0.0.1:80"`, `"FE80::0202:B3FF:FE1E:8329"`.
      *
      * Generated from protobuf field <code>string server_ip = 13;</code>
      * @return string
@@ -389,7 +402,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The IP address (IPv4 or IPv6) of the origin server that the request was
-     * sent to.
+     * sent to. This field can include port information. Examples:
+     * `"192.168.1.1"`, `"10.0.0.1:80"`, `"FE80::0202:B3FF:FE1E:8329"`.
      *
      * Generated from protobuf field <code>string server_ip = 13;</code>
      * @param string $var
@@ -405,7 +419,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The referer URL of the request, as defined in
-     * [HTTP/1.1 Header Field Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+     * [HTTP/1.1 Header Field
+     * Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
      *
      * Generated from protobuf field <code>string referer = 8;</code>
      * @return string
@@ -417,7 +432,8 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The referer URL of the request, as defined in
-     * [HTTP/1.1 Header Field Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+     * [HTTP/1.1 Header Field
+     * Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
      *
      * Generated from protobuf field <code>string referer = 8;</code>
      * @param string $var
@@ -436,11 +452,21 @@ class HttpRequest extends \Google\Protobuf\Internal\Message
      * received until the response was sent.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration latency = 14;</code>
-     * @return \Google\Protobuf\Duration
+     * @return \Google\Protobuf\Duration|null
      */
     public function getLatency()
     {
         return $this->latency;
+    }
+
+    public function hasLatency()
+    {
+        return isset($this->latency);
+    }
+
+    public function clearLatency()
+    {
+        unset($this->latency);
     }
 
     /**

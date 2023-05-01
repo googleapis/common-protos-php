@@ -25,16 +25,16 @@ class Exemplar extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>double value = 1;</code>
      */
-    private $value = 0.0;
+    protected $value = 0.0;
     /**
      * The observation (sampling) time of the above value.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 2;</code>
      */
-    private $timestamp = null;
+    protected $timestamp = null;
     /**
      * Contextual information about the example value. Examples are:
-     *   Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+     *   Trace: type.googleapis.com/google.monitoring.v3.SpanContext
      *   Literal string: type.googleapis.com/google.protobuf.StringValue
      *   Labels dropped during aggregation:
      *     type.googleapis.com/google.monitoring.v3.DroppedLabels
@@ -56,9 +56,9 @@ class Exemplar extends \Google\Protobuf\Internal\Message
      *           exemplar belongs.
      *     @type \Google\Protobuf\Timestamp $timestamp
      *           The observation (sampling) time of the above value.
-     *     @type \Google\Protobuf\Any[]|\Google\Protobuf\Internal\RepeatedField $attachments
+     *     @type array<\Google\Protobuf\Any>|\Google\Protobuf\Internal\RepeatedField $attachments
      *           Contextual information about the example value. Examples are:
-     *             Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+     *             Trace: type.googleapis.com/google.monitoring.v3.SpanContext
      *             Literal string: type.googleapis.com/google.protobuf.StringValue
      *             Labels dropped during aggregation:
      *               type.googleapis.com/google.monitoring.v3.DroppedLabels
@@ -103,11 +103,21 @@ class Exemplar extends \Google\Protobuf\Internal\Message
      * The observation (sampling) time of the above value.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp timestamp = 2;</code>
-     * @return \Google\Protobuf\Timestamp
+     * @return \Google\Protobuf\Timestamp|null
      */
     public function getTimestamp()
     {
         return $this->timestamp;
+    }
+
+    public function hasTimestamp()
+    {
+        return isset($this->timestamp);
+    }
+
+    public function clearTimestamp()
+    {
+        unset($this->timestamp);
     }
 
     /**
@@ -127,7 +137,7 @@ class Exemplar extends \Google\Protobuf\Internal\Message
 
     /**
      * Contextual information about the example value. Examples are:
-     *   Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+     *   Trace: type.googleapis.com/google.monitoring.v3.SpanContext
      *   Literal string: type.googleapis.com/google.protobuf.StringValue
      *   Labels dropped during aggregation:
      *     type.googleapis.com/google.monitoring.v3.DroppedLabels
@@ -144,7 +154,7 @@ class Exemplar extends \Google\Protobuf\Internal\Message
 
     /**
      * Contextual information about the example value. Examples are:
-     *   Trace ID: type.googleapis.com/google.devtools.cloudtrace.v1.Trace
+     *   Trace: type.googleapis.com/google.monitoring.v3.SpanContext
      *   Literal string: type.googleapis.com/google.protobuf.StringValue
      *   Labels dropped during aggregation:
      *     type.googleapis.com/google.monitoring.v3.DroppedLabels
@@ -152,7 +162,7 @@ class Exemplar extends \Google\Protobuf\Internal\Message
      * single exemplar, and this is enforced by the system.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Any attachments = 3;</code>
-     * @param \Google\Protobuf\Any[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Protobuf\Any>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAttachments($var)

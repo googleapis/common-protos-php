@@ -27,19 +27,19 @@ class Property extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * The type of this property.
      *
      * Generated from protobuf field <code>.google.api.Property.PropertyType type = 2;</code>
      */
-    private $type = 0;
+    protected $type = 0;
     /**
      * The description of the property
      *
      * Generated from protobuf field <code>string description = 3;</code>
      */
-    private $description = '';
+    protected $description = '';
 
     /**
      * Constructor.
@@ -106,7 +106,7 @@ class Property extends \Google\Protobuf\Internal\Message
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Api\Property_PropertyType::class);
+        GPBUtil::checkEnum($var, \Google\Api\Property\PropertyType::class);
         $this->type = $var;
 
         return $this;

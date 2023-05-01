@@ -22,21 +22,21 @@ class SystemParameter extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Define the HTTP header name to use for the parameter. It is case
      * insensitive.
      *
      * Generated from protobuf field <code>string http_header = 2;</code>
      */
-    private $http_header = '';
+    protected $http_header = '';
     /**
      * Define the URL query parameter name to use for the parameter. It is case
      * sensitive.
      *
      * Generated from protobuf field <code>string url_query_parameter = 3;</code>
      */
-    private $url_query_parameter = '';
+    protected $url_query_parameter = '';
 
     /**
      * Constructor.

@@ -9,46 +9,62 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Represents an expression text. Example:
- *     title: "User account presence"
- *     description: "Determines whether the request has a user account"
- *     expression: "size(request.user) > 0"
+ * Represents a textual expression in the Common Expression Language (CEL)
+ * syntax. CEL is a C-like expression language. The syntax and semantics of CEL
+ * are documented at https://github.com/google/cel-spec.
+ * Example (Comparison):
+ *     title: "Summary size limit"
+ *     description: "Determines if a summary is less than 100 chars"
+ *     expression: "document.summary.size() < 100"
+ * Example (Equality):
+ *     title: "Requestor is owner"
+ *     description: "Determines if requestor is the document owner"
+ *     expression: "document.owner == request.auth.claims.email"
+ * Example (Logic):
+ *     title: "Public documents"
+ *     description: "Determine whether the document should be publicly visible"
+ *     expression: "document.type != 'private' && document.type != 'internal'"
+ * Example (Data Manipulation):
+ *     title: "Notification string"
+ *     description: "Create a notification string with a timestamp."
+ *     expression: "'New message received at ' + string(document.create_time)"
+ * The exact variables and functions that may be referenced within an expression
+ * are determined by the service that evaluates it. See the service
+ * documentation for additional information.
  *
  * Generated from protobuf message <code>google.type.Expr</code>
  */
 class Expr extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Textual representation of an expression in
-     * Common Expression Language syntax.
-     * The application context of the containing message determines which
-     * well-known feature set of CEL is supported.
+     * Textual representation of an expression in Common Expression Language
+     * syntax.
      *
      * Generated from protobuf field <code>string expression = 1;</code>
      */
-    private $expression = '';
+    protected $expression = '';
     /**
-     * An optional title for the expression, i.e. a short string describing
+     * Optional. Title for the expression, i.e. a short string describing
      * its purpose. This can be used e.g. in UIs which allow to enter the
      * expression.
      *
      * Generated from protobuf field <code>string title = 2;</code>
      */
-    private $title = '';
+    protected $title = '';
     /**
-     * An optional description of the expression. This is a longer text which
+     * Optional. Description of the expression. This is a longer text which
      * describes the expression, e.g. when hovered over it in a UI.
      *
      * Generated from protobuf field <code>string description = 3;</code>
      */
-    private $description = '';
+    protected $description = '';
     /**
-     * An optional string indicating the location of the expression for error
+     * Optional. String indicating the location of the expression for error
      * reporting, e.g. a file name and a position in the file.
      *
      * Generated from protobuf field <code>string location = 4;</code>
      */
-    private $location = '';
+    protected $location = '';
 
     /**
      * Constructor.
@@ -57,19 +73,17 @@ class Expr extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $expression
-     *           Textual representation of an expression in
-     *           Common Expression Language syntax.
-     *           The application context of the containing message determines which
-     *           well-known feature set of CEL is supported.
+     *           Textual representation of an expression in Common Expression Language
+     *           syntax.
      *     @type string $title
-     *           An optional title for the expression, i.e. a short string describing
+     *           Optional. Title for the expression, i.e. a short string describing
      *           its purpose. This can be used e.g. in UIs which allow to enter the
      *           expression.
      *     @type string $description
-     *           An optional description of the expression. This is a longer text which
+     *           Optional. Description of the expression. This is a longer text which
      *           describes the expression, e.g. when hovered over it in a UI.
      *     @type string $location
-     *           An optional string indicating the location of the expression for error
+     *           Optional. String indicating the location of the expression for error
      *           reporting, e.g. a file name and a position in the file.
      * }
      */
@@ -79,10 +93,8 @@ class Expr extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Textual representation of an expression in
-     * Common Expression Language syntax.
-     * The application context of the containing message determines which
-     * well-known feature set of CEL is supported.
+     * Textual representation of an expression in Common Expression Language
+     * syntax.
      *
      * Generated from protobuf field <code>string expression = 1;</code>
      * @return string
@@ -93,10 +105,8 @@ class Expr extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Textual representation of an expression in
-     * Common Expression Language syntax.
-     * The application context of the containing message determines which
-     * well-known feature set of CEL is supported.
+     * Textual representation of an expression in Common Expression Language
+     * syntax.
      *
      * Generated from protobuf field <code>string expression = 1;</code>
      * @param string $var
@@ -111,7 +121,7 @@ class Expr extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An optional title for the expression, i.e. a short string describing
+     * Optional. Title for the expression, i.e. a short string describing
      * its purpose. This can be used e.g. in UIs which allow to enter the
      * expression.
      *
@@ -124,7 +134,7 @@ class Expr extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An optional title for the expression, i.e. a short string describing
+     * Optional. Title for the expression, i.e. a short string describing
      * its purpose. This can be used e.g. in UIs which allow to enter the
      * expression.
      *
@@ -141,7 +151,7 @@ class Expr extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An optional description of the expression. This is a longer text which
+     * Optional. Description of the expression. This is a longer text which
      * describes the expression, e.g. when hovered over it in a UI.
      *
      * Generated from protobuf field <code>string description = 3;</code>
@@ -153,7 +163,7 @@ class Expr extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An optional description of the expression. This is a longer text which
+     * Optional. Description of the expression. This is a longer text which
      * describes the expression, e.g. when hovered over it in a UI.
      *
      * Generated from protobuf field <code>string description = 3;</code>
@@ -169,7 +179,7 @@ class Expr extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An optional string indicating the location of the expression for error
+     * Optional. String indicating the location of the expression for error
      * reporting, e.g. a file name and a position in the file.
      *
      * Generated from protobuf field <code>string location = 4;</code>
@@ -181,7 +191,7 @@ class Expr extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * An optional string indicating the location of the expression for error
+     * Optional. String indicating the location of the expression for error
      * reporting, e.g. a file name and a position in the file.
      *
      * Generated from protobuf field <code>string location = 4;</code>

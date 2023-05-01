@@ -65,12 +65,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class Documentation extends \Google\Protobuf\Internal\Message
 {
     /**
-     * A short summary of what the service does. Can only be provided by
-     * plain text.
+     * A short description of what the service does. The summary must be plain
+     * text. It becomes the overview of the service displayed in Google Cloud
+     * Console.
+     * NOTE: This field is equivalent to the standard field `description`.
      *
      * Generated from protobuf field <code>string summary = 1;</code>
      */
-    private $summary = '';
+    protected $summary = '';
     /**
      * The top level pages for the documentation set.
      *
@@ -89,7 +91,16 @@ class Documentation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string documentation_root_url = 4;</code>
      */
-    private $documentation_root_url = '';
+    protected $documentation_root_url = '';
+    /**
+     * Specifies the service root url if the default one (the service name
+     * from the yaml file) is not suitable. This can be seen in any fully
+     * specified service urls as well as sections that show a base that other
+     * urls are relative to.
+     *
+     * Generated from protobuf field <code>string service_root_url = 6;</code>
+     */
+    protected $service_root_url = '';
     /**
      * Declares a single overview page. For example:
      * <pre><code>documentation:
@@ -107,7 +118,7 @@ class Documentation extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string overview = 2;</code>
      */
-    private $overview = '';
+    protected $overview = '';
 
     /**
      * Constructor.
@@ -116,15 +127,22 @@ class Documentation extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $summary
-     *           A short summary of what the service does. Can only be provided by
-     *           plain text.
-     *     @type \Google\Api\Page[]|\Google\Protobuf\Internal\RepeatedField $pages
+     *           A short description of what the service does. The summary must be plain
+     *           text. It becomes the overview of the service displayed in Google Cloud
+     *           Console.
+     *           NOTE: This field is equivalent to the standard field `description`.
+     *     @type array<\Google\Api\Page>|\Google\Protobuf\Internal\RepeatedField $pages
      *           The top level pages for the documentation set.
-     *     @type \Google\Api\DocumentationRule[]|\Google\Protobuf\Internal\RepeatedField $rules
+     *     @type array<\Google\Api\DocumentationRule>|\Google\Protobuf\Internal\RepeatedField $rules
      *           A list of documentation rules that apply to individual API elements.
      *           **NOTE:** All service configuration rules follow "last one wins" order.
      *     @type string $documentation_root_url
      *           The URL to the root of documentation.
+     *     @type string $service_root_url
+     *           Specifies the service root url if the default one (the service name
+     *           from the yaml file) is not suitable. This can be seen in any fully
+     *           specified service urls as well as sections that show a base that other
+     *           urls are relative to.
      *     @type string $overview
      *           Declares a single overview page. For example:
      *           <pre><code>documentation:
@@ -147,8 +165,10 @@ class Documentation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A short summary of what the service does. Can only be provided by
-     * plain text.
+     * A short description of what the service does. The summary must be plain
+     * text. It becomes the overview of the service displayed in Google Cloud
+     * Console.
+     * NOTE: This field is equivalent to the standard field `description`.
      *
      * Generated from protobuf field <code>string summary = 1;</code>
      * @return string
@@ -159,8 +179,10 @@ class Documentation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A short summary of what the service does. Can only be provided by
-     * plain text.
+     * A short description of what the service does. The summary must be plain
+     * text. It becomes the overview of the service displayed in Google Cloud
+     * Console.
+     * NOTE: This field is equivalent to the standard field `description`.
      *
      * Generated from protobuf field <code>string summary = 1;</code>
      * @param string $var
@@ -189,7 +211,7 @@ class Documentation extends \Google\Protobuf\Internal\Message
      * The top level pages for the documentation set.
      *
      * Generated from protobuf field <code>repeated .google.api.Page pages = 5;</code>
-     * @param \Google\Api\Page[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Api\Page>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPages($var)
@@ -217,7 +239,7 @@ class Documentation extends \Google\Protobuf\Internal\Message
      * **NOTE:** All service configuration rules follow "last one wins" order.
      *
      * Generated from protobuf field <code>repeated .google.api.DocumentationRule rules = 3;</code>
-     * @param \Google\Api\DocumentationRule[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Api\DocumentationRule>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRules($var)
@@ -250,6 +272,38 @@ class Documentation extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->documentation_root_url = $var;
+
+        return $this;
+    }
+
+    /**
+     * Specifies the service root url if the default one (the service name
+     * from the yaml file) is not suitable. This can be seen in any fully
+     * specified service urls as well as sections that show a base that other
+     * urls are relative to.
+     *
+     * Generated from protobuf field <code>string service_root_url = 6;</code>
+     * @return string
+     */
+    public function getServiceRootUrl()
+    {
+        return $this->service_root_url;
+    }
+
+    /**
+     * Specifies the service root url if the default one (the service name
+     * from the yaml file) is not suitable. This can be seen in any fully
+     * specified service urls as well as sections that show a base that other
+     * urls are relative to.
+     *
+     * Generated from protobuf field <code>string service_root_url = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setServiceRootUrl($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->service_root_url = $var;
 
         return $this;
     }

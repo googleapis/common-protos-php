@@ -22,7 +22,7 @@ class Advice extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string description = 2;</code>
      */
-    private $description = '';
+    protected $description = '';
 
     /**
      * Constructor.

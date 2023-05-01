@@ -15,17 +15,18 @@ class Httpbody
           return;
         }
         \GPBMetadata\Google\Protobuf\Any::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0af0010a19676f6f676c652f6170692f68747470626f64792e70726f746f" .
-            "120a676f6f676c652e61706922580a0848747470426f647912140a0c636f" .
-            "6e74656e745f74797065180120012809120c0a046461746118022001280c" .
-            "12280a0a657874656e73696f6e7318032003280b32142e676f6f676c652e" .
-            "70726f746f6275662e416e7942650a0e636f6d2e676f6f676c652e617069" .
-            "420d48747470426f647950726f746f50015a3b676f6f676c652e676f6c61" .
-            "6e672e6f72672f67656e70726f746f2f676f6f676c65617069732f617069" .
-            "2f68747470626f64793b68747470626f6479a2020447415049620670726f" .
-            "746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+ó
+google/api/httpbody.proto
+google.api"X
+HttpBody
+content_type (	
+data ((
+
+extensions (2.google.protobuf.AnyBh
+com.google.apiBHttpBodyProtoPZ;google.golang.org/genproto/googleapis/api/httpbody;httpbodyø¢GAPIbproto3'
+        , true);
 
         static::$is_initialized = true;
     }

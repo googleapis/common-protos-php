@@ -9,9 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * An object that describes the schema of a [MonitoredResource][google.api.MonitoredResource] object using a
- * type name and a set of labels.  For example, the monitored resource
- * descriptor for Google Compute Engine VM instances has a type of
+ * An object that describes the schema of a
+ * [MonitoredResource][google.api.MonitoredResource] object using a type name
+ * and a set of labels.  For example, the monitored resource descriptor for
+ * Google Compute Engine VM instances has a type of
  * `"gce_instance"` and specifies the use of the labels `"instance_id"` and
  * `"zone"` to identify particular VM instances.
  * Different APIs can support different monitored resource types. APIs generally
@@ -32,15 +33,18 @@ class MonitoredResourceDescriptor extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string name = 5;</code>
      */
-    private $name = '';
+    protected $name = '';
     /**
      * Required. The monitored resource type. For example, the type
      * `"cloudsql_database"` represents databases in Google Cloud SQL.
-     * The maximum length of this value is 256 characters.
+     *  For a list of types, see [Monitoring resource
+     *  types](https://cloud.google.com/monitoring/api/resources)
+     * and [Logging resource
+     * types](https://cloud.google.com/logging/docs/api/v2/resource-list).
      *
      * Generated from protobuf field <code>string type = 1;</code>
      */
-    private $type = '';
+    protected $type = '';
     /**
      * Optional. A concise name for the monitored resource type that might be
      * displayed in user interfaces. It should be a Title Cased Noun Phrase,
@@ -49,14 +53,14 @@ class MonitoredResourceDescriptor extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string display_name = 2;</code>
      */
-    private $display_name = '';
+    protected $display_name = '';
     /**
      * Optional. A detailed description of the monitored resource type that might
      * be used in documentation.
      *
      * Generated from protobuf field <code>string description = 3;</code>
      */
-    private $description = '';
+    protected $description = '';
     /**
      * Required. A set of labels used to describe instances of this monitored
      * resource type. For example, an individual Google Cloud SQL database is
@@ -65,6 +69,12 @@ class MonitoredResourceDescriptor extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.api.LabelDescriptor labels = 4;</code>
      */
     private $labels;
+    /**
+     * Optional. The launch stage of the monitored resource definition.
+     *
+     * Generated from protobuf field <code>.google.api.LaunchStage launch_stage = 7;</code>
+     */
+    protected $launch_stage = 0;
 
     /**
      * Constructor.
@@ -82,7 +92,10 @@ class MonitoredResourceDescriptor extends \Google\Protobuf\Internal\Message
      *     @type string $type
      *           Required. The monitored resource type. For example, the type
      *           `"cloudsql_database"` represents databases in Google Cloud SQL.
-     *           The maximum length of this value is 256 characters.
+     *            For a list of types, see [Monitoring resource
+     *            types](https://cloud.google.com/monitoring/api/resources)
+     *           and [Logging resource
+     *           types](https://cloud.google.com/logging/docs/api/v2/resource-list).
      *     @type string $display_name
      *           Optional. A concise name for the monitored resource type that might be
      *           displayed in user interfaces. It should be a Title Cased Noun Phrase,
@@ -91,10 +104,12 @@ class MonitoredResourceDescriptor extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *           Optional. A detailed description of the monitored resource type that might
      *           be used in documentation.
-     *     @type \Google\Api\LabelDescriptor[]|\Google\Protobuf\Internal\RepeatedField $labels
+     *     @type array<\Google\Api\LabelDescriptor>|\Google\Protobuf\Internal\RepeatedField $labels
      *           Required. A set of labels used to describe instances of this monitored
      *           resource type. For example, an individual Google Cloud SQL database is
      *           identified by values for the labels `"database_id"` and `"zone"`.
+     *     @type int $launch_stage
+     *           Optional. The launch stage of the monitored resource definition.
      * }
      */
     public function __construct($data = NULL) {
@@ -141,7 +156,10 @@ class MonitoredResourceDescriptor extends \Google\Protobuf\Internal\Message
     /**
      * Required. The monitored resource type. For example, the type
      * `"cloudsql_database"` represents databases in Google Cloud SQL.
-     * The maximum length of this value is 256 characters.
+     *  For a list of types, see [Monitoring resource
+     *  types](https://cloud.google.com/monitoring/api/resources)
+     * and [Logging resource
+     * types](https://cloud.google.com/logging/docs/api/v2/resource-list).
      *
      * Generated from protobuf field <code>string type = 1;</code>
      * @return string
@@ -154,7 +172,10 @@ class MonitoredResourceDescriptor extends \Google\Protobuf\Internal\Message
     /**
      * Required. The monitored resource type. For example, the type
      * `"cloudsql_database"` represents databases in Google Cloud SQL.
-     * The maximum length of this value is 256 characters.
+     *  For a list of types, see [Monitoring resource
+     *  types](https://cloud.google.com/monitoring/api/resources)
+     * and [Logging resource
+     * types](https://cloud.google.com/logging/docs/api/v2/resource-list).
      *
      * Generated from protobuf field <code>string type = 1;</code>
      * @param string $var
@@ -247,13 +268,39 @@ class MonitoredResourceDescriptor extends \Google\Protobuf\Internal\Message
      * identified by values for the labels `"database_id"` and `"zone"`.
      *
      * Generated from protobuf field <code>repeated .google.api.LabelDescriptor labels = 4;</code>
-     * @param \Google\Api\LabelDescriptor[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\Google\Api\LabelDescriptor>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setLabels($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Api\LabelDescriptor::class);
         $this->labels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. The launch stage of the monitored resource definition.
+     *
+     * Generated from protobuf field <code>.google.api.LaunchStage launch_stage = 7;</code>
+     * @return int
+     */
+    public function getLaunchStage()
+    {
+        return $this->launch_stage;
+    }
+
+    /**
+     * Optional. The launch stage of the monitored resource definition.
+     *
+     * Generated from protobuf field <code>.google.api.LaunchStage launch_stage = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLaunchStage($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Api\LaunchStage::class);
+        $this->launch_stage = $var;
 
         return $this;
     }

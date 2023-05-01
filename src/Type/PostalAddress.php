@@ -35,7 +35,7 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 revision = 1;</code>
      */
-    private $revision = 0;
+    protected $revision = 0;
     /**
      * Required. CLDR region code of the country/region of the address. This
      * is never inferred and it is up to the user to ensure the value is
@@ -45,7 +45,7 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string region_code = 2;</code>
      */
-    private $region_code = '';
+    protected $region_code = '';
     /**
      * Optional. BCP-47 language code of the contents of this address (if
      * known). This is often the UI language of the input form or is expected
@@ -60,7 +60,7 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string language_code = 3;</code>
      */
-    private $language_code = '';
+    protected $language_code = '';
     /**
      * Optional. Postal code of the address. Not all countries use or require
      * postal codes to be present, but where they are used, they may trigger
@@ -69,7 +69,7 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string postal_code = 4;</code>
      */
-    private $postal_code = '';
+    protected $postal_code = '';
     /**
      * Optional. Additional, country-specific, sorting code. This is not used
      * in most regions. Where it is used, the value is either a string like
@@ -79,7 +79,7 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string sorting_code = 5;</code>
      */
-    private $sorting_code = '';
+    protected $sorting_code = '';
     /**
      * Optional. Highest administrative subdivision which is used for postal
      * addresses of a country or region.
@@ -91,7 +91,7 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string administrative_area = 6;</code>
      */
-    private $administrative_area = '';
+    protected $administrative_area = '';
     /**
      * Optional. Generally refers to the city/town portion of the address.
      * Examples: US city, IT comune, UK post town.
@@ -100,14 +100,14 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string locality = 7;</code>
      */
-    private $locality = '';
+    protected $locality = '';
     /**
      * Optional. Sublocality of the address.
      * For example, this can be neighborhoods, boroughs, districts.
      *
      * Generated from protobuf field <code>string sublocality = 8;</code>
      */
-    private $sublocality = '';
+    protected $sublocality = '';
     /**
      * Unstructured address lines describing the lower levels of an address.
      * Because values in address_lines do not have type information and may
@@ -145,7 +145,7 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>string organization = 11;</code>
      */
-    private $organization = '';
+    protected $organization = '';
 
     /**
      * Constructor.
@@ -201,7 +201,7 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      *     @type string $sublocality
      *           Optional. Sublocality of the address.
      *           For example, this can be neighborhoods, boroughs, districts.
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $address_lines
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $address_lines
      *           Unstructured address lines describing the lower levels of an address.
      *           Because values in address_lines do not have type information and may
      *           sometimes contain multiple values in a single field (e.g.
@@ -221,7 +221,7 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      *           then geocoding is the recommended way to handle completely unstructured
      *           addresses (as opposed to guessing which parts of the address should be
      *           localities or administrative areas).
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $recipients
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $recipients
      *           Optional. The recipient at the address.
      *           This field may, under certain circumstances, contain multiline information.
      *           For example, it might contain "care of" information.
@@ -557,7 +557,7 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      * localities or administrative areas).
      *
      * Generated from protobuf field <code>repeated string address_lines = 9;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAddressLines($var)
@@ -587,7 +587,7 @@ class PostalAddress extends \Google\Protobuf\Internal\Message
      * For example, it might contain "care of" information.
      *
      * Generated from protobuf field <code>repeated string recipients = 10;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setRecipients($var)
