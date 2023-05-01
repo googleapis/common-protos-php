@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.0.0](https://github.com/googleapis/common-protos-php/compare/v3.2.0...v4.0.0) (2023-05-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove files unknown to owlbot ([#59](https://github.com/googleapis/common-protos-php/issues/59))
+* add owlbot automated updates ([#54](https://github.com/googleapis/common-protos-php/issues/54))
+
+### Features
+
+* Add owlbot automated updates ([#54](https://github.com/googleapis/common-protos-php/issues/54)) ([6d9134d](https://github.com/googleapis/common-protos-php/commit/6d9134d2f927e9c4aa3165e823477e25ef8ff38f))
+* Regenerate all common protos from new owlbot config ([#58](https://github.com/googleapis/common-protos-php/issues/58)) ([5dac653](https://github.com/googleapis/common-protos-php/commit/5dac653bdd60c4dbaec45e73e0ec487e5aeac9b1))
+
+
+### Miscellaneous Chores
+
+* Remove files unknown to owlbot ([#59](https://github.com/googleapis/common-protos-php/issues/59)) ([f541342](https://github.com/googleapis/common-protos-php/commit/f54134263a142e278c56f5e03e5a3d8c6f72aac3))
+
 ## [3.2.0](https://github.com/googleapis/common-protos-php/compare/v3.1.0...v3.2.0) (2023-01-12)
 
 
