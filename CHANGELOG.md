@@ -1,5 +1,20 @@
 # Changelog
 
+## [4.1.0](https://github.com/googleapis/common-protos-php/compare/v4.0.0...v4.1.0) (2023-05-06)
+
+
+### Features
+
+* Add ConfigServiceV2.CreateBucketAsync method for creating Log Buckets asynchronously ([b18d554](https://github.com/googleapis/common-protos-php/commit/b18d55421cbe1e55d62b5d149e56be23db8c4286))
+* Add ConfigServiceV2.CreateLink method for creating linked datasets for Log Analytics Buckets ([b18d554](https://github.com/googleapis/common-protos-php/commit/b18d55421cbe1e55d62b5d149e56be23db8c4286))
+* Add ConfigServiceV2.DeleteLink method for deleting linked datasets ([b18d554](https://github.com/googleapis/common-protos-php/commit/b18d55421cbe1e55d62b5d149e56be23db8c4286))
+* Add ConfigServiceV2.GetLink methods for describing linked datasets ([b18d554](https://github.com/googleapis/common-protos-php/commit/b18d55421cbe1e55d62b5d149e56be23db8c4286))
+* Add ConfigServiceV2.ListLinks method for listing linked datasets ([b18d554](https://github.com/googleapis/common-protos-php/commit/b18d55421cbe1e55d62b5d149e56be23db8c4286))
+* Add ConfigServiceV2.UpdateBucketAsync method for creating Log Buckets asynchronously ([b18d554](https://github.com/googleapis/common-protos-php/commit/b18d55421cbe1e55d62b5d149e56be23db8c4286))
+* Add LogBucket.analytics_enabled field that specifies whether Log Bucket's Analytics features are enabled ([b18d554](https://github.com/googleapis/common-protos-php/commit/b18d55421cbe1e55d62b5d149e56be23db8c4286))
+* Add LogBucket.index_configs field that contains a list of Log Bucket's indexed fields and related configuration data ([b18d554](https://github.com/googleapis/common-protos-php/commit/b18d55421cbe1e55d62b5d149e56be23db8c4286))
+* Log Analytics features of the Cloud Logging API ([#60](https://github.com/googleapis/common-protos-php/issues/60)) ([b18d554](https://github.com/googleapis/common-protos-php/commit/b18d55421cbe1e55d62b5d149e56be23db8c4286))
+
 ## [4.0.0](https://github.com/googleapis/common-protos-php/compare/v3.2.0...v4.0.0) (2023-05-01)
 
 
