@@ -87,6 +87,4 @@ class Format
     }
 }
 
-// Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Format::class, \Google\Api\FieldInfo_Format::class);
 
