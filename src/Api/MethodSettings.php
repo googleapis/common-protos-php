@@ -42,6 +42,20 @@ class MethodSettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.api.MethodSettings.LongRunning long_running = 2;</code>
      */
     protected $long_running = null;
+    /**
+     * List of top-level fields of the request message, that should be
+     * automatically populated by the client libraries based on their
+     * (google.api.field_info).format. Currently supported format: UUID4.
+     * Example of a YAML configuration:
+     *  publishing:
+     *    method_settings:
+     *      - selector: google.example.v1.ExampleService.CreateExample
+     *        auto_populated_fields:
+     *        - request_id
+     *
+     * Generated from protobuf field <code>repeated string auto_populated_fields = 3;</code>
+     */
+    private $auto_populated_fields;
 
     /**
      * Constructor.
@@ -68,6 +82,16 @@ class MethodSettings extends \Google\Protobuf\Internal\Message
      *                      seconds: 360 # 6 minutes
      *                    total_poll_timeout:
      *                       seconds: 54000 # 90 minutes
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $auto_populated_fields
+     *           List of top-level fields of the request message, that should be
+     *           automatically populated by the client libraries based on their
+     *           (google.api.field_info).format. Currently supported format: UUID4.
+     *           Example of a YAML configuration:
+     *            publishing:
+     *              method_settings:
+     *                - selector: google.example.v1.ExampleService.CreateExample
+     *                  auto_populated_fields:
+     *                  - request_id
      * }
      */
     public function __construct($data = NULL) {
@@ -163,6 +187,48 @@ class MethodSettings extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Api\MethodSettings\LongRunning::class);
         $this->long_running = $var;
+
+        return $this;
+    }
+
+    /**
+     * List of top-level fields of the request message, that should be
+     * automatically populated by the client libraries based on their
+     * (google.api.field_info).format. Currently supported format: UUID4.
+     * Example of a YAML configuration:
+     *  publishing:
+     *    method_settings:
+     *      - selector: google.example.v1.ExampleService.CreateExample
+     *        auto_populated_fields:
+     *        - request_id
+     *
+     * Generated from protobuf field <code>repeated string auto_populated_fields = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAutoPopulatedFields()
+    {
+        return $this->auto_populated_fields;
+    }
+
+    /**
+     * List of top-level fields of the request message, that should be
+     * automatically populated by the client libraries based on their
+     * (google.api.field_info).format. Currently supported format: UUID4.
+     * Example of a YAML configuration:
+     *  publishing:
+     *    method_settings:
+     *      - selector: google.example.v1.ExampleService.CreateExample
+     *        auto_populated_fields:
+     *        - request_id
+     *
+     * Generated from protobuf field <code>repeated string auto_populated_fields = 3;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAutoPopulatedFields($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->auto_populated_fields = $arr;
 
         return $this;
     }
