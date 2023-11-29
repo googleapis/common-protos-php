@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.5.0](https://github.com/googleapis/common-protos-php/compare/v4.4.0...v4.5.0) (2023-11-29)
+
+
+### Features
+
+* Add auto_populated_fields to google.api.MethodSettings ([#74](https://github.com/googleapis/common-protos-php/issues/74)) ([d739417](https://github.com/googleapis/common-protos-php/commit/d7394176eb95f0e92af4e93746dba8f515ba9bc2))
+
 ## [4.4.0](https://github.com/googleapis/common-protos-php/compare/v4.3.0...v4.4.0) (2023-10-02)
 
 
