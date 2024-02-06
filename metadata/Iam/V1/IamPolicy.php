@@ -23,24 +23,21 @@ class IamPolicy
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-£	
-google/iam/v1/iam_policy.protogoogle.iam.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.protogoogle/iam/v1/options.protogoogle/iam/v1/policy.proto google/protobuf/field_mask.proto"ë
-SetIamPolicyRequest
-resource (	B
-‚A˙A
-*+
-policy (2.google.iam.v1.PolicyB‚A/
-update_mask (2.google.protobuf.FieldMask"e
-GetIamPolicyRequest
-resource (	B
-‚A˙A
+û	
+google/iam/v1/iam_policy.protogoogle.iam.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.protogoogle/iam/v1/options.protogoogle/iam/v1/policy.proto google/protobuf/field_mask.proto"è
+SetIamPolicyRequest
+resource (	B	‡A˙A
+**
+policy (2.google.iam.v1.PolicyB‡A/
+update_mask (2.google.protobuf.FieldMask"d
+GetIamPolicyRequest
+resource (	B	‡A˙A
 *0
-options (2.google.iam.v1.GetPolicyOptions"T
-TestIamPermissionsRequest
-resource (	B
-‚A˙A
-*
-permissions (	B‚A"1
+options (2.google.iam.v1.GetPolicyOptions"R
+TestIamPermissionsRequest
+resource (	B	‡A˙A
+*
+permissions (	B‡A"1
 TestIamPermissionsResponse
 permissions (	2¥
 	IAMPolicyt
