@@ -47,7 +47,7 @@ class InstantiateClassesTest extends TestCase
         $this->assertNotNull($instance);
     }
 
-    public function classesProvider()
+    public static function classesProvider()
     {
         $dir = new RecursiveDirectoryIterator('src');
         $it = new RecursiveIteratorIterator($dir);
