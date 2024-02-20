@@ -38,9 +38,8 @@ class InstantiateClassesTest extends TestCase
      * A simple test to instantiate all classes in the repository.
      * This is a minimal test to make sure we don't include generated
      * classes that contain syntax errors.
-     *
-     * @dataProvider classesProvider
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('classesProvider')]
     public function testInstantiateClass($class)
     {
         $instance = new $class();
