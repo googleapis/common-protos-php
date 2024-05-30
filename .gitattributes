@@ -3,6 +3,6 @@
 /.github export-ignore
 /.gitignore export-ignore
 /dev export-ignore
-/phpunit.xml.dist export-ignore
 /owlbot.py export-ignore
+/phpunit.xml.dist export-ignore
 /tests export-ignore
