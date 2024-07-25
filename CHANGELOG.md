@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.7.0](https://github.com/googleapis/common-protos-php/compare/v4.6.0...v4.7.0) (2024-07-25)
+
+
+### Features
+
+* Add FieldInfo.referenced_types for generics ([246c334](https://github.com/googleapis/common-protos-php/commit/246c334480ce2f307fd1ed60f2712eda0d5da8b4))
+
+
+### Bug Fixes
+
+* Un-deprecate Endpoint.aliases field ([246c334](https://github.com/googleapis/common-protos-php/commit/246c334480ce2f307fd1ed60f2712eda0d5da8b4))
+
 ## [4.6.0](https://github.com/googleapis/common-protos-php/compare/v4.5.0...v4.6.0) (2024-04-03)
 
 
